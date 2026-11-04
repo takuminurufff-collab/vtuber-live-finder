@@ -26,10 +26,21 @@ import requests
 # ===== 設定 =====
 # 蓄積するチャンネルの登録者数上限（ページ側ではこれ以下の数字で絞り込める）
 POOL_MAX_SUBSCRIBERS = int(os.environ.get("POOL_MAX_SUBSCRIBERS", 10000))
-# 毎回の検索キーワード。1回の実行で QUERIES_PER_RUN 個ずつ順番に使う（1語100ユニット）
-SEARCH_QUERIES = [
-    "VTuber", "新人VTuber", "初配信", "個人勢VTuber", "Vtuber 雑談", "Vtuber 歌枠",
-    "Vtuber ゲーム実況", "Vライバー", "Vtuber 作業", "Vtuber 朝活",
+# 検索の計画。1回の実行で QUERIES_PER_RUN 個ずつ順番に使う（1回100ユニット）
+#   live     … いま配信中の動画
+#   upcoming … 配信予定（予告枠）。初配信の待機所を拾う
+#   recent   … 直近24時間に投稿された動画（新着順）。配信していない新人も拾う
+SEARCH_PLAN = [
+    ("live", "VTuber"), ("recent", "#新人Vtuber"),
+    ("live", "新人VTuber"), ("upcoming", "初配信"),
+    ("live", "初配信"), ("recent", "初配信 Vtuber"),
+    ("live", "個人勢VTuber"), ("recent", "#Vtuber準備中"),
+    ("live", "Vtuber 雑談"), ("upcoming", "新人Vtuber"),
+    ("live", "Vtuber 歌枠"), ("recent", "Vtuber 自己紹介"),
+    ("live", "Vtuber ゲーム実況"), ("recent", "#個人勢Vtuber"),
+    ("live", "Vライバー"), ("upcoming", "Vtuber デビュー"),
+    ("live", "Vtuber 作業"), ("recent", "Vtuber デビュー"),
+    ("live", "Vtuber 朝活"), ("recent", "#新人Vtuberを発掘せよ"),
 ]
 QUERIES_PER_RUN = int(os.environ.get("QUERIES_PER_RUN", 1))
 # 本数（動画・ショート・ライブ）を数え直す間隔と、1回あたりの最大チャンネル数（1件3ユニット）
@@ -105,18 +116,22 @@ def matches_keywords(*texts):
 
 # ---------- 1. 発見 ----------
 def pick_queries():
-    start = (int(NOW.timestamp()) // 3600 * QUERIES_PER_RUN) % len(SEARCH_QUERIES)
-    return [SEARCH_QUERIES[(start + i) % len(SEARCH_QUERIES)] for i in range(QUERIES_PER_RUN)]
+    start = (int(NOW.timestamp()) // 3600 * QUERIES_PER_RUN) % len(SEARCH_PLAN)
+    return [SEARCH_PLAN[(start + i) % len(SEARCH_PLAN)] for i in range(QUERIES_PER_RUN)]
 
 
 def discover(queries):
-    """配信中の動画を検索して {channel_id: snippet} を返す"""
+    """検索して {channel_id: snippet} を返す"""
     found = {}
-    for q in queries:
-        data = api_get("search", {
-            "part": "snippet", "type": "video", "eventType": "live", "q": q,
-            "maxResults": 50, "regionCode": REGION_CODE, "relevanceLanguage": RELEVANCE_LANGUAGE,
-        }, cost=100)
+    for mode, q in queries:
+        params = {"part": "snippet", "type": "video", "q": q, "maxResults": 50,
+                  "regionCode": REGION_CODE, "relevanceLanguage": RELEVANCE_LANGUAGE}
+        if mode in ("live", "upcoming"):
+            params["eventType"] = mode
+        else:
+            params["order"] = "date"
+            params["publishedAfter"] = iso(NOW - timedelta(hours=24)).replace("+00:00", "Z")
+        data = api_get("search", params, cost=100)
         for item in (data or {}).get("items", []):
             sn = dict(item["snippet"], video_id=item["id"]["videoId"])
             found.setdefault(sn["channelId"], sn)
@@ -287,7 +302,7 @@ def main():
         channels.append(item)
 
     out = {"updated_at": iso(datetime.now(timezone.utc)), "pool_max_subscribers": POOL_MAX_SUBSCRIBERS,
-           "queries": queries, "quota_used": quota_used, "channels": channels}
+           "queries": [f"{m}:{q}" for m, q in queries], "quota_used": quota_used, "channels": channels}
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
