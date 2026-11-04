@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
-新人VTuberライブ発掘：データ更新スクリプト
+うぶごえライブ：データ更新スクリプト
 
-条件:
-  1. 現在YouTubeでライブ配信中
-  2. チャンネル登録者数が MAX_SUBSCRIBERS 人以内
-  3. チャンネルの「ライブ」タブにある動画が MAX_LIVE_VIDEOS 本以内
+1. 発見  … 配信中の動画をキーワード検索し、小規模なVTuberチャンネルを data/channels.json に蓄積
+2. 更新  … 蓄積したチャンネルの登録者数と、動画・ショート・ライブの本数を更新
+3. 確認  … 各チャンネルのRSS（API枠を使わない）から最新動画を取り、いま配信中かを判定
+4. 出力  … ページ用の site/data.json を書き出す（絞り込みはページ側で行う）
 
-結果を site/data.json に書き出します。GitHub Actions から定期実行される想定です。
 手元で試すとき:
   pip install requests
-  (PowerShell) $env:YOUTUBE_API_KEY="キー"   /  (Mac) export YOUTUBE_API_KEY="キー"
+  (PowerShell) $env:YOUTUBE_API_KEY="キー"
   python finder.py
 """
 
@@ -18,29 +17,54 @@ import html
 import json
 import os
 import sys
-from datetime import datetime, timezone
+import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
 
 import requests
 
 # ===== 設定 =====
-MAX_SUBSCRIBERS = int(os.environ.get("MAX_SUBSCRIBERS", 1000))
-MAX_LIVE_VIDEOS = int(os.environ.get("MAX_LIVE_VIDEOS", 5))
-SEARCH_QUERIES = ["VTuber", "新人VTuber", "初配信"]   # 1語につき100ユニット
-PAGES_PER_QUERY = 1                                   # 50件/ページ
+# 蓄積するチャンネルの登録者数上限（ページ側ではこれ以下の数字で絞り込める）
+POOL_MAX_SUBSCRIBERS = int(os.environ.get("POOL_MAX_SUBSCRIBERS", 10000))
+# 毎回の検索キーワード。1回の実行で QUERIES_PER_RUN 個ずつ順番に使う（1語100ユニット）
+SEARCH_QUERIES = [
+    "VTuber", "新人VTuber", "初配信", "個人勢VTuber", "Vtuber 雑談", "Vtuber 歌枠",
+    "Vtuber ゲーム実況", "Vライバー", "Vtuber 作業", "Vtuber 朝活",
+]
+QUERIES_PER_RUN = int(os.environ.get("QUERIES_PER_RUN", 1))
+# 本数（動画・ショート・ライブ）を数え直す間隔と、1回あたりの最大チャンネル数（1件3ユニット）
+COUNTS_REFRESH_HOURS = 24
+COUNTS_PER_RUN = 60
+# RSSで確認する最新動画の数
+RSS_LATEST = 3
 REGION_CODE = "JP"
 RELEVANCE_LANGUAGE = "ja"
-REQUIRED_KEYWORDS = ["vtuber", "ブイチューバー", "初配信", "新人", "個人勢", "vライバー"]
-OUTPUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site", "data.json")
+REQUIRED_KEYWORDS = ["vtuber", "ブイチューバー", "初配信", "新人", "個人勢", "vライバー", "バーチャル"]
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(ROOT, "data", "channels.json")
+OUT_PATH = os.path.join(ROOT, "site", "data.json")
 # =================
 
 API = "https://www.googleapis.com/youtube/v3"
 API_KEY = None
 quota_used = 0
+NOW = datetime.now(timezone.utc)
+session = requests.Session()
+session.headers["User-Agent"] = "ubugoe-live/1.0"
+
+
+def iso(dt):
+    return dt.isoformat(timespec="seconds")
+
+
+def parse_iso(s):
+    return datetime.fromisoformat(s.replace("Z", "+00:00")) if s else None
 
 
 def api_get(endpoint, params, cost):
     global quota_used
-    r = requests.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
+    r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
     quota_used += cost
     if r.status_code == 404:
         return None
@@ -50,85 +74,21 @@ def api_get(endpoint, params, cost):
         except Exception:
             reason = r.text[:200]
         if reason == "quotaExceeded":
-            sys.exit("APIの1日の利用上限に達しました。日本時間17時以降に回復します。")
+            raise QuotaExceeded()
+        if reason == "playlistNotFound":
+            return None
         raise RuntimeError(f"{endpoint} でエラー ({r.status_code}): {reason}")
     return r.json()
 
 
+class QuotaExceeded(Exception):
+    pass
+
+
 def chunks(items, n=50):
+    items = list(items)
     for i in range(0, len(items), n):
         yield items[i:i + n]
-
-
-def search_live_videos():
-    found = {}
-    for q in SEARCH_QUERIES:
-        token = None
-        for _ in range(PAGES_PER_QUERY):
-            params = {"part": "snippet", "type": "video", "eventType": "live", "q": q,
-                      "maxResults": 50, "regionCode": REGION_CODE,
-                      "relevanceLanguage": RELEVANCE_LANGUAGE}
-            if token:
-                params["pageToken"] = token
-            data = api_get("search", params, cost=100)
-            for item in data.get("items", []):
-                found.setdefault(item["id"]["videoId"], item["snippet"])
-            token = data.get("nextPageToken")
-            if not token:
-                break
-    return found
-
-
-def get_channels(channel_ids):
-    result = {}
-    for batch in chunks(channel_ids):
-        data = api_get("channels", {"part": "snippet,statistics,contentDetails",
-                                    "id": ",".join(batch), "maxResults": 50}, cost=1)
-        for ch in data.get("items", []):
-            result[ch["id"]] = ch
-    return result
-
-
-def count_live_tab(channel_id, uploads_playlist):
-    """「ライブ」タブの本数。UC→UULV の再生リストで数え、無ければアップロード一覧から数える"""
-    data = api_get("playlistItems", {"part": "id", "playlistId": "UULV" + channel_id[2:],
-                                     "maxResults": 1}, cost=1)
-    if data is not None:
-        return data["pageInfo"]["totalResults"]
-    count, token = 0, None
-    for _ in range(4):
-        params = {"part": "contentDetails", "playlistId": uploads_playlist, "maxResults": 50}
-        if token:
-            params["pageToken"] = token
-        page = api_get("playlistItems", params, cost=1)
-        if page is None:
-            break
-        ids = [it["contentDetails"]["videoId"] for it in page.get("items", [])]
-        if ids:
-            vids = api_get("videos", {"part": "liveStreamingDetails", "id": ",".join(ids)}, cost=1)
-            count += sum(1 for v in vids.get("items", []) if "liveStreamingDetails" in v)
-        token = page.get("nextPageToken")
-        if count > MAX_LIVE_VIDEOS or not token:
-            break
-    return count
-
-
-def get_live_details(video_ids):
-    out = {}
-    for batch in chunks(video_ids):
-        data = api_get("videos", {"part": "liveStreamingDetails", "id": ",".join(batch)}, cost=1)
-        for v in data.get("items", []):
-            d = v.get("liveStreamingDetails", {})
-            out[v["id"]] = (int(d["concurrentViewers"]) if "concurrentViewers" in d else None,
-                            d.get("actualStartTime"))
-    return out
-
-
-def matches_keywords(*texts):
-    if not REQUIRED_KEYWORDS:
-        return True
-    joined = " ".join(t or "" for t in texts).lower()
-    return any(k.lower() in joined for k in REQUIRED_KEYWORDS)
 
 
 def thumb(thumbs):
@@ -138,58 +98,201 @@ def thumb(thumbs):
     return None
 
 
+def matches_keywords(*texts):
+    joined = " ".join(t or "" for t in texts).lower()
+    return any(k.lower() in joined for k in REQUIRED_KEYWORDS)
+
+
+# ---------- 1. 発見 ----------
+def pick_queries():
+    start = (int(NOW.timestamp()) // 3600 * QUERIES_PER_RUN) % len(SEARCH_QUERIES)
+    return [SEARCH_QUERIES[(start + i) % len(SEARCH_QUERIES)] for i in range(QUERIES_PER_RUN)]
+
+
+def discover(queries):
+    """配信中の動画を検索して {channel_id: snippet} を返す"""
+    found = {}
+    for q in queries:
+        data = api_get("search", {
+            "part": "snippet", "type": "video", "eventType": "live", "q": q,
+            "maxResults": 50, "regionCode": REGION_CODE, "relevanceLanguage": RELEVANCE_LANGUAGE,
+        }, cost=100)
+        for item in (data or {}).get("items", []):
+            sn = dict(item["snippet"], video_id=item["id"]["videoId"])
+            found.setdefault(sn["channelId"], sn)
+    return found
+
+
+# ---------- 2. 更新 ----------
+def fetch_channels(ids):
+    out = {}
+    for batch in chunks(ids):
+        data = api_get("channels", {"part": "snippet,statistics", "id": ",".join(batch),
+                                    "maxResults": 50}, cost=1)
+        for ch in (data or {}).get("items", []):
+            out[ch["id"]] = ch
+    return out
+
+
+def playlist_total(playlist_id):
+    data = api_get("playlistItems", {"part": "id", "playlistId": playlist_id, "maxResults": 1}, cost=1)
+    return 0 if data is None else data["pageInfo"]["totalResults"]
+
+
+def refresh_counts(ch_id, rec):
+    suffix = ch_id[2:]
+    rec["videos"] = playlist_total("UULF" + suffix)   # 通常の動画
+    rec["shorts"] = playlist_total("UUSH" + suffix)   # ショート
+    rec["lives"] = playlist_total("UULV" + suffix)    # ライブ
+    rec["counts_at"] = iso(NOW)
+
+
+# ---------- 3. 確認 ----------
+def rss_latest(ch_id):
+    try:
+        r = session.get("https://www.youtube.com/feeds/videos.xml",
+                        params={"channel_id": ch_id}, timeout=15)
+        if r.status_code != 200:
+            return []
+        root = ET.fromstring(r.content)
+        ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
+        ids = [e.findtext("yt:videoId", namespaces=ns) for e in root.findall("a:entry", ns)]
+        return [i for i in ids if i][:RSS_LATEST]
+    except Exception:
+        return []
+
+
+def fetch_videos(ids):
+    out = {}
+    for batch in chunks(ids):
+        data = api_get("videos", {"part": "snippet,liveStreamingDetails", "id": ",".join(batch)}, cost=1)
+        for v in (data or {}).get("items", []):
+            out[v["id"]] = v
+    return out
+
+
 def main():
-    videos = search_live_videos()
-    by_channel = {}
-    for vid, sn in videos.items():
-        by_channel.setdefault(sn["channelId"], (vid, sn))
-    channels = get_channels(list(by_channel))
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+    try:
+        with open(DB_PATH, encoding="utf-8") as f:
+            db = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        db = {}
 
-    candidates = []
-    for cid, (vid, sn) in by_channel.items():
-        ch = channels.get(cid)
-        if not ch:
-            continue
-        st = ch["statistics"]
-        if st.get("hiddenSubscriberCount") or "subscriberCount" not in st:
-            continue
-        subs = int(st["subscriberCount"])
-        if subs > MAX_SUBSCRIBERS:
-            continue
-        if not matches_keywords(sn["title"], sn["channelTitle"], ch["snippet"].get("description")):
-            continue
-        candidates.append((cid, vid, sn, ch, subs))
+    queries = pick_queries()
+    discovered = {}
+    try:
+        discovered = discover(queries)
 
-    streams = []
-    for cid, vid, sn, ch, subs in candidates:
-        n = count_live_tab(cid, ch["contentDetails"]["relatedPlaylists"]["uploads"])
-        if n <= MAX_LIVE_VIDEOS:
-            streams.append({
-                "channel": html.unescape(sn["channelTitle"]),
-                "channel_id": cid,
-                "channel_icon": thumb(ch["snippet"].get("thumbnails")),
-                "subscribers": subs,
-                "live_count": n,
-                "video_id": vid,
-                "title": html.unescape(sn["title"]),
-                "thumbnail": thumb(sn.get("thumbnails")),
-            })
+        # 新しく見つかったチャンネルを登録（登録者数・キーワードで選別）
+        new_ids = [c for c in discovered if c not in db]
+        for cid, ch in fetch_channels(new_ids).items():
+            st, sn = ch["statistics"], ch["snippet"]
+            if st.get("hiddenSubscriberCount") or "subscriberCount" not in st:
+                continue
+            if int(st["subscriberCount"]) > POOL_MAX_SUBSCRIBERS:
+                continue
+            live_sn = discovered[cid]
+            if not matches_keywords(live_sn["title"], sn["title"], sn.get("description")):
+                continue
+            db[cid] = {"first_seen": iso(NOW), "counts_at": None}
 
-    details = get_live_details([s["video_id"] for s in streams])
-    for s in streams:
-        s["viewers"], s["started_at"] = details.get(s["video_id"], (None, None))
-    streams.sort(key=lambda s: (s["live_count"], s["subscribers"]))
+        # 全チャンネルの登録者数・名前・アイコンを更新。上限を超えたら外す
+        for cid, ch in fetch_channels(list(db)).items():
+            st, sn = ch["statistics"], ch["snippet"]
+            subs = int(st.get("subscriberCount", 0))
+            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS:
+                db.pop(cid, None)
+                continue
+            db[cid].update(name=sn["title"], icon=thumb(sn.get("thumbnails")), subscribers=subs)
+        for cid in [c for c, r in db.items() if "name" not in r]:
+            db.pop(cid)  # 削除・非公開になったチャンネル
 
-    data = {
-        "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "conditions": {"max_subscribers": MAX_SUBSCRIBERS, "max_live_videos": MAX_LIVE_VIDEOS},
-        "scanned": len(videos),
-        "streams": streams,
-    }
-    os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
-    with open(OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"配信中 {len(videos)} 件を確認 → 該当 {len(streams)} 件。API消費 約{quota_used}ユニット")
+        # RSSで最新動画を集めて、配信中かどうかを判定
+        with ThreadPoolExecutor(max_workers=12) as ex:
+            latest = dict(zip(db, ex.map(rss_latest, list(db))))
+        video_ids = set()
+        for cid, ids in latest.items():
+            video_ids.update(ids)
+        for cid, sn in discovered.items():
+            if cid in db:
+                video_ids.add(sn["video_id"])
+        videos = fetch_videos(video_ids)
+
+        by_channel = {}
+        for v in videos.values():
+            by_channel.setdefault(v["snippet"]["channelId"], []).append(v)
+
+        for cid, rec in db.items():
+            vs = by_channel.get(cid, [])
+            live = next((v for v in vs if v["snippet"].get("liveBroadcastContent") == "live"), None)
+            was_live = rec.get("is_live")
+            rec["is_live"] = live is not None
+            if live:
+                d = live.get("liveStreamingDetails", {})
+                rec["live"] = {
+                    "video_id": live["id"],
+                    "title": live["snippet"]["title"],
+                    "thumbnail": thumb(live["snippet"].get("thumbnails")),
+                    "viewers": int(d["concurrentViewers"]) if "concurrentViewers" in d else None,
+                    "started_at": d.get("actualStartTime"),
+                }
+                rec["last_live_at"] = iso(NOW)
+                if not was_live:
+                    rec["counts_at"] = None  # 配信が始まったらライブ本数を数え直す
+            else:
+                rec.pop("live", None)
+                ended = [parse_iso(v["liveStreamingDetails"].get("actualEndTime"))
+                         for v in vs if v.get("liveStreamingDetails", {}).get("actualEndTime")]
+                if ended:
+                    newest = max(ended)
+                    prev = parse_iso(rec.get("last_live_at"))
+                    if not prev or newest > prev:
+                        rec["last_live_at"] = iso(newest)
+            if vs:
+                newest_v = max(vs, key=lambda v: v["snippet"]["publishedAt"])
+                rec["latest"] = {"video_id": newest_v["id"], "title": newest_v["snippet"]["title"],
+                                 "thumbnail": thumb(newest_v["snippet"].get("thumbnails"))}
+
+        # 本数の更新（未取得 → 配信中 → 古い順に、上限まで）
+        def stale(rec):
+            t = parse_iso(rec.get("counts_at"))
+            return t is None or NOW - t > timedelta(hours=COUNTS_REFRESH_HOURS)
+        queue = sorted((c for c, r in db.items() if stale(r)),
+                       key=lambda c: (db[c].get("counts_at") is not None,
+                                      not db[c].get("is_live"),
+                                      db[c].get("counts_at") or ""))
+        for cid in queue[:COUNTS_PER_RUN]:
+            refresh_counts(cid, db[cid])
+
+    except QuotaExceeded:
+        print("APIの1日の上限に達したため、ここまでの結果で保存します。")
+
+    with open(DB_PATH, "w", encoding="utf-8") as f:
+        json.dump(db, f, ensure_ascii=False, indent=0, sort_keys=True)
+
+    channels = []
+    for cid, r in db.items():
+        if "name" not in r:
+            continue
+        item = {"id": cid, "name": html.unescape(r["name"]), "icon": r.get("icon"),
+                "subscribers": r.get("subscribers"), "videos": r.get("videos"),
+                "shorts": r.get("shorts"), "lives": r.get("lives"),
+                "is_live": bool(r.get("is_live")), "last_live_at": r.get("last_live_at"),
+                "first_seen": r.get("first_seen")}
+        if r.get("live"):
+            item["live"] = dict(r["live"], title=html.unescape(r["live"]["title"]))
+        if r.get("latest"):
+            item["latest"] = dict(r["latest"], title=html.unescape(r["latest"]["title"]))
+        channels.append(item)
+
+    out = {"updated_at": iso(datetime.now(timezone.utc)), "pool_max_subscribers": POOL_MAX_SUBSCRIBERS,
+           "queries": queries, "quota_used": quota_used, "channels": channels}
+    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+    live_n = sum(1 for c in channels if c["is_live"])
+    print(f"検索語 {queries} / 蓄積 {len(channels)} チャンネル（うち配信中 {live_n}）/ API消費 約{quota_used}ユニット")
 
 
 if __name__ == "__main__":

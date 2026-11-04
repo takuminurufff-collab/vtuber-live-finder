@@ -1,10 +1,1 @@
-{
- "updated_at": "2026-11-04T03:46:00+00:00",
- "conditions": {"max_subscribers": 1000, "max_live_videos": 5},
- "scanned": 135,
- "streams": [
-  {"channel": "てん", "channel_id": "", "channel_icon": null, "subscribers": 42, "live_count": 2, "video_id": "FuvUf3LIDqU", "title": "初配信！", "thumbnail": null, "viewers": 8, "started_at": null},
-  {"channel": "人生ガラス張り系VTuber   野梅 のるきゅー", "channel_id": "", "channel_icon": null, "subscribers": 759, "live_count": 3, "video_id": "mNHkW_PeI0Y", "title": "【#新人Vtuber】【#雑談 】見つけて！！！見て！！コメント大歓迎！！！！！前回3645時間かかりPCエラーにより中断された配信リベンジ！！！！【#初配信】", "thumbnail": null, "viewers": null, "started_at": null},
-  {"channel": "噂乃なの Uwasano Nano", "channel_id": "", "channel_icon": null, "subscribers": 743, "live_count": 5, "video_id": "8YYzJexPjAo", "title": "LAWSONのおすすめを話しつつ占いもするかも.ᐣ【 #噂のなの 】", "thumbnail": null, "viewers": 8, "started_at": null}
- ]
-}
+{"updated_at":null,"channels":[]}

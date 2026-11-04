@@ -1,31 +1,37 @@
 # うぶごえライブ
 
-登録者数が少なく、「ライブ」タブの動画もまだ数本しかない新人VTuberのうち、いま配信中の人を一覧にするWebサービスです。
+小規模な新人VTuberを、登録者数・ライブ本数・動画本数・ショート本数と、いま配信中かどうかで絞り込める一覧です。
 
-- `finder.py` … YouTube Data API で検索し、結果を `site/data.json` に書き出す
-- `site/index.html` … 一覧ページ（data.json を読んで表示、5分ごとに再読み込み）
-- `.github/workflows/update.yml` … 1時間おきに finder.py を実行し、GitHub Pages に公開
+公開ページ: https://takuminurufff-collab.github.io/vtuber-live-finder/
 
-## 公開までの手順
+## しくみ
 
-1. GitHubで新しいリポジトリを作る（例: `vtuber-live-finder`）。無料プランでPagesを使うには **Public** にします。
-2. このフォルダの中身をすべてアップロードする（`.github` フォルダも忘れずに）。
-3. リポジトリの **Settings → Secrets and variables → Actions → New repository secret** で、
-   名前 `YOUTUBE_API_KEY`、値にAPIキーを登録する。
-4. **Settings → Pages** の「Source」を **GitHub Actions** にする。
-5. **Actions** タブ →「配信データ更新」→ **Run workflow** で初回を手動実行する。
-6. 数分後、`https://<ユーザー名>.github.io/<リポジトリ名>/` で一覧が見られます。以降は1時間おきに自動更新されます。
+1時間おきに GitHub Actions が `finder.py` を実行します。
 
-## 条件を変える
+1. **発見**：配信中の動画をキーワード検索し、登録者 `POOL_MAX_SUBSCRIBERS`（初期値1万）人以下のVTuberチャンネルを `data/channels.json` に蓄積します。キーワードは毎時入れ替わります。
+2. **更新**：蓄積したチャンネルの登録者数と、動画・ショート・ライブの本数を更新します。本数は1日1回、配信が始まったときにも数え直します。
+3. **確認**：各チャンネルのRSS（API枠を使いません）から最新動画を取り、いま配信中かを判定します。
+4. **出力**：`site/data.json` を書き出し、GitHub Pages に公開します。絞り込みはページ側で行います。
 
-**Settings → Secrets and variables → Actions → Variables** で次を追加すると、コードを触らずに変えられます。
+YouTubeには「配信中のすべてのチャンネル」を返すAPIがないため、検索で一度見つかったチャンネルが対象です。運用期間が長いほど蓄積が増えて、網羅率が上がります。
+
+## 今すぐ更新（管理者だけ）
+
+1. GitHubの右上アイコン → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token
+2. Repository access で **Only select repositories** → `vtuber-live-finder`
+3. Permissions → Repository permissions → **Actions** を **Read and write**
+4. 作ったトークンを、公開ページ下部の「管理者メニュー」に貼って保存
+
+保存したブラウザにだけ「今すぐ更新」ボタンが表示されます。
+
+## 設定（Settings → Secrets and variables → Actions → Variables）
 
 | 名前 | 意味 | 初期値 |
 |---|---|---|
-| `MAX_SUBSCRIBERS` | 登録者数の上限 | 1000 |
-| `MAX_LIVE_VIDEOS` | 「ライブ」タブの本数の上限 | 5 |
+| `POOL_MAX_SUBSCRIBERS` | 蓄積するチャンネルの登録者数上限 | 10000 |
+| `QUERIES_PER_RUN` | 1回の実行で使う検索キーワード数（1語100ユニット） | 1 |
 
 ## API の使用量
 
-1回の実行で約330ユニット。1時間おき（24回/日）で約8,000ユニットになり、無料枠（1日10,000）に収まります。
-検索キーワードを増やすと1語につき100ユニット増えるので、その場合は `update.yml` の cron の間隔を広げてください。
+1回 約300〜400ユニット × 24回で、1日 約8,000〜9,500ユニット（上限 10,000）。
+蓄積が数千チャンネルを超えたら、Google Cloud で YouTube Data API の上限引き上げを申請するか、実行間隔を広げてください。

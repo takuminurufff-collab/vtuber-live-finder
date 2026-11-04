@@ -2,19 +2,20 @@ name: 配信データ更新
 
 on:
   schedule:
-    # 1時間おき（毎時23分・UTC）。1回約330ユニット × 24回 ≒ 8,000ユニット/日
+    # 1時間おき（毎時23分・UTC）。1回 約300〜400ユニット × 24回 ≒ 8,000〜9,500ユニット/日
     - cron: "23 * * * *"
-  workflow_dispatch:   # Actions画面の「Run workflow」で手動実行も可能
+  workflow_dispatch:   # ページの「今すぐ更新」ボタン、またはActions画面の「Run workflow」から実行
   push:
     branches: [main]
+    paths-ignore: ["data/**", "site/data.json"]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
+  group: update
   cancel-in-progress: false
 
 jobs:
@@ -32,12 +33,21 @@ jobs:
 
       - run: pip install requests
 
-      - name: YouTubeから検索
+      - name: YouTubeから取得
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          MAX_SUBSCRIBERS: ${{ vars.MAX_SUBSCRIBERS || '1000' }}
-          MAX_LIVE_VIDEOS: ${{ vars.MAX_LIVE_VIDEOS || '5' }}
+          POOL_MAX_SUBSCRIBERS: ${{ vars.POOL_MAX_SUBSCRIBERS || '10000' }}
+          QUERIES_PER_RUN: ${{ vars.QUERIES_PER_RUN || '1' }}
         run: python finder.py
+
+      - name: 蓄積データを保存
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/channels.json site/data.json
+          git diff --cached --quiet || git commit -m "データ更新 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase -X theirs origin main || true
+          git push origin HEAD:main || true
 
       - uses: actions/upload-pages-artifact@v3
         with:
