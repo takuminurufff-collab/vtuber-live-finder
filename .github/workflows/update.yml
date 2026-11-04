@@ -1,0 +1,47 @@
+name: 配信データ更新
+
+on:
+  schedule:
+    # 1時間おき（毎時23分・UTC）。1回約330ユニット × 24回 ≒ 8,000ユニット/日
+    - cron: "23 * * * *"
+  workflow_dispatch:   # Actions画面の「Run workflow」で手動実行も可能
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: YouTubeから検索
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MAX_SUBSCRIBERS: ${{ vars.MAX_SUBSCRIBERS || '1000' }}
+          MAX_LIVE_VIDEOS: ${{ vars.MAX_LIVE_VIDEOS || '5' }}
+        run: python finder.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
