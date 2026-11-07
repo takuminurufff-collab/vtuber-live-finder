@@ -50,7 +50,28 @@ class RecheckTests(unittest.TestCase):
         with patch.object(finder, "playlist_total", side_effect=[None, 9, 3]):
             finder.refresh_counts("UC123", rec)
         self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (12, 9, 3))
+        self.assertEqual(rec["counts_at"], "2026-10-01T00:00:00Z")
+        self.assertEqual(rec["counts_attempt_at"], finder.iso(finder.NOW))
+        self.assertFalse(finder.counts_due(rec))
+
+    def test_known_counts_partial_failure_retries_after_cooldown(self):
+        old = finder.iso(finder.NOW - finder.timedelta(days=5))
+        rec = {"videos": 12, "shorts": 7, "lives": 2, "counts_at": old}
+        with patch.object(finder, "playlist_total", side_effect=[None, 8, 3]):
+            finder.refresh_counts("UC123", rec)
+        self.assertEqual(rec["counts_at"], old)
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (12, 8, 3))
+        self.assertFalse(finder.counts_due(rec))
+        rec["counts_attempt_at"] = finder.iso(finder.NOW - finder.timedelta(days=1, minutes=1))
+        self.assertTrue(finder.counts_due(rec))
+
+    def test_all_playlist_counts_success_refreshes_timestamp(self):
+        rec = {"videos": 12, "shorts": 7, "lives": 2,
+               "counts_at": finder.iso(finder.NOW - finder.timedelta(days=5))}
+        with patch.object(finder, "playlist_total", side_effect=[14, 9, 4]):
+            finder.refresh_counts("UC123", rec)
         self.assertEqual(rec["counts_at"], finder.iso(finder.NOW))
+        self.assertFalse(finder.counts_due(rec))
 
     def test_missing_playlist_keeps_backlog_due(self):
         rec = {"videos": None, "shorts": 7, "lives": 2,
