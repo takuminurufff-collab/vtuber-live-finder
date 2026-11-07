@@ -166,6 +166,7 @@ footer p { margin: 0; }
       <div class="field"><label for="f-lives">ライブ</label><div class="num"><input id="f-lives" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
       <div class="field"><label for="f-videos">動画</label><div class="num"><input id="f-videos" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
       <div class="field"><label for="f-shorts">ショート</label><div class="num"><input id="f-shorts" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
+      <div class="field"><label for="f-viewers">現在の同時接続者数</label><div class="num"><input id="f-viewers" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>人以内</span></div></div>
     </div>
     <p class="hint">空欄にするとその条件は使いません。<button class="linkbtn" id="reset" type="button">初期値に戻す</button></p>
   </section>
@@ -187,7 +188,7 @@ footer p { margin: 0; }
 
 <script>
 (function () {
-  var DEFAULTS = { st: "live", sort: "viewers", subs: "", lives: "", videos: "", shorts: "" };
+  var DEFAULTS = { st: "live", sort: "viewers", subs: "", lives: "", videos: "", shorts: "", viewers: "" };
   var KEY = "ubugoe-filters", TOKEN_KEY = "ubugoe-gh-token";
   var parts = location.hostname.split(".");
   var OWNER = parts[1] === "github" ? parts[0] : "takuminurufff-collab";
@@ -200,7 +201,7 @@ footer p { margin: 0; }
   try { Object.assign(f, JSON.parse(read(KEY) || "{}")); } catch (e) {}
   var data = null;
   var $ = function (id) { return document.getElementById(id); };
-  var FIELDS = ["subs", "lives", "videos", "shorts"];
+  var FIELDS = ["subs", "lives", "videos", "shorts", "viewers"];
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function num(n) { return n == null ? "–" : Number(n).toLocaleString("ja-JP"); }
@@ -227,8 +228,9 @@ footer p { margin: 0; }
     for (var i = 0; i < FIELDS.length; i++) {
       var k = FIELDS[i], v = f[k];
       if (v === "" || v == null) continue;
-      var val = c[map[k]];
-      if (val == null || val > Number(v)) return false;
+      var val = k === "viewers" ? (c.is_live && c.live ? c.live.viewers : null) : c[map[k]];
+      // 配信していない・同接非公開・取得不可は0人として扱わない。
+      if (val == null || !Number.isFinite(Number(val)) || Number(val) > Number(v)) return false;
     }
     return true;
   }
