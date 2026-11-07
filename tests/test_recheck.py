@@ -133,6 +133,33 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(result, 20)
         self.assertEqual(refresh.call_count, 20)
 
+    def test_never_attempted_missing_counts_precede_retry(self):
+        finder.budget = FakeBudget(remaining=100)
+        old = finder.iso(finder.NOW - finder.timedelta(days=2))
+        db = {
+            "UC_RETRY": {"videos": None, "shorts": None, "lives": None,
+                         "counts_at": None, "counts_attempt_at": old},
+            "UC_NEW": {"videos": None, "shorts": None, "lives": None,
+                       "counts_at": None},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            finder.refresh_due_counts(db, max_channels=1)
+        refresh.assert_called_once_with("UC_NEW", db["UC_NEW"])
+
+    def test_oldest_failed_count_attempt_precedes_recent_retry(self):
+        finder.budget = FakeBudget(remaining=100)
+        older = finder.iso(finder.NOW - finder.timedelta(days=4))
+        recent = finder.iso(finder.NOW - finder.timedelta(days=2))
+        db = {
+            "UC_RECENT": {"videos": None, "shorts": None, "lives": None,
+                          "counts_at": None, "counts_attempt_at": recent},
+            "UC_OLDER": {"videos": None, "shorts": None, "lives": None,
+                         "counts_at": None, "counts_attempt_at": older},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            finder.refresh_due_counts(db, max_channels=1)
+        refresh.assert_called_once_with("UC_OLDER", db["UC_OLDER"])
+
     def test_count_refresh_respects_low_api_budget(self):
         finder.budget = FakeBudget(remaining=2)
         db = {"UC": {"counts_at": None, "videos": None, "shorts": None,
