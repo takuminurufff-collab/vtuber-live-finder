@@ -44,6 +44,23 @@ class RecheckTests(unittest.TestCase):
                "counts_at": finder.iso(finder.NOW)}
         self.assertTrue(finder.counts_due(rec))
 
+    def test_unavailable_playlist_does_not_erase_known_count(self):
+        rec = {"videos": 12, "shorts": 7, "lives": 2,
+               "counts_at": "2026-10-01T00:00:00Z"}
+        with patch.object(finder, "playlist_total", side_effect=[None, 9, 3]):
+            finder.refresh_counts("UC123", rec)
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (12, 9, 3))
+        self.assertEqual(rec["counts_at"], finder.iso(finder.NOW))
+
+    def test_missing_playlist_keeps_backlog_due(self):
+        rec = {"videos": None, "shorts": 7, "lives": 2,
+               "counts_at": None}
+        with patch.object(finder, "playlist_total", side_effect=[None, 9, 3]):
+            finder.refresh_counts("UC123", rec)
+        self.assertIsNone(rec["videos"])
+        self.assertIsNone(rec["counts_at"])
+        self.assertTrue(finder.counts_due(rec))
+
     def test_count_refresh_is_atomic_on_quota_exception(self):
         previous = {"videos": 4, "shorts": 5, "lives": 6,
                     "counts_at": "2026-10-01T00:00:00Z"}
