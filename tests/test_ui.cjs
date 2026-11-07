@@ -75,6 +75,28 @@ test("data quality notice distinguishes unknown counts from zero", async () => {
   }
 });
 
+test("unknown subscriber totals appear last and remain visible without a subscriber filter", async () => {
+  const dom = await setup([
+    { ...record(1), subscribers: null },
+    { ...record(2), subscribers: 0 },
+    { ...record(3), subscribers: 100 },
+  ]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("st-all").click();
+    doc.getElementById("sort").value = "subs";
+    doc.getElementById("sort").dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+    const names = [...doc.querySelectorAll(".card .name")].map(e => e.textContent);
+    assert.deepEqual(names, ["VTuber 2", "VTuber 3", "VTuber 1"]);
+    assert.match(doc.getElementById("dataQuality").textContent, /登録者数が非公開または未取得：1件/);
+    doc.getElementById("f-subs-min").value = "0";
+    doc.getElementById("f-subs-min").dispatchEvent(new dom.window.Event("input", { bubbles: true }));
+    assert.equal(doc.querySelectorAll("a.card").length, 2);
+  } finally {
+    dom.window.close();
+  }
+});
+
 test("hidden admin menu cannot appear before interaction", async () => {
   const dom = await setup([record(1)]);
   try {
