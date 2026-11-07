@@ -530,6 +530,10 @@ def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     db = load(DB_PATH, {})
+    missing_counts_before = sum(
+        any(r.get(k) is None for k in ("videos", "shorts", "lives"))
+        for r in db.values()
+    )
     state = load(STATE_PATH, {})
     budget = Budget(state)
     rejected = state.setdefault("rejected", {})
@@ -728,6 +732,12 @@ def main():
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
     live_n = sum(1 for c in channels if c["is_live"])
+    missing_counts_after = sum(
+        any(r.get(k) is None for k in ("videos", "shorts", "lives"))
+        for r in db.values()
+    )
+    print(f"本数未取得 前回{missing_counts_before}件 → 現在{missing_counts_after}件"
+          f" / 全{len(channels)}件（新規候補の流入により増える場合あり）")
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
           f"{'（500件超えの区切り ' + str(stats['overflow']) + '）' if stats['overflow'] else ''}"
           f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']}・再発見 {stats['recovered']} / 蓄積 {len(channels)}（配信中 {live_n}）"
