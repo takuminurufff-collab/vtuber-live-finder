@@ -27,3 +27,5 @@ jobs:
         run: python -m compileall -q finder.py tests
       - name: Run offline unit tests
         run: python -m unittest discover -s tests -v
+      - name: Run JavaScript filter tests
+        run: node --test tests/test_filters.cjs
