@@ -36,7 +36,7 @@ jobs:
       - name: YouTubeから取得
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          POOL_MAX_SUBSCRIBERS: ${{ vars.POOL_MAX_SUBSCRIBERS || '10000' }}
+          POOL_MAX_SUBSCRIBERS: ${{ vars.POOL_MAX_SUBSCRIBERS || '1000000000' }}
           DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '9300' }}
         run: python finder.py
 

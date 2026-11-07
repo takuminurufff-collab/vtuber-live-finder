@@ -30,8 +30,8 @@ from zoneinfo import ZoneInfo
 import requests
 
 # ===== 設定 =====
-# 蓄積するチャンネルの登録者数上限（ページ側ではこれ以下の数字で絞り込める）
-POOL_MAX_SUBSCRIBERS = int(os.environ.get("POOL_MAX_SUBSCRIBERS", 10000))
+# 蓄積するチャンネルの登録者数上限（初期値は実質無制限。絞り込みはページ側で行う）
+POOL_MAX_SUBSCRIBERS = int(os.environ.get("POOL_MAX_SUBSCRIBERS", 1000000000))
 # 1日に使うAPIユニット（Googleの上限は10,000。手動実行の分を少し残す）
 DAILY_BUDGET = int(os.environ.get("DAILY_BUDGET", 9300))
 
