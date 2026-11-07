@@ -2,7 +2,7 @@ name: 配信データ更新
 
 on:
   schedule:
-    # 1時間おき（毎時23分・UTC）。1回 約300〜400ユニット × 24回 ≒ 8,000〜9,500ユニット/日
+    # 1時間おき（毎時23分・UTC）。API枠は finder.py が1日分を均等に配分する
     - cron: "23 * * * *"
   workflow_dispatch:   # ページの「今すぐ更新」ボタン、またはActions画面の「Run workflow」から実行
   push:
@@ -37,14 +37,14 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           POOL_MAX_SUBSCRIBERS: ${{ vars.POOL_MAX_SUBSCRIBERS || '10000' }}
-          QUERIES_PER_RUN: ${{ vars.QUERIES_PER_RUN || '1' }}
+          DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '9300' }}
         run: python finder.py
 
       - name: 蓄積データを保存
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/channels.json site/data.json
+          git add data/channels.json data/state.json site/data.json
           git diff --cached --quiet || git commit -m "データ更新 $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase -X theirs origin main || true
           git push origin HEAD:main || true
