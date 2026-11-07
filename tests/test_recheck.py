@@ -85,7 +85,31 @@ class RecheckTests(unittest.TestCase):
             "UC_HIDDEN": make_channel("VTuber", "", hidden=True),
         }):
             finder.recheck_rejected(db, state, rejected, {"recovered": 0})
-        self.assertNotIn("UC_HIDDEN", db)
+        self.assertIn("UC_HIDDEN", db)
+        self.assertIsNone(db["UC_HIDDEN"]["subscribers"])
+        self.assertNotIn("UC_HIDDEN", rejected)
+
+    def test_private_or_missing_subscriber_total_is_unknown(self):
+        self.assertIsNone(finder.subscriber_count({"hiddenSubscriberCount": True, "subscriberCount": "999"}))
+        self.assertIsNone(finder.subscriber_count({}))
+        self.assertEqual(finder.subscriber_count({"subscriberCount": "0"}), 0)
+        self.assertTrue(finder.within_pool_limit(None))
+
+    def test_known_subscriber_limit_still_applies(self):
+        with patch.object(finder, "POOL_MAX_SUBSCRIBERS", 500):
+            self.assertTrue(finder.within_pool_limit(None))
+            self.assertTrue(finder.within_pool_limit(500))
+            self.assertFalse(finder.within_pool_limit(501))
+
+    def test_recheck_retains_channel_without_subscriber_field(self):
+        db, state = {}, {}
+        rejected = {"UC_MISSING": finder.iso(finder.NOW)}
+        ch = make_channel("新人VTuber", "配信者")
+        del ch["statistics"]["subscriberCount"]
+        with patch.object(finder, "fetch_channels", return_value={"UC_MISSING": ch}):
+            finder.recheck_rejected(db, state, rejected, {"recovered": 0})
+        self.assertIn("UC_MISSING", db)
+        self.assertIsNone(db["UC_MISSING"]["subscribers"])
 
     def test_low_quota_does_not_call_api(self):
         finder.budget = FakeBudget(remaining=1)
