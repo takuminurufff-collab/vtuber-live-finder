@@ -41,7 +41,7 @@ SWEEP_TAGS = ["#新人Vtuber", "#Vtuber準備中", "#個人勢Vtuber", "#新人V
 SWEEP_MAX_SPAN = timedelta(hours=24)   # 1回の検索で扱う最大の期間
 SWEEP_MIN_SPAN = timedelta(minutes=15) # これ以上は細かくしない
 SWEEP_SAFE_TOTAL = 400                 # 区間の件数がこれを超えたら期間を半分にする
-SWEEP_MAX_LAG = timedelta(days=3)      # これより古い未確認分は諦める
+# 遅延した検索区間は切り捨てず、次回以降に引き継ぐ
 SWEEP_DELAY = timedelta(minutes=10)    # 投稿直後は検索に出ないことがあるので少し待つ
 SWEEP_MAX_PAGES = 10                   # YouTube検索が返すのは1区切りあたり最大500件
 
@@ -51,6 +51,10 @@ LIVE_PLAN = [
     ("live", "個人勢VTuber"), ("live", "Vtuber 雑談"), ("upcoming", "新人Vtuber"),
     ("live", "Vtuber 歌枠"), ("live", "Vtuber ゲーム実況"), ("upcoming", "Vtuber デビュー"),
     ("live", "Vライバー"), ("live", "Vtuber 作業"), ("live", "初配信"),
+    ("live", "新人V"), ("live", "初見歓迎 VTuber"), ("live", "Vtuber ASMR"),
+    ("live", "VTuber 個人"), ("upcoming", "新人V 初配信"),
+    ("live", "バーチャル配信者"), ("live", "Vtuber 朝活"),
+    ("live", "VTuber マイクラ"), ("upcoming", "VTuber 新人"),
 ]
 
 # 本数（動画・ショート・ライブ）を数え直す間隔（1チャンネル3ユニット）
@@ -211,11 +215,11 @@ def search_page(params):
 
 def sweep(state, found, stats):
     cursors = state.setdefault("sweep", {})
-    floor = NOW - SWEEP_MAX_LAG
     end = NOW - SWEEP_DELAY
     for tag in SWEEP_TAGS:
         c = parse_iso(cursors.get(tag)) or NOW - timedelta(hours=24)
-        cursors[tag] = iso(max(c, floor))
+        # 古いカーソルも保持する。処理しきれない区間を消去しない。
+        cursors[tag] = iso(c)
 
     def take(data):
         for item in data.get("items", []):
@@ -399,8 +403,7 @@ def main():
     state = load(STATE_PATH, {})
     budget = Budget(state)
     rejected = state.setdefault("rejected", {})
-    for cid in [c for c, t in rejected.items() if NOW - parse_iso(t) > timedelta(days=30)]:
-        rejected.pop(cid)
+    # 拒否済み候補は30日で破棄しない。再検査キューで周期的に再評価する。
 
     found = {}
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
