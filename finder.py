@@ -370,7 +370,11 @@ def fetch_channels(ids):
 
 def playlist_total(playlist_id):
     data = api_get("playlistItems", {"part": "id", "playlistId": playlist_id, "maxResults": 1}, cost=1)
-    return 0 if data is None else data["pageInfo"]["totalResults"]
+    # 404 / playlistNotFound は「0件」と断定できない。
+    # 不明値のまま保持し、次回の補完対象から外さない。
+    if data is None:
+        return None
+    return data["pageInfo"]["totalResults"]
 
 
 def refresh_counts(ch_id, rec):
