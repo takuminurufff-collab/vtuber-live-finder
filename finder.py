@@ -305,12 +305,12 @@ def sweep(state, found, stats):
                         "start": cursors[tag], "stop": iso(stop),
                         "reason": "500-result-limit"}
                     pending.pop(tag, None)
-                    done_tags.add(tag)
             else:
                 pending[tag] = {"start": cursors[tag], "stop": iso(stop),
                                 "next_page": token, "pages": pages}
-                # 他のタグも探索できるよう、今回のタグは一旦終了する。
-                done_tags.add(tag)
+            # 予算が十分あっても同じ失敗区間で回り続けないようにする。
+            # 続きのページや分割区間は次回の実行で再開する。
+            done_tags.add(tag)
             continue
 
         pending.pop(tag, None)
