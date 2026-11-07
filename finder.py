@@ -65,8 +65,14 @@ VTUBER_WORDS = ["vtuber", "ブイチューバー", "vライバー", "バーチ�
 SNOWBALL_SECTIONS_PER_RUN = 150   # おすすめチャンネル欄を調べるチャンネル数（1件1ユニット）
 SNOWBALL_HANDLES_PER_RUN = 150    # @ハンドルをチャンネルに変換する数（1件1ユニット）
 SNOWBALL_SECTIONS_EVERY = timedelta(days=7)
-# 事務所所属（企業勢）とみなす言葉。「無所属」「個人」が書かれていれば個人勢として扱う
-CORP_WORDS = ["所属", "hololive production", "nijisanji", "vspo", "774inc", "neo-porte", "riot music"]
+# 企業勢の判定：概要欄に「所属」と、下の事務所名の両方があれば企業勢とみなす
+# （「所属」だけだとサーバーやグループの所属まで外してしまうため）
+# 「無所属」「個人勢」などが書かれていれば個人勢として扱う
+CORP_AGENCIES = ["ホロライブ", "hololive", "ホロスターズ", "holostars", "にじさんじ", "nijisanji",
+                 "ぶいすぽ", "vspo", "ななしいんく", "774inc", "のりプロ", "noripro", "あおぎり高校",
+                 "ネオポルテ", "neo-porte", "riot music", "ハコネクト", "re:act", "upd8",
+                 ".live", "どっとライブ", "ブイアパ", "varium", "パレプロ", "ミリプロ", "深層組",
+                 "有閑喫茶", "あにまーれ", "プロプロ", "ぷろぐれす", "vshojo", "phase connect", "idol corp"]
 INDIE_WORDS = ["無所属", "個人勢", "個人vtuber", "個人で活動", "個人ｖ", "個人v"]
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -170,7 +176,7 @@ def is_corporate(*texts):
     t = " ".join(x or "" for x in texts).lower()
     if any(w in t for w in INDIE_WORDS):
         return False
-    return any(w in t for w in CORP_WORDS)
+    return "所属" in t and any(a in t for a in CORP_AGENCIES)
 
 
 UC_RE = re.compile(r"youtube\.com/channel/(UC[\w-]{22})")
