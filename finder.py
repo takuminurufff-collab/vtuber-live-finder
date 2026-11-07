@@ -523,18 +523,23 @@ def main():
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
     try:
-        # 未取得の動画本数が大量に滞留している場合も、各回で確実に少しずつ消化する。
-        # 先に予約するのは最大60ユニットで、タグ検索の予算を圧迫しすぎない。
-        early_cap = min(EARLY_COUNTS_PER_RUN, max(0, budget.run_left() // 6))
+        # 1回のAPI枠が250超のときだけ未取得本数を先行補完する。
+        # タグ検索に必要な200ユニット＋その他処理向け50ユニットを先に保護。
+        early_cap = min(EARLY_COUNTS_PER_RUN, max(0, (budget.run_left() - 250) // 3))
         counts_early = refresh_due_counts(db, max_channels=early_cap)
 
-        # 最新mainの優先順位を維持：タグ総ざらいを先に、配信検索は余力で行う。
-        reserve = 30 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 4)
+        # 最新mainの「タグの総ざらい優先」を維持し、検索には最大限200ユニットを確保。
+        requested_reserve = (30 + len(db) // 40
+                             + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN,
+                                   budget.run_cap // 4))
+        reserve = min(requested_reserve, max(0, budget.run_left() - 200))
         budget.run_cap -= reserve
-        sweep(state, found, stats)
-        if budget.run_left() >= 100:
-            live_q = live_search(state, found)
-        budget.run_cap += reserve
+        try:
+            sweep(state, found, stats)
+            if budget.run_left() >= 100:
+                live_q = live_search(state, found)
+        finally:
+            budget.run_cap += reserve
 
         # 新しく見つかったチャンネルを登録
         new_ids = [c for c in found if c not in db and c not in rejected]
