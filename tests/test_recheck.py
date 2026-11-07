@@ -127,8 +127,9 @@ class RecheckTests(unittest.TestCase):
             "items": [], "pageInfo": {"totalResults": 75}
         }) as search:
             finder.sweep(state, {}, stats)
-        self.assertEqual(search.call_count, 1)
-        self.assertEqual(search.call_args.args[0]["pageToken"], "page-2")
+        # 保存位置から再開後は、残予算があれば次の時間帯も探索する。
+        self.assertGreaterEqual(search.call_count, 1)
+        self.assertEqual(search.call_args_list[0].args[0]["pageToken"], "page-2")
         self.assertNotIn(tag, state["sweep_pending"])
         self.assertGreater(finder.parse_iso(state["sweep"][tag]), old)
 
@@ -138,8 +139,10 @@ class RecheckTests(unittest.TestCase):
         state = {"sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS}}
         state["sweep"][tag] = finder.iso(old)
         finder.budget = FakeBudget(remaining=10000)
+        # 件数推定は400以下だが、実際には500件上限に達する場合。
+        # 最初の区間から探し直して分割する必要がある。
         page = {"items": [], "nextPageToken": "overflow",
-                "pageInfo": {"totalResults": 500}}
+                "pageInfo": {"totalResults": 300}}
         with patch.object(finder, "search_page", return_value=page):
             finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
         self.assertEqual(state["sweep"][tag], finder.iso(old))
