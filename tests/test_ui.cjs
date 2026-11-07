@@ -8,6 +8,9 @@ const { JSDOM } = require("jsdom");
 const html = fs.readFileSync("site/index.html", "utf8");
 const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(script, "Application script is missing");
+// jsdom does not fully model CSS !important cascade for computed display.
+// Assert the author stylesheet explicitly honors the HTML hidden attribute.
+assert.match(html, /\[hidden\]\s*\{\s*display:\s*none\s*!important;\s*\}/);
 
 function record(i) {
   return {
@@ -48,7 +51,7 @@ test("all saved VTubers remain reachable beyond the first 300", async () => {
     more.click();
     assert.equal(doc.querySelectorAll("a.card").length, 651);
     assert.equal(more.hidden, true);
-    assert.equal(dom.window.getComputedStyle(more).display, "none");
+    assert.equal(more.hasAttribute("hidden"), true);
     doc.getElementById("f-subs-min").value = "640";
     doc.getElementById("f-subs-min").dispatchEvent(new dom.window.Event("input", { bubbles: true }));
     assert.equal(doc.querySelectorAll("a.card").length, 11);
@@ -77,7 +80,7 @@ test("hidden admin menu cannot appear before interaction", async () => {
   try {
     const admin = dom.window.document.getElementById("admin");
     assert.equal(admin.hidden, true);
-    assert.equal(dom.window.getComputedStyle(admin).display, "none");
+    assert.equal(admin.hasAttribute("hidden"), true);
   } finally {
     dom.window.close();
   }
