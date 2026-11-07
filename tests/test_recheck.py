@@ -59,7 +59,8 @@ class RecheckTests(unittest.TestCase):
             finder.refresh_counts("UC123", rec)
         self.assertIsNone(rec["videos"])
         self.assertIsNone(rec["counts_at"])
-        self.assertTrue(finder.counts_due(rec))
+        self.assertEqual(rec["counts_attempt_at"], finder.iso(finder.NOW))
+        self.assertFalse(finder.counts_due(rec))  # 24時間の再試行待ち
 
     def test_missing_playlist_retries_after_one_day_not_every_hour(self):
         rec = {"videos": None, "shorts": 5, "lives": 2, "counts_at": None}
