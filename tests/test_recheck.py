@@ -85,6 +85,29 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(result, 1)
         refresh.assert_called_once_with("UC_NEW", db["UC_NEW"])
 
+    def test_non_live_first_attempt_precedes_live_retry(self):
+        db = {
+            "UC_LIVE_RETRY": {"videos": None, "shorts": 3, "lives": 1,
+                              "is_live": True,
+                              "counts_attempt_at": finder.iso(finder.NOW - finder.timedelta(days=2))},
+            "UC_NEW_OFFLINE": {"videos": None, "shorts": None, "lives": None,
+                               "is_live": False},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            self.assertEqual(finder.refresh_due_counts(db, max_channels=1), 1)
+        refresh.assert_called_once_with("UC_NEW_OFFLINE", db["UC_NEW_OFFLINE"])
+
+    def test_live_first_attempt_precedes_non_live_first_attempt(self):
+        db = {
+            "UC_OFFLINE": {"videos": None, "shorts": None, "lives": None,
+                           "is_live": False},
+            "UC_LIVE": {"videos": None, "shorts": None, "lives": None,
+                        "is_live": True},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            self.assertEqual(finder.refresh_due_counts(db, max_channels=1), 1)
+        refresh.assert_called_once_with("UC_LIVE", db["UC_LIVE"])
+
     def test_count_refresh_is_atomic_on_quota_exception(self):
         previous = {"videos": 4, "shorts": 5, "lives": 6,
                     "counts_at": "2026-10-01T00:00:00Z"}
