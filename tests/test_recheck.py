@@ -167,6 +167,35 @@ class RecheckTests(unittest.TestCase):
         self.assertTrue(state["sweep_pending"][tag]["restart"])
         self.assertEqual(state["sweep_pending"][tag]["stop"], stop)
 
+    def test_token_expires_during_active_pagination(self):
+        tag = finder.SWEEP_TAGS[0]
+        old = finder.iso(finder.NOW - finder.timedelta(hours=2))
+        state = {"sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS}}
+        state["sweep"][tag] = old
+        finder.budget = FakeBudget(remaining=300)
+        first = {"items": [], "nextPageToken": "expired",
+                 "pageInfo": {"totalResults": 70}}
+        with patch.object(finder, "search_page", side_effect=[
+                first, RuntimeError("search でエラー (400): invalidPageToken")]):
+            finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        self.assertEqual(state["sweep"][tag], old)
+        self.assertTrue(state["sweep_pending"][tag]["restart"])
+
+    def test_restart_marker_cleared_after_successful_retry(self):
+        tag = finder.SWEEP_TAGS[0]
+        old = finder.iso(finder.NOW - finder.timedelta(hours=2))
+        stop = finder.iso(finder.NOW - finder.timedelta(hours=1))
+        state = {"sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS},
+                 "sweep_pending": {tag: {"start": old, "stop": stop,
+                                         "next_page": None, "pages": 0, "restart": True}}}
+        state["sweep"][tag] = old
+        finder.budget = FakeBudget(remaining=200)
+        with patch.object(finder, "search_page",
+                          return_value={"items": [], "pageInfo": {"totalResults": 0}}):
+            finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        self.assertNotIn(tag, state["sweep_pending"])
+        self.assertGreater(finder.parse_iso(state["sweep"][tag]), finder.parse_iso(old))
+
     def test_does_not_recheck_recent_failure(self):
         state = {"rejected_rechecked": {"UC_TEST": finder.iso(finder.NOW)}}
         with patch.object(finder, "fetch_channels") as fetch:
