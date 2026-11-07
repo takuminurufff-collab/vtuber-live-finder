@@ -434,6 +434,18 @@ def fetch_videos(ids):
     return out
 
 
+def subscriber_count(statistics):
+    """非公開・未返却はNone。登録者0人とは明確に区別する。"""
+    if statistics.get("hiddenSubscriberCount") or statistics.get("subscriberCount") is None:
+        return None
+    return int(statistics["subscriberCount"])
+
+
+def within_pool_limit(subscribers):
+    """登録者非公開は除外せず、上限値が判明している場合だけ制限する。"""
+    return subscribers is None or subscribers <= POOL_MAX_SUBSCRIBERS
+
+
 def recheck_rejected(db, state, rejected, stats):
     """既存の拒否履歴を、空きクォータ内で少しずつ再確認する。"""
     checked = state.setdefault("rejected_rechecked", {})
@@ -463,13 +475,12 @@ def recheck_rejected(db, state, rejected, stats):
         # 以前は企業勢と判定されるだけで除外されていたので再検査する。
         vtuber = looks_vtuber(sn["title"], sn.get("description")) or is_corporate(
             sn["title"], sn.get("description"))
-        known_subscribers = not st.get("hiddenSubscriberCount") and "subscriberCount" in st
-        if (vtuber and known_subscribers
-                and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS):
+        subscribers = subscriber_count(st)
+        if vtuber and within_pool_limit(subscribers):
             db[cid] = {
                 "first_seen": iso(NOW), "counts_at": None, "via": "rechecked",
                 "name": sn["title"], "icon": thumb(sn.get("thumbnails")),
-                "subscribers": int(st["subscriberCount"]),
+                "subscribers": subscribers,
             }
             rejected.pop(cid, None)
             checked.pop(cid, None)
@@ -546,12 +557,13 @@ def main():
         for cid, ch in fetch_channels(new_ids).items():
             st, sn = ch["statistics"], ch["snippet"]
             v = found[cid]
-            ok = (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
-                  and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
+            subscribers = subscriber_count(st)
+            ok = (within_pool_limit(subscribers)
                   and looks_vtuber(v.get("title"), v.get("description"), sn["title"], sn.get("description")))
             # 企業勢も対象。事務所所属を理由に候補から除外しない。
             if ok:
-                db[cid] = {"first_seen": iso(NOW), "counts_at": None}
+                db[cid] = {"first_seen": iso(NOW), "counts_at": None,
+                           "subscribers": subscribers}
                 stats["new"] += 1
             else:
                 rejected[cid] = iso(NOW)
@@ -561,8 +573,8 @@ def main():
         # 全チャンネルの登録者数・名前・アイコンを更新。上限を超えたら外す
         for cid, ch in fetch_channels(list(db)).items():
             st, sn = ch["statistics"], ch["snippet"]
-            subs = int(st.get("subscriberCount", 0))
-            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS:
+            subs = subscriber_count(st)
+            if not within_pool_limit(subs):
                 db.pop(cid, None)
                 rejected[cid] = iso(NOW)
                 continue
@@ -618,12 +630,12 @@ def main():
         cand = [c for c in cand if c not in db and c not in rejected]
         for cid, ch in fetch_channels(cand).items():
             st, sn = ch["statistics"], ch["snippet"]
-            if (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
-                    and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
+            subscribers = subscriber_count(st)
+            if (within_pool_limit(subscribers)
                     and looks_vtuber(sn["title"], sn.get("description"))):
                 db[cid] = {"first_seen": iso(NOW), "counts_at": None, "via": "snowball",
                            "name": sn["title"], "icon": thumb(sn.get("thumbnails")),
-                           "subscribers": int(st["subscriberCount"])}
+                           "subscribers": subscribers}
                 stats["snow"] += 1
             else:
                 rejected[cid] = iso(NOW)
