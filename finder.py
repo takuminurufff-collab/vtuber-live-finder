@@ -21,6 +21,7 @@ API の1日の枠（太平洋時間0時＝日本時間17時にリセット）を
 import html
 import json
 import os
+import re
 import sys
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
@@ -59,6 +60,14 @@ REGION_CODE = "JP"
 RELEVANCE_LANGUAGE = "ja"
 # VTuberかどうかの判定に使う言葉（動画タイトル・概要・チャンネル名・チャンネル概要のどこか）
 VTUBER_WORDS = ["vtuber", "ブイチューバー", "vライバー", "バーチャル", "個人勢", "準備中"]
+
+# 芋づる式：概要欄の「@ハンドル」「チャンネルURL」と、おすすめチャンネル欄から別のVTuberをたどる
+SNOWBALL_SECTIONS_PER_RUN = 150   # おすすめチャンネル欄を調べるチャンネル数（1件1ユニット）
+SNOWBALL_HANDLES_PER_RUN = 150    # @ハンドルをチャンネルに変換する数（1件1ユニット）
+SNOWBALL_SECTIONS_EVERY = timedelta(days=7)
+# 事務所所属（企業勢）とみなす言葉。「無所属」「個人」が書かれていれば個人勢として扱う
+CORP_WORDS = ["所属", "hololive production", "nijisanji", "vspo", "774inc", "neo-porte", "riot music"]
+INDIE_WORDS = ["無所属", "個人勢", "個人vtuber", "個人で活動", "個人ｖ", "個人v"]
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(ROOT, "data", "channels.json")
@@ -155,6 +164,25 @@ def thumb(thumbs):
 def looks_vtuber(*texts):
     joined = " ".join(t or "" for t in texts).lower()
     return any(w in joined for w in VTUBER_WORDS)
+
+
+def is_corporate(*texts):
+    t = " ".join(x or "" for x in texts).lower()
+    if any(w in t for w in INDIE_WORDS):
+        return False
+    return any(w in t for w in CORP_WORDS)
+
+
+UC_RE = re.compile(r"youtube\.com/channel/(UC[\w-]{22})")
+HANDLE_RE = re.compile(r"(?:youtube\.com/|(?<![\w@.]))@([\w.\-\u3040-\u30ff\u4e00-\u9fff]{3,30})")
+
+
+def mentions(text):
+    """概要欄などからチャンネルIDと@ハンドルを取り出す"""
+    text = text or ""
+    ids = set(UC_RE.findall(text))
+    handles = {h.rstrip(".").lower() for h in HANDLE_RE.findall(text)}
+    return ids, handles
 
 
 def load(path, default):
@@ -273,15 +301,36 @@ def rss_latest(ch_id):
         if r.status_code != 200:
             return None
         root = ET.fromstring(r.content)
-        out = []
-        for e in root.findall("a:entry", NS)[:RSS_LATEST]:
-            t = e.find("m:group/m:thumbnail", NS)
-            out.append({"video_id": e.findtext("yt:videoId", namespaces=NS),
-                        "title": e.findtext("a:title", namespaces=NS),
-                        "thumbnail": t.get("url") if t is not None else None})
-        return [x for x in out if x["video_id"]]
+        out, ids, handles = [], set(), set()
+        for n, e in enumerate(root.findall("a:entry", NS)):
+            desc = e.findtext("m:group/m:description", namespaces=NS) or ""
+            i, h = mentions(desc + " " + (e.findtext("a:title", namespaces=NS) or ""))
+            ids |= i
+            handles |= h
+            if n < RSS_LATEST:
+                t = e.find("m:group/m:thumbnail", NS)
+                out.append({"video_id": e.findtext("yt:videoId", namespaces=NS),
+                            "title": e.findtext("a:title", namespaces=NS),
+                            "thumbnail": t.get("url") if t is not None else None})
+        ids.discard(ch_id)
+        return {"entries": [x for x in out if x["video_id"]], "ids": ids, "handles": handles}
     except Exception:
         return None
+
+
+def featured_channels(ch_id):
+    data = api_get("channelSections", {"part": "contentDetails", "channelId": ch_id}, cost=1)
+    out = set()
+    for sec in (data or {}).get("items", []):
+        out.update(sec.get("contentDetails", {}).get("channels", []))
+    out.discard(ch_id)
+    return out
+
+
+def resolve_handle(handle):
+    data = api_get("channels", {"part": "id", "forHandle": "@" + handle}, cost=1)
+    items = (data or {}).get("items", [])
+    return items[0]["id"] if items else ""
 
 
 def fetch_videos(ids):
@@ -304,13 +353,13 @@ def main():
         rejected.pop(cid)
 
     found = {}
-    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0}
+    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "corp": 0}
     live_q = None
     try:
         # 配信検索は毎回1つ、残りを総ざらいに使う（本数の更新などの分は残しておく）
         if budget.run_left() >= 100:
             live_q = live_search(state, found)
-        reserve = 60 + len(db) // 40
+        reserve = 60 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 5)
         budget.run_cap -= reserve
         sweep(state, found, stats)
         budget.run_cap += reserve
@@ -322,7 +371,8 @@ def main():
             v = found[cid]
             ok = (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
                   and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
-                  and looks_vtuber(v.get("title"), v.get("description"), sn["title"], sn.get("description")))
+                  and looks_vtuber(v.get("title"), v.get("description"), sn["title"], sn.get("description"))
+                  and not is_corporate(sn["title"], sn.get("description")))
             if ok:
                 db[cid] = {"first_seen": iso(NOW), "counts_at": None}
                 stats["new"] += 1
@@ -333,7 +383,10 @@ def main():
         for cid, ch in fetch_channels(list(db)).items():
             st, sn = ch["statistics"], ch["snippet"]
             subs = int(st.get("subscriberCount", 0))
-            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS:
+            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS \
+                    or is_corporate(sn["title"], sn.get("description")):
+                if is_corporate(sn["title"], sn.get("description")):
+                    stats["corp"] += 1
                 db.pop(cid, None)
                 rejected[cid] = iso(NOW)
                 continue
@@ -346,9 +399,10 @@ def main():
         with ThreadPoolExecutor(max_workers=16) as ex:
             feeds = dict(zip(ids, ex.map(rss_latest, ids)))
         check = set()
-        for cid, entries in feeds.items():
+        for cid, feed in feeds.items():
             rec = db[cid]
             done = set(rec.get("done", []))
+            entries = (feed or {}).get("entries")
             if entries:
                 rec["latest"] = entries[0]
                 check.update(e["video_id"] for e in entries if e["video_id"] not in done)
@@ -358,6 +412,49 @@ def main():
             if cid in db and sn.get("liveBroadcastContent") in ("live", "upcoming"):
                 check.add(sn["video_id"])
         videos = fetch_videos(check)
+
+        # 芋づる式：概要欄の言及と、おすすめチャンネル欄から候補を集める
+        cand = set()
+        handle_cache = state.setdefault("handles", {})
+        pending_handles = set()
+        for feed in feeds.values():
+            if feed:
+                cand |= feed["ids"]
+                pending_handles |= {h for h in feed["handles"] if h not in handle_cache}
+        for v in videos.values():
+            i, h = mentions(v["snippet"].get("description"))
+            cand |= i
+            pending_handles |= {x for x in h if x not in handle_cache}
+        for h in sorted(pending_handles)[:SNOWBALL_HANDLES_PER_RUN]:
+            if budget.run_left() < 50:
+                break
+            handle_cache[h] = resolve_handle(h)
+        cand |= {c for c in handle_cache.values() if c}
+        sec_queue = sorted(db, key=lambda c: db[c].get("sections_at") or "")
+        n = 0
+        for cid in sec_queue:
+            t = parse_iso(db[cid].get("sections_at"))
+            if (t and NOW - t < SNOWBALL_SECTIONS_EVERY) or n >= SNOWBALL_SECTIONS_PER_RUN or budget.run_left() < 50:
+                break
+            cand |= featured_channels(cid)
+            db[cid]["sections_at"] = iso(NOW)
+            n += 1
+        cand = [c for c in cand if c not in db and c not in rejected]
+        for cid, ch in fetch_channels(cand).items():
+            st, sn = ch["statistics"], ch["snippet"]
+            if (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
+                    and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
+                    and looks_vtuber(sn["title"], sn.get("description"))
+                    and not is_corporate(sn["title"], sn.get("description"))):
+                db[cid] = {"first_seen": iso(NOW), "counts_at": None, "via": "snowball",
+                           "name": sn["title"], "icon": thumb(sn.get("thumbnails")),
+                           "subscribers": int(st["subscriberCount"])}
+                stats["snow"] += 1
+            else:
+                rejected[cid] = iso(NOW)
+        if len(handle_cache) > 20000:
+            for k in list(handle_cache)[:5000]:
+                handle_cache.pop(k)
 
         by_channel = {}
         for vid in check:
@@ -382,7 +479,7 @@ def main():
                     if end and (not prev or end > prev):
                         rec["last_live_at"] = iso(end)
             # 消えた動画も確定扱いにして、次から確認しない
-            for e in (feeds.get(cid) or []):
+            for e in ((feeds.get(cid) or {}).get("entries") or []):
                 if e["video_id"] in check and e["video_id"] not in videos and e["video_id"] not in done:
                     done.append(e["video_id"])
             rec["done"] = done[-20:]
@@ -451,7 +548,7 @@ def main():
     live_n = sum(1 for c in channels if c["is_live"])
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
           f"{'（500件超えの区切り ' + str(stats['overflow']) + '）' if stats['overflow'] else ''}"
-          f" / 配信検索 {live_q} / 新規 {stats['new']} / 蓄積 {len(channels)}（配信中 {live_n}）"
+          f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']}・企業勢除外 {stats['corp']} / 蓄積 {len(channels)}（配信中 {live_n}）"
           f" / API 今回{budget.run_used}・今日{budget.q['used']}ユニット")
 
 
