@@ -18,6 +18,8 @@
 
 対象になるのは、上のタグを付けて投稿したか、配信検索で見つかったか、すでに見つかったVTuberから芋づる式にたどれたチャンネルです。どれにも当てはまらないチャンネルは拾えません。
 
+登録者数が非公開・未取得のVTuberも候補として蓄積します。その場合は0人ではなく「不明」と表示し、登録者数による絞り込みを指定した場合のみ対象外になります。
+
 ## 今すぐ更新（管理者だけ）
 
 1. GitHubの右上アイコン → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token
