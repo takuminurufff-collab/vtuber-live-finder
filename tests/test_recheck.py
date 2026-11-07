@@ -83,6 +83,23 @@ class RecheckTests(unittest.TestCase):
         search.assert_called_once()
         self.assertEqual(state["live_plan_index"], len(finder.LIVE_PLAN))
 
+    def test_partial_pagination_does_not_advance_cursor(self):
+        old = finder.NOW - finder.timedelta(hours=2)
+        state = {"sweep": {tag: finder.iso(old) for tag in finder.SWEEP_TAGS}}
+        found = {}
+        stats = {"videos": 0, "slices": 0, "overflow": 0}
+        # どのページにも次ページがあり、上限で収集が打ち切られるケース
+        finder.budget = FakeBudget(remaining=300)
+        page = {"items": [], "nextPageToken": "another-page",
+                "pageInfo": {"totalResults": 500}}
+        with patch.object(finder, "search_page", return_value=page) as search:
+            finder.sweep(state, found, stats)
+        self.assertGreaterEqual(search.call_count, 1)
+        self.assertEqual(stats["overflow"], 1)
+        self.assertEqual(stats["slices"], 0)
+        for tag in finder.SWEEP_TAGS:
+            self.assertEqual(state["sweep"][tag], finder.iso(old))
+
     def test_does_not_recheck_recent_failure(self):
         state = {"rejected_rechecked": {"UC_TEST": finder.iso(finder.NOW)}}
         with patch.object(finder, "fetch_channels") as fetch:
