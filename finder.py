@@ -476,6 +476,40 @@ def recheck_rejected(db, state, rejected, stats):
             stats["recovered"] += 1
 
 
+# 新規・未取得チャンネルの本数取得を総ざらい検索より優先する。
+# APIはチャンネルあたり3ユニット。既存の予算制御の範囲で実施する。
+EARLY_COUNTS_PER_RUN = 20
+
+
+def counts_due(rec):
+    if any(rec.get(k) is None for k in ("videos", "shorts", "lives")):
+        return True
+    t = parse_iso(rec.get("counts_at"))
+    return t is None or NOW - t > COUNTS_REFRESH
+
+
+def refresh_due_counts(db, max_channels=None):
+    """未取得の本数を優先してAPI枠の範囲で更新し、実行件数を返す。"""
+    queue = sorted(
+        (cid for cid, rec in db.items() if counts_due(rec)),
+        key=lambda cid: (
+            all(db[cid].get(k) is not None for k in ("videos", "shorts", "lives")),
+            not db[cid].get("is_live"),
+            db[cid].get("counts_at") or "",
+            cid,
+        ),
+    )
+    refreshed = 0
+    for cid in queue:
+        if max_channels is not None and refreshed >= max_channels:
+            break
+        if budget.run_left() < 3 or budget.day_left() < 3:
+            break
+        refresh_counts(cid, db[cid])
+        refreshed += 1
+    return refreshed
+
+
 def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -489,6 +523,11 @@ def main():
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
     try:
+        # 未取得の動画本数が大量に滞留している場合も、各回で確実に少しずつ消化する。
+        # 先に予約するのは最大60ユニットで、タグ検索の予算を圧迫しすぎない。
+        early_cap = min(EARLY_COUNTS_PER_RUN, max(0, budget.run_left() // 6))
+        counts_early = refresh_due_counts(db, max_channels=early_cap)
+
         # 最新mainの優先順位を維持：タグ総ざらいを先に、配信検索は余力で行う。
         reserve = 30 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 4)
         budget.run_cap -= reserve
@@ -633,18 +672,8 @@ def main():
                 rec.pop("live", None)
                 rec["is_live"] = False
 
-        # 本数の更新（未取得 → 配信中 → 古い順。この回の残りユニットの範囲で）
-        def due(rec):
-            t = parse_iso(rec.get("counts_at"))
-            return t is None or NOW - t > COUNTS_REFRESH
-        queue = sorted((c for c, r in db.items() if due(r)),
-                       key=lambda c: (db[c].get("counts_at") is not None,
-                                      not db[c].get("is_live"),
-                                      db[c].get("counts_at") or ""))
-        for cid in queue:
-            if budget.run_left() < 3:
-                break
-            refresh_counts(cid, db[cid])
+        # 最後に残ったAPI枠でも本数を更新する。先ほど更新した対象は除外される。
+        counts_late = refresh_due_counts(db)
 
     except QuotaExceeded:
         print("APIの1日の上限に達したため、ここまでの結果で保存します。")
