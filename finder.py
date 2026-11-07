@@ -527,7 +527,7 @@ def counts_due(rec):
     return last_attempt is None or NOW - last_attempt >= MISSING_COUNTS_RETRY
 
 
-def refresh_due_counts(db, max_channels=None):
+def refresh_due_counts(db, max_channels=None, metrics=None):
     """未取得の本数を優先してAPI枠の範囲で更新し、実行件数を返す。"""
     queue = sorted(
         (cid for cid, rec in db.items() if counts_due(rec)),
@@ -550,8 +550,18 @@ def refresh_due_counts(db, max_channels=None):
             break
         if budget.run_left() < 3 or budget.day_left() < 3:
             break
-        refresh_counts(cid, db[cid])
+        rec = db[cid]
+        was_missing = any(rec.get(k) is None for k in ("videos", "shorts", "lives"))
+        refresh_counts(cid, rec)
         refreshed += 1
+        if metrics is not None:
+            metrics["attempted"] = metrics.get("attempted", 0) + 1
+            if rec.get("counts_at") == iso(NOW):
+                metrics["complete"] = metrics.get("complete", 0) + 1
+            else:
+                metrics["partial"] = metrics.get("partial", 0) + 1
+            if was_missing and all(rec.get(k) is not None for k in ("videos", "shorts", "lives")):
+                metrics["resolved"] = metrics.get("resolved", 0) + 1
     return refreshed
 
 
@@ -571,11 +581,12 @@ def main():
     found = {}
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
+    count_metrics = {"attempted": 0, "complete": 0, "partial": 0, "resolved": 0}
     try:
         # 1回のAPI枠が250超のときだけ未取得本数を先行補完する。
         # タグ検索に必要な200ユニット＋その他処理向け50ユニットを先に保護。
         early_cap = min(EARLY_COUNTS_PER_RUN, max(0, (budget.run_left() - 250) // 3))
-        counts_early = refresh_due_counts(db, max_channels=early_cap)
+        counts_early = refresh_due_counts(db, max_channels=early_cap, metrics=count_metrics)
 
         # 最新mainの「タグの総ざらい優先」を維持し、検索には最大限200ユニットを確保。
         requested_reserve = (30 + len(db) // 40
@@ -728,7 +739,7 @@ def main():
                 rec["is_live"] = False
 
         # 最後に残ったAPI枠でも本数を更新する。先ほど更新した対象は除外される。
-        counts_late = refresh_due_counts(db)
+        counts_late = refresh_due_counts(db, metrics=count_metrics)
 
     except QuotaExceeded:
         print("APIの1日の上限に達したため、ここまでの結果で保存します。")
@@ -765,6 +776,8 @@ def main():
         any(r.get(k) is None for k in ("videos", "shorts", "lives"))
         for r in db.values()
     )
+    print(f"本数取得 試行{count_metrics['attempted']}件・全項目成功{count_metrics['complete']}件"
+          f"・一部取得不能{count_metrics['partial']}件・未取得解消{count_metrics['resolved']}件")
     print(f"本数未取得 前回{missing_counts_before}件 → 現在{missing_counts_after}件"
           f" / 全{len(channels)}件（新規候補の流入により増える場合あり）")
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
