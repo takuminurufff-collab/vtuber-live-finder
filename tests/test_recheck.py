@@ -65,6 +65,24 @@ class RecheckTests(unittest.TestCase):
             finder.recheck_rejected({}, {}, rejected, {"recovered": 0})
         self.assertEqual(len(fetch.call_args.args[0]), finder.RECHECK_REJECTED_PER_RUN)
 
+    def test_old_discovery_cursor_is_not_discarded(self):
+        # 3日以上の未検索期間でもカーソルを最新側に飛ばさない。
+        old = finder.NOW - finder.timedelta(days=8)
+        state = {"sweep": {tag: finder.iso(old) for tag in finder.SWEEP_TAGS}}
+        finder.budget = FakeBudget(remaining=0)
+        finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        for tag in finder.SWEEP_TAGS:
+            self.assertEqual(state["sweep"][tag], finder.iso(old))
+
+    def test_live_query_diversity_does_not_increase_calls_per_run(self):
+        # キーワード数を増やしても1実行あたり検索は1回のまま。
+        self.assertGreater(len(finder.LIVE_PLAN), 12)
+        state = {"live_plan_index": len(finder.LIVE_PLAN) - 1}
+        with patch.object(finder, "search_page", return_value={"items": []}) as search:
+            finder.live_search(state, {})
+        search.assert_called_once()
+        self.assertEqual(state["live_plan_index"], len(finder.LIVE_PLAN))
+
     def test_does_not_recheck_recent_failure(self):
         state = {"rejected_rechecked": {"UC_TEST": finder.iso(finder.NOW)}}
         with patch.object(finder, "fetch_channels") as fetch:
