@@ -33,6 +33,34 @@ class RecheckTests(unittest.TestCase):
     def tearDown(self):
         finder.budget = self.old_budget
 
+    def test_count_refresh_is_atomic_on_quota_exception(self):
+        previous = {"videos": 4, "shorts": 5, "lives": 6,
+                    "counts_at": "2026-10-01T00:00:00Z"}
+        before = previous.copy()
+        def get_total(playlist_id):
+            if playlist_id.startswith("UULV"):
+                raise finder.QuotaExceeded()
+            return 99
+        with patch.object(finder, "playlist_total", side_effect=get_total):
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.refresh_counts("UC123", previous)
+        self.assertEqual(previous, before)
+
+    def test_count_refresh_is_atomic_on_http_error(self):
+        previous = {"videos": None, "shorts": None, "lives": None, "counts_at": None}
+        with patch.object(finder, "playlist_total", side_effect=[20, RuntimeError("API failed")]):
+            with self.assertRaises(RuntimeError):
+                finder.refresh_counts("UC123", previous)
+        self.assertEqual(previous, {"videos": None, "shorts": None, "lives": None, "counts_at": None})
+
+    def test_successful_count_refresh_updates_all_values_together(self):
+        rec = {"videos": None, "shorts": None, "lives": None, "counts_at": None}
+        with patch.object(finder, "playlist_total", side_effect=[0, 19, 2]) as fetch:
+            finder.refresh_counts("UC123", rec)
+        self.assertEqual([rec[k] for k in ("videos", "shorts", "lives")], [0, 19, 2])
+        self.assertEqual(rec["counts_at"], finder.iso(finder.NOW))
+        self.assertEqual(fetch.call_count, 3)
+
     def test_missing_counts_get_priority_over_stale_complete_counts(self):
         db = {
             "UC_STALE": {"videos": 1, "shorts": 2, "lives": 3,
