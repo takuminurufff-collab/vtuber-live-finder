@@ -474,12 +474,12 @@ def main():
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
     try:
-        # 配信検索は毎回1つ、残りを総ざらいに使う（本数の更新などの分は残しておく）
-        if budget.run_left() >= 100:
-            live_q = live_search(state, found)
-        reserve = 60 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 5)
+        # 最新mainの優先順位を維持：タグ総ざらいを先に、配信検索は余力で行う。
+        reserve = 30 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 4)
         budget.run_cap -= reserve
         sweep(state, found, stats)
+        if budget.run_left() >= 100:
+            live_q = live_search(state, found)
         budget.run_cap += reserve
 
         # 新しく見つかったチャンネルを登録
