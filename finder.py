@@ -59,6 +59,8 @@ LIVE_PLAN = [
 
 # 本数（動画・ショート・ライブ）を数え直す間隔（1チャンネル3ユニット）
 COUNTS_REFRESH = timedelta(days=3)
+# 取得不能プレイリストを毎時間再試行せず、無料API枠を守る。
+MISSING_COUNTS_RETRY = timedelta(days=1)
 RSS_LATEST = 3
 REGION_CODE = "JP"
 RELEVANCE_LANGUAGE = "ja"
@@ -395,6 +397,8 @@ def refresh_counts(ch_id, rec):
             rec[key] = value
     if all(rec.get(key) is not None for key in values):
         rec["counts_at"] = iso(NOW)
+    # API例外時はここまで到達しない。Noneを返した正常なAPI応答だけを抑制。
+    rec["counts_attempt_at"] = iso(NOW)
 
 
 # ---------- 4. 確認 ----------
@@ -510,7 +514,8 @@ EARLY_COUNTS_PER_RUN = 20
 
 def counts_due(rec):
     if any(rec.get(k) is None for k in ("videos", "shorts", "lives")):
-        return True
+        last_attempt = parse_iso(rec.get("counts_attempt_at"))
+        return last_attempt is None or NOW - last_attempt >= MISSING_COUNTS_RETRY
     t = parse_iso(rec.get("counts_at"))
     return t is None or NOW - t > COUNTS_REFRESH
 
