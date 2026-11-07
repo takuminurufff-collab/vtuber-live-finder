@@ -295,9 +295,11 @@ footer p { margin: 0; }
     grid.innerHTML = "";
     if (!data) return;
     var list = data.channels.filter(passes);
+    // 数値不明は0人ではない。昇順では必ず末尾にする。
+    function knownNumber(n) { return n == null ? Number.POSITIVE_INFINITY : Number(n); }
     var cmp = {
-      lives: function (a, b) { return (a.lives == null ? 1e9 : a.lives) - (b.lives == null ? 1e9 : b.lives) || a.subscribers - b.subscribers; },
-      subs: function (a, b) { return a.subscribers - b.subscribers; },
+      lives: function (a, b) { return knownNumber(a.lives) - knownNumber(b.lives) || knownNumber(a.subscribers) - knownNumber(b.subscribers) || 0; },
+      subs: function (a, b) { return knownNumber(a.subscribers) - knownNumber(b.subscribers) || 0; },
       viewers: function (a, b) { return ((b.live && b.live.viewers) || 0) - ((a.live && a.live.viewers) || 0); },
       recent: function (a, b) { return (b.is_live - a.is_live) || new Date(b.last_live_at || 0) - new Date(a.last_live_at || 0); },
       "new": function (a, b) { return new Date(b.first_seen || 0) - new Date(a.first_seen || 0); }
@@ -305,9 +307,13 @@ footer p { margin: 0; }
     list.sort(cmp);
     var total = data.channels.length, liveN = data.channels.filter(function (c) { return c.is_live; }).length;
     var missingCounts = data.channels.filter(function (c) { return c.videos == null || c.shorts == null || c.lives == null; }).length;
+    var privateSubscribers = data.channels.filter(function (c) { return c.subscribers == null; }).length;
     $("count").innerHTML = "";
     $("count").append("蓄積 ", el("b", null, num(total)), " チャンネル（配信中 " + liveN + "）のうち、条件に合うのは ", el("b", null, num(list.length)), " 件");
-    $("dataQuality").textContent = missingCounts ? "動画・Shorts・ライブ本数が未取得のチャンネル：" + num(missingCounts) + "件。数値条件を指定すると未取得チャンネルは検索対象から外れます。" : "";
+    $("dataQuality").textContent =
+      (missingCounts ? "動画・Shorts・ライブ本数が未取得：" + num(missingCounts) + "件。 " : "") +
+      (privateSubscribers ? "登録者数が非公開または未取得：" + num(privateSubscribers) + "件。 " : "") +
+      ((missingCounts || privateSubscribers) ? "不明な項目に数値条件を指定すると該当チャンネルは検索対象から外れます。" : "");
     $("showMore").hidden = list.length <= shownLimit;
     $("showMore").textContent = "さらに表示（" + num(Math.min(300, Math.max(0, list.length - shownLimit))) + "件）";
     if (!list.length) {
