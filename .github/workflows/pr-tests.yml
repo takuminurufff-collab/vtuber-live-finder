@@ -1,6 +1,8 @@
 name: Pull request tests
 
 on:
+  push:
+    branches: ['feature/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
