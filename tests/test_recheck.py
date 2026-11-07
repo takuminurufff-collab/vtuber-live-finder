@@ -33,6 +33,40 @@ class RecheckTests(unittest.TestCase):
     def tearDown(self):
         finder.budget = self.old_budget
 
+    def test_missing_counts_get_priority_over_stale_complete_counts(self):
+        db = {
+            "UC_STALE": {"videos": 1, "shorts": 2, "lives": 3,
+                         "counts_at": finder.iso(finder.NOW - finder.timedelta(days=10))},
+            "UC_MISSING": {"videos": None, "shorts": None, "lives": None,
+                           "counts_at": None},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            result = finder.refresh_due_counts(db, max_channels=1)
+        self.assertEqual(result, 1)
+        self.assertEqual(refresh.call_args.args[0], "UC_MISSING")
+
+    def test_count_refresh_does_not_exceed_batch_limit(self):
+        db = {str(i): {"counts_at": None, "videos": None, "shorts": None,
+                       "lives": None} for i in range(100)}
+        with patch.object(finder, "refresh_counts") as refresh:
+            result = finder.refresh_due_counts(db, max_channels=20)
+        self.assertEqual(result, 20)
+        self.assertEqual(refresh.call_count, 20)
+
+    def test_count_refresh_respects_low_api_budget(self):
+        finder.budget = FakeBudget(remaining=2)
+        db = {"UC": {"counts_at": None, "videos": None, "shorts": None,
+                     "lives": None}}
+        with patch.object(finder, "refresh_counts") as refresh:
+            result = finder.refresh_due_counts(db, max_channels=20)
+        self.assertEqual(result, 0)
+        refresh.assert_not_called()
+
+    def test_missing_fields_are_due_even_with_recent_timestamp(self):
+        row = {"videos": 12, "shorts": None, "lives": 3,
+               "counts_at": finder.iso(finder.NOW)}
+        self.assertTrue(finder.counts_due(row))
+
     def test_recovers_corporate_vtuber(self):
         db, state = {}, {}
         rejected = {"UC_TEST": finder.iso(finder.NOW)}
