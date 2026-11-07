@@ -178,6 +178,26 @@ class RecheckTests(unittest.TestCase):
                 finder.refresh_due_counts(db, metrics=metrics)
         self.assertEqual(metrics, {})
 
+    def test_backlog_distinguishes_eligible_and_retry_cooldown(self):
+        now = finder.NOW
+        db = {
+            "UC_FIRST": {"videos": None, "shorts": 0, "lives": 0},
+            "UC_WAIT": {"videos": None, "shorts": 0, "lives": 0,
+                        "counts_attempt_at": finder.iso(now - finder.timedelta(hours=1))},
+            "UC_RETRY": {"videos": 3, "shorts": None, "lives": 0,
+                         "counts_attempt_at": finder.iso(now - finder.timedelta(hours=25))},
+            "UC_DONE": {"videos": 3, "shorts": 0, "lives": 0,
+                        "counts_at": finder.iso(now)},
+        }
+        self.assertEqual(finder.counts_backlog(db), (3, 2, 1))
+
+    def test_backlog_does_not_consume_api_budget(self):
+        finder.budget = FakeBudget(remaining=0)
+        db = {"UC_NEW": {"videos": None, "shorts": None, "lives": None}}
+        with patch.object(finder, "playlist_total", side_effect=AssertionError("API called")):
+            self.assertEqual(finder.counts_backlog(db), (1, 1, 0))
+        self.assertEqual(finder.budget.run_left(), 0)
+
     def test_missing_counts_get_priority_over_stale_complete_counts(self):
         db = {
             "UC_STALE": {"videos": 1, "shorts": 2, "lives": 3,
