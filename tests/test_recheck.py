@@ -33,6 +33,17 @@ class RecheckTests(unittest.TestCase):
     def tearDown(self):
         finder.budget = self.old_budget
 
+    def test_unavailable_playlist_is_unknown_not_zero(self):
+        with patch.object(finder, "api_get", return_value=None):
+            self.assertIsNone(finder.playlist_total("UUSHexample"))
+        with patch.object(finder, "api_get", return_value={"pageInfo": {"totalResults": 0}}):
+            self.assertEqual(finder.playlist_total("UUSHexample"), 0)
+
+    def test_missing_playlist_count_remains_due_for_retry(self):
+        rec = {"videos": 4, "shorts": None, "lives": 0,
+               "counts_at": finder.iso(finder.NOW)}
+        self.assertTrue(finder.counts_due(rec))
+
     def test_count_refresh_is_atomic_on_quota_exception(self):
         previous = {"videos": 4, "shorts": 5, "lives": 6,
                     "counts_at": "2026-10-01T00:00:00Z"}
