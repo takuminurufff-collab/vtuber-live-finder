@@ -526,10 +526,12 @@ def refresh_due_counts(db, max_channels=None):
         (cid for cid, rec in db.items() if counts_due(rec)),
         key=lambda cid: (
             all(db[cid].get(k) is not None for k in ("videos", "shorts", "lives")),
+            # 初回取得をライブ状態より優先し、非ライブの新規候補も
+            # 再試行対象に追い越されないようにする。
+            db[cid].get("counts_attempt_at") is not None,
+            # 同じ初回/再試行グループ内では配信中を先に処理する。
             not db[cid].get("is_live"),
-            # 未取得の初回試行を優先し、失敗済みは最終試行の古い順に回す。
-            # counts_at だけで並べると、24時間ごとに再試行する失敗組が
-            # 一度も試していない新規チャンネルを追い越し続けてしまう。
+            # 再試行対象は最終試行が古い順。
             db[cid].get("counts_attempt_at") or "",
             db[cid].get("counts_at") or "",
             cid,
