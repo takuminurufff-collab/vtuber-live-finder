@@ -292,10 +292,24 @@ def sweep(state, found, stats):
         while token and pages < SWEEP_MAX_PAGES:
             if budget.run_left() < 100 or budget.day_left() < 100:
                 break
-            data = search_page(dict(params, pageToken=token))
+            try:
+                data = search_page(dict(params, pageToken=token))
+            except RuntimeError as exc:
+                if "invalidPageToken" not in str(exc):
+                    raise
+                # 実行中のページトークン失効でも区間を捨てず、次回先頭から取り直す。
+                pending[tag] = {"start": cursors[tag], "stop": iso(stop),
+                                "next_page": None, "pages": 0, "restart": True}
+                done_tags.add(tag)
+                token = None
+                break
             take(data)
             pages += 1
             token = data.get("nextPageToken")
+
+        if pending.get(tag, {}).get("restart"):
+            stats["overflow"] += 1
+            continue
 
         if token:
             stats["overflow"] += 1
