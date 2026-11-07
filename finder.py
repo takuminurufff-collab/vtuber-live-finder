@@ -387,7 +387,14 @@ def refresh_counts(ch_id, rec):
     videos = playlist_total("UULF" + suffix)  # 通常の動画
     shorts = playlist_total("UUSH" + suffix)  # ショート
     lives = playlist_total("UULV" + suffix)   # ライブ
-    rec.update(videos=videos, shorts=shorts, lives=lives, counts_at=iso(NOW))
+    # 取得不能な項目は既存の確定値を消さない。全項目が判明したときだけ
+    # 更新完了時刻を進め、未取得があれば次回も補完対象に残す。
+    values = {"videos": videos, "shorts": shorts, "lives": lives}
+    for key, value in values.items():
+        if value is not None:
+            rec[key] = value
+    if all(rec.get(key) is not None for key in values):
+        rec["counts_at"] = iso(NOW)
 
 
 # ---------- 4. 確認 ----------
