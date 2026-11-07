@@ -395,7 +395,9 @@ def refresh_counts(ch_id, rec):
     for key, value in values.items():
         if value is not None:
             rec[key] = value
-    if all(rec.get(key) is not None for key in values):
+    # 一部取得不能でも既知の数値は保持するが、全項目を確認できた
+    # と誤認して更新日時を進めない。
+    if all(value is not None for value in values.values()):
         rec["counts_at"] = iso(NOW)
     # API例外時はここまで到達しない。Noneを返した正常なAPI応答だけを抑制。
     rec["counts_attempt_at"] = iso(NOW)
@@ -517,7 +519,12 @@ def counts_due(rec):
         last_attempt = parse_iso(rec.get("counts_attempt_at"))
         return last_attempt is None or NOW - last_attempt >= MISSING_COUNTS_RETRY
     t = parse_iso(rec.get("counts_at"))
-    return t is None or NOW - t > COUNTS_REFRESH
+    if t is not None and NOW - t <= COUNTS_REFRESH:
+        return False
+    # 全本数が既知でも再取得に失敗した場合は、既知の値を維持しつつ
+    # 24時間待ってから再試行する（毎時のAPI枠浪費を防ぐ）。
+    last_attempt = parse_iso(rec.get("counts_attempt_at"))
+    return last_attempt is None or NOW - last_attempt >= MISSING_COUNTS_RETRY
 
 
 def refresh_due_counts(db, max_channels=None):
