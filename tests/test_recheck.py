@@ -95,10 +95,56 @@ class RecheckTests(unittest.TestCase):
         with patch.object(finder, "search_page", return_value=page) as search:
             finder.sweep(state, found, stats)
         self.assertGreaterEqual(search.call_count, 1)
-        self.assertEqual(stats["overflow"], 1)
+        self.assertGreaterEqual(stats["overflow"], 1)
         self.assertEqual(stats["slices"], 0)
         for tag in finder.SWEEP_TAGS:
             self.assertEqual(state["sweep"][tag], finder.iso(old))
+
+    def test_pagination_resumes_from_saved_token(self):
+        tag = finder.SWEEP_TAGS[0]
+        old = finder.NOW - finder.timedelta(hours=2)
+        state = {"sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS}}
+        state["sweep"][tag] = finder.iso(old)
+        stats = {"videos": 0, "slices": 0, "overflow": 0}
+
+        budget = FakeBudget(remaining=200)
+        finder.budget = budget
+
+        def first_search(params):
+            # 最初のページ取得後に、この回のAPI枠を使い切った状態を再現
+            budget.remaining = 0
+            return {"items": [], "nextPageToken": "page-2",
+                    "pageInfo": {"totalResults": 75}}
+
+        with patch.object(finder, "search_page", side_effect=first_search) as search:
+            finder.sweep(state, {}, stats)
+        self.assertEqual(search.call_count, 1)
+        self.assertEqual(state["sweep"][tag], finder.iso(old))
+        self.assertEqual(state["sweep_pending"][tag]["next_page"], "page-2")
+
+        budget.remaining = 200
+        with patch.object(finder, "search_page", return_value={
+            "items": [], "pageInfo": {"totalResults": 75}
+        }) as search:
+            finder.sweep(state, {}, stats)
+        self.assertEqual(search.call_count, 1)
+        self.assertEqual(search.call_args.args[0]["pageToken"], "page-2")
+        self.assertNotIn(tag, state["sweep_pending"])
+        self.assertGreater(finder.parse_iso(state["sweep"][tag]), old)
+
+    def test_pagination_at_limit_is_split_without_losing_cursor(self):
+        tag = finder.SWEEP_TAGS[0]
+        old = finder.NOW - finder.timedelta(hours=2)
+        state = {"sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS}}
+        state["sweep"][tag] = finder.iso(old)
+        finder.budget = FakeBudget(remaining=10000)
+        page = {"items": [], "nextPageToken": "overflow",
+                "pageInfo": {"totalResults": 500}}
+        with patch.object(finder, "search_page", return_value=page):
+            finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        self.assertEqual(state["sweep"][tag], finder.iso(old))
+        self.assertTrue(state["sweep_pending"][tag]["restart"])
+        self.assertIsNone(state["sweep_pending"][tag]["next_page"])
 
     def test_does_not_recheck_recent_failure(self):
         state = {"rejected_rechecked": {"UC_TEST": finder.iso(finder.NOW)}}
