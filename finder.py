@@ -222,7 +222,7 @@ def sweep(state, found, stats):
             stats["videos"] += 1
 
     done_tags = set()
-    while budget.run_left() >= 200:
+    while budget.run_left() >= 100:
         # いちばん遅れているタグから進める
         todo = [t for t in SWEEP_TAGS if t not in done_tags and parse_iso(cursors[t]) < end]
         if not todo:
@@ -253,7 +253,7 @@ def sweep(state, found, stats):
             stats["overflow"] += 1
         cursors[tag] = iso(stop)
         stats["slices"] += 1
-        if stop < end and budget.run_left() < 200:
+        if stop < end and budget.run_left() < 100:
             break
         if stop >= end:
             done_tags.add(tag)
@@ -362,12 +362,13 @@ def main():
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "corp": 0}
     live_q = None
     try:
-        # 配信検索は毎回1つ、残りを総ざらいに使う（本数の更新などの分は残しておく）
-        if budget.run_left() >= 100:
-            live_q = live_search(state, found)
-        reserve = 60 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 5)
+        # 優先順位：タグの総ざらい → 芋づる式・更新の分を残す → 余れば配信検索
+        # （1時間あたり約400ユニットしかないので、漏れに一番効く総ざらいを先にする）
+        reserve = 30 + len(db) // 40 + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN, budget.run_cap // 4)
         budget.run_cap -= reserve
         sweep(state, found, stats)
+        if budget.run_left() >= 100:
+            live_q = live_search(state, found)
         budget.run_cap += reserve
 
         # 新しく見つかったチャンネルを登録
