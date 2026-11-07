@@ -61,6 +61,29 @@ class RecheckTests(unittest.TestCase):
         self.assertIsNone(rec["counts_at"])
         self.assertTrue(finder.counts_due(rec))
 
+    def test_missing_playlist_retries_after_one_day_not_every_hour(self):
+        rec = {"videos": None, "shorts": 5, "lives": 2, "counts_at": None}
+        with patch.object(finder, "playlist_total", side_effect=[None, 5, 2]):
+            finder.refresh_counts("UC123", rec)
+        self.assertFalse(finder.counts_due(rec))
+        rec["counts_attempt_at"] = finder.iso(
+            finder.NOW - finder.timedelta(hours=23))
+        self.assertFalse(finder.counts_due(rec))
+        rec["counts_attempt_at"] = finder.iso(
+            finder.NOW - finder.timedelta(days=1, minutes=1))
+        self.assertTrue(finder.counts_due(rec))
+
+    def test_missing_playlist_retry_does_not_block_other_channels(self):
+        db = {
+            "UC_COOLDOWN": {"videos": None, "shorts": 2, "lives": 1,
+                            "counts_attempt_at": finder.iso(finder.NOW)},
+            "UC_NEW": {"videos": None, "shorts": None, "lives": None},
+        }
+        with patch.object(finder, "refresh_counts") as refresh:
+            result = finder.refresh_due_counts(db, max_channels=1)
+        self.assertEqual(result, 1)
+        refresh.assert_called_once_with("UC_NEW", db["UC_NEW"])
+
     def test_count_refresh_is_atomic_on_quota_exception(self):
         previous = {"videos": 4, "shorts": 5, "lives": 6,
                     "counts_at": "2026-10-01T00:00:00Z"}
