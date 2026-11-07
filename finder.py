@@ -249,14 +249,17 @@ def sweep(state, found, stats):
             span = span / 2
         token, pages = data.get("nextPageToken"), 1
         while token and pages < SWEEP_MAX_PAGES:
-            if budget.day_left() < 100:
+            if budget.run_left() < 100 or budget.day_left() < 100:
                 break
             data = search_page(dict(params, pageToken=token))
             take(data)
             pages += 1
             token = data.get("nextPageToken")
         if token:
+            # ページが残っている区間を処理済みにしない。
+            # 次回の収集で同じ区間を再訪できるよう、カーソルを保持する。
             stats["overflow"] += 1
+            break
         cursors[tag] = iso(stop)
         stats["slices"] += 1
         if stop < end and budget.run_left() < 200:
