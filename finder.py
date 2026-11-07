@@ -260,7 +260,16 @@ def sweep(state, found, stats):
             # 最初のページは既に取得済み。保存されたトークンから再開する。
             if budget.run_left() < 100 or budget.day_left() < 100:
                 break
-            data = search_page(dict(params, pageToken=token))
+            try:
+                data = search_page(dict(params, pageToken=token))
+            except RuntimeError as exc:
+                if "invalidPageToken" not in str(exc):
+                    raise
+                # ページトークン失効時は区間を保持し、次回は先頭から再検索。
+                pending[tag] = {"start": cursors[tag], "stop": iso(stop),
+                                "next_page": None, "pages": 0, "restart": True}
+                done_tags.add(tag)
+                continue
             take(data)
             pages += 1
             token = data.get("nextPageToken")
