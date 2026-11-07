@@ -29,3 +29,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Run JavaScript filter tests
         run: node --test tests/test_filters.cjs
+      - name: Install browser-DOM test dependency
+        run: npm install --no-save --no-audit --no-fund jsdom@26
+      - name: Run DOM interaction tests
+        run: node --test tests/test_ui.cjs
