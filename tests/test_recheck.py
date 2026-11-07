@@ -157,6 +157,27 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(rec["counts_at"], finder.iso(finder.NOW))
         self.assertEqual(fetch.call_count, 3)
 
+    def test_count_metrics_distinguish_full_and_partial_success(self):
+        db = {
+            "UCfirst": {"videos": None, "shorts": None, "lives": None},
+            "UCsecond": {"videos": None, "shorts": None, "lives": None},
+        }
+        metrics = {}
+        finder.budget = FakeBudget(remaining=100)
+        with patch.object(finder, "playlist_total", side_effect=[1, 2, 3, None, 4, 5]):
+            self.assertEqual(finder.refresh_due_counts(db, metrics=metrics), 2)
+        self.assertEqual(metrics, {"attempted": 2, "complete": 1,
+                                   "partial": 1, "resolved": 1})
+
+    def test_count_metrics_do_not_report_api_exception_as_success(self):
+        db = {"UCfirst": {"videos": None, "shorts": None, "lives": None}}
+        metrics = {}
+        finder.budget = FakeBudget(remaining=100)
+        with patch.object(finder, "playlist_total", side_effect=RuntimeError("API failed")):
+            with self.assertRaises(RuntimeError):
+                finder.refresh_due_counts(db, metrics=metrics)
+        self.assertEqual(metrics, {})
+
     def test_missing_counts_get_priority_over_stale_complete_counts(self):
         db = {
             "UC_STALE": {"videos": 1, "shorts": 2, "lives": 3,
