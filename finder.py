@@ -65,6 +65,8 @@ VTUBER_WORDS = ["vtuber", "ブイチューバー", "vライバー", "バーチ�
 SNOWBALL_SECTIONS_PER_RUN = 150   # おすすめチャンネル欄を調べるチャンネル数（1件1ユニット）
 SNOWBALL_HANDLES_PER_RUN = 150    # @ハンドルをチャンネルに変換する数（1件1ユニット）
 SNOWBALL_SECTIONS_EVERY = timedelta(days=7)
+RECHECK_REJECTED_PER_RUN = 25
+RECHECK_REJECTED_INTERVAL = timedelta(days=14)
 # 企業勢の判定：概要欄に「所属」と、下の事務所名の両方があれば企業勢とみなす
 # （「所属」だけだとサーバーやグループの所属まで外してしまうため）
 # 「無所属」「個人勢」などが書かれていれば個人勢として扱う
@@ -348,6 +350,48 @@ def fetch_videos(ids):
     return out
 
 
+def recheck_rejected(db, state, rejected, stats):
+    """既存の拒否履歴を、空きクォータ内で少しずつ再確認する。"""
+    checked = state.setdefault("rejected_rechecked", {})
+    for cid in list(checked):
+        if cid not in rejected:
+            del checked[cid]
+
+    if budget.run_left() < 2 or budget.day_left() < 2:
+        return
+    due = []
+    for cid in rejected:
+        last = parse_iso(checked.get(cid))
+        if last is None or NOW - last >= RECHECK_REJECTED_INTERVAL:
+            due.append(cid)
+    due.sort(key=lambda cid: (checked.get(cid) is not None, checked.get(cid) or "", cid))
+    due = due[:RECHECK_REJECTED_PER_RUN]
+    if not due:
+        return
+
+    channels = fetch_channels(due)
+    for cid in due:
+        checked[cid] = iso(NOW)
+        ch = channels.get(cid)
+        if ch is None:
+            continue
+        sn, st = ch["snippet"], ch["statistics"]
+        # 以前は企業勢と判定されるだけで除外されていたので再検査する。
+        vtuber = looks_vtuber(sn["title"], sn.get("description")) or is_corporate(
+            sn["title"], sn.get("description"))
+        known_subscribers = not st.get("hiddenSubscriberCount") and "subscriberCount" in st
+        if (vtuber and known_subscribers
+                and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS):
+            db[cid] = {
+                "first_seen": iso(NOW), "counts_at": None, "via": "rechecked",
+                "name": sn["title"], "icon": thumb(sn.get("thumbnails")),
+                "subscribers": int(st["subscriberCount"]),
+            }
+            rejected.pop(cid, None)
+            checked.pop(cid, None)
+            stats["recovered"] += 1
+
+
 def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -359,7 +403,7 @@ def main():
         rejected.pop(cid)
 
     found = {}
-    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0}
+    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
     try:
         # 配信検索は毎回1つ、残りを総ざらいに使う（本数の更新などの分は残しておく）
@@ -384,6 +428,8 @@ def main():
                 stats["new"] += 1
             else:
                 rejected[cid] = iso(NOW)
+
+        recheck_rejected(db, state, rejected, stats)
 
         # 全チャンネルの登録者数・名前・アイコンを更新。上限を超えたら外す
         for cid, ch in fetch_channels(list(db)).items():
@@ -550,7 +596,7 @@ def main():
     live_n = sum(1 for c in channels if c["is_live"])
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
           f"{'（500件超えの区切り ' + str(stats['overflow']) + '）' if stats['overflow'] else ''}"
-          f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']} / 蓄積 {len(channels)}（配信中 {live_n}）"
+          f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']}・再発見 {stats['recovered']} / 蓄積 {len(channels)}（配信中 {live_n}）"
           f" / API 今回{budget.run_used}・今日{budget.q['used']}ユニット")
 
 
