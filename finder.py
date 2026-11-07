@@ -359,7 +359,7 @@ def main():
         rejected.pop(cid)
 
     found = {}
-    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "corp": 0}
+    stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0}
     live_q = None
     try:
         # 配信検索は毎回1つ、残りを総ざらいに使う（本数の更新などの分は残しておく）
@@ -377,8 +377,8 @@ def main():
             v = found[cid]
             ok = (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
                   and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
-                  and looks_vtuber(v.get("title"), v.get("description"), sn["title"], sn.get("description"))
-                  and not is_corporate(sn["title"], sn.get("description")))
+                  and looks_vtuber(v.get("title"), v.get("description"), sn["title"], sn.get("description")))
+            # 企業勢も対象。事務所所属を理由に候補から除外しない。
             if ok:
                 db[cid] = {"first_seen": iso(NOW), "counts_at": None}
                 stats["new"] += 1
@@ -389,10 +389,7 @@ def main():
         for cid, ch in fetch_channels(list(db)).items():
             st, sn = ch["statistics"], ch["snippet"]
             subs = int(st.get("subscriberCount", 0))
-            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS \
-                    or is_corporate(sn["title"], sn.get("description")):
-                if is_corporate(sn["title"], sn.get("description")):
-                    stats["corp"] += 1
+            if st.get("hiddenSubscriberCount") or subs > POOL_MAX_SUBSCRIBERS:
                 db.pop(cid, None)
                 rejected[cid] = iso(NOW)
                 continue
@@ -450,8 +447,7 @@ def main():
             st, sn = ch["statistics"], ch["snippet"]
             if (not st.get("hiddenSubscriberCount") and "subscriberCount" in st
                     and int(st["subscriberCount"]) <= POOL_MAX_SUBSCRIBERS
-                    and looks_vtuber(sn["title"], sn.get("description"))
-                    and not is_corporate(sn["title"], sn.get("description"))):
+                    and looks_vtuber(sn["title"], sn.get("description"))):
                 db[cid] = {"first_seen": iso(NOW), "counts_at": None, "via": "snowball",
                            "name": sn["title"], "icon": thumb(sn.get("thumbnails")),
                            "subscribers": int(st["subscriberCount"])}
@@ -554,7 +550,7 @@ def main():
     live_n = sum(1 for c in channels if c["is_live"])
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
           f"{'（500件超えの区切り ' + str(stats['overflow']) + '）' if stats['overflow'] else ''}"
-          f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']}・企業勢除外 {stats['corp']} / 蓄積 {len(channels)}（配信中 {live_n}）"
+          f" / 配信検索 {live_q} / 新規 {stats['new']}・芋づる {stats['snow']} / 蓄積 {len(channels)}（配信中 {live_n}）"
           f" / API 今回{budget.run_used}・今日{budget.q['used']}ユニット")
 
 
