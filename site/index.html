@@ -72,7 +72,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 5vw
 .field label, .label { font-size: .75rem; color: var(--muted); letter-spacing: .04em; }
 .num { display: flex; align-items: center; gap: 6px; }
 .num input {
-  width: 7.5em; font: inherit; font-family: var(--mono); font-size: .9rem; color: var(--ink);
+  width: 6.5em; font: inherit; font-family: var(--mono); font-size: .9rem; color: var(--ink);
   background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px;
   font-variant-numeric: tabular-nums;
 }
@@ -162,11 +162,11 @@ footer p { margin: 0; }
       </div>
     </div>
     <div class="row">
-      <div class="field"><label for="f-subs">登録者数</label><div class="num"><input id="f-subs" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>人以内</span></div></div>
-      <div class="field"><label for="f-lives">ライブ</label><div class="num"><input id="f-lives" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
-      <div class="field"><label for="f-videos">動画</label><div class="num"><input id="f-videos" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
-      <div class="field"><label for="f-shorts">ショート</label><div class="num"><input id="f-shorts" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>本以内</span></div></div>
-      <div class="field"><label for="f-viewers">現在の同時接続者数</label><div class="num"><input id="f-viewers" type="number" min="0" inputmode="numeric" placeholder="指定なし"><span>人以内</span></div></div>
+      <div class="field"><label for="f-subs-min">登録者数</label><div class="num"><input id="f-subs-min" type="number" min="0" inputmode="numeric" placeholder="下限" aria-label="登録者数の最小値"><span>〜</span><input id="f-subs-max" type="number" min="0" inputmode="numeric" placeholder="上限" aria-label="登録者数の最大値"><span>人</span></div></div>
+      <div class="field"><label for="f-lives-min">ライブ</label><div class="num"><input id="f-lives-min" type="number" min="0" inputmode="numeric" placeholder="下限" aria-label="ライブの最小値"><span>〜</span><input id="f-lives-max" type="number" min="0" inputmode="numeric" placeholder="上限" aria-label="ライブの最大値"><span>本</span></div></div>
+      <div class="field"><label for="f-videos-min">動画</label><div class="num"><input id="f-videos-min" type="number" min="0" inputmode="numeric" placeholder="下限" aria-label="動画の最小値"><span>〜</span><input id="f-videos-max" type="number" min="0" inputmode="numeric" placeholder="上限" aria-label="動画の最大値"><span>本</span></div></div>
+      <div class="field"><label for="f-shorts-min">ショート</label><div class="num"><input id="f-shorts-min" type="number" min="0" inputmode="numeric" placeholder="下限" aria-label="ショートの最小値"><span>〜</span><input id="f-shorts-max" type="number" min="0" inputmode="numeric" placeholder="上限" aria-label="ショートの最大値"><span>本</span></div></div>
+      <div class="field"><label for="f-viewers-min">現在の同時接続者数</label><div class="num"><input id="f-viewers-min" type="number" min="0" inputmode="numeric" placeholder="下限" aria-label="現在の同時接続者数の最小値"><span>〜</span><input id="f-viewers-max" type="number" min="0" inputmode="numeric" placeholder="上限" aria-label="現在の同時接続者数の最大値"><span>人</span></div></div>
     </div>
     <p class="hint">空欄にするとその条件は使いません。<button class="linkbtn" id="reset" type="button">初期値に戻す</button></p>
   </section>
@@ -188,7 +188,10 @@ footer p { margin: 0; }
 
 <script>
 (function () {
-  var DEFAULTS = { st: "live", sort: "viewers", subs: "", lives: "", videos: "", shorts: "", viewers: "" };
+  var DEFAULTS = { st: "live", sort: "viewers",
+    subsMin: "", subsMax: "", livesMin: "", livesMax: "",
+    videosMin: "", videosMax: "", shortsMin: "", shortsMax: "",
+    viewersMin: "", viewersMax: "" };
   var KEY = "ubugoe-filters", TOKEN_KEY = "ubugoe-gh-token";
   var parts = location.hostname.split(".");
   var OWNER = parts[1] === "github" ? parts[0] : "takuminurufff-collab";
@@ -198,10 +201,18 @@ footer p { margin: 0; }
   function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 
   var f = Object.assign({}, DEFAULTS);
-  try { Object.assign(f, JSON.parse(read(KEY) || "{}")); } catch (e) {}
+  try {
+    var stored = JSON.parse(read(KEY) || "{}");
+    // 古い「○以内」の保存値を上限の指定として引き継ぐ。
+    ["subs", "lives", "videos", "shorts", "viewers"].forEach(function (k) {
+      if (stored[k + "Max"] == null && stored[k] !== "" && stored[k] != null) stored[k + "Max"] = stored[k];
+    });
+    Object.assign(f, stored);
+  } catch (e) {}
   var data = null;
   var $ = function (id) { return document.getElementById(id); };
   var FIELDS = ["subs", "lives", "videos", "shorts", "viewers"];
+  var METRICS = { subs: "subscribers", lives: "lives", videos: "videos", shorts: "shorts" };
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function num(n) { return n == null ? "–" : Number(n).toLocaleString("ja-JP"); }
@@ -217,20 +228,22 @@ footer p { margin: 0; }
   function syncControls() {
     ["live", "off", "all"].forEach(function (s) { $("st-" + s).setAttribute("aria-pressed", String(f.st === s)); });
     $("sort").value = f.sort;
-    FIELDS.forEach(function (k) { $("f-" + k).value = f[k]; });
+    FIELDS.forEach(function (k) { ["Min", "Max"].forEach(function (side) { $("f-" + k + "-" + side.toLowerCase()).value = f[k + side]; }); });
   }
   function save() { store(KEY, JSON.stringify(f)); }
 
   function passes(c) {
     if (f.st === "live" && !c.is_live) return false;
     if (f.st === "off" && c.is_live) return false;
-    var map = { subs: "subscribers", lives: "lives", videos: "videos", shorts: "shorts" };
     for (var i = 0; i < FIELDS.length; i++) {
-      var k = FIELDS[i], v = f[k];
-      if (v === "" || v == null) continue;
-      var val = k === "viewers" ? (c.is_live && c.live ? c.live.viewers : null) : c[map[k]];
-      // 配信していない・同接非公開・取得不可は0人として扱わない。
-      if (val == null || !Number.isFinite(Number(val)) || Number(val) > Number(v)) return false;
+      var k = FIELDS[i], min = f[k + "Min"], max = f[k + "Max"];
+      if ((min === "" || min == null) && (max === "" || max == null)) continue;
+      var value = k === "viewers" ? (c.is_live && c.live ? c.live.viewers : null) : c[METRICS[k]];
+      // 0は有効な値だが、未取得・非公開・未配信は0扱いしない。
+      if (value == null || !Number.isFinite(Number(value))) return false;
+      var n = Number(value);
+      if (min !== "" && min != null && n < Number(min)) return false;
+      if (max !== "" && max != null && n > Number(max)) return false;
     }
     return true;
   }
@@ -295,6 +308,7 @@ footer p { margin: 0; }
       return;
     }
     list.slice(0, 300).forEach(function (c) { grid.appendChild(card(c)); });
+    if (list.length > 300) grid.appendChild(el("p", "hint", "表示は先頭300件です。条件を絞ると残りのチャンネルも検索できます。"));
   }
 
   function load() {
@@ -316,7 +330,11 @@ footer p { margin: 0; }
   });
   $("sort").addEventListener("change", function (e) { f.sort = e.target.value; save(); render(); });
   FIELDS.forEach(function (k) {
-    $("f-" + k).addEventListener("input", function (e) { f[k] = e.target.value; save(); render(); });
+    ["Min", "Max"].forEach(function (side) {
+      $("f-" + k + "-" + side.toLowerCase()).addEventListener("input", function (e) {
+        f[k + side] = e.target.value; save(); render();
+      });
+    });
   });
   $("reset").addEventListener("click", function () { f = Object.assign({}, DEFAULTS); syncControls(); save(); render(); });
 
