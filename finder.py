@@ -374,11 +374,16 @@ def playlist_total(playlist_id):
 
 
 def refresh_counts(ch_id, rec):
+    """3項目をすべて取得できた場合だけ更新する。
+
+    API枠超過・通信エラーなどが途中で発生しても、以前の値と更新日時を
+    一部だけ書き換えない。次回の更新で安全に再試行できる。
+    """
     suffix = ch_id[2:]
-    rec["videos"] = playlist_total("UULF" + suffix)   # 通常の動画
-    rec["shorts"] = playlist_total("UUSH" + suffix)   # ショート
-    rec["lives"] = playlist_total("UULV" + suffix)    # ライブ
-    rec["counts_at"] = iso(NOW)
+    videos = playlist_total("UULF" + suffix)  # 通常の動画
+    shorts = playlist_total("UUSH" + suffix)  # ショート
+    lives = playlist_total("UULV" + suffix)   # ライブ
+    rec.update(videos=videos, shorts=shorts, lives=lives, counts_at=iso(NOW))
 
 
 # ---------- 4. 確認 ----------
