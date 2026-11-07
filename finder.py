@@ -215,10 +215,11 @@ def search_page(params):
 
 def sweep(state, found, stats):
     cursors = state.setdefault("sweep", {})
+    pending = state.setdefault("sweep_pending", {})
     end = NOW - SWEEP_DELAY
     for tag in SWEEP_TAGS:
         c = parse_iso(cursors.get(tag)) or NOW - timedelta(hours=24)
-        # 古いカーソルも保持する。処理しきれない区間を消去しない。
+        # 古いカーソルも保持し、処理しきれない区間を消去しない。
         cursors[tag] = iso(c)
 
     def take(data):
@@ -229,25 +230,56 @@ def sweep(state, found, stats):
 
     done_tags = set()
     while budget.run_left() >= 200:
-        # いちばん遅れているタグから進める
-        todo = [t for t in SWEEP_TAGS if t not in done_tags and parse_iso(cursors[t]) < end]
+        todo = [t for t in SWEEP_TAGS if t not in done_tags and
+                (t in pending or parse_iso(cursors[t]) < end)]
         if not todo:
             break
         tag = min(todo, key=lambda t: cursors[t])
         start = parse_iso(cursors[tag])
-        span = min(end - start, SWEEP_MAX_SPAN)
-        # 1回の検索でたどれるのは約500件まで。多すぎる区間は半分にしてやり直す
-        while True:
-            stop = start + span
+        work = pending.get(tag)
+
+        if work and work.get("start") != cursors[tag]:
+            # 進捗位置が外部で変わったときは古いページトークンを捨てる。
+            pending.pop(tag, None)
+            work = None
+
+        if work and work.get("restart"):
+            # 500件上限による再試行: 分割済みの時間幅で最初から検索。
+            stop = parse_iso(work["stop"])
             params = {"q": tag, "order": "date",
-                      "publishedAfter": iso(start), "publishedBefore": iso(stop)}
+                      "publishedAfter": cursors[tag], "publishedBefore": work["stop"]}
             data = search_page(params)
-            total = data.get("pageInfo", {}).get("totalResults", 0)
             take(data)
-            if total <= SWEEP_SAFE_TOTAL or span <= SWEEP_MIN_SPAN or budget.run_left() < 100:
+            token, pages = data.get("nextPageToken"), 1
+        elif work:
+            stop = parse_iso(work["stop"])
+            token = work["next_page"]
+            pages = work["pages"]
+            params = {"q": tag, "order": "date",
+                      "publishedAfter": cursors[tag], "publishedBefore": work["stop"]}
+            # 最初のページは既に取得済み。保存されたトークンから再開する。
+            if budget.run_left() < 100 or budget.day_left() < 100:
                 break
-            span = span / 2
-        token, pages = data.get("nextPageToken"), 1
+            data = search_page(dict(params, pageToken=token))
+            take(data)
+            pages += 1
+            token = data.get("nextPageToken")
+        else:
+            span = min(end - start, SWEEP_MAX_SPAN)
+            # 500件超の区間は先に分割し、検索上限到達をできるだけ避ける。
+            while True:
+                stop = start + span
+                params = {"q": tag, "order": "date",
+                          "publishedAfter": iso(start), "publishedBefore": iso(stop)}
+                data = search_page(params)
+                total = data.get("pageInfo", {}).get("totalResults", 0)
+                if (total <= SWEEP_SAFE_TOTAL or span <= SWEEP_MIN_SPAN
+                        or budget.run_left() < 100):
+                    take(data)
+                    break
+                span = span / 2
+            token, pages = data.get("nextPageToken"), 1
+
         while token and pages < SWEEP_MAX_PAGES:
             if budget.run_left() < 100 or budget.day_left() < 100:
                 break
@@ -255,15 +287,36 @@ def sweep(state, found, stats):
             take(data)
             pages += 1
             token = data.get("nextPageToken")
+
         if token:
-            # ページが残っている区間を処理済みにしない。
-            # 次回の収集で同じ区間を再訪できるよう、カーソルを保持する。
             stats["overflow"] += 1
-            break
+            if pages >= SWEEP_MAX_PAGES:
+                # YouTubeの検索上限を超えたときはページトークンを再利用しない。
+                # 可能なら区間をさらに分割して次回やり直す。
+                span = stop - start
+                if span > SWEEP_MIN_SPAN:
+                    pending.pop(tag, None)
+                    pending[tag] = {"start": cursors[tag],
+                                    "stop": iso(start + span / 2),
+                                    "next_page": None, "pages": 0,
+                                    "restart": True}
+                else:
+                    state.setdefault("sweep_blocked", {})[tag] = {
+                        "start": cursors[tag], "stop": iso(stop),
+                        "reason": "500-result-limit"}
+                    pending.pop(tag, None)
+                    done_tags.add(tag)
+            else:
+                pending[tag] = {"start": cursors[tag], "stop": iso(stop),
+                                "next_page": token, "pages": pages}
+                # 他のタグも探索できるよう、今回のタグは一旦終了する。
+                done_tags.add(tag)
+            continue
+
+        pending.pop(tag, None)
+        state.setdefault("sweep_blocked", {}).pop(tag, None)
         cursors[tag] = iso(stop)
         stats["slices"] += 1
-        if stop < end and budget.run_left() < 200:
-            break
         if stop >= end:
             done_tags.add(tag)
 
