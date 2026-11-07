@@ -527,6 +527,14 @@ def counts_due(rec):
     return last_attempt is None or NOW - last_attempt >= MISSING_COUNTS_RETRY
 
 
+def counts_backlog(db):
+    """本数未取得の総数と、今すぐ再試行可能な件数を返す（API呼び出しなし）。"""
+    missing = [rec for rec in db.values()
+               if any(rec.get(k) is None for k in ("videos", "shorts", "lives"))]
+    eligible = sum(counts_due(rec) for rec in missing)
+    return len(missing), eligible, len(missing) - eligible
+
+
 def refresh_due_counts(db, max_channels=None, metrics=None):
     """未取得の本数を優先してAPI枠の範囲で更新し、実行件数を返す。"""
     queue = sorted(
@@ -778,7 +786,9 @@ def main():
     )
     print(f"本数取得 試行{count_metrics['attempted']}件・全項目成功{count_metrics['complete']}件"
           f"・一部取得不能{count_metrics['partial']}件・未取得解消{count_metrics['resolved']}件")
+    _, eligible_counts, deferred_counts = counts_backlog(db)
     print(f"本数未取得 前回{missing_counts_before}件 → 現在{missing_counts_after}件"
+          f" / 今すぐ試行可能{eligible_counts}件・24時間待機中{deferred_counts}件"
           f" / 全{len(channels)}件（新規候補の流入により増える場合あり）")
     print(f"総ざらい {stats['slices']}区切り・{stats['videos']}本"
           f"{'（500件超えの区切り ' + str(stats['overflow']) + '）' if stats['overflow'] else ''}"
