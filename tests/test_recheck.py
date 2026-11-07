@@ -146,6 +146,24 @@ class RecheckTests(unittest.TestCase):
         self.assertTrue(state["sweep_pending"][tag]["restart"])
         self.assertIsNone(state["sweep_pending"][tag]["next_page"])
 
+    def test_expired_resume_token_restarts_same_window(self):
+        tag = finder.SWEEP_TAGS[0]
+        old = finder.iso(finder.NOW - finder.timedelta(hours=2))
+        stop = finder.iso(finder.NOW - finder.timedelta(hours=1))
+        state = {
+            "sweep": {t: finder.iso(finder.NOW) for t in finder.SWEEP_TAGS},
+            "sweep_pending": {tag: {"start": old, "stop": stop,
+                                    "next_page": "expired", "pages": 2}},
+        }
+        state["sweep"][tag] = old
+        finder.budget = FakeBudget(remaining=200)
+        with patch.object(finder, "search_page",
+                          side_effect=RuntimeError("search でエラー (400): invalidPageToken")):
+            finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        self.assertEqual(state["sweep"][tag], old)
+        self.assertTrue(state["sweep_pending"][tag]["restart"])
+        self.assertEqual(state["sweep_pending"][tag]["stop"], stop)
+
     def test_does_not_recheck_recent_failure(self):
         state = {"rejected_rechecked": {"UC_TEST": finder.iso(finder.NOW)}}
         with patch.object(finder, "fetch_channels") as fetch:
