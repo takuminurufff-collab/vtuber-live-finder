@@ -244,7 +244,8 @@ def sweep(state, found, stats):
             work = None
 
         if work and work.get("restart"):
-            # 500件上限による再試行: 分割済みの時間幅で最初から検索。
+            # 500件上限・期限切れトークンによる再試行。開始時点でフラグを解除。
+            pending.pop(tag, None)
             stop = parse_iso(work["stop"])
             params = {"q": tag, "order": "date",
                       "publishedAfter": cursors[tag], "publishedBefore": work["stop"]}
