@@ -75,6 +75,26 @@ class ApiQuotaTests(unittest.TestCase):
         self.assertEqual(finder.budget.run_left(), 0)
         self.assertEqual(finder.budget.q["used"], 1)
 
+    def test_missing_only_refresh_uses_one_last_unit_without_overrun(self):
+        # Integration check: refresh_due_counts -> playlist_total -> api_get.
+        finder.budget = FakeBudget(remaining=100)
+        finder.budget.run_limit = 1
+        cid = "UC" + "a" * 22
+        rec = {"videos": 24, "shorts": None, "lives": 3}
+        response = Mock(status_code=200)
+        response.json.return_value = {"pageInfo": {"totalResults": 8}}
+        metrics = {}
+        with patch.object(finder.session, "get", return_value=response) as request:
+            self.assertEqual(finder.refresh_due_counts({cid: rec}, metrics=metrics), 1)
+        request.assert_called_once()
+        self.assertEqual(request.call_args.kwargs["params"]["playlistId"],
+                         "UUSH" + cid[2:])
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (24, 8, 3))
+        self.assertEqual(finder.budget.run_used, 1)
+        self.assertEqual(finder.budget.run_left(), 0)
+        self.assertEqual(metrics["quota_units"], 1)
+        self.assertEqual(metrics["resolved"], 1)
+
     def test_no_request_when_daily_budget_is_exhausted(self):
         finder.budget = FakeBudget(remaining=0)
         with patch.object(finder.session, "get") as request:
