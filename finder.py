@@ -146,8 +146,12 @@ def api_get(endpoint, params, cost):
     # run_cap は探索・ライブ検索の一時的な予算確保にも使われる。
     if budget.day_left() < cost or budget.run_left() < cost:
         raise QuotaExceeded()
-    r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
-    budget.spend(cost)
+    # 送信後にタイムアウトしてもYouTube側で処理済みの可能性がある。
+    # 請求の確定値ではなく、過小計上を避けるため試行分を保守的に記録する。
+    try:
+        r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
+    finally:
+        budget.spend(cost)
     if r.status_code == 404:
         return None
     if r.status_code != 200:
