@@ -353,7 +353,14 @@ footer p { margin: 0; }
       if (!d || !Array.isArray(d.channels) || !Number.isFinite(Date.parse(d.updated_at)) ||
           d.channels.some(function (c) {
             return !c || typeof c.id !== "string" || !/^UC[A-Za-z0-9_-]{22}$/.test(c.id) ||
-              typeof c.name !== "string";
+              typeof c.name !== "string" ||
+              (c.is_live !== null && typeof c.is_live !== "boolean") ||
+              ["subscribers", "videos", "shorts", "lives"].some(function (key) {
+                return c[key] != null && (!Number.isSafeInteger(c[key]) || c[key] < 0);
+              }) ||
+              (c.is_live === true && (!c.live || typeof c.live.video_id !== "string" ||
+                !/^[A-Za-z0-9_-]{11}$/.test(c.live.video_id) ||
+                (c.live.viewers != null && (!Number.isSafeInteger(c.live.viewers) || c.live.viewers < 0))));
           }) || new Set(d.channels.map(function (c) { return c.id; })).size !== d.channels.length) {
         throw new Error("Invalid published dataset");
       }
