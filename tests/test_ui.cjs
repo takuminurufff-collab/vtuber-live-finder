@@ -166,39 +166,54 @@ async function simulateAdminRefresh(dom, failJson, previousPolls = 0, apiErrorPo
   const doc = win.document;
   let runLookups = 0;
   let datasetLookups = 0;
+  let dispatchedRequestId = null;
   const fetchUrls = [];
   win.setTimeout = (callback) => { callback(); return 0; };
   const now = win.Date.now();
   win.Date.now = () => now;
-  win.fetch = async (url) => {
+  win.fetch = async (url, options) => {
     fetchUrls.push(url);
-    if (url.includes("/dispatches")) return { status: 204 };
+    if (url.includes("/dispatches")) {
+      assert.equal(options.method, "POST");
+      const payload = JSON.parse(options.body);
+      dispatchedRequestId = payload.inputs.request_id;
+      assert.ok(dispatchedRequestId.length > 10);
+      return { status: 204 };
+    }
     if (url.includes("/actions/workflows/update.yml/runs?")) {
       runLookups++;
-      if (runLookups > 1 && runLookups <= apiErrorPolls + 1) return { ok: false, status: 502 };
-      const isPrevious = runLookups === 1 || runLookups <= previousPolls + 1;
+      if (runLookups <= apiErrorPolls) return { ok: false, status: 502 };
+      const isPrevious = runLookups <= apiErrorPolls + previousPolls;
+      const unrelated = {
+        id: 300, display_title: "配信データ更新 [another-person]",
+        created_at: new Date(now).toISOString(), status: "completed", conclusion: "failure",
+      };
+      const mine = {
+        id: 200, display_title: "配信データ更新 [" + dispatchedRequestId + "]",
+        created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
+      };
       return {
         ok: true,
-        json: async () => ({ workflow_runs: [{
-          id: isPrevious ? 100 : 101,
-          created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
-        }] }),
+        json: async () => ({ workflow_runs: isPrevious ? [unrelated] : [unrelated, mine] }),
       };
     }
     if (url.includes("data.json")) {
       datasetLookups++;
       if (failJson === true) throw new Error("network failed");
-      return { ok: true, json: async () => ({ updated_at: failJson === "stale" ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(), channels: [record(1)] }) };
+      return { ok: true, json: async () => ({
+        updated_at: failJson === "stale" ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(),
+        channels: [record(1)],
+      }) };
     }
     throw new Error("Unexpected fetch: " + url);
   };
   doc.getElementById("token").value = "test-token";
   doc.getElementById("saveToken").click();
   doc.getElementById("refreshBtn").click();
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 12; i++) {
     await new Promise((resolve) => setImmediate(resolve));
   }
-  doc.__refreshCounters = { runLookups, datasetLookups, fetchUrls };
+  doc.__refreshCounters = { runLookups, datasetLookups, fetchUrls, dispatchedRequestId };
   return doc;
 }
 
@@ -220,7 +235,7 @@ test("admin refresh ignores a recently finished run from before dispatch", async
   const dom = await setup([record(1)]);
   try {
     const doc = await simulateAdminRefresh(dom, false, 3);
-    assert.equal(doc.__refreshCounters.runLookups, 5);
+    assert.equal(doc.__refreshCounters.runLookups, 4);
     assert.equal(doc.__refreshCounters.datasetLookups, 1);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
     assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
@@ -234,7 +249,7 @@ test("admin polls only the update workflow on main instead of unrelated actions"
   try {
     const doc = await simulateAdminRefresh(dom, false);
     const runUrls = doc.__refreshCounters.fetchUrls.filter((url) => url.includes("/runs?"));
-    assert.ok(runUrls.length >= 2);
+    assert.ok(runUrls.length >= 1);
     assert.ok(runUrls.every((url) =>
       url.includes("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main")));
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
@@ -248,6 +263,19 @@ test("admin retries temporary GitHub runs API failures and still loads new data"
   try {
     const doc = await simulateAdminRefresh(dom, false, 0, 2);
     assert.equal(doc.__refreshCounters.runLookups, 4);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin correlates its own request even when a newer unrelated run has failed", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    assert.ok(doc.__refreshCounters.dispatchedRequestId);
     assert.equal(doc.__refreshCounters.datasetLookups, 1);
     assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
