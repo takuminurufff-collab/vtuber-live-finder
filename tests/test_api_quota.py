@@ -30,6 +30,61 @@ class ApiQuotaTests(unittest.TestCase):
     def tearDown(self):
         finder.budget = self.old_budget
 
+    def test_failed_run_checkpoint_saves_quota_but_not_unsaved_sweep_progress(self):
+        import json
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "state.json")
+            previous = {"last_run": "2026-11-07T00:00:00Z",
+                        "sweep": {"#vtuber": "2026-11-07T00:00:00Z"},
+                        "quota": {"day": "2026-11-07", "used": 25}}
+            with open(path, "w", encoding="utf-8") as output:
+                json.dump(previous, output)
+            finder.budget = FakeBudget(remaining=300)
+            finder.budget.q = {"day": "2026-11-07", "used": 125}
+            with patch.object(finder, "STATE_PATH", path):
+                finder.save_failed_run_quota()
+                with open(path, encoding="utf-8") as source:
+                    checkpoint = json.load(source)
+            self.assertEqual(checkpoint["quota"]["used"], 125)
+            self.assertEqual(checkpoint["sweep"], previous["sweep"])
+            self.assertEqual(checkpoint["last_run"], previous["last_run"])
+            self.assertFalse(os.path.exists(path + ".quota-tmp"))
+
+    def test_main_network_failure_saves_quota_and_propagates_error(self):
+        import json
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = os.path.join(directory, "state.json")
+            db_path = os.path.join(directory, "channels.json")
+            before = {"quota": {"day": finder.NOW.astimezone(finder.PT).date().isoformat(), "used": 0},
+                      "last_run": finder.iso(finder.NOW - finder.timedelta(hours=1))}
+            with open(state_path, "w", encoding="utf-8") as output:
+                json.dump(before, output)
+            with open(db_path, "w", encoding="utf-8") as output:
+                json.dump({}, output)
+            old = finder.budget
+            try:
+                def failed_refresh(db, *args, **kwargs):
+                    finder.budget.spend(2)
+                    raise finder.requests.Timeout("API timed out")
+                with patch.object(finder, "STATE_PATH", state_path), \
+                     patch.object(finder, "DB_PATH", db_path), \
+                     patch.object(finder, "refresh_due_counts", side_effect=failed_refresh):
+                    with self.assertRaises(finder.requests.Timeout):
+                        finder.main()
+                with open(state_path, encoding="utf-8") as source:
+                    saved = json.load(source)
+                with open(db_path, encoding="utf-8") as source:
+                    db_saved = json.load(source)
+                self.assertEqual(saved["quota"]["used"], 2)
+                self.assertEqual(saved["last_run"], before["last_run"])
+                self.assertEqual(db_saved, {})
+            finally:
+                finder.budget = old
+
     def test_timeout_is_accounted_as_possible_api_usage(self):
         # The server may have accepted the request despite a client timeout.
         finder.budget = FakeBudget(remaining=500)
