@@ -142,7 +142,9 @@ def parse_iso(s):
 
 
 def api_get(endpoint, params, cost):
-    if budget.day_left() < cost:
+    # 日次だけでなく実行ごとの割当上限もAPI送信直前に強制する。
+    # run_cap は探索・ライブ検索の一時的な予算確保にも使われる。
+    if budget.day_left() < cost or budget.run_left() < cost:
         raise QuotaExceeded()
     r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
     budget.spend(cost)
