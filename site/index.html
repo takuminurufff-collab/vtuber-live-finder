@@ -413,7 +413,17 @@ footer p { margin: 0; }
     setStatus("YouTubeから取得しています。1〜3分かかります。");
     function done(msg, err) { btn.disabled = false; btn.textContent = "今すぐ更新"; setStatus(msg, err); }
 
-    gh("/actions/workflows/update.yml/dispatches", { method: "POST", body: { ref: "main" } }).then(function (r) {
+    // dispatch APIは実行IDを返さないため、開始前の最新run IDを覚える。
+    // 直前の別の手動実行を自分の更新成功と取り違えないようにする。
+    var previousRunId = 0;
+    gh("/actions/runs?event=workflow_dispatch&per_page=1").then(function (r) {
+      if (!r.ok) throw new Error("更新履歴を確認できませんでした。再度お試しください。");
+      return r.json();
+    }).then(function (j) {
+      var previous = j.workflow_runs && j.workflow_runs[0];
+      previousRunId = previous ? Number(previous.id) || 0 : 0;
+      return gh("/actions/workflows/update.yml/dispatches", { method: "POST", body: { ref: "main" } });
+    }).then(function (r) {
       if (r.status === 401 || r.status === 403) throw new Error("トークンが無効か、Actionsの書き込み権限がありません。管理者メニューから保存し直してください。");
       if (r.status !== 204) throw new Error("更新を開始できませんでした（" + r.status + "）。");
       var tries = 0;
@@ -421,7 +431,7 @@ footer p { margin: 0; }
         tries++;
         gh("/actions/runs?event=workflow_dispatch&per_page=1").then(function (r) { return r.json(); }).then(function (j) {
           var run = j.workflow_runs && j.workflow_runs[0];
-          var fresh = run && new Date(run.created_at).getTime() > started - 60000;
+          var fresh = run && Number(run.id) > previousRunId && new Date(run.created_at).getTime() >= started - 60000;
           if (fresh && run.status === "completed") {
             if (run.conclusion !== "success") return done("更新に失敗しました。GitHubのActions画面でエラーを確認してください。", true);
             setStatus("反映を待っています…");
