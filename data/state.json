@@ -3001,12 +3001,12 @@
   "nktc_ktt": "UCReMH9KapHfHOtNQ4hIhhBA",
   "noah.yumesaki_vt": "UCPsQzfckd5SePjbUD5HkBCQ"
  },
- "last_run": "2026-11-08T16:41:16Z",
+ "last_run": "2026-11-08T17:00:49Z",
  "live_plan_index": 12,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-08",
-  "used": 4471
+  "used": 4576
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -5641,7 +5641,32 @@
   "UCBVZyUkFcejDPV52MmmiZbw": "2026-11-08T16:41:16Z",
   "UCBWfChH4kTymLeuaAdhBtug": "2026-11-08T16:41:16Z",
   "UCBYZNfXlRH4FvEJGzt2Zr9A": "2026-11-08T16:41:16Z",
-  "UCBaSCYQid-__CE6bnUPWXrw": "2026-11-08T16:41:16Z"
+  "UCBaSCYQid-__CE6bnUPWXrw": "2026-11-08T16:41:16Z",
+  "UCBbqUjg85i7Bfkxrl9mjcFQ": "2026-11-08T17:00:49Z",
+  "UCBc3-ri9nNaaqfNnA2Q7B6g": "2026-11-08T17:00:49Z",
+  "UCBdUwJ0C624COmDWHAXCbXQ": "2026-11-08T17:00:49Z",
+  "UCBhL4bbCBLdu08khJSQVIbQ": "2026-11-08T17:00:49Z",
+  "UCBi5RgQgbDHdGEFMyi4ybiw": "2026-11-08T17:00:49Z",
+  "UCBj_to0wyl5QX_y4gvBShsw": "2026-11-08T17:00:49Z",
+  "UCBmUDDWkp5KZw6xAHBSz8XA": "2026-11-08T17:00:49Z",
+  "UCBsUTmwcNDMiRoHbgAYhBdg": "2026-11-08T17:00:49Z",
+  "UCBtr2XDKxnbvdFbh3e9N-ug": "2026-11-08T17:00:49Z",
+  "UCBvV7fPLXtyfbgh60XMjNCg": "2026-11-08T17:00:49Z",
+  "UCBw-Dz6wHRkxiXKCLoWqDzA": "2026-11-08T17:00:49Z",
+  "UCBw-a0HQnFZrQxrcbNqBdxg": "2026-11-08T17:00:49Z",
+  "UCBwbhiiMi-MZ5Fwvtxq2UnQ": "2026-11-08T17:00:49Z",
+  "UCC2C6KCMNWYMJh55gDy2pkg": "2026-11-08T17:00:49Z",
+  "UCC6_2q2_YBDOA-QSlVRYWtg": "2026-11-08T17:00:49Z",
+  "UCC8Lgvaqm1dYByccbr8qGwg": "2026-11-08T17:00:49Z",
+  "UCC908QDJpCqTK-5MNdWE3yA": "2026-11-08T17:00:49Z",
+  "UCC9XemhMJBtLYKswKxw7Wew": "2026-11-08T17:00:49Z",
+  "UCCAhSM-KE7D383Kd7jzkJoA": "2026-11-08T17:00:49Z",
+  "UCCCm2ueQtW3mYUMB7Excq8g": "2026-11-08T17:00:49Z",
+  "UCCF2w9-E2h7LVTDkmFyqXmw": "2026-11-08T17:00:49Z",
+  "UCCJxWgoAlrkzoZpOMhREOeg": "2026-11-08T17:00:49Z",
+  "UCCTw0n2aF6VW86k49vlbtlw": "2026-11-08T17:00:49Z",
+  "UCCTygig8mCA5Jdu1lGplMJw": "2026-11-08T17:00:49Z",
+  "UCCVwR-Bb4Hqy518oaZnz3hg": "2026-11-08T17:00:49Z"
  },
  "sweep": {
   "#Vtuber準備中": "2026-11-08T12:50:48Z",
@@ -5652,8 +5677,8 @@
  "sweep_blocked": {},
  "sweep_pending": {
   "#新人Vtuber": {
-   "next_page": "CGQQAA",
-   "pages": 2,
+   "next_page": "CJYBEAA",
+   "pages": 3,
    "start": "2026-11-08T05:10:42Z",
    "stop": "2026-11-08T14:50:50Z"
   }
