@@ -20,16 +20,17 @@ function record(i) {
   };
 }
 
-async function setup(channels) {
+async function setup(channels, updatedAt = "2026-11-07T15:11:04Z", nowAt = null) {
   const dom = new JSDOM(html, {
     url: "https://example.com/vtuber-live-finder/",
     runScripts: "outside-only",
   });
   const win = dom.window;
   win.setInterval = () => 0;
+  if (nowAt) win.Date.now = () => Date.parse(nowAt);
   win.fetch = async () => ({
     ok: true,
-    json: async () => ({ updated_at: "2026-11-07T15:11:04Z", channels }),
+    json: async () => ({ updated_at: updatedAt, channels }),
   });
   win.eval(script);
   // Allow the initial data.json fetch and render promises to complete.
@@ -120,6 +121,39 @@ test("unknown livestream status is labelled as unverified, not offline", async (
     assert.match(doc.getElementById("count").textContent, /配信状況未確認 1/);
     doc.getElementById("st-off").click();
     assert.equal(doc.querySelectorAll("a.card").length, 0);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("fresh data does not show a stale livestream warning", async () => {
+  const dom = await setup([record(1)], "2026-11-08T14:00:00Z", "2026-11-08T15:30:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, true);
+    assert.equal(notice.textContent, "");
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("data older than two hours warns that livestream status may be outdated", async () => {
+  const dom = await setup([record(1)], "2026-11-08T12:59:00Z", "2026-11-08T15:00:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, false);
+    assert.match(notice.textContent, /配信中・同時接続者数/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("invalid update timestamp is shown as uncertain rather than current", async () => {
+  const dom = await setup([record(1)], "not-a-date", "2026-11-08T15:00:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, false);
+    assert.match(notice.textContent, /データの更新が遅れています/);
   } finally {
     dom.window.close();
   }

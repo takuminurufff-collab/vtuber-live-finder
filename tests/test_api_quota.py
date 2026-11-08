@@ -14,6 +14,9 @@ class FakeBudget:
     def day_left(self):
         return self.remaining - self.q["used"]
 
+    def run_left(self):
+        return self.run_limit - self.run_used if hasattr(self, "run_limit") else self.day_left()
+
     def spend(self, amount):
         self.q["used"] += amount
         self.run_used += amount
@@ -43,6 +46,34 @@ class ApiQuotaTests(unittest.TestCase):
                 finder.api_get("playlistItems", {"playlistId": "test"}, cost=1)
         self.assertEqual(finder.budget.run_used, 1)
         self.assertEqual(finder.budget.q["used"], finder.DAILY_BUDGET)
+
+    def test_no_request_when_run_budget_is_exhausted(self):
+        finder.budget = FakeBudget(remaining=100)
+        finder.budget.run_limit = 0
+        with patch.object(finder.session, "get") as request:
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.api_get("search", {"q": "VTuber"}, cost=100)
+        request.assert_not_called()
+        self.assertEqual(finder.budget.q["used"], 0)
+
+    def test_expensive_request_is_blocked_before_run_cap_is_exceeded(self):
+        finder.budget = FakeBudget(remaining=1000)
+        finder.budget.run_limit = 99
+        with patch.object(finder.session, "get") as request:
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.api_get("search", {"q": "VTuber"}, cost=100)
+        request.assert_not_called()
+
+    def test_request_can_use_the_last_available_run_unit(self):
+        finder.budget = FakeBudget(remaining=100)
+        finder.budget.run_limit = 1
+        response = Mock(status_code=200)
+        response.json.return_value = {"items": []}
+        with patch.object(finder.session, "get", return_value=response) as request:
+            finder.api_get("channels", {"id": "UCexample"}, cost=1)
+        request.assert_called_once()
+        self.assertEqual(finder.budget.run_left(), 0)
+        self.assertEqual(finder.budget.q["used"], 1)
 
     def test_no_request_when_daily_budget_is_exhausted(self):
         finder.budget = FakeBudget(remaining=0)
