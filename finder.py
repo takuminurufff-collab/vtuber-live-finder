@@ -560,7 +560,8 @@ def refresh_due_counts(db, max_channels=None, metrics=None):
         rec = db[cid]
         required_units = count_refresh_cost(rec)
         if budget.run_left() < required_units or budget.day_left() < required_units:
-            break
+            # 大きな要求が入らなくても、少ない枠で補完できる候補を探す。
+            continue
         was_missing = any(rec.get(k) is None for k in ("videos", "shorts", "lives"))
         # 途中でAPI例外が発生しても、消費済みのクォータを計測する。
         units_before = budget.run_used
