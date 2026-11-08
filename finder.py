@@ -560,7 +560,15 @@ def refresh_due_counts(db, max_channels=None, metrics=None):
             break
         rec = db[cid]
         was_missing = any(rec.get(k) is None for k in ("videos", "shorts", "lives"))
-        refresh_counts(cid, rec)
+        # 途中でAPI例外が発生しても、消費済みのクォータを計測する。
+        units_before = budget.run_used
+        try:
+            refresh_counts(cid, rec)
+        finally:
+            if metrics is not None:
+                metrics["quota_units"] = metrics.get("quota_units", 0) + (
+                    budget.run_used - units_before
+                )
         refreshed += 1
         if metrics is not None:
             metrics["attempted"] = metrics.get("attempted", 0) + 1
@@ -589,7 +597,7 @@ def main():
     found = {}
     stats = {"videos": 0, "slices": 0, "overflow": 0, "new": 0, "snow": 0, "recovered": 0}
     live_q = None
-    count_metrics = {"attempted": 0, "complete": 0, "partial": 0, "resolved": 0}
+    count_metrics = {"attempted": 0, "complete": 0, "partial": 0, "resolved": 0, "quota_units": 0}
     try:
         # 1回のAPI枠が250超のときだけ未取得本数を先行補完する。
         # タグ検索に必要な200ユニット＋その他処理向け50ユニットを先に保護。
@@ -785,7 +793,8 @@ def main():
         for r in db.values()
     )
     print(f"本数取得 試行{count_metrics['attempted']}件・全項目成功{count_metrics['complete']}件"
-          f"・一部取得不能{count_metrics['partial']}件・未取得解消{count_metrics['resolved']}件")
+          f"・一部取得不能{count_metrics['partial']}件・未取得解消{count_metrics['resolved']}件"
+          f"・本数取得API消費{count_metrics['quota_units']}ユニット")
     _, eligible_counts, deferred_counts = counts_backlog(db)
     print(f"本数未取得 前回{missing_counts_before}件 → 現在{missing_counts_after}件"
           f" / 今すぐ試行可能{eligible_counts}件・24時間待機中{deferred_counts}件"
