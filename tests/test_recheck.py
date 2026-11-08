@@ -405,6 +405,52 @@ class RecheckTests(unittest.TestCase):
         for tag in finder.SWEEP_TAGS:
             self.assertEqual(state["sweep"][tag], finder.iso(old))
 
+    def test_discovery_reserves_live_search_quota_when_200_available(self):
+        finder.budget = finder.Budget({})
+        finder.budget.run_cap = 200
+        finder.budget.run_used = 0
+        finder.budget.q["used"] = 0
+        state = {}
+        def sweep_once(*args):
+            self.assertEqual(finder.budget.run_left(), 100)
+            finder.budget.spend(100)
+        def live_once(*args):
+            self.assertEqual(finder.budget.run_left(), 100)
+            finder.budget.spend(100)
+            return "live:query"
+        with patch.object(finder, "sweep", side_effect=sweep_once) as sweep, \
+             patch.object(finder, "live_search", side_effect=live_once) as live:
+            result = finder.run_discovery_queries(state, {}, {})
+        self.assertEqual(result, "live:query")
+        sweep.assert_called_once()
+        live.assert_called_once()
+        self.assertEqual(finder.budget.run_cap, 200)
+
+    def test_low_quota_alternates_live_and_tag_discovery(self):
+        finder.budget = finder.Budget({})
+        finder.budget.q["used"] = 0
+        state = {}
+        with patch.object(finder, "sweep") as sweep, \
+             patch.object(finder, "live_search", return_value="live:query") as live:
+            finder.budget.run_cap = 150
+            self.assertEqual(finder.run_discovery_queries(state, {}, {}), "live:query")
+            finder.budget.run_cap = 150
+            self.assertIsNone(finder.run_discovery_queries(state, {}, {}))
+            finder.budget.run_cap = 150
+            self.assertEqual(finder.run_discovery_queries(state, {}, {}), "live:query")
+        self.assertEqual(live.call_count, 2)
+        sweep.assert_called_once()
+
+    def test_discovery_skips_both_searches_below_100_units(self):
+        finder.budget = finder.Budget({})
+        finder.budget.run_cap = 99
+        finder.budget.q["used"] = 0
+        with patch.object(finder, "sweep") as sweep, \
+             patch.object(finder, "live_search") as live:
+            self.assertIsNone(finder.run_discovery_queries({}, {}, {}))
+        sweep.assert_not_called()
+        live.assert_not_called()
+
     def test_live_query_diversity_does_not_increase_calls_per_run(self):
         # キーワード数を増やしても1実行あたり検索は1回のまま。
         self.assertGreater(len(finder.LIVE_PLAN), 12)
