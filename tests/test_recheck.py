@@ -296,6 +296,38 @@ class RecheckTests(unittest.TestCase):
         self.assertNotIn("UC_TEST", rejected)
         self.assertEqual(stats["recovered"], 1)
 
+    def test_unverified_live_is_unknown_then_eventually_offline(self):
+        rec = {"live": {"video_id": "abc12345678", "title": "Stream"},
+               "is_live": True}
+        for n in (1, 2):
+            finder.update_live_state(rec, None, {"abc12345678"}, {})
+            self.assertIsNone(rec["is_live"])
+            self.assertEqual(rec["live_verify_failures"], n)
+            self.assertIn("live", rec)
+        finder.update_live_state(rec, None, {"abc12345678"}, {})
+        self.assertIs(rec["is_live"], False)
+        self.assertNotIn("live", rec)
+        self.assertNotIn("live_verify_failures", rec)
+
+    def test_verified_live_resets_unknown_state(self):
+        rec = {"live": {"video_id": "abc12345678"}, "is_live": None,
+               "live_verify_failures": 2}
+        live = {"id": "abc12345678",
+                "snippet": {"title": "Still live", "thumbnails": {}},
+                "liveStreamingDetails": {"concurrentViewers": "42",
+                                         "actualStartTime": "2026-11-07T10:00:00Z"}}
+        finder.update_live_state(rec, live, {"abc12345678"}, {"abc12345678": live})
+        self.assertIs(rec["is_live"], True)
+        self.assertEqual(rec["live"]["viewers"], 42)
+        self.assertNotIn("live_verify_failures", rec)
+
+    def test_confirmed_ended_stream_is_offline_immediately(self):
+        rec = {"live": {"video_id": "abc12345678"}, "is_live": True}
+        finder.update_live_state(rec, None, {"abc12345678"},
+                                 {"abc12345678": {"snippet": {"liveBroadcastContent": "none"}}})
+        self.assertIs(rec["is_live"], False)
+        self.assertNotIn("live", rec)
+
     def test_hidden_subscribers_not_zero(self):
         db, state, rejected = {}, {}, {"UC_HIDDEN": finder.iso(finder.NOW)}
         with patch.object(finder, "fetch_channels", return_value={
