@@ -1,0 +1,37 @@
+name: Pull request tests
+
+on:
+  push:
+    branches: ['feature/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout pull request code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install requests
+      - name: Verify Python syntax
+        run: python -m compileall -q finder.py tests
+      - name: Run offline unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run JavaScript filter tests
+        run: node --test tests/test_filters.cjs
+      - name: Validate saved VTuber dataset
+        run: node --test tests/test_dataset.cjs
+      - name: Install browser-DOM test dependency
+        run: npm install --no-save --no-audit --no-fund jsdom@26
+      - name: Run DOM interaction tests
+        run: node --test tests/test_ui.cjs
