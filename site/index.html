@@ -134,6 +134,7 @@ footer p { margin: 0; }
     <div class="head-text">
       <div class="brand"><span class="lamp" aria-hidden="true"></span><h1>うぶごえライブ</h1></div>
       <p class="meta" id="meta">データを読み込んでいます…</p>
+      <p class="hint" id="freshnessWarning" role="status" hidden></p>
     </div>
     <div id="refreshBox" hidden>
       <button class="btn primary" id="refreshBtn" type="button">今すぐ更新</button>
@@ -229,6 +230,17 @@ footer p { margin: 0; }
     var h = Math.floor(m / 60);
     if (h < 24) return h + "時間" + (m % 60 ? (m % 60) + "分" : "");
     return Math.floor(h / 24) + "日";
+  }
+
+  // 時刻不明や最終更新から2時間以上のデータをライブの現況として扱わない。
+  function updateFreshness(updatedAt) {
+    var node = $("freshnessWarning");
+    var age = Date.now() - Date.parse(updatedAt);
+    var stale = !Number.isFinite(age) || age > 2 * 60 * 60 * 1000;
+    node.hidden = !stale;
+    node.textContent = stale
+      ? "データの更新が遅れています。配信中・同時接続者数は現在の状況と異なる可能性があります。"
+      : "";
   }
 
   function syncControls() {
@@ -334,9 +346,12 @@ footer p { margin: 0; }
     }).then(function (d) {
       data = d;
       $("meta").textContent = "最終更新 " + ago(d.updated_at) + "前";
+      updateFreshness(d.updated_at);
       render();
     }).catch(function () {
       $("meta").textContent = "データを読み込めませんでした。少し待ってから再読み込みしてください。";
+      $("freshnessWarning").hidden = false;
+      $("freshnessWarning").textContent = "最新データを確認できません。表示中の配信情報は古い可能性があります。";
     });
   }
 
