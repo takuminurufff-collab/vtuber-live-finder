@@ -435,12 +435,22 @@ footer p { margin: 0; }
           var fresh = run && new Date(run.created_at).getTime() >= started - 60000;
           if (fresh && run.status === "completed") {
             if (run.conclusion !== "success") return done("更新に失敗しました。GitHubのActions画面でエラーを確認してください。", true);
-            setStatus("反映を待っています…");
-            setTimeout(function () { load(requiredNewerThan).then(function (loaded) {
-              if (!loaded) return done("GitHubの更新は成功しましたが、最新データの反映を確認できませんでした。少し待ってページを再読み込みしてください。", true);
-              done("更新しました。");
-              setTimeout(function () { setStatus(""); }, 4000);
-            }); }, 20000);
+            setStatus("GitHubの更新が完了しました。公開データへの反映を確認しています…");
+            var verifyTries = 0;
+            (function verifyPublished() {
+              verifyTries++;
+              load(requiredNewerThan).then(function (loaded) {
+                if (loaded) {
+                  done("更新しました。");
+                  setTimeout(function () { setStatus(""); }, 4000);
+                } else if (verifyTries >= 12) {
+                  done("GitHubの更新は成功しましたが、公開データの反映を確認できませんでした。少し待ってページを再読み込みしてください。", true);
+                } else {
+                  setStatus("公開データの反映を待っています…（確認 " + verifyTries + "/12）");
+                  setTimeout(verifyPublished, 10000);
+                }
+              });
+            })();
           } else if (tries > 40) {
             done("時間がかかっています。少し待ってからページを再読み込みしてください。", true);
           } else setTimeout(poll, 8000);
