@@ -43,3 +43,14 @@ test("live records contain valid viewer counts, but unknown concurrent viewershi
 test("dataset records update timestamp for freshness messaging", () => {
   assert.ok(typeof data.updated_at === "string" && Number.isFinite(Date.parse(data.updated_at)));
 });
+
+test("live stream IDs are valid and not shared by multiple channels", () => {
+  const seen = new Set();
+  for (const channel of channels) {
+    if (!channel.is_live) continue;
+    const videoId = channel.live.video_id;
+    assert.match(videoId, /^[A-Za-z0-9_-]{11}$/, channel.id + ": invalid live video ID");
+    assert.ok(!seen.has(videoId), "Duplicate live stream: " + videoId);
+    seen.add(videoId);
+  }
+});
