@@ -210,3 +210,23 @@ class ApiQuotaTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class BudgetPacingTests(unittest.TestCase):
+    def test_five_minute_followup_does_not_get_hourly_allowance(self):
+        now = finder.NOW
+        state = {"last_run": finder.iso(now - finder.timedelta(minutes=5)),
+                 "quota": {"day": now.astimezone(finder.PT).date().isoformat(), "used": 0}}
+        budget = finder.Budget(state)
+        reset = finder.datetime.combine(now.astimezone(finder.PT).date() + finder.timedelta(days=1),
+                                        finder.datetime.min.time(), finder.PT)
+        hours_left = max((reset - now).total_seconds() / 3600, 1)
+        expected = int(finder.DAILY_BUDGET * min(1, (5 / 60) / hours_left))
+        self.assertLessEqual(budget.run_cap, expected + 1)
+
+    def test_hourly_run_still_receives_normal_allowance(self):
+        now = finder.NOW
+        state = {"last_run": finder.iso(now - finder.timedelta(hours=1)),
+                 "quota": {"day": now.astimezone(finder.PT).date().isoformat(), "used": 0}}
+        budget = finder.Budget(state)
+        self.assertGreater(budget.run_cap, 0)
