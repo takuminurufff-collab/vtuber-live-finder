@@ -240,7 +240,7 @@ footer p { margin: 0; }
 
   function passes(c) {
     if (f.st === "live" && !c.is_live) return false;
-    if (f.st === "off" && c.is_live) return false;
+    if (f.st === "off" && c.is_live !== false) return false;
     for (var i = 0; i < FIELDS.length; i++) {
       var k = FIELDS[i], min = f[k + "Min"], max = f[k + "Max"];
       if ((min === "" || min == null) && (max === "" || max == null)) continue;
@@ -269,7 +269,7 @@ footer p { margin: 0; }
       t.appendChild(el("span", "badge", c.live.viewers == null ? "LIVE" : "LIVE " + num(c.live.viewers) + "人"));
       if (c.live.started_at) t.appendChild(el("span", "elapsed", ago(c.live.started_at) + "経過"));
     } else {
-      t.appendChild(el("span", "badge", c.last_live_at ? "最終配信 " + ago(c.last_live_at) + "前" : "配信していません"));
+      t.appendChild(el("span", "badge", c.is_live == null ? "配信状況を確認中" : (c.last_live_at ? "最終配信 " + ago(c.last_live_at) + "前" : "配信していません")));
     }
     a.appendChild(t);
 
@@ -305,11 +305,12 @@ footer p { margin: 0; }
       "new": function (a, b) { return new Date(b.first_seen || 0) - new Date(a.first_seen || 0); }
     }[f.sort] || function () { return 0; };
     list.sort(cmp);
-    var total = data.channels.length, liveN = data.channels.filter(function (c) { return c.is_live; }).length;
+    var total = data.channels.length, liveN = data.channels.filter(function (c) { return c.is_live === true; }).length;
+    var unknownLiveN = data.channels.filter(function (c) { return c.is_live == null; }).length;
     var missingCounts = data.channels.filter(function (c) { return c.videos == null || c.shorts == null || c.lives == null; }).length;
     var privateSubscribers = data.channels.filter(function (c) { return c.subscribers == null; }).length;
     $("count").innerHTML = "";
-    $("count").append("蓄積 ", el("b", null, num(total)), " チャンネル（配信中 " + liveN + "）のうち、条件に合うのは ", el("b", null, num(list.length)), " 件");
+    $("count").append("蓄積 ", el("b", null, num(total)), " チャンネル（配信中 " + liveN + (unknownLiveN ? "・配信状況未確認 " + unknownLiveN : "") + "）のうち、条件に合うのは ", el("b", null, num(list.length)), " 件");
     $("dataQuality").textContent =
       (missingCounts ? "動画・Shorts・ライブ本数が未取得：" + num(missingCounts) + "件。 " : "") +
       (privateSubscribers ? "登録者数が非公開または未取得：" + num(privateSubscribers) + "件。 " : "") +
