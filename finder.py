@@ -112,7 +112,8 @@ class Budget:
         self.q = q
         remaining = max(0, DAILY_BUDGET - q["used"])
         last = parse_iso(state.get("last_run")) or NOW - timedelta(hours=1)
-        since = min(max((NOW - last).total_seconds() / 3600, 1), 24)
+        # Runs can occur minutes apart (scheduled + manual/push); do not grant each a full hour.
+        since = min(max((NOW - last).total_seconds() / 3600, 0), 24)
         reset = datetime.combine(NOW.astimezone(PT).date() + timedelta(days=1),
                                  datetime.min.time(), PT)
         left = max((reset - NOW).total_seconds() / 3600, 1)
