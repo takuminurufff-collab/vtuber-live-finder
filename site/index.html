@@ -348,10 +348,12 @@ footer p { margin: 0; }
       $("meta").textContent = "最終更新 " + ago(d.updated_at) + "前";
       updateFreshness(d.updated_at);
       render();
+      return true;
     }).catch(function () {
       $("meta").textContent = "データを読み込めませんでした。少し待ってから再読み込みしてください。";
       $("freshnessWarning").hidden = false;
       $("freshnessWarning").textContent = "最新データを確認できません。表示中の配信情報は古い可能性があります。";
+      return false;
     });
   }
 
@@ -413,7 +415,11 @@ footer p { margin: 0; }
           if (fresh && run.status === "completed") {
             if (run.conclusion !== "success") return done("更新に失敗しました。GitHubのActions画面でエラーを確認してください。", true);
             setStatus("反映を待っています…");
-            setTimeout(function () { load().then(function () { done("更新しました。"); setTimeout(function () { setStatus(""); }, 4000); }); }, 20000);
+            setTimeout(function () { load().then(function (loaded) {
+              if (!loaded) return done("GitHubの更新は成功しましたが、画面で最新データを読み込めませんでした。ページを再読み込みしてください。", true);
+              done("更新しました。");
+              setTimeout(function () { setStatus(""); }, 4000);
+            }); }, 20000);
           } else if (tries > 40) {
             done("時間がかかっています。少し待ってからページを再読み込みしてください。", true);
           } else setTimeout(poll, 8000);
