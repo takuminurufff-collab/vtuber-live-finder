@@ -70,3 +70,11 @@ test("live/off/all state filters work independently", () => {
   assert.equal(check({ st:"off" }, live), false);
   assert.equal(check({ st:"all" }, ordinary), true);
 });
+
+test("unverified livestream status is not incorrectly classified as offline", () => {
+  const unknown = { ...ordinary, is_live: null, live: { video_id: "abc12345678", viewers: 18 } };
+  assert.equal(check({ st: "off" }, unknown), false);
+  assert.equal(check({ st: "live" }, unknown), false);
+  assert.equal(check({ st: "all" }, unknown), true);
+  assert.equal(check({ st: "all", viewersMax: "100" }, unknown), false);
+});
