@@ -231,7 +231,7 @@ def sweep(state, found, stats):
             stats["videos"] += 1
 
     done_tags = set()
-    while budget.run_left() >= 200:
+    while budget.run_left() >= 100 and budget.day_left() >= 100:
         todo = [t for t in SWEEP_TAGS if t not in done_tags and
                 (t in pending or parse_iso(cursors[t]) < end)]
         if not todo:
@@ -633,16 +633,16 @@ def main():
     live_q = None
     count_metrics = {"attempted": 0, "complete": 0, "partial": 0, "resolved": 0, "quota_units": 0}
     try:
-        # 1回のAPI枠が250超のときだけ未取得本数を先行補完する。
-        # タグ検索に必要な200ユニット＋その他処理向け50ユニットを先に保護。
+        # 十分な残予算があるときだけ未取得本数を先行補完する。
+        # 探索の最低100ユニットに加え、後続処理へ余裕を残す。
         early_cap = min(EARLY_COUNTS_PER_RUN, max(0, (budget.run_left() - 250) // 3))
         counts_early = refresh_due_counts(db, max_channels=early_cap, metrics=count_metrics)
 
-        # 最新mainの「タグの総ざらい優先」を維持し、検索には最大限200ユニットを確保。
+        # タグ探索は1回100ユニット。これだけ残っていれば実行できるようにする。
         requested_reserve = (30 + len(db) // 40
                              + min(SNOWBALL_SECTIONS_PER_RUN + SNOWBALL_HANDLES_PER_RUN,
                                    budget.run_cap // 4))
-        reserve = min(requested_reserve, max(0, budget.run_left() - 200))
+        reserve = min(requested_reserve, max(0, budget.run_left() - 100))
         budget.run_cap -= reserve
         try:
             sweep(state, found, stats)
