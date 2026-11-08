@@ -372,6 +372,30 @@ class RecheckTests(unittest.TestCase):
             finder.recheck_rejected({}, {}, rejected, {"recovered": 0})
         self.assertEqual(len(fetch.call_args.args[0]), finder.RECHECK_REJECTED_PER_RUN)
 
+    def test_sweep_uses_remaining_100_units(self):
+        old = finder.NOW - finder.timedelta(hours=1)
+        state = {"sweep": {tag: finder.iso(old) for tag in finder.SWEEP_TAGS}}
+        finder.budget = FakeBudget(remaining=100)
+        stats = {"videos": 0, "slices": 0, "overflow": 0}
+
+        def one_search(params):
+            # 検索1回の100ユニットを使い切った状態を再現。
+            finder.budget.remaining -= 100
+            return {"items": [], "pageInfo": {"totalResults": 0}}
+
+        with patch.object(finder, "search_page", side_effect=one_search) as search:
+            finder.sweep(state, {}, stats)
+        search.assert_called_once()
+        self.assertEqual(stats["slices"], 1)
+        self.assertGreater(finder.parse_iso(state["sweep"][finder.SWEEP_TAGS[0]]), old)
+
+    def test_sweep_does_not_search_with_less_than_100_units(self):
+        finder.budget = FakeBudget(remaining=99)
+        state = {"sweep": {}}
+        with patch.object(finder, "search_page") as search:
+            finder.sweep(state, {}, {"videos": 0, "slices": 0, "overflow": 0})
+        search.assert_not_called()
+
     def test_old_discovery_cursor_is_not_discarded(self):
         # 3日以上の未検索期間でもカーソルを最新側に飛ばさない。
         old = finder.NOW - finder.timedelta(days=8)
