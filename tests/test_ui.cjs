@@ -107,3 +107,20 @@ test("hidden admin menu cannot appear before interaction", async () => {
     dom.window.close();
   }
 });
+
+test("unknown livestream status is labelled as unverified, not offline", async () => {
+  const unknown = { ...record(1), is_live: null, last_live_at: "2026-11-07T14:00:00Z",
+    live: { video_id: "abc12345678", title: "Unverified", viewers: 123 } };
+  const dom = await setup([unknown]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("st-all").click();
+    assert.equal(doc.querySelectorAll("a.card").length, 1);
+    assert.match(doc.querySelector("a.card .badge").textContent, /配信状況を確認中/);
+    assert.match(doc.getElementById("count").textContent, /配信状況未確認 1/);
+    doc.getElementById("st-off").click();
+    assert.equal(doc.querySelectorAll("a.card").length, 0);
+  } finally {
+    dom.window.close();
+  }
+});
