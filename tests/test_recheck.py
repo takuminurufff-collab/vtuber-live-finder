@@ -58,6 +58,47 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(metrics["quota_units"], 2)
         self.assertEqual(metrics.get("complete", 0), 0)
 
+    def test_one_missing_playlist_uses_only_one_api_request(self):
+        rec = {"videos": 14, "shorts": None, "lives": 3, "counts_at": None}
+        self.assertEqual(finder.count_refresh_cost(rec), 1)
+        with patch.object(finder, "playlist_total", return_value=8) as get:
+            finder.refresh_counts("UC123", rec)
+        get.assert_called_once_with("UUSH123")
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (14, 8, 3))
+        self.assertEqual(rec["counts_at"], finder.iso(finder.NOW))
+
+    def test_two_missing_playlists_use_only_two_requests(self):
+        rec = {"videos": None, "shorts": 4, "lives": None}
+        self.assertEqual(finder.count_refresh_cost(rec), 2)
+        with patch.object(finder, "playlist_total", side_effect=[7, 2]) as get:
+            finder.refresh_counts("UC123", rec)
+        self.assertEqual([c.args[0] for c in get.call_args_list], ["UULF123", "UULV123"])
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (7, 4, 2))
+
+    def test_stale_complete_counts_still_refresh_all_three(self):
+        rec = {"videos": 1, "shorts": 2, "lives": 3}
+        self.assertEqual(finder.count_refresh_cost(rec), 3)
+        with patch.object(finder, "playlist_total", side_effect=[2, 3, 4]) as get:
+            finder.refresh_counts("UC123", rec)
+        self.assertEqual(get.call_count, 3)
+        self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (2, 3, 4))
+
+    def test_single_missing_count_can_use_last_quota_unit(self):
+        finder.budget = FakeBudget(remaining=1)
+        rec = {"videos": 4, "shorts": None, "lives": 1}
+        with patch.object(finder, "playlist_total", return_value=0) as get:
+            self.assertEqual(finder.refresh_due_counts({"UC123": rec}), 1)
+        get.assert_called_once()
+        self.assertEqual(rec["shorts"], 0)
+
+    def test_partial_refresh_exception_does_not_write_known_or_attempt_timestamp(self):
+        rec = {"videos": 12, "shorts": None, "lives": 3, "counts_at": None}
+        original = rec.copy()
+        with patch.object(finder, "playlist_total", side_effect=RuntimeError("API error")):
+            with self.assertRaises(RuntimeError):
+                finder.refresh_counts("UC123", rec)
+        self.assertEqual(rec, original)
+
     def test_unavailable_playlist_is_unknown_not_zero(self):
         with patch.object(finder, "api_get", return_value=None):
             self.assertIsNone(finder.playlist_total("UUSHexample"))
