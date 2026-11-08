@@ -53,5 +53,25 @@ class ApiQuotaTests(unittest.TestCase):
         self.assertEqual(finder.budget.run_used, 0)
 
 
+    def test_count_refresh_tracks_units_when_second_playlist_fails(self):
+        finder.budget = FakeBudget()
+        finder.budget.run_left = finder.budget.day_left
+        db = {"UC" + "a" * 22: {"counts_at": None}}
+        metrics = {}
+        responses = [
+            Mock(status_code=200),
+            Mock(status_code=500, text="server error"),
+        ]
+        responses[0].json.return_value = {"pageInfo": {"totalResults": 5}}
+        responses[1].json.return_value = {"error": {"errors": [{"reason": "backendError"}]}}
+        with patch.object(finder.session, "get", side_effect=responses) as request:
+            with self.assertRaises(RuntimeError):
+                finder.refresh_due_counts(db, metrics=metrics)
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(metrics["quota_units"], 2)
+        self.assertEqual(finder.budget.run_used, 2)
+        self.assertNotIn("videos", db[next(iter(db))])
+        self.assertNotIn("counts_at", {k: v for k, v in db[next(iter(db))].items() if v is not None})
+
 if __name__ == "__main__":
     unittest.main()
