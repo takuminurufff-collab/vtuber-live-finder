@@ -615,6 +615,35 @@ def update_live_state(rec, live, checked_video_ids, videos):
         rec["is_live"] = False
 
 
+def run_discovery_queries(state, found, stats):
+    """限られたAPI予算をタグ探索とライブ発見に公平に割り当てる。
+
+    残り200以上では検索1回分をライブ発見に必ず確保する。
+    残り100〜199ではタグ探索とライブ発見を実行ごとに交互に行う。
+    """
+    remaining = min(budget.run_left(), budget.day_left())
+    if remaining < 100:
+        return None
+    if remaining < 200:
+        use_live = state.get("low_quota_live_next", True)
+        # 途中でAPIエラーが起きても次回は別経路を試せるよう先に保存する。
+        state["low_quota_live_next"] = not use_live
+        if use_live:
+            return live_search(state, found)
+        sweep(state, found, stats)
+        return None
+
+    # 先にタグを探索しても、ライブ検索の最低100ユニットを残す。
+    budget.run_cap -= 100
+    try:
+        sweep(state, found, stats)
+    finally:
+        budget.run_cap += 100
+    if budget.run_left() >= 100 and budget.day_left() >= 100:
+        return live_search(state, found)
+    return None
+
+
 def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -645,9 +674,7 @@ def main():
         reserve = min(requested_reserve, max(0, budget.run_left() - 100))
         budget.run_cap -= reserve
         try:
-            sweep(state, found, stats)
-            if budget.run_left() >= 100:
-                live_q = live_search(state, found)
+            live_q = run_discovery_queries(state, found, stats)
         finally:
             budget.run_cap += reserve
 
