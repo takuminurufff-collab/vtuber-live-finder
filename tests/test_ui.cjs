@@ -338,3 +338,36 @@ test("admin refresh reports success when the new dataset is actually loaded", as
     dom.window.close();
   }
 });
+
+
+test("malformed numeric totals cannot replace the current published cards", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const win = dom.window, doc = win.document;
+    doc.getElementById("st-all").click();
+    assert.equal(doc.querySelectorAll("a.card").length, 1);
+    win.fetch = async () => ({ ok: true, json: async () => ({
+      updated_at: "2026-11-08T15:11:04Z", channels: [{ ...record(2), subscribers: -10 }]
+    }) });
+    await win.eval("load()");
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(doc.querySelector(".card .name").textContent, "VTuber 1");
+    assert.equal(doc.getElementById("freshnessWarning").hidden, false);
+  } finally { dom.window.close(); }
+});
+
+test("malformed live records cannot replace the current published cards", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const win = dom.window, doc = win.document;
+    doc.getElementById("st-all").click();
+    win.fetch = async () => ({ ok: true, json: async () => ({
+      updated_at: "2026-11-08T15:11:04Z", channels: [{ ...record(2), is_live: true,
+        live: { video_id: "bad", viewers: -1 } }]
+    }) });
+    await win.eval("load()");
+    await new Promise(resolve => setImmediate(resolve));
+    assert.equal(doc.querySelector(".card .name").textContent, "VTuber 1");
+    assert.equal(doc.getElementById("freshnessWarning").hidden, false);
+  } finally { dom.window.close(); }
+});
