@@ -20,16 +20,17 @@ function record(i) {
   };
 }
 
-async function setup(channels) {
+async function setup(channels, updatedAt = "2026-11-07T15:11:04Z", nowAt = null) {
   const dom = new JSDOM(html, {
     url: "https://example.com/vtuber-live-finder/",
     runScripts: "outside-only",
   });
   const win = dom.window;
   win.setInterval = () => 0;
+  if (nowAt) win.Date.now = () => Date.parse(nowAt);
   win.fetch = async () => ({
     ok: true,
-    json: async () => ({ updated_at: "2026-11-07T15:11:04Z", channels }),
+    json: async () => ({ updated_at: updatedAt, channels }),
   });
   win.eval(script);
   // Allow the initial data.json fetch and render promises to complete.
@@ -120,6 +121,219 @@ test("unknown livestream status is labelled as unverified, not offline", async (
     assert.match(doc.getElementById("count").textContent, /配信状況未確認 1/);
     doc.getElementById("st-off").click();
     assert.equal(doc.querySelectorAll("a.card").length, 0);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("fresh data does not show a stale livestream warning", async () => {
+  const dom = await setup([record(1)], "2026-11-08T14:00:00Z", "2026-11-08T15:30:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, true);
+    assert.equal(notice.textContent, "");
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("data older than two hours warns that livestream status may be outdated", async () => {
+  const dom = await setup([record(1)], "2026-11-08T12:59:00Z", "2026-11-08T15:00:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, false);
+    assert.match(notice.textContent, /配信中・同時接続者数/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("invalid update timestamp is shown as uncertain rather than current", async () => {
+  const dom = await setup([record(1)], "not-a-date", "2026-11-08T15:00:00Z");
+  try {
+    const notice = dom.window.document.getElementById("freshnessWarning");
+    assert.equal(notice.hidden, false);
+    assert.match(notice.textContent, /データの更新が遅れています/);
+    assert.equal(dom.window.document.getElementById("meta").textContent, "最終更新日時を確認できません");
+    assert.doesNotMatch(dom.window.document.getElementById("meta").textContent, /NaN/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+async function simulateAdminRefresh(dom, failJson, previousPolls = 0, apiErrorPolls = 0) {
+  const win = dom.window;
+  const doc = win.document;
+  let runLookups = 0;
+  let datasetLookups = 0;
+  let dispatchedRequestId = null;
+  const fetchUrls = [];
+  win.setTimeout = (callback) => { callback(); return 0; };
+  const now = win.Date.now();
+  win.Date.now = () => now;
+  win.fetch = async (url, options) => {
+    fetchUrls.push(url);
+    if (url.includes("/dispatches")) {
+      assert.equal(options.method, "POST");
+      const payload = JSON.parse(options.body);
+      dispatchedRequestId = payload.inputs.request_id;
+      assert.ok(dispatchedRequestId.length > 10);
+      return { status: 204 };
+    }
+    if (url.includes("/actions/workflows/update.yml/runs?")) {
+      runLookups++;
+      if (runLookups <= apiErrorPolls) return { ok: false, status: 502 };
+      const isPrevious = runLookups <= apiErrorPolls + previousPolls;
+      const unrelated = {
+        id: 300, display_title: "配信データ更新 [another-person]",
+        created_at: new Date(now).toISOString(), status: "completed", conclusion: "failure",
+      };
+      const mine = {
+        id: 200, display_title: "配信データ更新 [" + dispatchedRequestId + "]",
+        created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
+      };
+      return {
+        ok: true,
+        json: async () => ({ workflow_runs: isPrevious ? [unrelated] : [unrelated, mine] }),
+      };
+    }
+    if (url.includes("data.json")) {
+      datasetLookups++;
+      if (failJson === true) throw new Error("network failed");
+      return { ok: true, json: async () => ({
+        updated_at: (failJson === "stale" || (failJson === "stale-then-fresh" && datasetLookups <= 2))
+          ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(),
+        channels: [record(1)],
+      }) };
+    }
+    throw new Error("Unexpected fetch: " + url);
+  };
+  doc.getElementById("token").value = "test-token";
+  doc.getElementById("saveToken").click();
+  doc.getElementById("refreshBtn").click();
+  for (let i = 0; i < 12; i++) {
+    await new Promise((resolve) => setImmediate(resolve));
+  }
+  doc.__refreshCounters = { runLookups, datasetLookups, fetchUrls, dispatchedRequestId };
+  return doc;
+}
+
+test("admin refresh reports JSON loading failure rather than false success", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, true);
+    const status = doc.getElementById("refreshStatus");
+    assert.match(status.textContent, /公開データの反映を確認できませんでした/);
+    assert.doesNotMatch(status.textContent, /^更新しました。$/);
+    assert.match(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh ignores a recently finished run from before dispatch", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false, 3);
+    assert.equal(doc.__refreshCounters.runLookups, 4);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin polls only the update workflow on main instead of unrelated actions", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    const runUrls = doc.__refreshCounters.fetchUrls.filter((url) => url.includes("/runs?"));
+    assert.ok(runUrls.length >= 1);
+    assert.ok(runUrls.every((url) =>
+      url.includes("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main")));
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin retries temporary GitHub runs API failures and still loads new data", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false, 0, 2);
+    assert.equal(doc.__refreshCounters.runLookups, 3);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin correlates its own request even when a newer unrelated run has failed", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    assert.ok(doc.__refreshCounters.dispatchedRequestId);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh never claims success while CDN serves unchanged JSON", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale");
+    const status = doc.getElementById("refreshStatus");
+    assert.match(status.textContent, /公開データの反映を確認できませんでした/);
+    assert.doesNotMatch(status.textContent, /更新しました/);
+    assert.match(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin keeps checking stale CDN data and succeeds after publication catches up", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale-then-fresh");
+    assert.equal(doc.__refreshCounters.datasetLookups, 3);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.match(doc.getElementById("meta").textContent, /最終更新/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin gives up after twelve stale dataset responses rather than polling forever", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale");
+    assert.equal(doc.__refreshCounters.datasetLookups, 12);
+    assert.match(doc.getElementById("refreshStatus").className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh reports success when the new dataset is actually loaded", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    const status = doc.getElementById("refreshStatus");
+    // Success toast is cleared by an immediate fake timeout.
+    assert.doesNotMatch(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.match(doc.getElementById("meta").textContent, /最終更新/);
+    assert.equal(doc.getElementById("freshnessWarning").hidden, true);
   } finally {
     dom.window.close();
   }

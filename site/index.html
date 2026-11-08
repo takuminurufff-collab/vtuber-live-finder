@@ -134,6 +134,7 @@ footer p { margin: 0; }
     <div class="head-text">
       <div class="brand"><span class="lamp" aria-hidden="true"></span><h1>うぶごえライブ</h1></div>
       <p class="meta" id="meta">データを読み込んでいます…</p>
+      <p class="hint" id="freshnessWarning" role="status" hidden></p>
     </div>
     <div id="refreshBox" hidden>
       <button class="btn primary" id="refreshBtn" type="button">今すぐ更新</button>
@@ -223,12 +224,25 @@ footer p { margin: 0; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function num(n) { return n == null ? "–" : Number(n).toLocaleString("ja-JP"); }
   function ago(iso) {
-    if (!iso) return "";
-    var m = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+    if (!iso) return null;
+    var when = Date.parse(iso);
+    if (!Number.isFinite(when)) return null;
+    var m = Math.max(0, Math.round((Date.now() - when) / 60000));
     if (m < 60) return m + "分";
     var h = Math.floor(m / 60);
     if (h < 24) return h + "時間" + (m % 60 ? (m % 60) + "分" : "");
     return Math.floor(h / 24) + "日";
+  }
+
+  // 時刻不明や最終更新から2時間以上のデータをライブの現況として扱わない。
+  function updateFreshness(updatedAt) {
+    var node = $("freshnessWarning");
+    var age = Date.now() - Date.parse(updatedAt);
+    var stale = !Number.isFinite(age) || age > 2 * 60 * 60 * 1000;
+    node.hidden = !stale;
+    node.textContent = stale
+      ? "データの更新が遅れています。配信中・同時接続者数は現在の状況と異なる可能性があります。"
+      : "";
   }
 
   function syncControls() {
@@ -327,16 +341,27 @@ footer p { margin: 0; }
     list.slice(0, shownLimit).forEach(function (c) { grid.appendChild(card(c)); });
   }
 
-  function load() {
+  function load(minUpdatedAt) {
     return fetch("data.json?t=" + Date.now()).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       return r.json();
     }).then(function (d) {
+      // 管理者の手動更新後は、更新前と同じJSONを最新として扱わない。
+      // 無効な更新日時も含め、配信キャッシュが古ければ失敗として知らせる。
+      if (minUpdatedAt != null && !(Date.parse(d.updated_at) > minUpdatedAt)) {
+        throw new Error("Dataset has not advanced");
+      }
       data = d;
-      $("meta").textContent = "最終更新 " + ago(d.updated_at) + "前";
+      var elapsed = ago(d.updated_at);
+      $("meta").textContent = elapsed == null ? "最終更新日時を確認できません" : "最終更新 " + elapsed + "前";
+      updateFreshness(d.updated_at);
       render();
+      return true;
     }).catch(function () {
       $("meta").textContent = "データを読み込めませんでした。少し待ってから再読み込みしてください。";
+      $("freshnessWarning").hidden = false;
+      $("freshnessWarning").textContent = "最新データを確認できません。表示中の配信情報は古い可能性があります。";
+      return false;
     });
   }
 
@@ -382,27 +407,57 @@ footer p { margin: 0; }
 
   $("refreshBtn").addEventListener("click", function () {
     var btn = $("refreshBtn"), started = Date.now();
+    var previousUpdatedAt = data ? Date.parse(data.updated_at) : NaN;
+    var requiredNewerThan = Number.isFinite(previousUpdatedAt) ? previousUpdatedAt : 0;
     btn.disabled = true; btn.innerHTML = '<span class="spin" aria-hidden="true"></span>更新中…';
     setStatus("YouTubeから取得しています。1〜3分かかります。");
     function done(msg, err) { btn.disabled = false; btn.textContent = "今すぐ更新"; setStatus(msg, err); }
 
-    gh("/actions/workflows/update.yml/dispatches", { method: "POST", body: { ref: "main" } }).then(function (r) {
+    // Actionsのdispatch応答にはrun IDがないため、入力した固有IDを
+    // workflowのrun-nameに埋め、同時実行でも自分の更新だけを追跡する。
+    var requestId = (window.crypto && window.crypto.randomUUID)
+      ? window.crypto.randomUUID() : Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+    var expectedTitle = "配信データ更新 [" + requestId + "]";
+    gh("/actions/workflows/update.yml/dispatches", {
+      method: "POST", body: { ref: "main", inputs: { request_id: requestId } }
+    }).then(function (r) {
       if (r.status === 401 || r.status === 403) throw new Error("トークンが無効か、Actionsの書き込み権限がありません。管理者メニューから保存し直してください。");
       if (r.status !== 204) throw new Error("更新を開始できませんでした（" + r.status + "）。");
       var tries = 0;
       (function poll() {
         tries++;
-        gh("/actions/runs?event=workflow_dispatch&per_page=1").then(function (r) { return r.json(); }).then(function (j) {
-          var run = j.workflow_runs && j.workflow_runs[0];
-          var fresh = run && new Date(run.created_at).getTime() > started - 60000;
+        gh("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main&per_page=30").then(function (r) {
+          if (!r.ok) throw new Error("更新履歴の取得に失敗しました");
+          return r.json();
+        }).then(function (j) {
+          var runs = j.workflow_runs || [];
+          var run = runs.find(function (r) { return r.display_title === expectedTitle; });
+          var fresh = run && new Date(run.created_at).getTime() >= started - 60000;
           if (fresh && run.status === "completed") {
             if (run.conclusion !== "success") return done("更新に失敗しました。GitHubのActions画面でエラーを確認してください。", true);
-            setStatus("反映を待っています…");
-            setTimeout(function () { load().then(function () { done("更新しました。"); setTimeout(function () { setStatus(""); }, 4000); }); }, 20000);
+            setStatus("GitHubの更新が完了しました。公開データへの反映を確認しています…");
+            var verifyTries = 0;
+            (function verifyPublished() {
+              verifyTries++;
+              load(requiredNewerThan).then(function (loaded) {
+                if (loaded) {
+                  done("更新しました。");
+                  setTimeout(function () { setStatus(""); }, 4000);
+                } else if (verifyTries >= 12) {
+                  done("GitHubの更新は成功しましたが、公開データの反映を確認できませんでした。少し待ってページを再読み込みしてください。", true);
+                } else {
+                  setStatus("公開データの反映を待っています…（確認 " + verifyTries + "/12）");
+                  setTimeout(verifyPublished, 10000);
+                }
+              });
+            })();
           } else if (tries > 40) {
             done("時間がかかっています。少し待ってからページを再読み込みしてください。", true);
           } else setTimeout(poll, 8000);
-        }).catch(function () { setTimeout(poll, 8000); });
+        }).catch(function () {
+          if (tries >= 40) return done("GitHubの実行状況を確認できませんでした。Actions画面をご確認ください。", true);
+          setTimeout(poll, 8000);
+        });
       })();
     }).catch(function (e) { done(e.message, true); });
   });
