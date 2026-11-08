@@ -795,6 +795,11 @@ def main():
     print(f"本数取得 試行{count_metrics['attempted']}件・全項目成功{count_metrics['complete']}件"
           f"・一部取得不能{count_metrics['partial']}件・未取得解消{count_metrics['resolved']}件"
           f"・本数取得API消費{count_metrics['quota_units']}ユニット")
+    # 取得効率は今回の成功数を分母にする。成功ゼロなら不明として表示する。
+    efficiency = (f"{count_metrics['quota_units'] / count_metrics['complete']:.1f}"
+                  if count_metrics['complete'] else "算出不可")
+    print(f"本数取得効率 全項目成功1件あたり{efficiency} APIユニット"
+          f"（成功{count_metrics['complete']}件、消費{count_metrics['quota_units']}ユニット）")
     _, eligible_counts, deferred_counts = counts_backlog(db)
     print(f"本数未取得 前回{missing_counts_before}件 → 現在{missing_counts_after}件"
           f" / 今すぐ試行可能{eligible_counts}件・24時間待機中{deferred_counts}件"
