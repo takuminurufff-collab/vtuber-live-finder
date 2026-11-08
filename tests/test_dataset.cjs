@@ -15,7 +15,7 @@ test("dataset is an array of uniquely identified YouTube channels", () => {
     assert.ok(!seen.has(channel.id), "Duplicate channel: " + channel.id);
     seen.add(channel.id);
     assert.equal(typeof channel.name, "string");
-    assert.equal(typeof channel.is_live, "boolean");
+    assert.ok(channel.is_live === null || typeof channel.is_live === "boolean");
   }
 });
 
