@@ -17,6 +17,7 @@ def make_channel(name, description, subscribers=12, hidden=False):
 class FakeBudget:
     def __init__(self, remaining=100):
         self.remaining = remaining
+        self.run_used = 0
 
     def run_left(self):
         return self.remaining
@@ -32,6 +33,30 @@ class RecheckTests(unittest.TestCase):
 
     def tearDown(self):
         finder.budget = self.old_budget
+
+    def test_count_quota_metrics_include_successful_requests(self):
+        rec = {"videos": None, "shorts": None, "lives": None}
+        metrics = {}
+        def refresh(_cid, record):
+            finder.budget.run_used += 3
+            record.update(videos=1, shorts=2, lives=3,
+                          counts_at=finder.iso(finder.NOW))
+        with patch.object(finder, "refresh_counts", side_effect=refresh):
+            self.assertEqual(finder.refresh_due_counts({"UC123": rec}, metrics=metrics), 1)
+        self.assertEqual(metrics["quota_units"], 3)
+        self.assertEqual(metrics["complete"], 1)
+
+    def test_count_quota_metrics_include_failed_requests(self):
+        rec = {"videos": None, "shorts": None, "lives": None}
+        metrics = {}
+        def fail(_cid, _rec):
+            finder.budget.run_used += 2
+            raise finder.QuotaExceeded()
+        with patch.object(finder, "refresh_counts", side_effect=fail):
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.refresh_due_counts({"UC123": rec}, metrics=metrics)
+        self.assertEqual(metrics["quota_units"], 2)
+        self.assertEqual(metrics.get("complete", 0), 0)
 
     def test_unavailable_playlist_is_unknown_not_zero(self):
         with patch.object(finder, "api_get", return_value=None):
