@@ -581,6 +581,40 @@ def refresh_due_counts(db, max_channels=None, metrics=None):
     return refreshed
 
 
+def update_live_state(rec, live, checked_video_ids, videos):
+    """取得不可のライブ動画をオフラインと誤判定しない。"""
+    was_live = bool(rec.get("live"))
+    if live:
+        d = live.get("liveStreamingDetails", {})
+        rec["live"] = {
+            "video_id": live["id"],
+            "title": live["snippet"]["title"],
+            "thumbnail": thumb(live["snippet"].get("thumbnails")),
+            "viewers": int(d["concurrentViewers"]) if "concurrentViewers" in d else None,
+            "started_at": d.get("actualStartTime"),
+        }
+        rec["is_live"] = True
+        rec.pop("live_verify_failures", None)
+        rec["last_live_at"] = iso(NOW)
+        if not was_live:
+            rec["counts_at"] = None  # 配信が始まったらライブ本数を数え直す
+    elif was_live and rec["live"]["video_id"] in checked_video_ids and rec["live"]["video_id"] not in videos:
+        # 動画情報が欠けていれば、配信終了と断定せず次回も検証する。
+        failures = rec.get("live_verify_failures", 0) + 1
+        rec["live_verify_failures"] = failures
+        if failures < 3:
+            rec["is_live"] = None
+        else:
+            # 削除・非公開で永続的に見つからない動画を3回で解除する。
+            rec.pop("live", None)
+            rec.pop("live_verify_failures", None)
+            rec["is_live"] = False
+    else:
+        rec.pop("live", None)
+        rec.pop("live_verify_failures", None)
+        rec["is_live"] = False
+
+
 def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -736,36 +770,7 @@ def main():
                     done.append(e["video_id"])
             rec["done"] = done[-20:]
 
-            was_live = bool(rec.get("live"))
-            if live:
-                d = live.get("liveStreamingDetails", {})
-                rec["live"] = {
-                    "video_id": live["id"],
-                    "title": live["snippet"]["title"],
-                    "thumbnail": thumb(live["snippet"].get("thumbnails")),
-                    "viewers": int(d["concurrentViewers"]) if "concurrentViewers" in d else None,
-                    "started_at": d.get("actualStartTime"),
-                }
-                rec["is_live"] = True
-                rec.pop("live_verify_failures", None)
-                rec["last_live_at"] = iso(NOW)
-                if not was_live:
-                    rec["counts_at"] = None  # 配信が始まったらライブ本数を数え直す
-            elif was_live and rec["live"]["video_id"] in check and rec["live"]["video_id"] not in videos:
-                # 動画情報が欠けていれば、配信終了と断定せず次回も検証する。
-                failures = rec.get("live_verify_failures", 0) + 1
-                rec["live_verify_failures"] = failures
-                if failures < 3:
-                    rec["is_live"] = None
-                else:
-                    # 削除・非公開で永続的に見つからない動画を3回で解除する。
-                    rec.pop("live", None)
-                    rec.pop("live_verify_failures", None)
-                    rec["is_live"] = False
-            else:
-                rec.pop("live", None)
-                rec.pop("live_verify_failures", None)
-                rec["is_live"] = False
+            update_live_state(rec, live, check, videos)
 
         # 最後に残ったAPI枠でも本数を更新する。先ほど更新した対象は除外される。
         counts_late = refresh_due_counts(db, metrics=count_metrics)
