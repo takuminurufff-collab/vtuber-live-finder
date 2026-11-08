@@ -1,10 +1,18 @@
 name: 配信データ更新
+# ブラウザからの手動更新は固有IDをrun-nameに付け、同時実行でも識別する。
+run-name: ${{ inputs.request_id && format('配信データ更新 [{0}]', inputs.request_id) || '配信データ更新' }}
 
 on:
   schedule:
     # 1時間おき（毎時23分・UTC）。API枠は finder.py が1日分を均等に配分する
     - cron: "23 * * * *"
   workflow_dispatch:   # ページの「今すぐ更新」ボタン、またはActions画面の「Run workflow」から実行
+    inputs:
+      request_id:
+        description: "手動更新の識別ID（ブラウザが自動設定）"
+        type: string
+        required: false
+        default: ""
   push:
     branches: [main]
     paths-ignore: ["data/**", "site/data.json"]
