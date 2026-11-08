@@ -379,27 +379,28 @@ def playlist_total(playlist_id):
     return data["pageInfo"]["totalResults"]
 
 
-def refresh_counts(ch_id, rec):
-    """3項目をすべて取得できた場合だけ更新する。
+def count_refresh_cost(rec):
+    """本数の欠損があれば欠損項目だけ、全件既知なら3項目を更新する。"""
+    missing = sum(rec.get(key) is None for key in ("videos", "shorts", "lives"))
+    return missing or 3
 
-    API枠超過・通信エラーなどが途中で発生しても、以前の値と更新日時を
-    一部だけ書き換えない。次回の更新で安全に再試行できる。
+
+def refresh_counts(ch_id, rec):
+    """欠損項目だけ補完する。完全な既存データは従来どおり全項目を再取得。
+
+    取得処理中の例外では既存データを変更しない。APIの「取得できない」
+    応答（None）は0件と混同せず、後日再試行する。
     """
     suffix = ch_id[2:]
-    videos = playlist_total("UULF" + suffix)  # 通常の動画
-    shorts = playlist_total("UUSH" + suffix)  # ショート
-    lives = playlist_total("UULV" + suffix)   # ライブ
-    # 取得不能な項目は既存の確定値を消さない。全項目が判明したときだけ
-    # 更新完了時刻を進め、未取得があれば次回も補完対象に残す。
-    values = {"videos": videos, "shorts": shorts, "lives": lives}
-    for key, value in values.items():
-        if value is not None:
-            rec[key] = value
-    # 一部取得不能でも既知の数値は保持するが、全項目を確認できた
-    # と誤認して更新日時を進めない。
-    if all(value is not None for value in values.values()):
+    playlists = {"videos": "UULF", "shorts": "UUSH", "lives": "UULV"}
+    incomplete = any(rec.get(key) is None for key in playlists)
+    targets = (key for key in playlists if not incomplete or rec.get(key) is None)
+    values = {key: playlist_total(playlists[key] + suffix) for key in targets}
+    # 例外なくリクエストを終えた場合だけ確定した値を反映する。
+    rec.update({key: value for key, value in values.items() if value is not None})
+    if all(rec.get(key) is not None for key in playlists) and all(
+            value is not None for value in values.values()):
         rec["counts_at"] = iso(NOW)
-    # API例外時はここまで到達しない。Noneを返した正常なAPI応答だけを抑制。
     rec["counts_attempt_at"] = iso(NOW)
 
 
@@ -556,9 +557,10 @@ def refresh_due_counts(db, max_channels=None, metrics=None):
     for cid in queue:
         if max_channels is not None and refreshed >= max_channels:
             break
-        if budget.run_left() < 3 or budget.day_left() < 3:
-            break
         rec = db[cid]
+        required_units = count_refresh_cost(rec)
+        if budget.run_left() < required_units or budget.day_left() < required_units:
+            break
         was_missing = any(rec.get(k) is None for k in ("videos", "shorts", "lives"))
         # 途中でAPI例外が発生しても、消費済みのクォータを計測する。
         units_before = budget.run_used
