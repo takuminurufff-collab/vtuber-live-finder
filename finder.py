@@ -210,8 +210,11 @@ def load(path, default):
     try:
         with open(path, encoding="utf-8") as f:
             return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
+    except FileNotFoundError:
         return default
+    except json.JSONDecodeError as exc:
+        # Existing state/channel data must never be silently replaced with an empty DB.
+        raise ValueError(f"保存済みJSONが破損しています: {path}") from exc
 
 
 # ---------- 1. 総ざらい ----------
