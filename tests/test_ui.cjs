@@ -201,7 +201,8 @@ async function simulateAdminRefresh(dom, failJson, previousPolls = 0, apiErrorPo
       datasetLookups++;
       if (failJson === true) throw new Error("network failed");
       return { ok: true, json: async () => ({
-        updated_at: failJson === "stale" ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(),
+        updated_at: (failJson === "stale" || (failJson === "stale-then-fresh" && datasetLookups <= 2))
+          ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(),
         channels: [record(1)],
       }) };
     }
@@ -222,7 +223,7 @@ test("admin refresh reports JSON loading failure rather than false success", asy
   try {
     const doc = await simulateAdminRefresh(dom, true);
     const status = doc.getElementById("refreshStatus");
-    assert.match(status.textContent, /最新データの反映を確認できませんでした/);
+    assert.match(status.textContent, /公開データの反映を確認できませんでした/);
     assert.doesNotMatch(status.textContent, /^更新しました。$/);
     assert.match(status.className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
@@ -289,9 +290,34 @@ test("admin refresh never claims success while CDN serves unchanged JSON", async
   try {
     const doc = await simulateAdminRefresh(dom, "stale");
     const status = doc.getElementById("refreshStatus");
-    assert.match(status.textContent, /最新データの反映を確認できませんでした/);
+    assert.match(status.textContent, /公開データの反映を確認できませんでした/);
     assert.doesNotMatch(status.textContent, /更新しました/);
     assert.match(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin keeps checking stale CDN data and succeeds after publication catches up", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale-then-fresh");
+    assert.equal(doc.__refreshCounters.datasetLookups, 3);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.match(doc.getElementById("meta").textContent, /最終更新/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin gives up after twelve stale dataset responses rather than polling forever", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale");
+    assert.equal(doc.__refreshCounters.datasetLookups, 12);
+    assert.match(doc.getElementById("refreshStatus").className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
   } finally {
     dom.window.close();
