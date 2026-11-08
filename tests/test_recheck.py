@@ -83,6 +83,18 @@ class RecheckTests(unittest.TestCase):
         self.assertEqual(get.call_count, 3)
         self.assertEqual((rec["videos"], rec["shorts"], rec["lives"]), (2, 3, 4))
 
+    def test_low_quota_skips_expensive_candidates_and_recovers_cheaper_one(self):
+        finder.budget = FakeBudget(remaining=1)
+        db = {
+            "UC_ALL_MISSING": {"videos": None, "shorts": None, "lives": None},
+            "UC_ONLY_SHORTS": {"videos": 3, "shorts": None, "lives": 2},
+        }
+        with patch.object(finder, "playlist_total", return_value=5) as get:
+            self.assertEqual(finder.refresh_due_counts(db), 1)
+        get.assert_called_once_with("UUSH_ONLY_SHORTS")
+        self.assertIsNone(db["UC_ALL_MISSING"]["videos"])
+        self.assertEqual(db["UC_ONLY_SHORTS"]["shorts"], 5)
+
     def test_single_missing_count_can_use_last_quota_unit(self):
         finder.budget = FakeBudget(remaining=1)
         rec = {"videos": 4, "shorts": None, "lives": 1}
