@@ -653,6 +653,24 @@ def run_discovery_queries(state, found, stats):
     return None
 
 
+def save_failed_run_quota():
+    """失敗時は消費API枠だけを保存し、未確定の探索位置は書き出さない。
+
+    通信済みリクエストの使用量を失わず、再実行時に動画探索の途中経過を
+    誤って飛ばさないため、ディスク上の既存stateを基準にする。
+    """
+    previous = load(STATE_PATH, {})
+    previous["quota"] = dict(budget.q)
+    temporary = STATE_PATH + ".quota-tmp"
+    try:
+        with open(temporary, "w", encoding="utf-8") as f:
+            json.dump(previous, f, ensure_ascii=False, indent=1, sort_keys=True)
+        os.replace(temporary, STATE_PATH)
+    finally:
+        if os.path.exists(temporary):
+            os.remove(temporary)
+
+
 def main():
     global budget
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
@@ -813,6 +831,11 @@ def main():
 
     except QuotaExceeded:
         print("APIの1日の上限に達したため、ここまでの結果で保存します。")
+    except Exception:
+        # APIタイムアウト等で今回の処理が中断されても、API消費量を失わない。
+        # 部分的なdbやsweep進捗は保存せず、例外は再送出してActionsを失敗扱いにする。
+        save_failed_run_quota()
+        raise
 
     state["last_run"] = iso(NOW)
     with open(DB_PATH, "w", encoding="utf-8") as f:
