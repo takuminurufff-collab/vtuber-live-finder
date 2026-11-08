@@ -176,7 +176,7 @@ async function simulateAdminRefresh(dom, failJson) {
     };
     if (url.includes("data.json")) {
       if (failJson) throw new Error("network failed");
-      return { ok: true, json: async () => ({ updated_at: new Date(now).toISOString(), channels: [record(1)] }) };
+      return { ok: true, json: async () => ({ updated_at: failJson === "stale" ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(), channels: [record(1)] }) };
     }
     throw new Error("Unexpected fetch: " + url);
   };
@@ -194,8 +194,22 @@ test("admin refresh reports JSON loading failure rather than false success", asy
   try {
     const doc = await simulateAdminRefresh(dom, true);
     const status = doc.getElementById("refreshStatus");
-    assert.match(status.textContent, /最新データを読み込めませんでした/);
+    assert.match(status.textContent, /最新データの反映を確認できませんでした/);
     assert.doesNotMatch(status.textContent, /^更新しました。$/);
+    assert.match(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh never claims success while CDN serves unchanged JSON", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, "stale");
+    const status = doc.getElementById("refreshStatus");
+    assert.match(status.textContent, /最新データの反映を確認できませんでした/);
+    assert.doesNotMatch(status.textContent, /更新しました/);
     assert.match(status.className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
   } finally {
