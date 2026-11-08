@@ -2073,11 +2073,11 @@
   "nktc_ktt": "UCReMH9KapHfHOtNQ4hIhhBA",
   "noah.yumesaki_vt": "UCPsQzfckd5SePjbUD5HkBCQ"
  },
- "last_run": "2026-11-08T05:00:42Z",
+ "last_run": "2026-11-08T05:20:42Z",
  "live_plan_index": 5,
  "quota": {
   "day": "2026-11-07",
-  "used": 8814
+  "used": 8996
  },
  "rejected": {
   "UC-223d-mqwq5s4Yc7Xd26Vg": "2026-11-07T18:07:41Z",
@@ -3531,10 +3531,45 @@
   "UCzwwIWJ50jpuke5QA-7hi5g": "2026-11-08T04:00:40Z",
   "UCzxvHSbp_1xJH0mB1nog0cQ": "2026-11-07T18:00:43Z"
  },
+ "rejected_rechecked": {
+  "UC-223d-mqwq5s4Yc7Xd26Vg": "2026-11-08T05:20:42Z",
+  "UC-3rTgZfsZhf1RdXr3DwPLg": "2026-11-08T05:20:42Z",
+  "UC-5WrLhfjMgrMdaEbcNLlaQ": "2026-11-08T05:20:42Z",
+  "UC-7eKNHqnzO19PGhx_J8K6Q": "2026-11-08T05:20:42Z",
+  "UC-7rSkqwl8DU9eCXpeFW0cQ": "2026-11-08T05:20:42Z",
+  "UC-DNdH2PB8s6pTCAtT_7PVw": "2026-11-08T05:20:42Z",
+  "UC-GJUnoyHEq8JtEKN-Q_09w": "2026-11-08T05:20:42Z",
+  "UC-M0Poxo4VXMxdIzinqWOig": "2026-11-08T05:20:42Z",
+  "UC-NN5cehnXjD_uGBtRFRolA": "2026-11-08T05:20:42Z",
+  "UC-O2c2Jkce-ASBOoYgZ2uSA": "2026-11-08T05:20:42Z",
+  "UC-PqlHOp_eLJH0OR2kiDaWw": "2026-11-08T05:20:42Z",
+  "UC-QS07-AlWBThfD12FnbQ8w": "2026-11-08T05:20:42Z",
+  "UC-TW5XiEDvlyPEyMZSz8Cxg": "2026-11-08T05:20:42Z",
+  "UC-YyR3w0F6hk5odN8wPYsMA": "2026-11-08T05:20:42Z",
+  "UC-ZbSrRhWKOfMHQRjS0xBqA": "2026-11-08T05:20:42Z",
+  "UC-ae939xSidrXdkeW_BNvzw": "2026-11-08T05:20:42Z",
+  "UC-bMhudwlpUvPeBryPlIDAA": "2026-11-08T05:20:42Z",
+  "UC-dphNmfzajY421b3up9SqA": "2026-11-08T05:20:42Z",
+  "UC-e1lt8mTbFmpKFfayjOLNA": "2026-11-08T05:20:42Z",
+  "UC-gwNC8Htw2sZvxs91wv5QQ": "2026-11-08T05:20:42Z",
+  "UC-iyI3By1DSnEItTsS-D2Qg": "2026-11-08T05:20:42Z",
+  "UC-jLanNIyZXL1BUdRJqHVEw": "2026-11-08T05:20:42Z",
+  "UC-mfUJB6F501yxh6HAQ3wdA": "2026-11-08T05:20:42Z",
+  "UC-omlpQfECZOZIvh-tQtLQQ": "2026-11-08T05:20:42Z",
+  "UC-xAh7A1q9nBqqX7ScWg53w": "2026-11-08T05:20:42Z"
+ },
  "sweep": {
   "#Vtuber準備中": "2026-11-08T02:50:44Z",
   "#個人勢Vtuber": "2026-11-08T01:22:31Z",
   "#新人Vtuber": "2026-11-08T00:50:42Z",
   "#新人Vtuberを発掘せよ": "2026-11-08T01:50:43Z"
+ },
+ "sweep_pending": {
+  "#新人Vtuber": {
+   "next_page": "CDIQAA",
+   "pages": 1,
+   "start": "2026-11-08T00:50:42Z",
+   "stop": "2026-11-08T05:10:42Z"
+  }
  }
 }
