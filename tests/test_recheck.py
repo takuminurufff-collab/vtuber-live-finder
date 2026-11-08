@@ -191,7 +191,7 @@ class RecheckTests(unittest.TestCase):
         finder.budget = FakeBudget(remaining=100)
         with patch.object(finder, "playlist_total", side_effect=[1, 2, 3, None, 4, 5]):
             self.assertEqual(finder.refresh_due_counts(db, metrics=metrics), 2)
-        self.assertEqual(metrics, {"attempted": 2, "complete": 1,
+        self.assertEqual(metrics, {"quota_units": 0, "attempted": 2, "complete": 1,
                                    "partial": 1, "resolved": 1})
 
     def test_count_metrics_do_not_report_api_exception_as_success(self):
@@ -201,7 +201,7 @@ class RecheckTests(unittest.TestCase):
         with patch.object(finder, "playlist_total", side_effect=RuntimeError("API failed")):
             with self.assertRaises(RuntimeError):
                 finder.refresh_due_counts(db, metrics=metrics)
-        self.assertEqual(metrics, {})
+        self.assertEqual(metrics, {"quota_units": 0})
 
     def test_backlog_distinguishes_eligible_and_retry_cooldown(self):
         now = finder.NOW
