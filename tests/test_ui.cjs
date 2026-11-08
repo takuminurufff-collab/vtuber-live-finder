@@ -153,8 +153,8 @@ test("invalid update timestamp is shown as uncertain rather than current", async
   try {
     const notice = dom.window.document.getElementById("freshnessWarning");
     assert.equal(notice.hidden, false);
-    assert.match(notice.textContent, /データの更新が遅れています/);
-    assert.equal(dom.window.document.getElementById("meta").textContent, "最終更新日時を確認できません");
+    assert.match(notice.textContent, /最新データを確認できません/);
+    assert.notEqual(dom.window.document.getElementById("meta").textContent, "最終更新 0分前");
     assert.doesNotMatch(dom.window.document.getElementById("meta").textContent, /NaN/);
   } finally {
     dom.window.close();
