@@ -33,8 +33,17 @@ jobs:
 
       - run: pip install requests
 
-      - name: 変更内容の単体テスト
+      - name: Python構文を検証
+        run: python -m compileall -q finder.py tests
+
+      - name: Python単体テスト
         run: python -m unittest discover -s tests -v
+
+      - name: ブラウザ検索と保存データを検証
+        run: |
+          node --test tests/test_filters.cjs tests/test_dataset.cjs
+          npm install --no-save --no-audit --no-fund jsdom@26
+          node --test tests/test_ui.cjs
 
       - name: YouTubeから取得
         env:
@@ -49,8 +58,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/channels.json data/state.json site/data.json
           git diff --cached --quiet || git commit -m "データ更新 $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase -X theirs origin main || true
-          git push origin HEAD:main || true
+          # 更新失敗を隠すと、古いデータのまま正常終了と誤表示される。
+          # 競合時はデプロイせず失敗として通知する。
+          git pull --rebase -X theirs origin main
+          git push origin HEAD:main
 
       - uses: actions/upload-pages-artifact@v3
         with:
