@@ -341,11 +341,16 @@ footer p { margin: 0; }
     list.slice(0, shownLimit).forEach(function (c) { grid.appendChild(card(c)); });
   }
 
-  function load() {
+  function load(minUpdatedAt) {
     return fetch("data.json?t=" + Date.now()).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       return r.json();
     }).then(function (d) {
+      // 管理者の手動更新後は、更新前と同じJSONを最新として扱わない。
+      // 無効な更新日時も含め、配信キャッシュが古ければ失敗として知らせる。
+      if (minUpdatedAt != null && !(Date.parse(d.updated_at) > minUpdatedAt)) {
+        throw new Error("Dataset has not advanced");
+      }
       data = d;
       var elapsed = ago(d.updated_at);
       $("meta").textContent = elapsed == null ? "最終更新日時を確認できません" : "最終更新 " + elapsed + "前";
@@ -402,6 +407,8 @@ footer p { margin: 0; }
 
   $("refreshBtn").addEventListener("click", function () {
     var btn = $("refreshBtn"), started = Date.now();
+    var previousUpdatedAt = data ? Date.parse(data.updated_at) : NaN;
+    var requiredNewerThan = Number.isFinite(previousUpdatedAt) ? previousUpdatedAt : 0;
     btn.disabled = true; btn.innerHTML = '<span class="spin" aria-hidden="true"></span>更新中…';
     setStatus("YouTubeから取得しています。1〜3分かかります。");
     function done(msg, err) { btn.disabled = false; btn.textContent = "今すぐ更新"; setStatus(msg, err); }
@@ -418,8 +425,8 @@ footer p { margin: 0; }
           if (fresh && run.status === "completed") {
             if (run.conclusion !== "success") return done("更新に失敗しました。GitHubのActions画面でエラーを確認してください。", true);
             setStatus("反映を待っています…");
-            setTimeout(function () { load().then(function (loaded) {
-              if (!loaded) return done("GitHubの更新は成功しましたが、画面で最新データを読み込めませんでした。ページを再読み込みしてください。", true);
+            setTimeout(function () { load(requiredNewerThan).then(function (loaded) {
+              if (!loaded) return done("GitHubの更新は成功しましたが、最新データの反映を確認できませんでした。少し待ってページを再読み込みしてください。", true);
               done("更新しました。");
               setTimeout(function () { setStatus(""); }, 4000);
             }); }, 20000);
