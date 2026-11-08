@@ -158,3 +158,60 @@ test("invalid update timestamp is shown as uncertain rather than current", async
     dom.window.close();
   }
 });
+
+async function simulateAdminRefresh(dom, failJson) {
+  const win = dom.window;
+  const doc = win.document;
+  win.setTimeout = (callback) => { callback(); return 0; };
+  const now = win.Date.now();
+  win.Date.now = () => now;
+  win.fetch = async (url) => {
+    if (url.includes("/dispatches")) return { status: 204 };
+    if (url.includes("/actions/runs?")) return {
+      json: async () => ({ workflow_runs: [{
+        created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
+      }] }),
+    };
+    if (url.includes("data.json")) {
+      if (failJson) throw new Error("network failed");
+      return { ok: true, json: async () => ({ updated_at: new Date(now).toISOString(), channels: [record(1)] }) };
+    }
+    throw new Error("Unexpected fetch: " + url);
+  };
+  doc.getElementById("token").value = "test-token";
+  doc.getElementById("saveToken").click();
+  doc.getElementById("refreshBtn").click();
+  for (let i = 0; i < 10; i++) {
+    await new Promise((resolve) => setImmediate(resolve));
+  }
+  return doc;
+}
+
+test("admin refresh reports JSON loading failure rather than false success", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, true);
+    const status = doc.getElementById("refreshStatus");
+    assert.match(status.textContent, /最新データを読み込めませんでした/);
+    assert.doesNotMatch(status.textContent, /^更新しました。$/);
+    assert.match(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh reports success when the new dataset is actually loaded", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    const status = doc.getElementById("refreshStatus");
+    // Success toast is cleared by an immediate fake timeout.
+    assert.doesNotMatch(status.className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.match(doc.getElementById("meta").textContent, /最終更新/);
+    assert.equal(doc.getElementById("freshnessWarning").hidden, true);
+  } finally {
+    dom.window.close();
+  }
+});
