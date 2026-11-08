@@ -224,8 +224,10 @@ footer p { margin: 0; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function num(n) { return n == null ? "–" : Number(n).toLocaleString("ja-JP"); }
   function ago(iso) {
-    if (!iso) return "";
-    var m = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+    if (!iso) return null;
+    var when = Date.parse(iso);
+    if (!Number.isFinite(when)) return null;
+    var m = Math.max(0, Math.round((Date.now() - when) / 60000));
     if (m < 60) return m + "分";
     var h = Math.floor(m / 60);
     if (h < 24) return h + "時間" + (m % 60 ? (m % 60) + "分" : "");
@@ -345,7 +347,8 @@ footer p { margin: 0; }
       return r.json();
     }).then(function (d) {
       data = d;
-      $("meta").textContent = "最終更新 " + ago(d.updated_at) + "前";
+      var elapsed = ago(d.updated_at);
+      $("meta").textContent = elapsed == null ? "最終更新日時を確認できません" : "最終更新 " + elapsed + "前";
       updateFreshness(d.updated_at);
       render();
       return true;
