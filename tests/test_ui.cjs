@@ -338,3 +338,23 @@ test("admin refresh reports success when the new dataset is actually loaded", as
     dom.window.close();
   }
 });
+
+
+test("malformed numeric totals are rejected before rendering", async () => {
+  const dom = await setup([{ ...record(1), subscribers: -10 }]);
+  try {
+    const doc = dom.window.document;
+    assert.equal(doc.querySelectorAll("a.card").length, 0);
+    assert.equal(doc.getElementById("freshnessWarning").hidden, false);
+  } finally { dom.window.close(); }
+});
+
+test("malformed live records are rejected before rendering", async () => {
+  const dom = await setup([{ ...record(1), is_live: true,
+    live: { video_id: "bad", viewers: -1 } }]);
+  try {
+    const doc = dom.window.document;
+    assert.equal(doc.querySelectorAll("a.card").length, 0);
+    assert.equal(doc.getElementById("freshnessWarning").hidden, false);
+  } finally { dom.window.close(); }
+});
