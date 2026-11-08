@@ -416,7 +416,7 @@ footer p { margin: 0; }
     // dispatch APIは実行IDを返さないため、開始前の最新run IDを覚える。
     // 直前の別の手動実行を自分の更新成功と取り違えないようにする。
     var previousRunId = 0;
-    gh("/actions/runs?event=workflow_dispatch&per_page=1").then(function (r) {
+    gh("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main&per_page=1").then(function (r) {
       if (!r.ok) throw new Error("更新履歴を確認できませんでした。再度お試しください。");
       return r.json();
     }).then(function (j) {
@@ -429,7 +429,10 @@ footer p { margin: 0; }
       var tries = 0;
       (function poll() {
         tries++;
-        gh("/actions/runs?event=workflow_dispatch&per_page=1").then(function (r) { return r.json(); }).then(function (j) {
+        gh("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main&per_page=1").then(function (r) {
+          if (!r.ok) throw new Error("更新履歴の取得に失敗しました");
+          return r.json();
+        }).then(function (j) {
           var run = j.workflow_runs && j.workflow_runs[0];
           var fresh = run && Number(run.id) > previousRunId && new Date(run.created_at).getTime() >= started - 60000;
           if (fresh && run.status === "completed") {
@@ -443,7 +446,10 @@ footer p { margin: 0; }
           } else if (tries > 40) {
             done("時間がかかっています。少し待ってからページを再読み込みしてください。", true);
           } else setTimeout(poll, 8000);
-        }).catch(function () { setTimeout(poll, 8000); });
+        }).catch(function () {
+          if (tries >= 40) return done("GitHubの実行状況を確認できませんでした。Actions画面をご確認ください。", true);
+          setTimeout(poll, 8000);
+        });
       })();
     }).catch(function (e) { done(e.message, true); });
   });
