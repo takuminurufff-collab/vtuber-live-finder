@@ -351,6 +351,15 @@ footer p { margin: 0; }
       if (minUpdatedAt != null && !(Date.parse(d.updated_at) > minUpdatedAt)) {
         throw new Error("Dataset has not advanced");
       }
+      // A successful HTTP response is not necessarily a usable dataset.
+      // Keep the last valid cards visible if publication is partial or malformed.
+      if (!d || !Array.isArray(d.channels) || !Number.isFinite(Date.parse(d.updated_at)) ||
+          d.channels.some(function (c) {
+            return !c || typeof c.id !== "string" || !/^UC[A-Za-z0-9_-]{22}$/.test(c.id) ||
+              typeof c.name !== "string";
+          })) {
+        throw new Error("Invalid published dataset");
+      }
       data = d;
       var elapsed = ago(d.updated_at);
       $("meta").textContent = elapsed == null ? "最終更新日時を確認できません" : "最終更新 " + elapsed + "前";
