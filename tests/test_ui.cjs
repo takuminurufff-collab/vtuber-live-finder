@@ -161,21 +161,30 @@ test("invalid update timestamp is shown as uncertain rather than current", async
   }
 });
 
-async function simulateAdminRefresh(dom, failJson) {
+async function simulateAdminRefresh(dom, failJson, previousPolls = 0) {
   const win = dom.window;
   const doc = win.document;
+  let runLookups = 0;
+  let datasetLookups = 0;
   win.setTimeout = (callback) => { callback(); return 0; };
   const now = win.Date.now();
   win.Date.now = () => now;
   win.fetch = async (url) => {
     if (url.includes("/dispatches")) return { status: 204 };
-    if (url.includes("/actions/runs?")) return {
-      json: async () => ({ workflow_runs: [{
-        created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
-      }] }),
-    };
+    if (url.includes("/actions/runs?")) {
+      runLookups++;
+      const isPrevious = runLookups === 1 || runLookups <= previousPolls + 1;
+      return {
+        ok: true,
+        json: async () => ({ workflow_runs: [{
+          id: isPrevious ? 100 : 101,
+          created_at: new Date(now).toISOString(), status: "completed", conclusion: "success",
+        }] }),
+      };
+    }
     if (url.includes("data.json")) {
-      if (failJson) throw new Error("network failed");
+      datasetLookups++;
+      if (failJson === true) throw new Error("network failed");
       return { ok: true, json: async () => ({ updated_at: failJson === "stale" ? "2026-11-07T15:11:04Z" : new Date(now).toISOString(), channels: [record(1)] }) };
     }
     throw new Error("Unexpected fetch: " + url);
@@ -186,6 +195,7 @@ async function simulateAdminRefresh(dom, failJson) {
   for (let i = 0; i < 10; i++) {
     await new Promise((resolve) => setImmediate(resolve));
   }
+  doc.__refreshCounters = { runLookups, datasetLookups };
   return doc;
 }
 
@@ -198,6 +208,19 @@ test("admin refresh reports JSON loading failure rather than false success", asy
     assert.doesNotMatch(status.textContent, /^更新しました。$/);
     assert.match(status.className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin refresh ignores a recently finished run from before dispatch", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false, 3);
+    assert.equal(doc.__refreshCounters.runLookups, 5);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
   } finally {
     dom.window.close();
   }
