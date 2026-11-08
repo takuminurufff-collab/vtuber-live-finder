@@ -747,11 +747,24 @@ def main():
                     "started_at": d.get("actualStartTime"),
                 }
                 rec["is_live"] = True
+                rec.pop("live_verify_failures", None)
                 rec["last_live_at"] = iso(NOW)
                 if not was_live:
                     rec["counts_at"] = None  # 配信が始まったらライブ本数を数え直す
+            elif was_live and rec["live"]["video_id"] in check and rec["live"]["video_id"] not in videos:
+                # 動画情報が欠けていれば、配信終了と断定せず次回も検証する。
+                failures = rec.get("live_verify_failures", 0) + 1
+                rec["live_verify_failures"] = failures
+                if failures < 3:
+                    rec["is_live"] = None
+                else:
+                    # 削除・非公開で永続的に見つからない動画を3回で解除する。
+                    rec.pop("live", None)
+                    rec.pop("live_verify_failures", None)
+                    rec["is_live"] = False
             else:
                 rec.pop("live", None)
+                rec.pop("live_verify_failures", None)
                 rec["is_live"] = False
 
         # 最後に残ったAPI枠でも本数を更新する。先ほど更新した対象は除外される。
@@ -773,7 +786,7 @@ def main():
         item = {"id": cid, "name": html.unescape(r["name"]), "icon": r.get("icon"),
                 "subscribers": r.get("subscribers"), "videos": r.get("videos"),
                 "shorts": r.get("shorts"), "lives": r.get("lives"),
-                "is_live": bool(r.get("is_live")), "last_live_at": r.get("last_live_at"),
+                "is_live": r.get("is_live", False), "last_live_at": r.get("last_live_at"),
                 "first_seen": r.get("first_seen")}
         if r.get("live"):
             item["live"] = dict(r["live"], title=html.unescape(r["live"]["title"] or ""))
