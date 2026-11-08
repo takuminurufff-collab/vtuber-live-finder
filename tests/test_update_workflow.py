@@ -10,6 +10,13 @@ WORKFLOW = (pathlib.Path(__file__).resolve().parents[1]
 
 
 class UpdateWorkflowSafetyTests(unittest.TestCase):
+    def test_unique_manual_request_id_is_exposed_in_run_title(self):
+        self.assertIn("run-name:", WORKFLOW)
+        self.assertIn("inputs.request_id", WORKFLOW)
+        self.assertIn("request_id:", WORKFLOW)
+        self.assertIn("type: string", WORKFLOW)
+        self.assertIn("required: false", WORKFLOW)
+
     def test_both_update_paths_require_fresh_main_before_push(self):
         self.assertEqual(WORKFLOW.count("git fetch origin main"), 2)
         self.assertEqual(
