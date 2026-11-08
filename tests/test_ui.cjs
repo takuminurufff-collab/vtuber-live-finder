@@ -161,18 +161,21 @@ test("invalid update timestamp is shown as uncertain rather than current", async
   }
 });
 
-async function simulateAdminRefresh(dom, failJson, previousPolls = 0) {
+async function simulateAdminRefresh(dom, failJson, previousPolls = 0, apiErrorPolls = 0) {
   const win = dom.window;
   const doc = win.document;
   let runLookups = 0;
   let datasetLookups = 0;
+  const fetchUrls = [];
   win.setTimeout = (callback) => { callback(); return 0; };
   const now = win.Date.now();
   win.Date.now = () => now;
   win.fetch = async (url) => {
+    fetchUrls.push(url);
     if (url.includes("/dispatches")) return { status: 204 };
-    if (url.includes("/actions/runs?")) {
+    if (url.includes("/actions/workflows/update.yml/runs?")) {
       runLookups++;
+      if (runLookups > 1 && runLookups <= apiErrorPolls + 1) return { ok: false, status: 502 };
       const isPrevious = runLookups === 1 || runLookups <= previousPolls + 1;
       return {
         ok: true,
@@ -195,7 +198,7 @@ async function simulateAdminRefresh(dom, failJson, previousPolls = 0) {
   for (let i = 0; i < 10; i++) {
     await new Promise((resolve) => setImmediate(resolve));
   }
-  doc.__refreshCounters = { runLookups, datasetLookups };
+  doc.__refreshCounters = { runLookups, datasetLookups, fetchUrls };
   return doc;
 }
 
@@ -221,6 +224,33 @@ test("admin refresh ignores a recently finished run from before dispatch", async
     assert.equal(doc.__refreshCounters.datasetLookups, 1);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
     assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin polls only the update workflow on main instead of unrelated actions", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false);
+    const runUrls = doc.__refreshCounters.fetchUrls.filter((url) => url.includes("/runs?"));
+    assert.ok(runUrls.length >= 2);
+    assert.ok(runUrls.every((url) =>
+      url.includes("/actions/workflows/update.yml/runs?event=workflow_dispatch&branch=main")));
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
+  } finally {
+    dom.window.close();
+  }
+});
+
+test("admin retries temporary GitHub runs API failures and still loads new data", async () => {
+  const dom = await setup([record(1)]);
+  try {
+    const doc = await simulateAdminRefresh(dom, false, 0, 2);
+    assert.equal(doc.__refreshCounters.runLookups, 4);
+    assert.equal(doc.__refreshCounters.datasetLookups, 1);
+    assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
+    assert.equal(doc.getElementById("refreshBtn").disabled, false);
   } finally {
     dom.window.close();
   }
