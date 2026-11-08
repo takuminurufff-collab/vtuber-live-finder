@@ -30,6 +30,35 @@ class ApiQuotaTests(unittest.TestCase):
     def tearDown(self):
         finder.budget = self.old_budget
 
+    def test_timeout_is_accounted_as_possible_api_usage(self):
+        # The server may have accepted the request despite a client timeout.
+        finder.budget = FakeBudget(remaining=500)
+        finder.budget.run_limit = 100
+        with patch.object(finder.session, "get", side_effect=finder.requests.Timeout("timeout")) as request:
+            with self.assertRaises(finder.requests.Timeout):
+                finder.api_get("search", {"q": "Vtuber"}, cost=100)
+        request.assert_called_once()
+        self.assertEqual(finder.budget.run_used, 100)
+        self.assertEqual(finder.budget.q["used"], 100)
+        self.assertEqual(finder.budget.run_left(), 0)
+
+    def test_connection_failure_conservatively_tracks_attempted_unit(self):
+        finder.budget = FakeBudget(remaining=30)
+        finder.budget.run_limit = 1
+        with patch.object(finder.session, "get", side_effect=finder.requests.ConnectionError("disconnected")):
+            with self.assertRaises(finder.requests.ConnectionError):
+                finder.api_get("playlistItems", {"playlistId": "UULFexample"}, cost=1)
+        self.assertEqual(finder.budget.run_used, 1)
+
+    def test_preflight_rejection_does_not_charge_failed_network_attempt(self):
+        finder.budget = FakeBudget(remaining=500)
+        finder.budget.run_limit = 99
+        with patch.object(finder.session, "get") as request:
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.api_get("search", {"q": "Vtuber"}, cost=100)
+        request.assert_not_called()
+        self.assertEqual(finder.budget.run_used, 0)
+
     def test_missing_playlist_still_consumes_one_unit(self):
         response = Mock(status_code=404)
         with patch.object(finder.session, "get", return_value=response) as request:
