@@ -230,3 +230,43 @@ class BudgetPacingTests(unittest.TestCase):
                  "quota": {"day": now.astimezone(finder.PT).date().isoformat(), "used": 0}}
         budget = finder.Budget(state)
         self.assertGreater(budget.run_cap, 0)
+
+
+class PersistentDataSafetyTests(unittest.TestCase):
+    def test_missing_json_uses_default(self):
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertEqual(finder.load(os.path.join(directory, "missing.json"), {"ok": True}), {"ok": True})
+
+    def test_corrupt_json_does_not_get_replaced_with_empty_data(self):
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "channels.json")
+            original = '{"UCabc":'
+            with open(path, "w", encoding="utf-8") as output:
+                output.write(original)
+            with self.assertRaisesRegex(ValueError, "破損"):
+                finder.load(path, {})
+            with open(path, encoding="utf-8") as source:
+                self.assertEqual(source.read(), original)
+
+    def test_failed_run_checkpoint_refuses_to_overwrite_corrupt_state(self):
+        import os
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "state.json")
+            original = '{broken json'
+            with open(path, "w", encoding="utf-8") as output:
+                output.write(original)
+            previous_budget = finder.budget
+            try:
+                finder.budget = FakeBudget()
+                with patch.object(finder, "STATE_PATH", path):
+                    with self.assertRaises(ValueError):
+                        finder.save_failed_run_quota()
+                with open(path, encoding="utf-8") as source:
+                    self.assertEqual(source.read(), original)
+            finally:
+                finder.budget = previous_budget
