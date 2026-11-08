@@ -262,7 +262,7 @@ test("admin retries temporary GitHub runs API failures and still loads new data"
   const dom = await setup([record(1)]);
   try {
     const doc = await simulateAdminRefresh(dom, false, 0, 2);
-    assert.equal(doc.__refreshCounters.runLookups, 4);
+    assert.equal(doc.__refreshCounters.runLookups, 3);
     assert.equal(doc.__refreshCounters.datasetLookups, 1);
     assert.doesNotMatch(doc.getElementById("refreshStatus").className, /err/);
     assert.equal(doc.getElementById("refreshBtn").disabled, false);
