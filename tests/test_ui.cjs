@@ -415,7 +415,7 @@ test("unknown last livestream time never renders null before", async () => {
     doc.getElementById("st-all").click();
     const labels = [...doc.querySelectorAll(".card .badge")].map(e => e.textContent);
     assert.equal(labels.length, 2);
-    assert.ok(labels.every(label => label === "最終配信時刻不明"));
+    assert.deepEqual(labels, ["最終配信時刻不明", "配信していません"]);
     assert.ok(labels.every(label => !label.includes("null")));
   } finally { dom.window.close(); }
 });
