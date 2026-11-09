@@ -34,7 +34,8 @@ import requests
 # 蓄積するチャンネルの登録者数上限（初期値は実質無制限。絞り込みはページ側で行う）
 POOL_MAX_SUBSCRIBERS = int(os.environ.get("POOL_MAX_SUBSCRIBERS", 1000000000))
 # 1日に使うAPIユニット（Googleの上限は10,000。手動実行の分を少し残す）
-DAILY_BUDGET = int(os.environ.get("DAILY_BUDGET", 9300))
+# Never let a repository variable silently exceed the approved free-tier safety budget.
+DAILY_BUDGET = max(0, min(9300, int(os.environ.get("DAILY_BUDGET", 9300))))
 
 # 総ざらいするタグ（投稿時刻で区切って全件たどる）
 SWEEP_TAGS = ["#新人Vtuber", "#Vtuber準備中", "#個人勢Vtuber", "#新人Vtuberを発掘せよ"]
