@@ -56,3 +56,12 @@ test("live stream IDs are valid and not shared by multiple channels", () => {
     seen.add(videoId);
   }
 });
+
+// Reject a collector clock that would make the UI show a misleading future update.
+test("dataset update timestamp is not in the future", () => {
+  const updated = Date.parse(data.updated_at);
+  assert.ok(Number.isFinite(updated), "Invalid dataset update timestamp");
+  const clockSkewAllowanceMs = 10 * 60 * 1000;
+  assert.ok(updated <= Date.now() + clockSkewAllowanceMs,
+    "Dataset update timestamp is more than 10 minutes in the future");
+});
