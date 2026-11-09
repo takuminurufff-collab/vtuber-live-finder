@@ -9,6 +9,8 @@ const channels = data.channels;
 
 test("dataset is an array of uniquely identified YouTube channels", () => {
   assert.ok(Array.isArray(channels));
+  // A successful collector run must never publish an empty replacement for the accumulated catalog.
+  assert.ok(channels.length > 0, "Refusing to publish an empty VTuber catalog");
   const seen = new Set();
   for (const channel of channels) {
     assert.match(channel.id, /^UC[A-Za-z0-9_-]{22}$/);
