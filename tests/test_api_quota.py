@@ -221,8 +221,11 @@ class BudgetPacingTests(unittest.TestCase):
         reset = finder.datetime.combine(now.astimezone(finder.PT).date() + finder.timedelta(days=1),
                                         finder.datetime.min.time(), finder.PT)
         hours_left = max((reset - now).total_seconds() / 3600, 1)
-        expected = int(finder.DAILY_BUDGET * min(1, (5 / 60) / hours_left))
-        self.assertLessEqual(budget.run_cap, expected + 1)
+        # iso() stores whole seconds; the actual elapsed interval may exceed
+        # five minutes by almost a second after timestamp round-tripping.
+        elapsed = (now - finder.parse_iso(state["last_run"])).total_seconds() / 3600
+        expected = int(finder.DAILY_BUDGET * min(1, elapsed / hours_left))
+        self.assertEqual(budget.run_cap, expected)
 
     def test_hourly_run_still_receives_normal_allowance(self):
         now = finder.NOW
