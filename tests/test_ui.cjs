@@ -358,3 +358,8 @@ test("malformed live records are rejected before rendering", async () => {
     assert.equal(doc.getElementById("freshnessWarning").hidden, false);
   } finally { dom.window.close(); }
 });
+
+
+test("published data timestamp validation rejects future clock skew", () => {
+  assert.match(script, /Date\.parse\(d\.updated_at\)\s*>\s*Date\.now\(\)\s*\+\s*5\s*\*\s*60\s*\*\s*1000/);
+});
