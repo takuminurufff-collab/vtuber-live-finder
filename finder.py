@@ -844,7 +844,8 @@ def main():
         counts_late = refresh_due_counts(db, metrics=count_metrics)
 
     except QuotaExceeded:
-        print("APIの1日の上限に達したため、ここまでの結果で保存します。")
+        print("APIの利用可能枠に達したため、ここまでの結果で保存します。"
+              f"（今回の残り {budget.run_left()} / 日次の残り {budget.day_left()} ユニット）")
     except Exception:
         # APIタイムアウト等で今回の処理が中断されても、API消費量を失わない。
         # 部分的なdbやsweep進捗は保存せず、例外は再送出してActionsを失敗扱いにする。
