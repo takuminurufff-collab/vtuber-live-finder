@@ -235,6 +235,24 @@ class BudgetPacingTests(unittest.TestCase):
         self.assertGreater(budget.run_cap, 0)
 
 
+class PersistedQuotaSafetyTests(unittest.TestCase):
+    def test_corrupt_persisted_usage_fails_closed(self):
+        today = finder.NOW.astimezone(finder.PT).date().isoformat()
+        for bad in (-1, None, "0", 1.5, True):
+            with self.subTest(used=bad):
+                state = {"quota": {"day": today, "used": bad}}
+                with self.assertRaisesRegex(ValueError, "API消費量"):
+                    finder.Budget(state)
+                self.assertEqual(state["quota"]["used"], bad)
+
+    def test_usage_above_daily_limit_cannot_grant_extra_quota(self):
+        today = finder.NOW.astimezone(finder.PT).date().isoformat()
+        state = {"quota": {"day": today, "used": finder.DAILY_BUDGET + 10}}
+        budget = finder.Budget(state)
+        self.assertEqual(budget.run_cap, 0)
+        self.assertLess(budget.day_left(), 0)
+
+
 class PersistentDataSafetyTests(unittest.TestCase):
     def test_missing_json_uses_default(self):
         import os
