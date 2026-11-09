@@ -3379,12 +3379,12 @@
   "suzujun": "UC8BrKZbNXiNVEBiiD-OzZ0Q",
   "taka_chyai": "UCTy-Stu-dkC4awmqV_TjRFQ"
  },
- "last_run": "2026-11-09T05:05:56Z",
+ "last_run": "2026-11-09T05:46:58Z",
  "live_plan_index": 20,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-08",
-  "used": 8582
+  "used": 8801
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -4308,7 +4308,6 @@
   "UCMttSOQC4jct9rJHNQ9X6zQ": "2026-11-08T04:00:40Z",
   "UCMw_ZItJfFDesNSMw1uQ6hg": "2026-11-08T04:00:40Z",
   "UCMx60HYcw1ieiPlZZagfqXQ": "2026-11-08T14:00:51Z",
-  "UCMzxQ58QL4NNbWghGymtHvw": "2026-11-07T14:14:15Z",
   "UCN-u6kwuSPbz7z43sFkSMzw": "2026-11-09T00:00:48Z",
   "UCN2dBbyLJUQHQhAFnGvGaog": "2026-11-07T23:00:43Z",
   "UCN7PqlXD9c5owpmZtrspVsw": "2026-11-07T20:00:40Z",
@@ -6781,7 +6780,31 @@
   "UCMpw36mXEu3SLsqdrJxUKNA": "2026-11-09T05:05:56Z",
   "UCMq2XH7dwic63XXPXP30shg": "2026-11-09T05:05:56Z",
   "UCMqPoMJ9oAfHFhSRtOXi0Kw": "2026-11-09T05:05:56Z",
-  "UCMqXjj0KaW7cl8o8CH0AKNA": "2026-11-09T05:05:56Z"
+  "UCMqXjj0KaW7cl8o8CH0AKNA": "2026-11-09T05:05:56Z",
+  "UCMqgnW7zcdlZncFFoHowh2Q": "2026-11-09T05:46:58Z",
+  "UCMt1CmKIm9f713HWS81VIYg": "2026-11-09T05:46:58Z",
+  "UCMttSOQC4jct9rJHNQ9X6zQ": "2026-11-09T05:46:58Z",
+  "UCMw_ZItJfFDesNSMw1uQ6hg": "2026-11-09T05:46:58Z",
+  "UCMx60HYcw1ieiPlZZagfqXQ": "2026-11-09T05:46:58Z",
+  "UCN-u6kwuSPbz7z43sFkSMzw": "2026-11-09T05:46:58Z",
+  "UCN2dBbyLJUQHQhAFnGvGaog": "2026-11-09T05:46:58Z",
+  "UCN7PqlXD9c5owpmZtrspVsw": "2026-11-09T05:46:58Z",
+  "UCN7aBS5da9MWlR97oerUkPA": "2026-11-09T05:46:58Z",
+  "UCN9oTkG7GI-J83r-weenQyA": "2026-11-09T05:46:58Z",
+  "UCNA4cT5UhrqVyQ3YWyfQnhA": "2026-11-09T05:46:58Z",
+  "UCNAMq62Ea7a5J_bsNHgN4_Q": "2026-11-09T05:46:58Z",
+  "UCNArrFGS0-JzFPbL-rOAHJg": "2026-11-09T05:46:58Z",
+  "UCNElM45JypxqAR73RoUQ10g": "2026-11-09T05:46:58Z",
+  "UCNFEPAOwNkDqF_srIz6ILwA": "2026-11-09T05:46:58Z",
+  "UCNGA09DZMBbEgN1nItyy5RQ": "2026-11-09T05:46:58Z",
+  "UCNGD8f3e-PofsIrajlTwevg": "2026-11-09T05:46:58Z",
+  "UCNGPws8716T7ov9UAM94oDA": "2026-11-09T05:46:58Z",
+  "UCNIRPGcyDJfxPxM1ujGIGgA": "2026-11-09T05:46:58Z",
+  "UCNIsO7c7a3J_4RRLnLyhObg": "2026-11-09T05:46:58Z",
+  "UCNJ_7JAsI-qCzH2PRmI0SJg": "2026-11-09T05:46:58Z",
+  "UCNKxHC2T_wUNers3d4MWePQ": "2026-11-09T05:46:58Z",
+  "UCNN0n29dfU-F3DQ4YvEenuQ": "2026-11-09T05:46:58Z",
+  "UCNPdg7KTbaEYBiMqqV0azIg": "2026-11-09T05:46:58Z"
  },
  "sweep": {
   "#Vtuber準備中": "2026-11-09T00:28:48Z",
@@ -6792,8 +6815,8 @@
  "sweep_blocked": {},
  "sweep_pending": {
   "#新人Vtuber": {
-   "next_page": "CGQQAA",
-   "pages": 2,
+   "next_page": "CJYBEAA",
+   "pages": 3,
    "start": "2026-11-08T14:50:50Z",
    "stop": "2026-11-09T01:50:48Z"
   }
