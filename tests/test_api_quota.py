@@ -283,6 +283,16 @@ class BudgetConfigurationSafetyTests(unittest.TestCase):
             spec.loader.exec_module(module)
             self.assertEqual(module.DAILY_BUDGET, 9300)
 
+
+    def test_invalid_budget_configuration_uses_safe_default(self):
+        self.assertEqual(finder.approved_daily_budget("not-a-number"), 9300)
+        self.assertEqual(finder.approved_daily_budget(""), 9300)
+        self.assertEqual(finder.approved_daily_budget(None), 9300)
+
+    def test_negative_budget_configuration_cannot_become_negative(self):
+        self.assertEqual(finder.approved_daily_budget("-25"), 0)
+        self.assertEqual(finder.approved_daily_budget("100000"), 9300)
+
     def test_lower_configured_budget_is_preserved(self):
         import importlib.util
         import os
