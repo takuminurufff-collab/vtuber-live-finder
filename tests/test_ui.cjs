@@ -405,3 +405,17 @@ test("invalid livestream start time does not display a bogus null elapsed label"
     assert.match(doc.querySelector(".card .badge").textContent, /LIVE 0人/);
   } finally { dom.window.close(); }
 });
+
+
+test("unknown last livestream time never renders null before", async () => {
+  const dom = await setup([{ ...record(1), last_live_at: "invalid-date" },
+    { ...record(2), last_live_at: null }]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("st-all").click();
+    const labels = [...doc.querySelectorAll(".card .badge")].map(e => e.textContent);
+    assert.equal(labels.length, 2);
+    assert.ok(labels.every(label => label === "最終配信時刻不明"));
+    assert.ok(labels.every(label => !label.includes("null")));
+  } finally { dom.window.close(); }
+});
