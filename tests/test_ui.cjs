@@ -393,3 +393,15 @@ test("malformed live records are rejected before rendering", async () => {
 test("published data timestamp validation rejects future clock skew", () => {
   assert.match(script, /Date\.parse\(d\.updated_at\)\s*>\s*Date\.now\(\)\s*\+\s*5\s*\*\s*60\s*\*\s*1000/);
 });
+
+test("invalid livestream start time does not display a bogus null elapsed label", async () => {
+  const live = { ...record(1), is_live: true,
+    live: { video_id: "abc12345678", title: "Live", viewers: 0, started_at: "invalid-date" } };
+  const dom = await setup([live]);
+  try {
+    const doc = dom.window.document;
+    assert.equal(doc.querySelectorAll("a.card").length, 1);
+    assert.equal(doc.querySelector(".card .elapsed"), null);
+    assert.match(doc.querySelector(".card .badge").textContent, /LIVE 0人/);
+  } finally { dom.window.close(); }
+});
