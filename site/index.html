@@ -287,7 +287,7 @@ footer p { margin: 0; }
       }
     } else {
       var lastLiveAgo = ago(c.last_live_at);
-      t.appendChild(el("span", "badge", c.is_live == null ? "配信状況を確認中" : (lastLiveAgo != null ? "最終配信 " + lastLiveAgo + "前" : "最終配信時刻不明")));
+      t.appendChild(el("span", "badge", c.is_live == null ? "配信状況を確認中" : (lastLiveAgo != null ? "最終配信 " + lastLiveAgo + "前" : (c.last_live_at ? "最終配信時刻不明" : "配信していません"))));
     }
     a.appendChild(t);
 
