@@ -119,8 +119,13 @@ class Budget:
         q = state.setdefault("quota", {})
         if q.get("day") != today:
             q.update(day=today, used=0)
+        # Never interpret a corrupt persisted counter as unused free quota.
+        # A malformed or negative value must stop the run before any API call.
+        used = q.get("used")
+        if type(used) is not int or used < 0:
+            raise ValueError("保存済みAPI消費量が不正です。安全のため更新を停止します")
         self.q = q
-        remaining = max(0, DAILY_BUDGET - q["used"])
+        remaining = max(0, DAILY_BUDGET - used)
         last = parse_iso(state.get("last_run")) or NOW - timedelta(hours=1)
         # Runs can occur minutes apart (scheduled + manual/push); do not grant each a full hour.
         since = min(max((NOW - last).total_seconds() / 3600, 0), 24)
