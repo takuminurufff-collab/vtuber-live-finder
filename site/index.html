@@ -321,13 +321,19 @@ footer p { margin: 0; }
       return Number(a) - Number(b);
     }
     function viewerCount(c) { return c.is_live && c.live ? c.live.viewers : null; }
+    function newestFirst(a, b) {
+      var aTime = Date.parse(a), bTime = Date.parse(b);
+      var aKnown = Number.isFinite(aTime), bKnown = Number.isFinite(bTime);
+      if (!aKnown || !bKnown) return Number(bKnown) - Number(aKnown);
+      return bTime - aTime;
+    }
     function descendingKnown(a, b) { return ascendingKnown(b, a) * (a == null || b == null ? -1 : 1); }
     var cmp = {
       lives: function (a, b) { return ascendingKnown(a.lives, b.lives) || ascendingKnown(a.subscribers, b.subscribers); },
       subs: function (a, b) { return ascendingKnown(a.subscribers, b.subscribers); },
       viewers: function (a, b) { return descendingKnown(viewerCount(a), viewerCount(b)); },
-      recent: function (a, b) { return Number(b.is_live === true) - Number(a.is_live === true) || new Date(b.last_live_at || 0) - new Date(a.last_live_at || 0); },
-      "new": function (a, b) { return new Date(b.first_seen || 0) - new Date(a.first_seen || 0); }
+      recent: function (a, b) { return Number(b.is_live === true) - Number(a.is_live === true) || newestFirst(a.last_live_at, b.last_live_at); },
+      "new": function (a, b) { return newestFirst(a.first_seen, b.first_seen); }
     }[f.sort] || function () { return 0; };
     list.sort(cmp);
     var total = data.channels.length, liveN = data.channels.filter(function (c) { return c.is_live === true; }).length;

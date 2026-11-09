@@ -419,3 +419,22 @@ test("unknown last livestream time never renders null before", async () => {
     assert.ok(labels.every(label => !label.includes("null")));
   } finally { dom.window.close(); }
 });
+
+test("recent and discovery sorting place invalid or missing dates after known dates", async () => {
+  const dom = await setup([
+    { ...record(1), last_live_at: "not-a-date", first_seen: "bad" },
+    { ...record(2), last_live_at: "2026-11-08T12:00:00Z", first_seen: "2026-11-07T00:00:00Z" },
+    { ...record(3), last_live_at: null, first_seen: null },
+    { ...record(4), last_live_at: "2026-11-09T12:00:00Z", first_seen: "2026-11-09T00:00:00Z" },
+  ]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("st-all").click();
+    for (const sort of ["recent", "new"]) {
+      doc.getElementById("sort").value = sort;
+      doc.getElementById("sort").dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+      assert.deepEqual([...doc.querySelectorAll(".card .name")].map(e => e.textContent).slice(0, 2),
+        ["VTuber 4", "VTuber 2"]);
+    }
+  } finally { dom.window.close(); }
+});
