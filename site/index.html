@@ -351,6 +351,7 @@ footer p { margin: 0; }
       // Validate the complete response before reading properties or replacing cards.
       // A 200 response may still contain a partial or malformed dataset.
       if (!d || !Array.isArray(d.channels) || !Number.isFinite(Date.parse(d.updated_at)) ||
+          Date.parse(d.updated_at) > Date.now() + 5 * 60 * 1000 ||
           d.channels.some(function (c) {
             return !c || typeof c.id !== "string" || !/^UC[A-Za-z0-9_-]{22}$/.test(c.id) ||
               typeof c.name !== "string" ||
