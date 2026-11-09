@@ -270,3 +270,25 @@ class PersistentDataSafetyTests(unittest.TestCase):
                     self.assertEqual(source.read(), original)
             finally:
                 finder.budget = previous_budget
+
+
+class BudgetConfigurationSafetyTests(unittest.TestCase):
+    def test_budget_configuration_never_exceeds_approved_daily_limit(self):
+        import importlib.util
+        import os
+        from unittest.mock import patch
+        with patch.dict(os.environ, {"DAILY_BUDGET": "999999"}):
+            spec = importlib.util.spec_from_file_location("finder_budget_guard_test", finder.__file__)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            self.assertEqual(module.DAILY_BUDGET, 9300)
+
+    def test_lower_configured_budget_is_preserved(self):
+        import importlib.util
+        import os
+        from unittest.mock import patch
+        with patch.dict(os.environ, {"DAILY_BUDGET": "1200"}):
+            spec = importlib.util.spec_from_file_location("finder_budget_guard_low_test", finder.__file__)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            self.assertEqual(module.DAILY_BUDGET, 1200)
