@@ -98,6 +98,36 @@ test("unknown subscriber totals appear last and remain visible without a subscri
   }
 });
 
+test("viewer sorting keeps unknown counts after known zero, not tied with zero", async () => {
+  const live = (i, viewers) => ({ ...record(i), is_live: true,
+    live: { video_id: String(i).padStart(11, "0"), title: "Live", viewers } });
+  const dom = await setup([live(1, null), live(2, 0), live(3, 20)]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("sort").value = "viewers";
+    doc.getElementById("sort").dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+    assert.deepEqual([...doc.querySelectorAll(".card .name")].map(e => e.textContent),
+      ["VTuber 3", "VTuber 2", "VTuber 1"]);
+  } finally { dom.window.close(); }
+});
+
+test("ascending live-count sorting puts multiple unknown values last", async () => {
+  const dom = await setup([
+    { ...record(1), lives: null, subscribers: 5 },
+    { ...record(2), lives: 0 },
+    { ...record(3), lives: null, subscribers: 10 },
+    { ...record(4), lives: 3 },
+  ]);
+  try {
+    const doc = dom.window.document;
+    doc.getElementById("st-all").click();
+    doc.getElementById("sort").value = "lives";
+    doc.getElementById("sort").dispatchEvent(new dom.window.Event("change", { bubbles: true }));
+    assert.deepEqual([...doc.querySelectorAll(".card .name")].map(e => e.textContent),
+      ["VTuber 2", "VTuber 4", "VTuber 1", "VTuber 3"]);
+  } finally { dom.window.close(); }
+});
+
 test("hidden admin menu cannot appear before interaction", async () => {
   const dom = await setup([record(1)]);
   try {

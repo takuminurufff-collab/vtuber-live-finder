@@ -310,12 +310,19 @@ footer p { margin: 0; }
     if (!data) return;
     var list = data.channels.filter(passes);
     // 数値不明は0人ではない。昇順では必ず末尾にする。
-    function knownNumber(n) { return n == null ? Number.POSITIVE_INFINITY : Number(n); }
+    function ascendingKnown(a, b) {
+      // Keep unknown values last, including when both values are unknown.
+      var aMissing = a == null, bMissing = b == null;
+      if (aMissing || bMissing) return Number(aMissing) - Number(bMissing);
+      return Number(a) - Number(b);
+    }
+    function viewerCount(c) { return c.is_live && c.live ? c.live.viewers : null; }
+    function descendingKnown(a, b) { return ascendingKnown(b, a) * (a == null || b == null ? -1 : 1); }
     var cmp = {
-      lives: function (a, b) { return knownNumber(a.lives) - knownNumber(b.lives) || knownNumber(a.subscribers) - knownNumber(b.subscribers) || 0; },
-      subs: function (a, b) { return knownNumber(a.subscribers) - knownNumber(b.subscribers) || 0; },
-      viewers: function (a, b) { return ((b.live && b.live.viewers) || 0) - ((a.live && a.live.viewers) || 0); },
-      recent: function (a, b) { return (b.is_live - a.is_live) || new Date(b.last_live_at || 0) - new Date(a.last_live_at || 0); },
+      lives: function (a, b) { return ascendingKnown(a.lives, b.lives) || ascendingKnown(a.subscribers, b.subscribers); },
+      subs: function (a, b) { return ascendingKnown(a.subscribers, b.subscribers); },
+      viewers: function (a, b) { return descendingKnown(viewerCount(a), viewerCount(b)); },
+      recent: function (a, b) { return Number(b.is_live === true) - Number(a.is_live === true) || new Date(b.last_live_at || 0) - new Date(a.last_live_at || 0); },
       "new": function (a, b) { return new Date(b.first_seen || 0) - new Date(a.first_seen || 0); }
     }[f.sort] || function () { return 0; };
     list.sort(cmp);
