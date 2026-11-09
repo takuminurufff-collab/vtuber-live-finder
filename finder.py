@@ -154,7 +154,15 @@ def iso(dt):
 
 
 def parse_iso(s):
-    return datetime.fromisoformat(s.replace("Z", "+00:00")) if s else None
+    """Treat missing or malformed stored timestamps as unknown, not a fatal crash."""
+    if not isinstance(s, str) or not s:
+        return None
+    try:
+        parsed = datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    # Legacy records may contain naive ISO timestamps; interpret them as UTC.
+    return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed
 
 
 def api_get(endpoint, params, cost):
