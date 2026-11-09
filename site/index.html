@@ -281,7 +281,10 @@ footer p { margin: 0; }
     if (src) { var img = el("img"); img.src = src; img.alt = ""; img.loading = "lazy"; t.appendChild(img); }
     if (live) {
       t.appendChild(el("span", "badge", c.live.viewers == null ? "LIVE" : "LIVE " + num(c.live.viewers) + "人"));
-      if (c.live.started_at) t.appendChild(el("span", "elapsed", ago(c.live.started_at) + "経過"));
+      if (c.live.started_at) {
+        var elapsed = ago(c.live.started_at);
+        if (elapsed != null) t.appendChild(el("span", "elapsed", elapsed + "経過"));
+      }
     } else {
       t.appendChild(el("span", "badge", c.is_live == null ? "配信状況を確認中" : (c.last_live_at ? "最終配信 " + ago(c.last_live_at) + "前" : "配信していません")));
     }
