@@ -179,7 +179,8 @@ def api_get(endpoint, params, cost):
             r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
             break
         except (requests.Timeout, requests.ConnectionError):
-            if attempt == 1:
+            # Preserve the original transport failure when a retry is unaffordable.
+            if attempt == 1 or budget.day_left() <= cost or budget.run_left() <= cost:
                 raise
         finally:
             # Every attempted request can consume quota, even on timeout.
