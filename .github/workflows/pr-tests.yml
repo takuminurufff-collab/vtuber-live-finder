@@ -35,3 +35,9 @@ jobs:
         run: npm install --no-save --no-audit --no-fund jsdom@26
       - name: Run DOM interaction tests
         run: node --test tests/test_ui.cjs
+      - name: Install real Chromium browser test dependencies
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Run desktop and mobile Chromium smoke tests
+        run: python tests/browser_smoke.py
