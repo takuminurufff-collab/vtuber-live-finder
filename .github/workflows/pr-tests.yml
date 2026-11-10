@@ -40,7 +40,7 @@ jobs:
           python -m pip install playwright
           python -m playwright install --with-deps chromium
       - name: Run desktop and mobile Chromium smoke tests
-        run: python tests/browser_smoke.py
+        run: CHECK_PUBLIC_SITE=1 python tests/browser_smoke.py
 
   public-site-check:
     runs-on: ubuntu-latest
