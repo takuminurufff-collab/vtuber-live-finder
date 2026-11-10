@@ -133,6 +133,24 @@ class ApiQuotaTests(unittest.TestCase):
         request.assert_not_called()
         self.assertEqual(finder.budget.run_used, 0)
 
+    def test_malformed_playlist_total_stays_unknown(self):
+        # Do not publish a false count or mark a missing metric as complete.
+        for payload in ({}, {"pageInfo": {}},
+                        {"pageInfo": {"totalResults": -1}},
+                        {"pageInfo": {"totalResults": "0"}},
+                        {"pageInfo": {"totalResults": True}}):
+            with self.subTest(payload=payload):
+                response = Mock(status_code=200)
+                response.json.return_value = payload
+                with patch.object(finder.session, "get", return_value=response):
+                    self.assertIsNone(finder.playlist_total("UULFexample"))
+
+    def test_valid_zero_playlist_total_is_preserved(self):
+        response = Mock(status_code=200)
+        response.json.return_value = {"pageInfo": {"totalResults": 0}}
+        with patch.object(finder.session, "get", return_value=response):
+            self.assertEqual(finder.playlist_total("UULFexample"), 0)
+
     def test_missing_playlist_still_consumes_one_unit(self):
         response = Mock(status_code=404)
         with patch.object(finder.session, "get", return_value=response) as request:
