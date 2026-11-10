@@ -4,6 +4,7 @@ import datetime
 import functools
 import http.server
 import json
+import os
 import threading
 from pathlib import Path
 
@@ -69,6 +70,27 @@ try:
             ), f"{width}: horizontal overflow"
             page.close()
             print(f"Chromium smoke OK: {width}x{height}")
+        if os.environ.get("CHECK_PUBLIC_SITE") == "1":
+            # Exercise the actual deployed HTML and dataset, not mocked fixtures.
+            public_url = "https://takuminurufff-collab.github.io/vtuber-live-finder/"
+            for width, height in [(1440, 900), (390, 844)]:
+                page = browser.new_page(viewport={"width": width, "height": height})
+                errors = []
+                page.on("pageerror", lambda error: errors.append(str(error)))
+                response = page.goto(public_url, wait_until="domcontentloaded", timeout=30000)
+                assert response and response.ok, f"{width}: public site HTTP error"
+                page.locator("#meta").get_by_text("最終更新").wait_for(timeout=30000)
+                page.locator("#st-all").click()
+                assert page.locator(".card").count() > 0, f"{width}: empty public catalog"
+                page.locator("#f-subs-min").fill("0")
+                page.locator("#reset").click()
+                assert page.locator("#f-subs-min").input_value() == "", f"{width}: public reset"
+                assert not errors, f"{width}: public JS errors: {errors}"
+                assert page.evaluate(
+                    "document.documentElement.scrollWidth <= window.innerWidth + 1"
+                ), f"{width}: public horizontal overflow"
+                page.close()
+                print(f"Public Chromium smoke OK: {width}x{height}")
         browser.close()
 finally:
     server.shutdown()
