@@ -111,7 +111,7 @@ class ApiQuotaTests(unittest.TestCase):
         finder.budget = FakeBudget(remaining=1)
         finder.budget.run_limit = 10
         with patch.object(finder.session, "get", side_effect=finder.requests.Timeout("slow")) as request:
-            with self.assertRaises(finder.QuotaExceeded):
+            with self.assertRaises(finder.requests.Timeout):
                 finder.api_get("channels", {"id": "test"}, cost=1)
         request.assert_called_once()
         self.assertEqual(finder.budget.run_used, 1)
