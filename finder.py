@@ -418,7 +418,12 @@ def playlist_total(playlist_id):
     # 不明値のまま保持し、次回の補完対象から外さない。
     if data is None:
         return None
-    return data["pageInfo"]["totalResults"]
+    total = data.get("pageInfo", {}).get("totalResults")
+    # An incomplete or malformed API response must not become a false count.
+    # Keep the value unknown so a later scheduled run can retry safely.
+    if type(total) is not int or total < 0:
+        return None
+    return total
 
 
 def count_refresh_cost(rec):
