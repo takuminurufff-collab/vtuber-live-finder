@@ -438,3 +438,27 @@ test("recent and discovery sorting place invalid or missing dates after known da
     }
   } finally { dom.window.close(); }
 });
+
+
+test("a slower response cannot roll back a newer published dataset", async () => {
+  const dom = await setup([record(1)], "2026-11-10T12:00:00Z", "2026-11-10T12:30:00Z");
+  try {
+    const win = dom.window, doc = win.document;
+    doc.getElementById("st-all").click();
+    assert.match(doc.querySelector(".card .name").textContent, /VTuber 1/);
+    // A successful initial load is already displayed; subsequent responses may
+    // arrive out of order when manual refresh overlaps the periodic refresh.
+    let scheduledLoad;
+    win.setInterval = fn => { scheduledLoad = fn; return 0; };
+    // Re-register the existing application script to obtain its interval callback.
+    win.eval(script);
+    await new Promise(resolve => setImmediate(resolve));
+    await new Promise(resolve => setImmediate(resolve));
+    win.fetch = async () => ({ok:true, json:async () => ({
+      updated_at:"2026-11-10T11:00:00Z", channels:[record(2)]
+    })});
+    await scheduledLoad();
+    assert.match(doc.querySelector(".card .name").textContent, /VTuber 1/);
+    assert.match(doc.getElementById("freshnessWarning").textContent, /最新データを確認できません/);
+  } finally { dom.window.close(); }
+});
