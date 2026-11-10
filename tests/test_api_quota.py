@@ -92,10 +92,29 @@ class ApiQuotaTests(unittest.TestCase):
         with patch.object(finder.session, "get", side_effect=finder.requests.Timeout("timeout")) as request:
             with self.assertRaises(finder.requests.Timeout):
                 finder.api_get("search", {"q": "Vtuber"}, cost=100)
-        request.assert_called_once()
+        request.assert_called_once()  # The run cap cannot fund a retry.
         self.assertEqual(finder.budget.run_used, 100)
         self.assertEqual(finder.budget.q["used"], 100)
         self.assertEqual(finder.budget.run_left(), 0)
+
+    def test_transient_timeout_retries_and_charges_both_attempts(self):
+        finder.budget = FakeBudget(remaining=10)
+        finder.budget.run_limit = 10
+        response = Mock(status_code=200)
+        response.json.return_value = {"items": []}
+        with patch.object(finder.session, "get", side_effect=[finder.requests.Timeout("slow"), response]) as request:
+            self.assertEqual(finder.api_get("channels", {"id": "test"}, cost=1), {"items": []})
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(finder.budget.run_used, 2)
+
+    def test_retry_stops_when_daily_quota_cannot_fund_second_attempt(self):
+        finder.budget = FakeBudget(remaining=1)
+        finder.budget.run_limit = 10
+        with patch.object(finder.session, "get", side_effect=finder.requests.Timeout("slow")) as request:
+            with self.assertRaises(finder.QuotaExceeded):
+                finder.api_get("channels", {"id": "test"}, cost=1)
+        request.assert_called_once()
+        self.assertEqual(finder.budget.run_used, 1)
 
     def test_connection_failure_conservatively_tracks_attempted_unit(self):
         finder.budget = FakeBudget(remaining=30)
