@@ -41,3 +41,24 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Run desktop and mobile Chromium smoke tests
         run: python tests/browser_smoke.py
+
+  public-site-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check published site and dataset are reachable
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://takuminurufff-collab.github.io/vtuber-live-finder"
+          curl --fail --location --retry 3 --retry-delay 3 --max-time 20 --silent --show-error "$base/" -o /tmp/vtuber-index.html
+          grep -q 'うぶごえライブ' /tmp/vtuber-index.html
+          curl --fail --location --retry 3 --retry-delay 3 --max-time 20 --silent --show-error "$base/data.json" -o /tmp/vtuber-data.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('/tmp/vtuber-data.json').read_text())
+          assert isinstance(data.get('channels'), list) and len(data['channels']) > 0, 'Empty public catalog'
+          assert isinstance(data.get('updated_at'), str), 'Missing public update timestamp'
+          print(f"Public site reachable, {len(data['channels'])} VTubers in catalog")
+          PY
