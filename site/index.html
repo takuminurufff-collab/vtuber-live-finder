@@ -385,6 +385,10 @@ footer p { margin: 0; }
       if (minUpdatedAt != null && !(Date.parse(d.updated_at) > minUpdatedAt)) {
         throw new Error("Dataset has not advanced");
       }
+      // A slower earlier fetch must never roll back newer already-rendered data.
+      if (data && Date.parse(d.updated_at) < Date.parse(data.updated_at)) {
+        throw new Error("Dataset older than currently displayed data");
+      }
       data = d;
       var elapsed = ago(d.updated_at);
       $("meta").textContent = elapsed == null ? "最終更新日時を確認できません" : "最終更新 " + elapsed + "前";
