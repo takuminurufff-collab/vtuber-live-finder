@@ -65,3 +65,9 @@ test("dataset update timestamp is not in the future", () => {
   assert.ok(updated <= Date.now() + clockSkewAllowanceMs,
     "Dataset update timestamp is more than 10 minutes in the future");
 });
+
+// The browser must accept every timestamp that CI allows for clock skew.
+test("browser and CI use the same future timestamp tolerance", () => {
+  const html = fs.readFileSync("site/index.html", "utf8");
+  assert.match(html, /Date\.parse\(d\.updated_at\) > Date\.now\(\) \+ 10 \* 60 \* 1000/);
+});

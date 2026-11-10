@@ -391,7 +391,7 @@ test("malformed live records are rejected before rendering", async () => {
 
 
 test("published data timestamp validation rejects future clock skew", () => {
-  assert.match(script, /Date\.parse\(d\.updated_at\)\s*>\s*Date\.now\(\)\s*\+\s*5\s*\*\s*60\s*\*\s*1000/);
+  assert.match(script, /Date\.parse\(d\.updated_at\)\s*>\s*Date\.now\(\)\s*\+\s*10\s*\*\s*60\s*\*\s*1000/);
 });
 
 test("invalid livestream start time does not display a bogus null elapsed label", async () => {
