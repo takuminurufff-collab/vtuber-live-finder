@@ -172,10 +172,19 @@ def api_get(endpoint, params, cost):
         raise QuotaExceeded()
     # 送信後にタイムアウトしてもYouTube側で処理済みの可能性がある。
     # 請求の確定値ではなく、過小計上を避けるため試行分を保守的に記録する。
-    try:
-        r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
-    finally:
-        budget.spend(cost)
+    for attempt in range(2):
+        if budget.day_left() < cost or budget.run_left() < cost:
+            raise QuotaExceeded()
+        try:
+            r = session.get(f"{API}/{endpoint}", params=dict(params, key=API_KEY), timeout=20)
+            break
+        except (requests.Timeout, requests.ConnectionError):
+            # Preserve the original transport failure when a retry is unaffordable.
+            if attempt == 1 or budget.day_left() < 2 * cost or budget.run_left() < 2 * cost:
+                raise
+        finally:
+            # Every attempted request can consume quota, even on timeout.
+            budget.spend(cost)
     if r.status_code == 404:
         return None
     if r.status_code != 200:
