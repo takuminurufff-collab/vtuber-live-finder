@@ -5419,12 +5419,12 @@
   "藍蓮_airen": "UCpDPWRkexQyf7H6WLppQgVg",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-11T15:27:34Z",
+ "last_run": "2026-11-11T16:00:52Z",
  "live_plan_index": 13,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-11",
-  "used": 3266
+  "used": 3475
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -8330,7 +8330,6 @@
   "UClopDDOLYmZWtUtcSvZ-I6g": "2026-11-09T04:40:14Z",
   "UCloqaT_35wFZahU8pB8KyWA": "2026-11-07T14:14:15Z",
   "UClp5HhAKRA-TcJ1fGW0dJlQ": "2026-11-08T13:00:48Z",
-  "UClrQ7xhRBxS_v_-WuudGKmA": "2026-11-09T14:00:58Z",
   "UClrViVkqmxvlDzpcmmMKXVA": "2026-11-07T15:00:44Z",
   "UClrt8NHxvFB-EM1y7au7wHA": "2026-11-08T08:00:45Z",
   "UClspxKgw3il9BugS5qMIavg": "2026-11-08T09:13:46Z",
@@ -12074,11 +12073,35 @@
   "UClK70J9yZsmcYvk_yvpbZeQ": "2026-11-11T15:27:34Z",
   "UClKf6kD40AiJVc_8UsV5N6g": "2026-11-11T15:27:34Z",
   "UClLr2SaFqI7ttqwXIEHxPdg": "2026-11-11T15:27:34Z",
-  "UClNPJ1KXjpOwp_W6wJfGWSg": "2026-11-11T15:27:34Z"
+  "UClNPJ1KXjpOwp_W6wJfGWSg": "2026-11-11T15:27:34Z",
+  "UClOC5TAcZkWFdMZBIquMLBQ": "2026-11-11T16:00:52Z",
+  "UClP17ck8CmFoaIazI9h158Q": "2026-11-11T16:00:52Z",
+  "UClQ0tVxXIF99UjVpKBn87Pw": "2026-11-11T16:00:52Z",
+  "UClQ8ExTRktxalr3qBl_kx0Q": "2026-11-11T16:00:52Z",
+  "UClRYC-Vs0LxopwrWPXyKInw": "2026-11-11T16:00:52Z",
+  "UClSPh9US7lhe_bSrxeSZAOg": "2026-11-11T16:00:52Z",
+  "UClUJ5r7vzQ9fnFVw8-Imyyw": "2026-11-11T16:00:52Z",
+  "UClUgwNGTerN-_WQmZBjaOVA": "2026-11-11T16:00:52Z",
+  "UClVuL6OzLDUCi_0TMvmJVOA": "2026-11-11T16:00:52Z",
+  "UClWFwzCosFg76rM6iUhFsIA": "2026-11-11T16:00:52Z",
+  "UCl_SfFAdeQa2_SjvK_uU4dQ": "2026-11-11T16:00:52Z",
+  "UClcrumxkjVAzqVJCnaEDE3w": "2026-11-11T16:00:52Z",
+  "UCle2UYhLtgVh5ZbxRe83fRw": "2026-11-11T16:00:52Z",
+  "UClfLipYFD0oM-QR1y3kkepA": "2026-11-11T16:00:52Z",
+  "UClfjJJJqBh9SL4cCgNHDPsg": "2026-11-11T16:00:52Z",
+  "UClg3JM3Wuc4Nm2dk0inVwmg": "2026-11-11T16:00:52Z",
+  "UCljmvdFUJYvC2RhRyIVCZWQ": "2026-11-11T16:00:52Z",
+  "UCllSM_Yz53O1VDNWX4UOpnA": "2026-11-11T16:00:52Z",
+  "UCln9P4Qm3-EAY4aiEPmRwEA": "2026-11-11T16:00:52Z",
+  "UClopDDOLYmZWtUtcSvZ-I6g": "2026-11-11T16:00:52Z",
+  "UCloqaT_35wFZahU8pB8KyWA": "2026-11-11T16:00:52Z",
+  "UClp5HhAKRA-TcJ1fGW0dJlQ": "2026-11-11T16:00:52Z",
+  "UClrViVkqmxvlDzpcmmMKXVA": "2026-11-11T16:00:52Z",
+  "UClrt8NHxvFB-EM1y7au7wHA": "2026-11-11T16:00:52Z"
  },
  "sweep": {
   "#Vtuber準備中": "2026-11-11T02:50:46Z",
-  "#個人勢Vtuber": "2026-11-10T23:24:11Z",
+  "#個人勢Vtuber": "2026-11-11T15:50:52Z",
   "#新人Vtuber": "2026-11-11T04:50:49Z",
   "#新人Vtuberを発掘せよ": "2026-11-11T00:50:46Z"
  },
