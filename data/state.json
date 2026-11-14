@@ -6681,12 +6681,12 @@
   "西園寺まりりん": "UCzrwvapp587lhoRkmjKPDiA",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-14T15:00:54Z",
+ "last_run": "2026-11-14T16:00:49Z",
  "live_plan_index": 8,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-14",
-  "used": 3090
+  "used": 3477
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -9710,6 +9710,7 @@
   "UCd72iR4EoboRgurJuS63Sew": "2026-11-09T04:40:14Z",
   "UCd8k3Mg3H1jPfxXqAHj-8dg": "2026-11-13T15:00:57Z",
   "UCdAEs_Of3NXwwPkfIaoLitw": "2026-11-11T05:00:49Z",
+  "UCdCKTU-0rlL9awmEad32Ihg": "2026-11-14T16:00:49Z",
   "UCdCtwlokTRwijUC3mS6U4kw": "2026-11-07T19:00:42Z",
   "UCdD8I0uoxeVdUKmKE2X4AEA": "2026-11-09T23:42:33Z",
   "UCdDhN34HKaSUPkFsx-MX9Uw": "2026-11-07T15:00:44Z",
@@ -10217,6 +10218,7 @@
   "UCk2fDZsnk6AkBQgjrICrCRQ": "2026-11-09T03:00:53Z",
   "UCk5Kp9A0rqYv5oUUVURKWNQ": "2026-11-10T15:00:55Z",
   "UCk5g2IwJnA0qe8d4gud2CWA": "2026-11-07T14:14:15Z",
+  "UCk7MaeT3AjuxVraqmzoGICQ": "2026-11-14T16:00:49Z",
   "UCk8eFq-x4ZV0aObwkYqo77g": "2026-11-11T15:00:53Z",
   "UCk8x-DIp0-AoQsDUHm14z8g": "2026-11-09T09:02:00Z",
   "UCk9yTCSRRw3pm0NsryPEh7g": "2026-11-08T09:00:46Z",
@@ -16069,5 +16071,12 @@
   "#新人Vtuberを発掘せよ": "2026-11-14T12:51:02Z"
  },
  "sweep_blocked": {},
- "sweep_pending": {}
+ "sweep_pending": {
+  "#新人Vtuber": {
+   "next_page": "CDIQAA",
+   "pages": 1,
+   "start": "2026-11-13T17:44:31Z",
+   "stop": "2026-11-14T15:50:49Z"
+  }
+ }
 }
