@@ -6921,12 +6921,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-15T21:00:49Z",
- "live_plan_index": 2,
- "low_quota_live_next": true,
+ "last_run": "2026-11-15T22:01:00Z",
+ "live_plan_index": 3,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-15",
-  "used": 5415
+  "used": 5805
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
