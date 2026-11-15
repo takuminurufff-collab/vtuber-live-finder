@@ -6921,12 +6921,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-15T16:00:45Z",
+ "last_run": "2026-11-15T17:00:59Z",
  "live_plan_index": 21,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-15",
-  "used": 3480
+  "used": 3870
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -10005,6 +10005,7 @@
   "UCbxVhpCR-H4DwxIdTZwAaCg": "2026-11-10T19:00:50Z",
   "UCbyQ0ucNFTQzbupslSvBfug": "2026-11-07T14:14:15Z",
   "UCbzBZCUn9frVSJuf3dadA9g": "2026-11-11T11:00:52Z",
+  "UCc-YQcywHOgr4vHTpMWlxVw": "2026-11-15T17:00:59Z",
   "UCc08wa0bSUhlsjnQ5pfsqug": "2026-11-09T08:00:48Z",
   "UCc0QiWeLMWCT9agWEFrPgfA": "2026-11-11T19:00:50Z",
   "UCc1wGDqEmbsr0-K3uSh9B8w": "2026-11-12T20:00:49Z",
@@ -11652,6 +11653,7 @@
   "UCxMZ2Wb1iO_gEnK6CXVW0ow": "2026-11-09T08:00:48Z",
   "UCxMgJOhQelhe36voAT0U-Og": "2026-11-09T04:40:14Z",
   "UCxNkjA-z_z7TN6dvRWpgHLg": "2026-11-15T14:00:52Z",
+  "UCxNlZxwkzcbgQJnoIIpn-Cg": "2026-11-15T17:00:59Z",
   "UCxPCsO-_Z0NpkJlglZPBdcg": "2026-11-07T21:00:41Z",
   "UCxPUK3JC6rBtlRZrbh2IEFA": "2026-11-08T19:00:46Z",
   "UCxQKVSqZ6DX-bfL35CViu_A": "2026-11-08T08:00:45Z",
@@ -14950,6 +14952,7 @@
   "UCcKxdXI2hKq9uyKmmdjT2YQ": "2026-11-12T12:00:49Z",
   "UCcMg4bqpqBArlg61XDCfK1w": "2026-11-10T07:00:50Z",
   "UCcMitiPoO2BLQDtFbRba0hQ": "2026-11-10T07:00:50Z",
+  "UCcNKcz30BwWEEoQsR7DA3mg": "2026-11-15T17:00:59Z",
   "UCcP9f9bGET5_ZsoXpKa8oNA": "2026-11-12T20:57:46Z",
   "UCcPfEBOnfwtIsEYTcZJ9bjw": "2026-11-10T07:00:50Z",
   "UCcQ8HWDWm58tKOL-4pbDThA": "2026-11-12T12:58:09Z",
@@ -16511,6 +16514,7 @@
   "UCwb2QujINX38U34b3Z0Kvaw": "2026-11-13T17:54:31Z",
   "UCwbATtxw6BmL1m2cDXD7xTQ": "2026-11-13T17:54:31Z",
   "UCwbfrTTRTri0fIvfdkdsZQA": "2026-11-13T17:54:31Z",
+  "UCwcTbpoZv76cASSHPo3nStg": "2026-11-15T17:00:59Z",
   "UCwdLNy-SLW97c78CcQAWfbg": "2026-11-13T17:54:31Z",
   "UCwdwrnaJCQl69ZFc39NrySA": "2026-11-13T17:54:31Z",
   "UCweqot52RICXoi94gfZNA2g": "2026-11-13T17:54:31Z",
@@ -16773,5 +16777,12 @@
   "#新人Vtuberを発掘せよ": "2026-11-15T12:50:49Z"
  },
  "sweep_blocked": {},
- "sweep_pending": {}
+ "sweep_pending": {
+  "#新人Vtuber": {
+   "next_page": "CDIQAA",
+   "pages": 1,
+   "start": "2026-11-14T15:50:49Z",
+   "stop": "2026-11-15T15:50:49Z"
+  }
+ }
 }
