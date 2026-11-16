@@ -6983,12 +6983,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-16T02:00:47Z",
+ "last_run": "2026-11-16T02:53:08Z",
  "live_plan_index": 5,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-15",
-  "used": 7359
+  "used": 7690
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -12722,6 +12722,7 @@
   "UC9WLWeVD4Uk9H6PEpPWmijg": "2026-11-13T07:00:47Z",
   "UC9Wus-5ZzCzGFEnr2ChL-Qg": "2026-11-08T16:00:46Z",
   "UC9XF0EUJZUHSMXFQZ7rNYJQ": "2026-11-10T05:00:49Z",
+  "UC9XOIDGyrylcPYw7VeLzHIg": "2026-11-16T02:53:08Z",
   "UC9XmtaWbavinTxsZPEvgzlg": "2026-11-08T16:00:46Z",
   "UC9Y-cfY7FvuEGCqMEi9I08g": "2026-11-08T19:41:04Z",
   "UC9Zxn6Ez26h8PWDY7Ka-6zg": "2026-11-08T16:00:46Z",
@@ -13208,6 +13209,7 @@
   "UCG-vDkb52608WIkKMYzpPEw": "2026-11-08T21:00:51Z",
   "UCG09qajPDZdPtLsTkW7mJQA": "2026-11-08T21:00:51Z",
   "UCG0ViJXFpWQYA7u0SQ9-7ZA": "2026-11-10T05:00:49Z",
+  "UCG0WrjHLGEGuzrbu2gxUERg": "2026-11-16T02:53:08Z",
   "UCG0rzBZV_QMP4MtWg6IjhEA": "2026-11-12T09:00:48Z",
   "UCG0wqPVh4HMaysPPdcLYYBw": "2026-11-08T21:00:51Z",
   "UCG186u-UvYuLg-NItFFMTJg": "2026-11-12T02:00:43Z",
@@ -14071,6 +14073,7 @@
   "UCQrg-GOwY9P9xbIpmheVsQA": "2026-11-09T11:00:52Z",
   "UCQrgT6cTWfjHfDrkhLM2h6g": "2026-11-09T11:00:52Z",
   "UCQtg5FUP9qeiwmkNrrhiuOg": "2026-11-09T18:00:55Z",
+  "UCQuFZfzjYFYh-L3Xu9xCImA": "2026-11-16T02:53:08Z",
   "UCQuMgd8KU4K9IxyiV90MglQ": "2026-11-09T11:00:52Z",
   "UCQvtp5dKOxROunGqw6h6YKQ": "2026-11-09T11:00:52Z",
   "UCQyHnb5K96r2sj78Bi6Hl3w": "2026-11-14T06:01:04Z",
@@ -16030,6 +16033,7 @@
   "UCp3iY6y_xEBqhYToHQBemtg": "2026-11-12T04:00:52Z",
   "UCp4LHNfvkZzokDHnFt3WwuA": "2026-11-12T04:00:52Z",
   "UCp7HdcGvpj09XLqYUOmCxyQ": "2026-11-14T09:00:44Z",
+  "UCp9RCMeifGD8cRhQXE2rqcA": "2026-11-16T02:53:08Z",
   "UCpA-MURzHEMT0iu-uDy6Jng": "2026-11-12T04:00:52Z",
   "UCpAZRDd27uwCZmrXTX5QsqQ": "2026-11-12T04:00:52Z",
   "UCpBJB0npl0LxGFPYVxwtE-g": "2026-11-14T06:01:04Z",
@@ -16245,6 +16249,7 @@
   "UCs2q6FO5BXewxn6wg9jdD5w": "2026-11-12T16:00:54Z",
   "UCs2slDVrUuoTL0pbM0dH0JQ": "2026-11-13T07:00:47Z",
   "UCs4Fvha8s3ioI0Wuv9TcFUA": "2026-11-12T17:00:53Z",
+  "UCs4eI7shEq_KPQZy9-08-yQ": "2026-11-16T02:53:08Z",
   "UCs5J0dwW2sftrPVj5yasWhQ": "2026-11-12T17:00:53Z",
   "UCs709cxwqUT11vYrBXBQ9Ow": "2026-11-13T04:00:48Z",
   "UCs7QbCYQoSNjcD759BjkyIA": "2026-11-12T20:00:49Z",
@@ -16253,6 +16258,7 @@
   "UCsABPC_SPKUaf7BkZGs4wbQ": "2026-11-12T17:00:53Z",
   "UCsAZIJYMAFM0i4SsgFm3E0g": "2026-11-12T17:00:53Z",
   "UCsC_999SvYy2V4swEJ1cxmA": "2026-11-12T17:00:53Z",
+  "UCsCsBz8g32WxejYZDv-Cm-A": "2026-11-16T02:53:08Z",
   "UCsCvBHQucEbAyQPypuOCA_w": "2026-11-12T17:00:53Z",
   "UCsFFRVLzFxS7YTNHW-Ks-qA": "2026-11-12T17:00:53Z",
   "UCsGPqe1oSUj4rReMAZEGC4Q": "2026-11-12T17:00:53Z",
@@ -16887,8 +16893,8 @@
  "sweep_blocked": {},
  "sweep_pending": {
   "#新人Vtuber": {
-   "next_page": "CPoBEAA",
-   "pages": 5,
+   "next_page": "CKwCEAA",
+   "pages": 6,
    "start": "2026-11-14T15:50:49Z",
    "stop": "2026-11-15T15:50:49Z"
   }
