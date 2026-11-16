@@ -7035,12 +7035,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-16T18:00:56Z",
+ "last_run": "2026-11-16T19:00:53Z",
  "live_plan_index": 13,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-16",
-  "used": 4257
+  "used": 4645
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -13457,6 +13457,7 @@
   "UCGMU0bDN4e4lhm6dfjGvrGg": "2026-11-11T17:00:50Z",
   "UCGNR80YipjSyWlzzTtjmu6g": "2026-11-12T20:57:46Z",
   "UCGNaqv1feM7k-OJxoUvSTcw": "2026-11-11T19:00:50Z",
+  "UCGOU44DKt-ElfsdzpUSQmlA": "2026-11-16T19:00:53Z",
   "UCGQxM4VGidwPQnDKGwzcYdg": "2026-11-08T21:00:51Z",
   "UCGRfAVA-O7kjpKvigHpSu6w": "2026-11-14T02:00:50Z",
   "UCGRiHnUtxwfHbiDcVZX2GfA": "2026-11-08T21:00:51Z",
@@ -16719,6 +16720,7 @@
   "UCuGD1paDrwhDP-PJteOh-UA": "2026-11-13T08:00:51Z",
   "UCuGWharL6ltdEjI-wFlFC8Q": "2026-11-13T08:00:51Z",
   "UCuHkFKkEoTa9ifojaukVUQg": "2026-11-13T08:00:51Z",
+  "UCuI1FdfEl5C03PxsaEiv_-A": "2026-11-16T19:00:53Z",
   "UCuI5XaO-6VkOEhHao6ij7JA": "2026-11-13T09:45:49Z",
   "UCuI_L2wn_ugqeDtOMCjWOkQ": "2026-11-13T08:00:51Z",
   "UCuI_opAVX6qbxZY-a-AxFuQ": "2026-11-13T08:00:51Z",
@@ -17193,5 +17195,12 @@
   "#新人Vtuberを発掘せよ": "2026-11-16T12:50:49Z"
  },
  "sweep_blocked": {},
- "sweep_pending": {}
+ "sweep_pending": {
+  "#新人Vtuber": {
+   "next_page": "CDIQAA",
+   "pages": 1,
+   "start": "2026-11-15T15:50:49Z",
+   "stop": "2026-11-16T15:50:49Z"
+  }
+ }
 }
