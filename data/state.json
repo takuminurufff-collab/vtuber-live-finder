@@ -7035,12 +7035,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-16T17:00:54Z",
- "live_plan_index": 12,
- "low_quota_live_next": true,
+ "last_run": "2026-11-16T18:00:56Z",
+ "live_plan_index": 13,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-16",
-  "used": 3869
+  "used": 4257
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -8384,6 +8384,7 @@
   "UCGMU0bDN4e4lhm6dfjGvrGg": "2026-11-11T17:00:50Z",
   "UCGNR80YipjSyWlzzTtjmu6g": "2026-11-12T20:00:49Z",
   "UCGNaqv1feM7k-OJxoUvSTcw": "2026-11-11T18:00:45Z",
+  "UCGOU44DKt-ElfsdzpUSQmlA": "2026-11-16T18:00:56Z",
   "UCGQxM4VGidwPQnDKGwzcYdg": "2026-11-08T14:00:51Z",
   "UCGRfAVA-O7kjpKvigHpSu6w": "2026-11-14T01:00:49Z",
   "UCGRiHnUtxwfHbiDcVZX2GfA": "2026-11-08T13:00:48Z",
@@ -11646,6 +11647,7 @@
   "UCuGD1paDrwhDP-PJteOh-UA": "2026-11-07T21:00:41Z",
   "UCuGWharL6ltdEjI-wFlFC8Q": "2026-11-10T13:00:54Z",
   "UCuHkFKkEoTa9ifojaukVUQg": "2026-11-08T08:00:45Z",
+  "UCuI1FdfEl5C03PxsaEiv_-A": "2026-11-16T18:00:56Z",
   "UCuI5XaO-6VkOEhHao6ij7JA": "2026-11-13T08:00:51Z",
   "UCuI_L2wn_ugqeDtOMCjWOkQ": "2026-11-11T20:02:47Z",
   "UCuI_opAVX6qbxZY-a-AxFuQ": "2026-11-12T05:00:45Z",
@@ -12297,6 +12299,7 @@
   "UC1JcPKRNOmu8gZuMhdo5TBQ": "2026-11-08T09:00:46Z",
   "UC1JnagrqjTzERqfpNtRfx1A": "2026-11-14T06:01:04Z",
   "UC1JqYl6BeSYo6F3OQTwFoNQ": "2026-11-08T06:00:49Z",
+  "UC1K-QGCi0HE9fFo0JaqRnug": "2026-11-16T18:00:56Z",
   "UC1Kh48e1obZ4pPLaGwZOM8g": "2026-11-08T10:00:45Z",
   "UC1N6kzMw8fA6WoAzOsEMoGg": "2026-11-13T16:03:11Z",
   "UC1QMBbHe2AgLC4ozI-jdXJQ": "2026-11-10T20:00:51Z",
