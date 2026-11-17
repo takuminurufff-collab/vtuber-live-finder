@@ -7035,12 +7035,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-17T08:00:54Z",
+ "last_run": "2026-11-17T09:01:05Z",
  "live_plan_index": 21,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-17",
-  "used": 387
+  "used": 776
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -8079,6 +8079,7 @@
   "UCCVyC7Fe8VRq602wvaJUerg": "2026-11-07T14:14:15Z",
   "UCCXuVtvLqMX_yXb2Og1yYEQ": "2026-11-08T15:00:50Z",
   "UCCYdypPyGA6RYttRw5Iastg": "2026-11-07T15:00:44Z",
+  "UCC_C6wITuITsHRPO2jHg3zA": "2026-11-17T09:01:05Z",
   "UCC_Xg84qaz9qMNiTMguEgKQ": "2026-11-09T08:00:48Z",
   "UCC_m6T2bcvHCFY1PPwiIERA": "2026-11-08T20:37:50Z",
   "UCCcOF7Czu6_8-SOzDajq2qw": "2026-11-09T00:00:48Z",
@@ -13554,6 +13555,7 @@
   "UCGvo0pzkJtP2LS81ifgdc0Q": "2026-11-08T22:00:53Z",
   "UCGwJJ0ErFP9SjYEvtvxJLUA": "2026-11-08T22:00:53Z",
   "UCGx2Ay-ht4tvx0XOk6Dfb3A": "2026-11-08T22:00:53Z",
+  "UCGyhYcIeqxYIHdFlgYiE5qg": "2026-11-17T09:01:05Z",
   "UCH-8gQVBlnoviOtkGzD0KAA": "2026-11-15T06:00:56Z",
   "UCH-GWteO_y03254x0tnpCKg": "2026-11-08T22:00:53Z",
   "UCH-WeTNer2ikXqDM-_CfVCg": "2026-11-12T16:00:54Z",
@@ -14697,6 +14699,7 @@
   "UCUrsE6wMY1GTLZ0NwTxuuRg": "2026-11-13T07:00:47Z",
   "UCUs97iMAiefhthprpphjCKg": "2026-11-09T17:01:01Z",
   "UCUsWnLtVHBR7s5O92m0cncg": "2026-11-09T17:01:01Z",
+  "UCUucxjtVMKvXspzmhVoiK2w": "2026-11-17T09:01:05Z",
   "UCUvPhFV0gZpSfgmVOJXZ7SA": "2026-11-09T17:01:01Z",
   "UCUvkTaDT4rn5cAOJNX2UEJA": "2026-11-13T12:01:04Z",
   "UCUw-GOhbsSL8Fozjrvg9T2g": "2026-11-09T17:01:01Z",
@@ -17259,16 +17262,9 @@
  "sweep": {
   "#Vtuber準備中": "2026-11-16T14:10:17Z",
   "#個人勢Vtuber": "2026-11-16T10:50:48Z",
-  "#新人Vtuber": "2026-11-15T15:50:49Z",
+  "#新人Vtuber": "2026-11-16T15:50:49Z",
   "#新人Vtuberを発掘せよ": "2026-11-16T12:50:49Z"
  },
  "sweep_blocked": {},
- "sweep_pending": {
-  "#新人Vtuber": {
-   "next_page": "CJADEAA",
-   "pages": 8,
-   "start": "2026-11-15T15:50:49Z",
-   "stop": "2026-11-16T15:50:49Z"
-  }
- }
+ "sweep_pending": {}
 }
