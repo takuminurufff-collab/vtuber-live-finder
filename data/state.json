@@ -7035,12 +7035,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-17T07:01:01Z",
- "live_plan_index": 20,
- "low_quota_live_next": true,
+ "last_run": "2026-11-17T08:00:54Z",
+ "live_plan_index": 21,
+ "low_quota_live_next": false,
  "quota": {
-  "day": "2026-11-16",
-  "used": 9300
+  "day": "2026-11-17",
+  "used": 387
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -8446,6 +8446,7 @@
   "UCGvo0pzkJtP2LS81ifgdc0Q": "2026-11-08T01:00:42Z",
   "UCGwJJ0ErFP9SjYEvtvxJLUA": "2026-11-08T01:00:42Z",
   "UCGx2Ay-ht4tvx0XOk6Dfb3A": "2026-11-07T18:00:43Z",
+  "UCGyhYcIeqxYIHdFlgYiE5qg": "2026-11-17T08:00:54Z",
   "UCH-8gQVBlnoviOtkGzD0KAA": "2026-11-15T05:00:48Z",
   "UCH-GWteO_y03254x0tnpCKg": "2026-11-08T01:00:42Z",
   "UCH-WeTNer2ikXqDM-_CfVCg": "2026-11-12T15:00:52Z",
@@ -9589,6 +9590,7 @@
   "UCUrsE6wMY1GTLZ0NwTxuuRg": "2026-11-13T07:00:47Z",
   "UCUs97iMAiefhthprpphjCKg": "2026-11-08T08:00:45Z",
   "UCUsWnLtVHBR7s5O92m0cncg": "2026-11-07T14:14:15Z",
+  "UCUucxjtVMKvXspzmhVoiK2w": "2026-11-17T08:00:54Z",
   "UCUvPhFV0gZpSfgmVOJXZ7SA": "2026-11-08T10:00:45Z",
   "UCUvkTaDT4rn5cAOJNX2UEJA": "2026-11-13T11:01:14Z",
   "UCUw-GOhbsSL8Fozjrvg9T2g": "2026-11-09T15:00:59Z",
@@ -12672,6 +12674,7 @@
   "UC5_Aq4VZLrzZmHq7Dh4xZzw": "2026-11-10T16:00:53Z",
   "UC5_EjSpnIA751F-5KZLcyMA": "2026-11-16T08:00:50Z",
   "UC5_IAqaZkQz6SmEMNY5kXUw": "2026-11-12T01:00:48Z",
+  "UC5_mE94HhBnYGZNUTt3zCfw": "2026-11-17T08:00:54Z",
   "UC5cO92gNceuFsO9znE13-ZA": "2026-11-10T23:34:11Z",
   "UC5dJFf4m-mEcoyJRfhBljoA": "2026-11-10T01:41:20Z",
   "UC5f4WK639nVL7CCDFhQWSpA": "2026-11-10T13:00:54Z",
@@ -13173,6 +13176,7 @@
   "UCCMewRU0D8tnmCtm0CH6TMA": "2026-11-14T05:00:54Z",
   "UCCOXI6AfWYthjfpE2cOsaBg": "2026-11-15T09:00:45Z",
   "UCCP94P9nF_RjwamPLACobJg": "2026-11-12T17:00:53Z",
+  "UCCQamt5ulIhumrwS7npKK3A": "2026-11-17T08:00:54Z",
   "UCCQimjBV-L0J1oHvUcVbAqQ": "2026-11-12T20:57:46Z",
   "UCCQjZPl_OcxLl22ehxdUWMw": "2026-11-10T14:00:50Z",
   "UCCScN57LCjn5zRjjT1VtB1w": "2026-11-10T05:00:49Z",
@@ -13431,6 +13435,7 @@
   "UCF_vVhJkCrT2cDKbbeHJsvw": "2026-11-11T14:00:50Z",
   "UCFaGKEDWe9_jOmWMsyatxSw": "2026-11-15T20:00:48Z",
   "UCFb_zzDgwX36CvpymjPwGkQ": "2026-11-08T20:37:50Z",
+  "UCFbbekX-vrd4iogZRoeKnvw": "2026-11-17T08:00:54Z",
   "UCFbk20543E1EP9WgfGi98uw": "2026-11-12T08:00:49Z",
   "UCFdpvola9Ee1exf6bY098Xw": "2026-11-13T01:58:22Z",
   "UCFeaYtJmM3qyrHB8fvhwJDg": "2026-11-08T20:37:50Z",
