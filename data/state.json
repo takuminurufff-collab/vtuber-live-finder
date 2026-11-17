@@ -7185,12 +7185,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-17T16:00:52Z",
- "live_plan_index": 4,
- "low_quota_live_next": true,
+ "last_run": "2026-11-17T17:00:54Z",
+ "live_plan_index": 5,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-17",
-  "used": 3526
+  "used": 3911
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -9410,6 +9410,7 @@
   "UCQgQKXJ1QAkP869u_ZeD3Sg": "2026-11-08T03:00:44Z",
   "UCQgokmQ2eg29mHwFjmE-wVA": "2026-11-17T11:00:53Z",
   "UCQhal0Oi6iemXjFjO3I4rvg": "2026-11-07T18:07:41Z",
+  "UCQhcvblledTueAYhPwVFoew": "2026-11-17T17:00:54Z",
   "UCQjB6L29CR7HMETdQuBwV9w": "2026-11-14T04:00:48Z",
   "UCQjIXLk6lridUCQIBHaLMDw": "2026-11-07T20:00:40Z",
   "UCQkL7heYbTNzroFQR7sHYWA": "2026-11-08T08:00:45Z",
@@ -11989,6 +11990,7 @@
   "UCvGmFpETY6PRDOFhz0eWz4A": "2026-11-09T17:46:40Z",
   "UCvH1V84WtPU-tscycPdYulw": "2026-11-14T04:00:48Z",
   "UCvH9DEIF_1WdN2IY-U6U-Yw": "2026-11-12T07:00:51Z",
+  "UCvInZx9h3jC2JzsIzoOebWg": "2026-11-17T17:00:54Z",
   "UCvJ4g0BXLGkyaue7fmiNvIA": "2026-11-07T18:07:41Z",
   "UCvJQNSz1PMvUHvSMgETMRdw": "2026-11-13T09:01:07Z",
   "UCvLmadv2GQ7_jp2RJGk4Gaw": "2026-11-09T08:00:48Z",
@@ -14596,6 +14598,7 @@
   "UCQgQKXJ1QAkP869u_ZeD3Sg": "2026-11-09T10:41:12Z",
   "UCQgokmQ2eg29mHwFjmE-wVA": "2026-11-17T13:00:54Z",
   "UCQhal0Oi6iemXjFjO3I4rvg": "2026-11-09T11:00:52Z",
+  "UCQhcvblledTueAYhPwVFoew": "2026-11-17T17:00:54Z",
   "UCQjB6L29CR7HMETdQuBwV9w": "2026-11-14T05:00:54Z",
   "UCQjIXLk6lridUCQIBHaLMDw": "2026-11-09T11:00:52Z",
   "UCQkL7heYbTNzroFQR7sHYWA": "2026-11-09T11:00:52Z",
@@ -17175,6 +17178,7 @@
   "UCvGmFpETY6PRDOFhz0eWz4A": "2026-11-13T13:00:54Z",
   "UCvH1V84WtPU-tscycPdYulw": "2026-11-14T06:01:04Z",
   "UCvH9DEIF_1WdN2IY-U6U-Yw": "2026-11-13T13:00:54Z",
+  "UCvInZx9h3jC2JzsIzoOebWg": "2026-11-17T17:00:54Z",
   "UCvJ4g0BXLGkyaue7fmiNvIA": "2026-11-13T13:00:54Z",
   "UCvJQNSz1PMvUHvSMgETMRdw": "2026-11-13T13:00:54Z",
   "UCvLmadv2GQ7_jp2RJGk4Gaw": "2026-11-13T13:00:54Z",
