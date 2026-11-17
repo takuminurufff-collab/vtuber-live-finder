@@ -7035,12 +7035,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-17T06:00:51Z",
+ "last_run": "2026-11-17T07:01:01Z",
  "live_plan_index": 20,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-16",
-  "used": 8886
+  "used": 9300
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -7566,6 +7566,7 @@
   "UC5_Aq4VZLrzZmHq7Dh4xZzw": "2026-11-10T15:00:55Z",
   "UC5_EjSpnIA751F-5KZLcyMA": "2026-11-16T07:00:49Z",
   "UC5_IAqaZkQz6SmEMNY5kXUw": "2026-11-12T00:00:50Z",
+  "UC5_mE94HhBnYGZNUTt3zCfw": "2026-11-17T07:01:01Z",
   "UC5cO92gNceuFsO9znE13-ZA": "2026-11-10T23:00:52Z",
   "UC5dJFf4m-mEcoyJRfhBljoA": "2026-11-10T01:00:55Z",
   "UC5f4WK639nVL7CCDFhQWSpA": "2026-11-10T12:00:51Z",
@@ -8067,6 +8068,7 @@
   "UCCMewRU0D8tnmCtm0CH6TMA": "2026-11-14T04:00:48Z",
   "UCCOXI6AfWYthjfpE2cOsaBg": "2026-11-15T08:00:52Z",
   "UCCP94P9nF_RjwamPLACobJg": "2026-11-12T17:00:53Z",
+  "UCCQamt5ulIhumrwS7npKK3A": "2026-11-17T07:01:01Z",
   "UCCQimjBV-L0J1oHvUcVbAqQ": "2026-11-12T20:00:49Z",
   "UCCQjZPl_OcxLl22ehxdUWMw": "2026-11-10T13:00:54Z",
   "UCCScN57LCjn5zRjjT1VtB1w": "2026-11-10T04:00:51Z",
@@ -8325,6 +8327,7 @@
   "UCF_vVhJkCrT2cDKbbeHJsvw": "2026-11-11T13:00:52Z",
   "UCFaGKEDWe9_jOmWMsyatxSw": "2026-11-15T20:00:48Z",
   "UCFb_zzDgwX36CvpymjPwGkQ": "2026-11-07T21:00:41Z",
+  "UCFbbekX-vrd4iogZRoeKnvw": "2026-11-17T07:01:01Z",
   "UCFbk20543E1EP9WgfGi98uw": "2026-11-12T07:00:51Z",
   "UCFdpvola9Ee1exf6bY098Xw": "2026-11-13T00:00:53Z",
   "UCFeaYtJmM3qyrHB8fvhwJDg": "2026-11-07T19:00:42Z",
@@ -14079,6 +14082,7 @@
   "UCNH-swU7qbGTQftgUh1Veyg": "2026-11-15T02:51:28Z",
   "UCNIP0TiHp4gE9qjuig5nuMw": "2026-11-10T09:00:53Z",
   "UCNIRPGcyDJfxPxM1ujGIGgA": "2026-11-09T05:46:58Z",
+  "UCNIReiVeNsfDslubozhB8mw": "2026-11-17T07:01:01Z",
   "UCNIsO7c7a3J_4RRLnLyhObg": "2026-11-09T05:46:58Z",
   "UCNJ_7JAsI-qCzH2PRmI0SJg": "2026-11-09T05:46:58Z",
   "UCNKxHC2T_wUNers3d4MWePQ": "2026-11-09T05:46:58Z",
@@ -17256,8 +17260,8 @@
  "sweep_blocked": {},
  "sweep_pending": {
   "#新人Vtuber": {
-   "next_page": "CN4CEAA",
-   "pages": 7,
+   "next_page": "CJADEAA",
+   "pages": 8,
    "start": "2026-11-15T15:50:49Z",
    "stop": "2026-11-16T15:50:49Z"
   }
