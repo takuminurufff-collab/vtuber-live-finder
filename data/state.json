@@ -7185,12 +7185,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-18T09:01:07Z",
- "live_plan_index": 13,
- "low_quota_live_next": true,
+ "last_run": "2026-11-18T10:00:51Z",
+ "live_plan_index": 14,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-18",
-  "used": 777
+  "used": 1163
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -7968,6 +7968,7 @@
   "UC8owZH7JHqRAP2lHxIirYHw": "2026-11-17T11:00:53Z",
   "UC8pSf2ulJ9hZh5na6FW8vAw": "2026-11-12T08:00:49Z",
   "UC8qcoryizcHgr88rqyamFPg": "2026-11-07T22:00:40Z",
+  "UC8rA48iuOoeauLI0LFkdLew": "2026-11-18T10:00:51Z",
   "UC8rcEBzJSleTkf_-agPM20g": "2026-11-13T00:00:53Z",
   "UC8rxpPuEcXB19TY4yphKulA": "2026-11-13T07:00:47Z",
   "UC8sMBRVW5993lg7vee-0deg": "2026-11-07T15:10:09Z",
@@ -10813,6 +10814,7 @@
   "UCgQioNr92qymTUv88XIhYrA": "2026-11-11T09:00:46Z",
   "UCgTTWtz0gXQ_CUdotYOKGBw": "2026-11-08T09:00:46Z",
   "UCgTawCMmbf5TFUDboGyVC3Q": "2026-11-07T14:14:15Z",
+  "UCgUDSlsO3W0ZUU4ZrqD8X8A": "2026-11-18T10:00:51Z",
   "UCgV6HVGGlNFjiZ9wZfwv2kg": "2026-11-13T19:01:03Z",
   "UCgVOyeRGipw21RzohpTvbfQ": "2026-11-10T19:00:50Z",
   "UCgVV6xsKVYAQgkHIwEvn0Wg": "2026-11-13T04:00:48Z",
@@ -13192,6 +13194,7 @@
   "UC8owZH7JHqRAP2lHxIirYHw": "2026-11-17T12:00:52Z",
   "UC8pSf2ulJ9hZh5na6FW8vAw": "2026-11-12T09:00:48Z",
   "UC8qcoryizcHgr88rqyamFPg": "2026-11-08T15:00:50Z",
+  "UC8rA48iuOoeauLI0LFkdLew": "2026-11-18T10:00:51Z",
   "UC8rcEBzJSleTkf_-agPM20g": "2026-11-13T01:00:50Z",
   "UC8rxpPuEcXB19TY4yphKulA": "2026-11-13T07:00:47Z",
   "UC8sMBRVW5993lg7vee-0deg": "2026-11-08T15:00:50Z",
@@ -16037,6 +16040,7 @@
   "UCgQioNr92qymTUv88XIhYrA": "2026-11-11T12:00:51Z",
   "UCgTTWtz0gXQ_CUdotYOKGBw": "2026-11-10T14:00:50Z",
   "UCgTawCMmbf5TFUDboGyVC3Q": "2026-11-10T14:00:50Z",
+  "UCgUDSlsO3W0ZUU4ZrqD8X8A": "2026-11-18T10:00:51Z",
   "UCgV6HVGGlNFjiZ9wZfwv2kg": "2026-11-13T20:01:32Z",
   "UCgVOyeRGipw21RzohpTvbfQ": "2026-11-10T20:00:51Z",
   "UCgVV6xsKVYAQgkHIwEvn0Wg": "2026-11-13T06:00:48Z",
