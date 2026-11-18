@@ -44648,7 +44648,8 @@
 "subscribers": 753
 },
 "UCC039lPDIRYNRYD22JvB1QQ": {
-"counts_at": null,
+"counts_at": "2026-11-18T15:01:01Z",
+"counts_attempt_at": "2026-11-18T15:01:01Z",
 "first_seen": "2026-11-18T14:00:54Z",
 "icon": "https://yt3.ggpht.com/y_JkIir3odVoOeNvUYway-fxpvYSWqOjmI7inie6bcc0KkoTdmZkux2-68lTWTS1duGDMPVCE08=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -44656,8 +44657,11 @@
 "title": "【マシュマロ企画】第１回 みんなのオリキャラ紹介【#新人VTuber】",
 "video_id": "nupJ9xcslFk"
 },
+"lives": 680,
 "name": "綾園冬華ちゃんねる",
-"subscribers": 1050
+"shorts": 9,
+"subscribers": 1050,
+"videos": 4
 },
 "UCC05cjlhj3JLjVEilDLKVDw": {
 "counts_at": null,
@@ -55729,6 +55733,7 @@
 },
 "UCFIAH63CIv9094ULtgjTQRw": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-18T15:01:01Z",
 "first_seen": "2026-11-18T14:00:54Z",
 "icon": "https://yt3.ggpht.com/MXqI5OcL19KG0wignC1XK43YJTcqssFw1iqBI9e7VoDBNXqkT-wu2L1-hITAzhgFKurXqIRmRA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -55736,7 +55741,9 @@
 "title": "【#biohazard /#biohazardvillage 】ちぬ #01【#完全初見 /#vtuber /#個人vtuber 】",
 "video_id": "hI3NK8dSIvc"
 },
+"lives": 570,
 "name": "神成レオナ / Leona Kaminari",
+"shorts": 21,
 "subscribers": 1090
 },
 "UCFIPVDm8SejRZHkuVOzBmpA": {
@@ -57365,7 +57372,8 @@
 "videos": 1
 },
 "UCFuG0sAoignf0wTfqRCkGbQ": {
-"counts_at": null,
+"counts_at": "2026-11-18T15:01:01Z",
+"counts_attempt_at": "2026-11-18T15:01:01Z",
 "first_seen": "2026-11-18T14:00:54Z",
 "icon": "https://yt3.ggpht.com/qlsal7_56_vN286_3vVAxvN9VbhSRZkM_CylLBz9X9U8iHhFNxZ7I8dMU_nCe2A8GvfL8O63LA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -57373,8 +57381,11 @@
 "title": "【歌枠/KARAOKE】タイトルをつけ忘れるおちゃめVsinger【#個人Vtuber / 七–ナノ−】 #初見さん大歓迎 #配信中なの",
 "video_id": "FEqdriILHU0"
 },
+"lives": 445,
 "name": "七-Nano-ちゃんねる",
-"subscribers": 2170
+"shorts": 47,
+"subscribers": 2170,
+"videos": 16
 },
 "UCFv6R5ROeVjDcSldUht6H3A": {
 "counts_at": null,
@@ -68588,6 +68599,11 @@
 "shorts": 156,
 "subscribers": 7660,
 "videos": 7
+},
+"UCJcylebvLS7B_e8bwpVweQw": {
+"counts_at": null,
+"first_seen": "2026-11-18T15:01:01Z",
+"subscribers": 18600
 },
 "UCJdCcpxByLYYzobYwymK8vQ": {
 "counts_at": null,
@@ -157658,6 +157674,11 @@
 "subscribers": 1790,
 "videos": 19
 },
+"UCjbmGzhnnqtfW-yg7cy84zA": {
+"counts_at": null,
+"first_seen": "2026-11-18T15:01:01Z",
+"subscribers": 72
+},
 "UCjcA83Ggm4KU23RStQB7Ulw": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-08T19:00:46Z",
@@ -160392,6 +160413,11 @@
 "subscribers": 1210,
 "via": "snowball",
 "videos": 53
+},
+"UCkdUa81TiEo4bDISJUgCpOA": {
+"counts_at": null,
+"first_seen": "2026-11-18T15:01:01Z",
+"subscribers": 97
 },
 "UCkdzr-xr7TpSfOdse1NEvhQ": {
 "counts_at": null,
