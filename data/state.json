@@ -7185,12 +7185,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-19T22:00:51Z",
- "live_plan_index": 12,
- "low_quota_live_next": true,
+ "last_run": "2026-11-19T22:18:07Z",
+ "live_plan_index": 13,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-19",
-  "used": 5806
+  "used": 5909
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -8741,6 +8741,7 @@
   "UCI6arigi1YTt9pTj9xsQXyA": "2026-11-13T00:00:53Z",
   "UCI7-LebyvoEO4TFh6jV4iZA": "2026-11-07T14:14:15Z",
   "UCI7ZUTg0E_szqU3ZWer782A": "2026-11-10T16:00:53Z",
+  "UCI7tvWRsyyQb6FBQhlXCG7A": "2026-11-19T22:18:07Z",
   "UCI9GblsiUkE7ng1zQvELUlQ": "2026-11-07T22:03:39Z",
   "UCIAZgQ7LEWYqDq436jC5FXA": "2026-11-07T18:07:41Z",
   "UCIBMvf1IcDAMb9KJqWHKhWw": "2026-11-11T04:00:47Z",
@@ -11843,6 +11844,7 @@
   "UCsQwBJtxcZBCeyKigEvXSYQ": "2026-11-11T09:00:46Z",
   "UCsR7zhsMfN2o33tzdiVsr2A": "2026-11-07T15:10:09Z",
   "UCsRnT8d71HMKbGuLLr3PPsA": "2026-11-08T05:00:42Z",
+  "UCsT-WT6QgNhda-Q9DAkeYOA": "2026-11-19T22:18:07Z",
   "UCsW3atZgvJRLov09sj6eyKw": "2026-11-13T00:00:53Z",
   "UCsX2VFvpuLIQ2kZHfDjvi2g": "2026-11-07T16:00:43Z",
   "UCsX8uJHgXJuSgINyzoCiptg": "2026-11-11T01:00:46Z",
@@ -14050,6 +14052,7 @@
   "UCI6arigi1YTt9pTj9xsQXyA": "2026-11-13T01:58:22Z",
   "UCI7-LebyvoEO4TFh6jV4iZA": "2026-11-09T00:00:48Z",
   "UCI7ZUTg0E_szqU3ZWer782A": "2026-11-10T17:00:52Z",
+  "UCI7tvWRsyyQb6FBQhlXCG7A": "2026-11-19T22:18:07Z",
   "UCI9GblsiUkE7ng1zQvELUlQ": "2026-11-09T00:00:48Z",
   "UCIAZgQ7LEWYqDq436jC5FXA": "2026-11-09T00:00:48Z",
   "UCIBMvf1IcDAMb9KJqWHKhWw": "2026-11-11T05:00:49Z",
@@ -17152,6 +17155,7 @@
   "UCsQwBJtxcZBCeyKigEvXSYQ": "2026-11-12T18:00:52Z",
   "UCsR7zhsMfN2o33tzdiVsr2A": "2026-11-12T18:00:52Z",
   "UCsRnT8d71HMKbGuLLr3PPsA": "2026-11-12T18:00:52Z",
+  "UCsT-WT6QgNhda-Q9DAkeYOA": "2026-11-19T22:18:07Z",
   "UCsW3atZgvJRLov09sj6eyKw": "2026-11-13T04:00:48Z",
   "UCsX2VFvpuLIQ2kZHfDjvi2g": "2026-11-12T18:00:52Z",
   "UCsX8uJHgXJuSgINyzoCiptg": "2026-11-12T18:00:52Z",
