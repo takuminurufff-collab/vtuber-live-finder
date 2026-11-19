@@ -7185,12 +7185,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-19T12:00:54Z",
+ "last_run": "2026-11-19T13:00:49Z",
  "live_plan_index": 7,
- "low_quota_live_next": false,
+ "low_quota_live_next": true,
  "quota": {
   "day": "2026-11-19",
-  "used": 1937
+  "used": 2324
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -17713,8 +17713,8 @@
  "sweep_blocked": {},
  "sweep_pending": {
   "#新人Vtuber": {
-   "next_page": "CGQQAA",
-   "pages": 2,
+   "next_page": "CJYBEAA",
+   "pages": 3,
    "start": "2026-11-18T15:50:49Z",
    "stop": "2026-11-19T08:50:51Z"
   }
