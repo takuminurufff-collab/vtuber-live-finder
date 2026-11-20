@@ -6432,9 +6432,13 @@
 "videos": 2
 },
 "UC0aVsNopoKzlK4EEbZQW0eA": {
-"counts_at": null,
+"counts_at": "2026-11-20T22:00:50Z",
+"counts_attempt_at": "2026-11-20T22:00:50Z",
 "first_seen": "2026-11-20T21:19:45Z",
-"subscribers": 2
+"lives": 6,
+"shorts": 3,
+"subscribers": 2,
+"videos": 2
 },
 "UC0ao5db57qWlb-3ypDV0vuw": {
 "counts_at": null,
@@ -22379,6 +22383,11 @@
 "via": "snowball",
 "videos": 5
 },
+"UC55eE-nnrW08jV6JpIaXeOA": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 333
+},
 "UC56conDojpK-aPtomS2ckFA": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-08T16:30:16Z",
@@ -32348,7 +32357,8 @@
 "videos": 669
 },
 "UC7tSGSTAw5uCxH4TpFmbHWw": {
-"counts_at": null,
+"counts_at": "2026-11-20T22:00:50Z",
+"counts_attempt_at": "2026-11-20T22:00:50Z",
 "first_seen": "2026-11-20T21:00:49Z",
 "icon": "https://yt3.ggpht.com/lWIWnQre1svoQ0iCSxty_HwchC9Kic4HnixoNvese_bvGvfXv44KB9yYDzZkY-OPpJK88oGO1w=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -32356,8 +32366,11 @@
 "title": "[魔物獵人] 妖鳥尾巴的百年任務!? #台v #vtuber #啵跳霏 #雜談 #搞笑 #個人勢  #魔物 #搞笑 #個人勢 #魔物獵人 #monsterhunter",
 "video_id": "EFaBYh-0gSw"
 },
+"lives": 22,
 "name": "地上一灘啵跳霏",
-"subscribers": 502
+"shorts": 17,
+"subscribers": 502,
+"videos": 7
 },
 "UC7tUwG7a4FG4mlBz8vQVXog": {
 "counts_at": "2026-11-16T19:00:53Z",
@@ -76224,6 +76237,11 @@
 "shorts": 133,
 "subscribers": 300,
 "videos": 13
+},
+"UCLN7eNBFg6kg56lGZgPhSPg": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 960
 },
 "UCLNRwvN4OeKApCg-sBWPrng": {
 "counts_at": null,
@@ -134966,6 +134984,11 @@
 "via": "snowball",
 "videos": 9
 },
+"UCbm1-hrftqwG96KbxcHwWhw": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 2650
+},
 "UCbmGF8dmuaSzDBTEqOznQuQ": {
 "counts_at": "2026-11-14T23:00:50Z",
 "counts_attempt_at": "2026-11-14T23:00:50Z",
@@ -141805,6 +141828,11 @@
 "shorts": 49,
 "subscribers": 867,
 "videos": 3
+},
+"UCdjU9Px5uvGsRaGSrREfnzw": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 90
 },
 "UCdjcwYo1yxH1AZY_b8nf3-A": {
 "counts_at": null,
@@ -169891,6 +169919,11 @@
 "via": "snowball",
 "videos": 5
 },
+"UCmLdrp4wuxUqdfZSbKYBVOg": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 3300
+},
 "UCmMCc4YcqoGbTUjHtvH7iQA": {
 "counts_at": "2026-11-17T18:00:51Z",
 "counts_attempt_at": "2026-11-17T18:00:51Z",
@@ -188656,6 +188689,11 @@
 "subscribers": 3320,
 "videos": 146
 },
+"UCs9bPzgjumEDefyDt0jZx1w": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 2530
+},
 "UCs9wWYxP_GZbP8VsuMGCOqQ": {
 "counts_at": "2026-11-14T10:00:48Z",
 "counts_attempt_at": "2026-11-14T10:00:48Z",
@@ -194850,6 +194888,11 @@
 "subscribers": 242,
 "via": "snowball",
 "videos": 10
+},
+"UCtzuqXC9qHIWvcbvd6z9n1w": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 4760
 },
 "UCu-KQ7bnVuT-I7oZvNCeiIA": {
 "counts_at": "2026-11-10T22:00:49Z",
@@ -213116,6 +213159,11 @@
 "shorts": 617,
 "subscribers": 12800,
 "videos": 29
+},
+"UCzMRjYxVe6YuCEr8VaWIp4A": {
+"counts_at": null,
+"first_seen": "2026-11-20T22:00:50Z",
+"subscribers": 3200
 },
 "UCzMh2suGLACYjRg5Ay5tg9g": {
 "counts_at": null,
