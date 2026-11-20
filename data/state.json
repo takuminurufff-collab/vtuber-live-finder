@@ -7185,12 +7185,12 @@
   "青海一星baseballchannel": "UCRnydni5CyoYYIw6adezS6g",
   "館西智也": "UCPoQSF-TIxpeadADLdW-aHg"
  },
- "last_run": "2026-11-20T03:01:01Z",
- "live_plan_index": 15,
- "low_quota_live_next": true,
+ "last_run": "2026-11-20T03:34:03Z",
+ "live_plan_index": 16,
+ "low_quota_live_next": false,
  "quota": {
   "day": "2026-11-19",
-  "used": 7742
+  "used": 7935
  },
  "rejected": {
   "UC--PJqRdDcM4RpSonMCkp9w": "2026-11-08T08:00:45Z",
@@ -7644,6 +7644,7 @@
   "UC4R0SYIDQv7VSBkIKbDYUeQ": "2026-11-08T19:00:46Z",
   "UC4T-dSpkAT8xGprFjXpBeMw": "2026-11-10T01:00:55Z",
   "UC4WfJExgjEkpqAYtBCmG9lg": "2026-11-11T03:00:46Z",
+  "UC4X-G8juoya-_-TkiDxwsKA": "2026-11-20T03:34:03Z",
   "UC4YaOt1yT-ZeyB0OmxHgolA": "2026-11-07T15:00:44Z",
   "UC4YpBt-Tp0vjFok4FdAu69g": "2026-11-07T14:14:15Z",
   "UC4Z_iOMd5dVcfrTQLrlck3g": "2026-11-08T09:13:46Z",
@@ -10392,6 +10393,7 @@
   "UCaScal66y4R9KgktZlnJSzQ": "2026-11-09T21:00:50Z",
   "UCaUI2dEv5ANtcgvXGaRN_oA": "2026-11-16T11:46:35Z",
   "UCaUnbZukOy2AD726PLjZjRA": "2026-11-07T14:14:15Z",
+  "UCaWbUNVtOCjpAcg_0ebMdew": "2026-11-20T03:34:03Z",
   "UCaXV3Xha3iU9mxLMvSakSKQ": "2026-11-14T08:01:04Z",
   "UCaXenuXylTk4ZpSP3MhKRdw": "2026-11-12T03:00:49Z",
   "UCaXfFDauhubIgmaTKxM74Kw": "2026-11-07T15:00:44Z",
@@ -12961,6 +12963,7 @@
   "UC4R0SYIDQv7VSBkIKbDYUeQ": "2026-11-08T19:41:04Z",
   "UC4T-dSpkAT8xGprFjXpBeMw": "2026-11-10T01:41:20Z",
   "UC4WfJExgjEkpqAYtBCmG9lg": "2026-11-11T04:00:47Z",
+  "UC4X-G8juoya-_-TkiDxwsKA": "2026-11-20T03:34:03Z",
   "UC4YaOt1yT-ZeyB0OmxHgolA": "2026-11-08T08:00:45Z",
   "UC4YpBt-Tp0vjFok4FdAu69g": "2026-11-08T08:00:45Z",
   "UC4Z_iOMd5dVcfrTQLrlck3g": "2026-11-08T10:00:45Z",
@@ -15709,6 +15712,7 @@
   "UCaScal66y4R9KgktZlnJSzQ": "2026-11-10T04:00:51Z",
   "UCaUI2dEv5ANtcgvXGaRN_oA": "2026-11-16T11:46:35Z",
   "UCaUnbZukOy2AD726PLjZjRA": "2026-11-10T04:00:51Z",
+  "UCaWbUNVtOCjpAcg_0ebMdew": "2026-11-20T03:34:03Z",
   "UCaXV3Xha3iU9mxLMvSakSKQ": "2026-11-14T09:00:44Z",
   "UCaXenuXylTk4ZpSP3MhKRdw": "2026-11-12T03:56:33Z",
   "UCaXfFDauhubIgmaTKxM74Kw": "2026-11-10T04:00:51Z",
