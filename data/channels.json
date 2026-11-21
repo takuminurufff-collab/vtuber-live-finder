@@ -377,9 +377,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/xD1_mhQlIvM/hqdefault.jpg",
-"title": "【原神】魔神任務 第7章 第6幕｢彼岸より届けられし昨日｣やります！！",
-"video_id": "xD1_mhQlIvM"
+"thumbnail": "https://i2.ytimg.com/vi/5S2oTezVebE/hqdefault.jpg",
+"title": "【VALORANT】大会本番！！！　AzuRed女子～堕落した天使達～",
+"video_id": "5S2oTezVebE"
 },
 "live": {
 "started_at": "2026-11-17T11:01:39Z",
@@ -2073,9 +2073,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:16:19Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/5DyTt6xJ6ns/hqdefault.jpg",
-"title": "【バトオペ3/Steam/PC版】先行ネットワークテストを昼からもやってくぞー【VTuber/機動戦士ガンダムバトルオペレーション3】",
-"video_id": "5DyTt6xJ6ns"
+"thumbnail": "https://i4.ytimg.com/vi/WiLyDVEO1Lg/hqdefault.jpg",
+"title": "【バトオペ3/Steam/PC版】先行ネットワークテストで強襲が楽しいから強襲ばっかり使ってる【VTuber/機動戦士ガンダムバトルオペレーション3】",
+"video_id": "WiLyDVEO1Lg"
 },
 "lives": 766,
 "name": "みなみうり",
@@ -2540,7 +2540,7 @@
 "name": "星瑠璃メロウ / Hoshiruri Mellow",
 "sections_at": "2026-11-17T11:00:53Z",
 "shorts": 132,
-"subscribers": 5820,
+"subscribers": 5840,
 "videos": 14
 },
 "UC-ehVkeJgpuw3cQ6yTGP37Q": {
@@ -2749,7 +2749,7 @@
 "name": "ひかげちゃんねる",
 "sections_at": "2026-11-07T14:14:15Z",
 "shorts": 17,
-"subscribers": 398,
+"subscribers": 399,
 "via": "snowball",
 "videos": 0
 },
@@ -3047,7 +3047,7 @@
 "name": "夢見るぷりんちゃん🍮🎈",
 "sections_at": "2026-11-14T06:01:04Z",
 "shorts": 107,
-"subscribers": 958
+"subscribers": 957
 },
 "UC-o-1qjKkMLq-ZFxXIzOUBQ": {
 "counts_at": null,
@@ -3335,7 +3335,7 @@
 "name": "金ノ木 犀",
 "sections_at": "2026-11-12T06:00:46Z",
 "shorts": 356,
-"subscribers": 989,
+"subscribers": 988,
 "via": "snowball",
 "videos": 190
 },
@@ -4367,7 +4367,7 @@
 "name": "詰ませちゃんっ!!",
 "sections_at": "2026-11-12T06:00:46Z",
 "shorts": 48,
-"subscribers": 994,
+"subscribers": 995,
 "videos": 39
 },
 "UC09mAbVFHcq950SfN_growA": {
@@ -4450,7 +4450,7 @@
 "name": "希望町りむ🥩🍽",
 "sections_at": "2026-11-16T05:00:49Z",
 "shorts": 8,
-"subscribers": 123
+"subscribers": 124
 },
 "UC0AeEw7z1F3hP0TSkKrbNbQ": {
 "counts_at": null,
@@ -5156,7 +5156,16 @@
 },
 "UC0IUr9VIn7WUaBOm7OMj-8Q": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
+"icon": "https://yt3.ggpht.com/R_jrDP9zX3_-zgsuVRkCIHq65tCFoX3ntwqyDG0DB-D62ZL1tc0yHlKtGZvaXVPBF6IPISbt=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i1.ytimg.com/vi/0f-z2rVKoc4/hqdefault.jpg",
+"title": "明かされる悲しい過去… #るくてん #vtuber #新人vtuber #歌凪れい #切り抜き #うたなぎ放送局 #shorts #short",
+"video_id": "0f-z2rVKoc4"
+},
+"name": "凪",
+"shorts": 10,
 "subscribers": 11
 },
 "UC0Igu_SDbOju-Y5FJCNtqtw": {
@@ -5549,6 +5558,18 @@
 "subscribers": 214,
 "via": "snowball",
 "videos": 46
+},
+"UC0Odsi2S2k7f1so0Zc6o9Aw": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/q9H7_fQGwJ71KsSpdYSb7QmAvvUD3P2VuHQKvtg_re--kFm30H7DzEgaG4wTmz_eMy_SSinw6w=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/RuBJu9XoY4I/hqdefault.jpg",
+"title": "【 Lobotomy Corporation 】 Day48～中層抑制再来！？ミリしら管理人、赤い霧を再び乗り越える！ Part16 【 個人VTuber / 仁村郁穂 】",
+"video_id": "RuBJu9XoY4I"
+},
+"name": "仁村郁穂 / Nimura Ikuho",
+"subscribers": 685
 },
 "UC0Oh9eT77B-oVYk9HbPVvcw": {
 "counts_at": null,
@@ -6273,7 +6294,7 @@
 "name": "月見月 レオ ウルフェカ",
 "sections_at": "2026-11-08T01:00:42Z",
 "shorts": 2,
-"subscribers": 644,
+"subscribers": 643,
 "via": "snowball",
 "videos": 4
 },
@@ -7131,7 +7152,7 @@
 "name": "霙Mizore Ch.",
 "sections_at": "2026-11-14T03:00:52Z",
 "shorts": 32,
-"subscribers": 547,
+"subscribers": 548,
 "videos": 7
 },
 "UC0mrYdMV12OtvPa_GfL9nJw": {
@@ -7738,9 +7759,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T07:47:38Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/DNzHuljBI4w/hqdefault.jpg",
-"title": "【R.E.P.O.】コスメく～～～～ださい！",
-"video_id": "DNzHuljBI4w"
+"thumbnail": "https://i4.ytimg.com/vi/ScG1voLzVQI/hqdefault.jpg",
+"title": "【Apex Legends】ゴジラコラボが楽しすぎてだな…！！",
+"video_id": "ScG1voLzVQI"
 },
 "lives": 530,
 "name": "はすかわたけし",
@@ -7957,7 +7978,7 @@
 "name": "アラン･デッドリー=シンズ",
 "sections_at": "2026-11-13T00:00:53Z",
 "shorts": 3,
-"subscribers": 279,
+"subscribers": 280,
 "via": "snowball",
 "videos": 5
 },
@@ -8080,7 +8101,7 @@
 "name": "ばにら",
 "sections_at": "2026-11-12T07:00:51Z",
 "shorts": 732,
-"subscribers": 969,
+"subscribers": 968,
 "videos": 4
 },
 "UC10EWSm0lQ9bvuxgBKD-jDw": {
@@ -8181,7 +8202,8 @@
 "via": "snowball"
 },
 "UC11VkSIkwH6DKbiJ_0odEbg": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:01:07Z",
 "icon": "https://yt3.ggpht.com/xTfmjsg9kaLqWH-y0kOT9gsTCjzGFU0gF2hKkGAxgunuNaEfKNVPW45V4i61HATXLC8AtJhFTQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -8189,8 +8211,11 @@
 "title": "【#ネルあす合戦2】宝をたくさん集めて優勝目指そう！！！【#新人vtuber/#桃霊媄狐】",
 "video_id": "cKBmRFRXPes"
 },
+"lives": 256,
 "name": "桃霊 媄狐 / Momotama Mico",
-"subscribers": 438
+"shorts": 55,
+"subscribers": 438,
+"videos": 30
 },
 "UC11afkx52SH2ku4m3xU8Ygg": {
 "counts_at": null,
@@ -8460,15 +8485,15 @@
 "is_live": false,
 "last_live_at": "2026-11-16T23:33:05Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/G1QVxW5IwQ8/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/KWcPCGla5Gw/hqdefault.jpg",
 "title": "【 #初見大歓迎 】エンジョイ歌枠！【 #縦型配信 #新人Vtuber #歌枠 】",
-"video_id": "G1QVxW5IwQ8"
+"video_id": "KWcPCGla5Gw"
 },
 "lives": 210,
 "name": "(ё)ぴたそ｡ 【 Pitaso. Ch. 】",
 "sections_at": "2026-11-12T07:00:51Z",
 "shorts": 114,
-"subscribers": 3660,
+"subscribers": 3650,
 "videos": 4
 },
 "UC16J4Xxpwb4AAINKjfXe15g": {
@@ -8632,9 +8657,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:48:08Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/PRLNm_Poc3c/hqdefault.jpg",
-"title": "【Pokémon UNITE】あまね杯（3分遅延）【Vtuber】",
-"video_id": "PRLNm_Poc3c"
+"thumbnail": "https://i4.ytimg.com/vi/KenMm2cfeO8/hqdefault.jpg",
+"title": "【Pokémon UNITE】あまね杯後ランク【Vtuber】",
+"video_id": "KenMm2cfeO8"
 },
 "lives": 1357,
 "name": "水倉ユラ【ユラのアトリエ】",
@@ -9050,9 +9075,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/DuF1xHAhxWE/hqdefault.jpg",
-"title": "【#エンドフィールド】#1 初めてのエンドフィールド！まずは推しを見つける所から✨全キャラPV鑑賞🎬✨  #PR  #ぶいきゃす  【アークナイツ: エンドフィールド】【#新人vtuber】",
-"video_id": "DuF1xHAhxWE"
+"thumbnail": "https://i3.ytimg.com/vi/vqEXEKJG_rI/hqdefault.jpg",
+"title": "【雑談/縦型】昼活雑談⏰今起きましたおはようございます。みんなのお昼ご飯なんですか？　 #初見さん歓迎  #shorts  【雑談】【#新人vtuber】",
+"video_id": "vqEXEKJG_rI"
 },
 "live": {
 "started_at": "2026-11-17T09:03:22Z",
@@ -9608,7 +9633,7 @@
 "name": "Loveli ASMR Ch. -愛蒔らぶり-",
 "sections_at": "2026-11-13T00:00:53Z",
 "shorts": 7,
-"subscribers": 2580,
+"subscribers": 2620,
 "videos": 12
 },
 "UC1Rz_Dz0Js4bf0G70_DvoWg": {
@@ -11373,7 +11398,7 @@
 "name": "Shikina Ch. 霧宮シキナ",
 "sections_at": "2026-11-07T14:14:15Z",
 "shorts": 26,
-"subscribers": 193,
+"subscribers": 192,
 "videos": 2
 },
 "UC2-XNgYwh1gX3NnqT_m-Maw": {
@@ -11845,7 +11870,7 @@
 "name": "花彩音_3kHz  / かさね_さんきろへるつ",
 "sections_at": "2026-11-13T00:00:53Z",
 "shorts": 396,
-"subscribers": 2390,
+"subscribers": 2400,
 "via": "snowball",
 "videos": 68
 },
@@ -13867,9 +13892,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/NDBURfgdzzc/hqdefault.jpg",
-"title": "【テーブルゲームワールド】 TRPG『カタシロ Remake』 PL：炯遊えいり #えいりのカタシロ 【※ネタバレ注意】 #vtuber #live",
-"video_id": "NDBURfgdzzc"
+"thumbnail": "https://i3.ytimg.com/vi/JFKDKq3iAIY/hqdefault.jpg",
+"title": "【嘆きの七英雄】第5章 攻略2回目！！ 世界の真実とは……？！ 王道ファンタジーRPGを多声類がじっくり読み上げ実況プレイ！ #vtuber #PR live",
+"video_id": "JFKDKq3iAIY"
 },
 "live": {
 "started_at": "2026-11-17T09:15:37Z",
@@ -15981,7 +16006,7 @@
 },
 "name": "Yard Zeroths.",
 "shorts": 2,
-"subscribers": 8
+"subscribers": 9
 },
 "UC3ByjTrBLa2KJNxrpkpQr-Q": {
 "counts_at": null,
@@ -16108,7 +16133,16 @@
 },
 "UC3DRWOmy6tzA7k1UOFXvAhg": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
+"icon": "https://yt3.ggpht.com/lk6pzyEjQqYlHBODqF0eRLwyHR-yOL8Irphdj70CruJesNcxycDGTh4cltCsH-X5U81GY7xX=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/2A9-tOr4eig/hqdefault.jpg",
+"title": "#ホロライブ 入らないの？ #新人vtuber #shorts",
+"video_id": "2A9-tOr4eig"
+},
+"name": "好 小鈴 / Hao_Xiaoring",
+"shorts": 3,
 "subscribers": 117
 },
 "UC3DdHhQ5DhbkiX1S1lTK5EA": {
@@ -16607,7 +16641,7 @@
 "name": "ラヴカ・リィカ🦈🖤Lavca•Lyca ",
 "sections_at": "2026-11-15T04:00:45Z",
 "shorts": 9,
-"subscribers": 165,
+"subscribers": 164,
 "videos": 1
 },
 "UC3NIE21dJW2Y7zw7CMeQ67A": {
@@ -16639,9 +16673,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T11:14:21Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/Na7pBtrRpHE/hqdefault.jpg",
-"title": "【5周年】長らくのご愛顧、ありがとうございます【 #vtuber 】",
-"video_id": "Na7pBtrRpHE"
+"thumbnail": "https://i2.ytimg.com/vi/aJr6i3vpaCM/hqdefault.jpg",
+"title": "【Cult of the Lamb】また神の話してる…【#vtuber 】",
+"video_id": "aJr6i3vpaCM"
 },
 "lives": 1292,
 "name": "大鳳湊-Otori Minato-",
@@ -16695,9 +16729,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T14:02:25Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/W68gHu7U_tQ/hqdefault.jpg",
-"title": "【雑談】歌枠リレーの振り返りとありがとうのやつ【#Vtuber 小仲ぺこ子】",
-"video_id": "W68gHu7U_tQ"
+"thumbnail": "https://i2.ytimg.com/vi/ipCeh2oftSQ/hqdefault.jpg",
+"title": "【 #食いしん坊あつまれ歌枠リレー 】たくさん食べる準備はできてるか！！開会式だよ🍔😋【小仲ぺこ子 #歌枠リレー 】",
+"video_id": "ipCeh2oftSQ"
 },
 "lives": 445,
 "name": "小仲ぺこ子 / Onaka Pecoco",
@@ -16778,7 +16812,7 @@
 "last_live_at": "2026-11-13T13:05:42Z",
 "latest": {
 "thumbnail": "https://i4.ytimg.com/vi/_AA1251YVY8/hqdefault.jpg",
-"title": "【参加型カスタム】13000人突破するまで終われない?!『活動歴8年目ほんとにありがとう』#apex #シーズン31#エペ配信#無名のおにぎり",
+"title": "【祝】13000人突破するまで終われない?!『活動歴8年目ほんとにありがとう』#apex #シーズン31#エペ配信#無名のおにぎり ",
 "video_id": "_AA1251YVY8"
 },
 "lives": 41,
@@ -16843,9 +16877,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T15:00:56Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VYPraPWI-b0/hqdefault.jpg",
-"title": "今確実に雑魚なのは僕です。台本とコメントをもらってクリアを目指す　【ウミガリ】#新人vtuber #ゲーム実況 #聖蓮配信記録",
-"video_id": "VYPraPWI-b0"
+"thumbnail": "https://i1.ytimg.com/vi/xwHAN76ND6g/hqdefault.jpg",
+"title": "ご主人様のご帰還じゃ　#新人vtuber #雑談  #聖蓮配信記録　 #聖蓮",
+"video_id": "xwHAN76ND6g"
 },
 "lives": 109,
 "name": "聖蓮チャンネル",
@@ -17389,9 +17423,9 @@
 "first_seen": "2026-11-19T01:00:52Z",
 "icon": "https://yt3.ggpht.com/h4tlpEkrjBpNRWooHdh2aT8fVBSiB6nhJY72klFeBKTwk915logMguVr_mLzNya3pvBhPIRmSw=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/UOBKhj8WS_Q/hqdefault.jpg",
-"title": "大乱闘やってないからお船やるパカ【World of Warships: Legends】",
-"video_id": "UOBKhj8WS_Q"
+"thumbnail": "https://i2.ytimg.com/vi/980PiL6YcRU/hqdefault.jpg",
+"title": "【星の翼】シャフランクマパカ　11/21【Starward】【星之翼】#星の翼 #ほしつば #starward #星之翼",
+"video_id": "980PiL6YcRU"
 },
 "lives": 2139,
 "name": "パカコーンちゃんねる",
@@ -17662,7 +17696,7 @@
 "name": "のえるお",
 "sections_at": "2026-11-15T05:00:48Z",
 "shorts": 26,
-"subscribers": 571,
+"subscribers": 573,
 "videos": 2
 },
 "UC3dOWrACCf2bh8ZbTtzLbbg": {
@@ -18029,9 +18063,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/hGP-QEQy7j4/hqdefault.jpg",
-"title": "【 #NIKKE 】完全初見🔰新米指揮官です！一体どんなゲームなんだろ…？勝利の女神：NIKKE #1｜ 【#おしたらいぶ 】#Vtuber",
-"video_id": "hGP-QEQy7j4"
+"thumbnail": "https://i1.ytimg.com/vi/839AU0tKaLU/hqdefault.jpg",
+"title": "【雀魂/段位戦 】#242 聖2目指してPt盛るぞ🔥　VPL8期生　#vtuber  #おしたらいぶ",
+"video_id": "839AU0tKaLU"
 },
 "live": {
 "started_at": "2026-11-17T11:00:55Z",
@@ -19127,7 +19161,7 @@
 "name": "鬱病VTuber寝瑠眠夢",
 "sections_at": "2026-11-15T07:00:58Z",
 "shorts": 2,
-"subscribers": 76
+"subscribers": 75
 },
 "UC45tm9GXZabu4027AOthYyQ": {
 "counts_at": null,
@@ -19549,7 +19583,7 @@
 "name": "pi pi",
 "sections_at": "2026-11-16T05:00:49Z",
 "shorts": 29,
-"subscribers": 170,
+"subscribers": 171,
 "videos": 1
 },
 "UC49nkS0GVaHRBPw7RoQ7kZA": {
@@ -20263,15 +20297,15 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:21:14Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/4Qwp60Vu9uk/hqdefault.jpg",
-"title": "【新人VTuber】shorts動画が伸びる基準とは…【セルフ受肉】#shorts #vtuber #新人vtuber #雑談配信",
-"video_id": "4Qwp60Vu9uk"
+"thumbnail": "https://i4.ytimg.com/vi/o5h2ePdHn0M/hqdefault.jpg",
+"title": "【雑談】みんな元気～～！？？初見さん・常連さん・ROM専大歓迎！【新人vtuber】#shorts #新人vtuber #雑談 #初見さん大歓迎",
+"video_id": "o5h2ePdHn0M"
 },
 "lives": 10,
 "name": "成世 猫恋@ぱうぱう",
 "sections_at": "2026-11-16T06:00:46Z",
 "shorts": 43,
-"subscribers": 370,
+"subscribers": 371,
 "videos": 9
 },
 "UC4RESMAlv6lQGemPYpZM-KQ": {
@@ -20465,9 +20499,20 @@
 "videos": 18
 },
 "UC4VgPUdavBGTL96ydRRLmOg": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:30:50Z",
-"subscribers": 20200
+"icon": "https://yt3.ggpht.com/3JHZ0b1FX-sY4wLJAMGnhmlotxweNd8SNibjevOivdy1wOAf-4e2d5NZcQNPiHpRAsuPFEEzKP8=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i2.ytimg.com/vi/mvbE-2537ZI/hqdefault.jpg",
+"title": "【初配信】新人Vtuber、電撃デビューします。【天來らいむ】",
+"video_id": "mvbE-2537ZI"
+},
+"lives": 70,
+"name": "Raimu Ch. 天來らいむ",
+"shorts": 42,
+"subscribers": 20200,
+"videos": 14
 },
 "UC4VirZAWmW4kwko86aaQCsg": {
 "counts_at": null,
@@ -20547,15 +20592,15 @@
 "is_live": false,
 "last_live_at": "2026-11-16T11:49:40Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/jiSX87hXwEs/hqdefault.jpg",
+"thumbnail": "https://i1.ytimg.com/vi/HSZ7kdAuigY/hqdefault.jpg",
 "title": "【Splatoon3】初見さん大歓迎！！祝ＣＨ登録800人！スぺ縛り800人キル耐久！【オープン参加型】",
-"video_id": "jiSX87hXwEs"
+"video_id": "HSZ7kdAuigY"
 },
 "lives": 429,
 "name": "ぐりぉ",
 "sections_at": "2026-11-16T06:00:46Z",
 "shorts": 9,
-"subscribers": 894,
+"subscribers": 893,
 "via": "snowball"
 },
 "UC4WvPs9nuKbsrXM2fFN3cJw": {
@@ -21874,7 +21919,7 @@
 "lives": 34,
 "name": "夜酔宮らぱん",
 "shorts": 9,
-"subscribers": 599,
+"subscribers": 602,
 "videos": 1
 },
 "UC4qEM4h9vVEsZrf6E49T3Jg": {
@@ -22003,7 +22048,7 @@
 "lives": 250,
 "name": "ちゃんほぷ",
 "shorts": 7,
-"subscribers": 323,
+"subscribers": 322,
 "via": "snowball"
 },
 "UC4te29cKJJX-_Rj_mt5RtYA": {
@@ -22358,7 +22403,7 @@
 },
 "name": "はぴあ@VTuber準備中",
 "shorts": 62,
-"subscribers": 488,
+"subscribers": 489,
 "videos": 3
 },
 "UC4zQ5zSkCkFeSsDkvz8aWtQ": {
@@ -23938,9 +23983,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:47:39Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/3Laxysixp20/hqdefault.jpg",
-"title": "【 テイルズオブエターニア リマスター 】シリーズ初プレイ ✦︎ ※枠立てなおし※ 真実が明らかになった…！やるしかないのか、決意を胸に！【 にじさんじ / 千凛あゆむ 】",
-"video_id": "3Laxysixp20"
+"thumbnail": "https://i4.ytimg.com/vi/wOsXcm22gvc/hqdefault.jpg",
+"title": "【 テイルズオブエターニア リマスター 】シリーズ初プレイ ✦︎ 最終決戦きたあああ！世界は救えるのか？関係性も気になる…【 にじさんじ / 千凛あゆむ 】",
+"video_id": "wOsXcm22gvc"
 },
 "lives": 254,
 "name": "千凛あゆむ / Senri Ayumu【にじさんじ】",
@@ -24188,7 +24233,7 @@
 "lives": 27,
 "name": "Heru CH.碧衣ヘル",
 "shorts": 31,
-"subscribers": 24500,
+"subscribers": 24600,
 "via": "snowball",
 "videos": 2
 },
@@ -24274,9 +24319,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:35:56Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/stjcN8qkkVc/hqdefault.jpg",
-"title": "【Risk of Rain 2】筋肉モリモリマッチョマンの紙装甲だ📜【ローグライク/如月魔冬】",
-"video_id": "stjcN8qkkVc"
+"thumbnail": "https://i4.ytimg.com/vi/Sp24ZU7mo-Y/hqdefault.jpg",
+"title": "【VALORANT】PCは大体叩くと治ると思います【如月魔冬】",
+"video_id": "Sp24ZU7mo-Y"
 },
 "lives": 5,
 "name": "如月魔冬-Capitol Demon N ",
@@ -24482,9 +24527,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T13:26:22Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/mEGZ0hlidfw/hqdefault.jpg",
-"title": "【雀魂】初見さん歓迎！雀魂参加型やっていくよ！【新人VTuber/白星ミライ】",
-"video_id": "mEGZ0hlidfw"
+"thumbnail": "https://i2.ytimg.com/vi/eH-7Qke6ZyA/hqdefault.jpg",
+"title": "【深夜雑談】初見さん歓迎！ちょっと話そ！【新人VTuber/白星ミライ】",
+"video_id": "eH-7Qke6ZyA"
 },
 "lives": 93,
 "name": "白星ミライ-shiroboshi mirai-",
@@ -24885,9 +24930,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T22:17:14Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/ZVRq-Mi8YMo/hqdefault.jpg",
-"title": "【雑談】ヒマしてる方はいらっしゃいますか？",
-"video_id": "ZVRq-Mi8YMo"
+"thumbnail": "https://i1.ytimg.com/vi/XcAPgA22bhc/hqdefault.jpg",
+"title": "【雑談】酒を飲みながらラストスパート！！",
+"video_id": "XcAPgA22bhc"
 },
 "lives": 423,
 "name": "ラルル・アルナイル【VTuber】",
@@ -24914,9 +24959,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T03:13:30Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/AgHAtfnebkU/hqdefault.jpg",
-"title": "ReDeads NEVER stop being scary 😱 - Ocarina of Time",
-"video_id": "AgHAtfnebkU"
+"thumbnail": "https://i2.ytimg.com/vi/a7h9f57XSS4/hqdefault.jpg",
+"title": "【Wuthering Waves】New Rover journeys to v2.7 Main Story Quest (Act X)! ٩(ˊᗜˋ*)و",
+"video_id": "a7h9f57XSS4"
 },
 "lives": 425,
 "name": "seyuppi",
@@ -25048,9 +25093,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:23:13Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/RJ4KT0GCDXg/hqdefault.jpg",
-"title": "【ペーパーマリオオリガミキング#2】赤テープ編攻略中！盛り上げ(下げ)ますわよぉ！！【Vtuber/カイトLINK】",
-"video_id": "RJ4KT0GCDXg"
+"thumbnail": "https://i2.ytimg.com/vi/uf6C2qkmKEY/hqdefault.jpg",
+"title": "【カービィのエアライダー/参加型】ムーンデーモン杯輝きの部1日目！カイトLINK視点【Vtuber/カイトLINK】",
+"video_id": "uf6C2qkmKEY"
 },
 "lives": 1242,
 "name": "カイトLINK-VT",
@@ -25261,7 +25306,7 @@
 "lives": 108,
 "name": "花祀うた。𓏲𓎨 / hanamatsuri uta",
 "shorts": 30,
-"subscribers": 788
+"subscribers": 787
 },
 "UC5kiCdN-Zv8obGhm8j8xCRA": {
 "counts_at": "2026-11-17T06:00:51Z",
@@ -26071,7 +26116,7 @@
 "last_live_at": "2026-11-16T16:13:55Z",
 "latest": {
 "thumbnail": "https://i4.ytimg.com/vi/OIM-i4bPIxA/hqdefault.jpg",
-"title": "【 #空の軌跡the2nd 】完全初見！VS古代竜からの湖畔お泊りパーティだ！ #14 [6章]【眠瑠おみ/個人Vtuber】",
+"title": "【 #空の軌跡the2nd 】完全初見！湖畔でお休みからの結社の基地潜入！ついに出会えた...！ #14 [6章]【眠瑠おみ/個人Vtuber】",
 "video_id": "OIM-i4bPIxA"
 },
 "lives": 430,
@@ -26502,7 +26547,7 @@
 "lives": 69,
 "name": "月龍 鱗/Oboro Rin",
 "shorts": 35,
-"subscribers": 128,
+"subscribers": 129,
 "videos": 8
 },
 "UC66DRsVkzrPAp6hZV7-HBGw": {
@@ -26780,9 +26825,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T15:30:22Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VFqzkPXhkuk/hqdefault.jpg",
-"title": "【雑談┊︎初見さん歓迎】歌枠リレーありがとございました♡ いろいろと振り返り♡ 【双葉いよ/Vtuber】",
-"video_id": "VFqzkPXhkuk"
+"thumbnail": "https://i2.ytimg.com/vi/52IF1734hzw/hqdefault.jpg",
+"title": "【#LightUpNotes】はじめての歌枠リレー、甘さも強さも全力で伝えます♡【双葉いよ/Vtuber】",
+"video_id": "52IF1734hzw"
 },
 "lives": 134,
 "name": "双葉いよ - FutabaIyo -",
@@ -26956,9 +27001,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T12:09:05Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/9axQ8qiGLPA/hqdefault.jpg",
-"title": "【キングダムハーツ3】#2 オリンポスいくぞー！【おがちむ】※ネタバレあり",
-"video_id": "9axQ8qiGLPA"
+"thumbnail": "https://i3.ytimg.com/vi/zIP18SGMkGE/hqdefault.jpg",
+"title": "【#FF14】朝からルレですね【#おがちむ】※ネタバレあり",
+"video_id": "zIP18SGMkGE"
 },
 "lives": 1194,
 "name": "おがちむ",
@@ -27713,7 +27758,7 @@
 "lives": 76,
 "name": "雨止めあ",
 "shorts": 7,
-"subscribers": 900,
+"subscribers": 906,
 "videos": 2
 },
 "UC6RXHtmJGLXl6g1AtYnWsbg": {
@@ -27993,7 +28038,7 @@
 "name": "世界初男性VTuberばあちゃる【祝うま年🐴】",
 "sections_at": "2026-11-07T14:14:15Z",
 "shorts": 41,
-"subscribers": 97400,
+"subscribers": 97500,
 "via": "snowball",
 "videos": 67
 },
@@ -28281,7 +28326,7 @@
 "lives": 169,
 "name": "鰐梨あらん",
 "shorts": 275,
-"subscribers": 9190,
+"subscribers": 9200,
 "videos": 25
 },
 "UC6Z2P_aLO1RkD8wu3EQwCjQ": {
@@ -28924,9 +28969,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:07:25Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ySE6IQlrS6I/hqdefault.jpg",
-"title": "【#グラブル】初めての闇古戦場！予選2日目｜95HELL！【狗乃わん】",
-"video_id": "ySE6IQlrS6I"
+"thumbnail": "https://i1.ytimg.com/vi/pYIfTycpNww/hqdefault.jpg",
+"title": "【#グラブル】初めての闇古戦場！予選1日目｜肉集め！【狗乃わん】",
+"video_id": "pYIfTycpNww"
 },
 "lives": 50,
 "name": "狗乃わん",
@@ -29123,9 +29168,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/3zeQxtvgBfo/hqdefault.jpg",
-"title": "11月 21日 土曜日【今日は何の日⁈】【語呂合わせ】のショートバージョンです。🍀新人Vtuberが練習＆編集なしで話してます🍀 #個人Vtuber#新人Vtuber#個人勢#個人＃ショート",
-"video_id": "3zeQxtvgBfo"
+"thumbnail": "https://i3.ytimg.com/vi/vYUJplZ11wU/hqdefault.jpg",
+"title": "11月 22日 日曜日【今日は何の日⁈】【語呂合わせ】のショートバージョンです。🍀新人Vtuberが練習＆編集なしで話してます🍀 #個人Vtuber#新人Vtuber#個人勢#個人＃ショート",
+"video_id": "vYUJplZ11wU"
 },
 "live": {
 "started_at": "2026-11-17T08:33:58Z",
@@ -30215,9 +30260,9 @@
 "is_live": false,
 "last_live_at": "2026-11-11T15:03:32Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ajbN2LLNhnw/hqdefault.jpg",
-"title": "【グラブル】今日夜勤 #グラブル   #個人vtuber",
-"video_id": "ajbN2LLNhnw"
+"thumbnail": "https://i4.ytimg.com/vi/sJlHBqjfnB0/hqdefault.jpg",
+"title": "【グラブル】ただいま 白湯を飲みながら #グラブル   #個人vtuber",
+"video_id": "sJlHBqjfnB0"
 },
 "lives": 434,
 "name": "碧海ふうりん",
@@ -30390,7 +30435,7 @@
 "lives": 41,
 "name": "稲玻こめこ",
 "shorts": 2,
-"subscribers": 214,
+"subscribers": 215,
 "via": "snowball",
 "videos": 12
 },
@@ -30448,7 +30493,7 @@
 "lives": 222,
 "name": "Techi Ch. 海姫てち",
 "shorts": 13,
-"subscribers": 394,
+"subscribers": 395,
 "videos": 9
 },
 "UC79Mo6IUaSHZz7L9MCV8wDw": {
@@ -30606,7 +30651,7 @@
 "lives": 528,
 "name": "Figaro",
 "shorts": 27,
-"subscribers": 87400,
+"subscribers": 87300,
 "videos": 56
 },
 "UC7D4heQdNoSzh6nC3i3b6yA": {
@@ -31555,7 +31600,7 @@
 "name": "闇乃よわ_Yamino Yowa",
 "sections_at": "2026-11-07T14:12:05Z",
 "shorts": 6,
-"subscribers": 478,
+"subscribers": 480,
 "videos": 0
 },
 "UC7Xv--2ovUCrfj_8dnaR-og": {
@@ -31693,9 +31738,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:53:33Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/k5TdLK3sPbM/hqdefault.jpg",
+"thumbnail": "https://i2.ytimg.com/vi/uyCAPyr2XPs/hqdefault.jpg",
 "title": "【Euro Truck Simulator 2】アイスランドイベ進めつつバスも運転したーい！ ETS2配信 ※G29ハンコン使用【VTuber / ひなころ🐥🌸】",
-"video_id": "k5TdLK3sPbM"
+"video_id": "uyCAPyr2XPs"
 },
 "lives": 1937,
 "name": "ひなころ - hinakoro -",
@@ -31962,7 +32007,7 @@
 "name": "こにむらは関係者席",
 "sections_at": "2026-11-07T14:12:05Z",
 "shorts": 0,
-"subscribers": 816,
+"subscribers": 815,
 "videos": 1
 },
 "UC7fUnkh8DWYXxV_ECymoPHA": {
@@ -31994,9 +32039,9 @@
 "first_seen": "2026-11-19T06:00:57Z",
 "icon": "https://yt3.ggpht.com/vrM7sGqTPxvd4gF1PJEfpge65G8eEMoNzREP29d-E2-mNMIG2_Ol9hCsKTDVRRqVBQ4XSmCMil0=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/WOZOHAM6QP4/hqdefault.jpg",
-"title": "#3 #風燕伝 | なんか難易度上がってないか⁉️探索していくよん#VTuber武侠伝【Vtuber | はちさん】#PR #hatisandesu8 #vtuber",
-"video_id": "WOZOHAM6QP4"
+"thumbnail": "https://i3.ytimg.com/vi/ft68lBXaI8U/hqdefault.jpg",
+"title": "#56 | 🐡参加型✨虹寝てたYO🌈ウミエビ乱獲or共同新居つくろ🎶自称ハトピの朝の顔💛【Vtuber | はちさん】 #ハートピアスローライフ #heartpia #ハートピア",
+"video_id": "ft68lBXaI8U"
 },
 "lives": 689,
 "name": "はちさん | HATISAN ",
@@ -32267,7 +32312,7 @@
 "lives": 449,
 "name": "夜伽ネム / Yotogi Nem",
 "shorts": 35,
-"subscribers": 7140,
+"subscribers": 7150,
 "videos": 1
 },
 "UC7jBttcAYFJqjfHiUAikgyA": {
@@ -33504,7 +33549,7 @@
 "name": "未霧 ちゃん",
 "sections_at": "2026-11-07T15:00:44Z",
 "shorts": 62,
-"subscribers": 2630,
+"subscribers": 2640,
 "videos": 2
 },
 "UC88uKSEaCN30sjN4HEaFp3A": {
@@ -34034,7 +34079,7 @@
 "lives": 2,
 "name": "ちまとろ。",
 "shorts": 11,
-"subscribers": 203,
+"subscribers": 204,
 "via": "snowball"
 },
 "UC8LeWdcls7hGVoDoTn0Jn5Q": {
@@ -35274,9 +35319,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:39:26Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/XXSIYafT4-c/hqdefault.jpg",
-"title": "【雑談】金曜日まであと少し。今日はもう頑張ったことにしよう。  #Vtuber #個人勢vtuber #雑談配信 #JustChatting",
-"video_id": "XXSIYafT4-c"
+"thumbnail": "https://i1.ytimg.com/vi/Peb_mNWs7GA/hqdefault.jpg",
+"title": "【朝活/雑談】連休？ 知らない子ですね。 #Vtuber #個人勢vtuber #JustChatting #雑談配信",
+"video_id": "Peb_mNWs7GA"
 },
 "lives": 360,
 "name": "三佳月よる / Yoru Mikaduki",
@@ -36019,6 +36064,18 @@
 "subscribers": 865,
 "videos": 4
 },
+"UC8vYQ9WTkOTO311pqi-FYXQ": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/KMFfwSOY9bQ4sLrIF68QeK6XIgGRh86XavPVSSVC6JkGEdRPCJ9OYF45HaC3EPL3XI1_ghLq7A=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/ROeNOkar0xk/hqdefault.jpg",
+"title": "〚 推理 〛深夜だからデスゲームに参加した全員の死因を特定する。バズったオブラディンライク『デスゲームの報告書』 #初見歓迎 〚 繭玉ザクロ 〛",
+"video_id": "ROeNOkar0xk"
+},
+"name": "繭玉 ザクロ / Mayutama Zakuro",
+"subscribers": 33900
+},
 "UC8w-_bnwDHCUatoqLFDO2eQ": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-08T16:00:46Z",
@@ -36207,9 +36264,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T18:08:54Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/upsxiT4k7Yg/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/OapZ-Z8quMU/hqdefault.jpg",
 "title": "【初見さん待ち歌枠】心温まる歌を歌おう！#あんにんたいむ #187【パレデミア学園/香桜あんにん/＃新人VTuber】",
-"video_id": "upsxiT4k7Yg"
+"video_id": "OapZ-Z8quMU"
 },
 "lives": 179,
 "name": "香桜あんにん / Kosakura Annin 【パレデミア学園】",
@@ -36579,9 +36636,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:01:58Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ioB-2mn1Kls/hqdefault.jpg",
-"title": "＃３〖9 Souls〗１年近くぶりになるリベンジ！　＃ホラーゲーム",
-"video_id": "ioB-2mn1Kls"
+"thumbnail": "https://i2.ytimg.com/vi/5aMK7iHW37U/hqdefault.jpg",
+"title": "〖Scawy Game〗売れないホラー作家は猫に餌をあげます　＃コラボ",
+"video_id": "5aMK7iHW37U"
 },
 "lives": 2087,
 "name": "レイン芝王🐬🎮",
@@ -36932,9 +36989,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:08:17Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0GWu_6aqVmc/hqdefault.jpg",
+"thumbnail": "https://i2.ytimg.com/vi/Qr2gV62fYMo/hqdefault.jpg",
 "title": "【マイクラ統合版参加型】能力バトル！だれでもいつでも参加大歓迎！18~24時まで！新人VTuber！",
-"video_id": "0GWu_6aqVmc"
+"video_id": "Qr2gV62fYMo"
 },
 "lives": 44,
 "name": "べびぃさっぷ_VTuber",
@@ -37001,9 +37058,9 @@
 "first_seen": "2026-11-21T02:00:47Z",
 "icon": "https://yt3.ggpht.com/sSp3xRQkuXzCqOLq6GgMDSQN8FqHJxnfRFNRSIS9Hryc2SaX5lcUYFbQN4TzPu5NU4FSNXtvbQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/MFV60QVslJw/hqdefault.jpg",
-"title": "【#モンハンワイルズ＃MHWilds】※全部必須※　数盛り…()諦めない❕長時間配信二枠目：ゴグマジオス1000頭狩猟企画　パート31【＃Steam版/参加型】#みゆライブ＃初見さん大歓迎",
-"video_id": "MFV60QVslJw"
+"thumbnail": "https://i4.ytimg.com/vi/o5nOydGLfYI/hqdefault.jpg",
+"title": "【#モンハンワイルズ＃MHWilds】※全部必須※　少しでも数盛りたい…()　長時間配信一枠目：ゴグマジオス1000頭狩猟企画　パート30【＃Steam版/参加型】#みゆライブ＃初見さん大歓迎",
+"video_id": "o5nOydGLfYI"
 },
 "lives": 862,
 "name": "乙姫美雪Otohimemiyuki",
@@ -37308,9 +37365,11 @@
 },
 "UC9JUHtL0Xhj5G1K0U_AX57Q": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:01:07Z",
 "icon": "https://yt3.ggpht.com/5OHYEh-WLWxdAL7pwtDcUpB7l8fltvgShm97W79MN5M9e2ZkO5_6Bzjum6TMuJFoKqhh82yaOQ=s240-c-k-c0x00ffffff-no-rj",
 "name": "神倉めろ",
+"shorts": 1,
 "subscribers": 44
 },
 "UC9JX9VPwEh8ziRSiPGPNa6w": {
@@ -37389,7 +37448,7 @@
 "lives": 258,
 "name": "松風しあ / 脚本家VTuber",
 "shorts": 39,
-"subscribers": 745,
+"subscribers": 746,
 "via": "snowball",
 "videos": 47
 },
@@ -37762,7 +37821,7 @@
 "lives": 1,
 "name": "幽鬼ねむ ｰ Yuki Nemu ｰ",
 "shorts": 4,
-"subscribers": 277,
+"subscribers": 279,
 "videos": 1
 },
 "UC9Qhbc04d0tK1vjJVhmp1cw": {
@@ -37787,9 +37846,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T02:00:19Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/gPekH0JTK4Q/hqdefault.jpg",
-"title": "【ロボトミ】装備回収して3周目に突入する人外管理職",
-"video_id": "gPekH0JTK4Q"
+"thumbnail": "https://i3.ytimg.com/vi/jhDLRnUpsmo/hqdefault.jpg",
+"title": "【バイオ9】レオン好きな人がやるアンブレラ履修 part4",
+"video_id": "jhDLRnUpsmo"
 },
 "lives": 409,
 "name": "苺乗(Ichinose)",
@@ -38124,9 +38183,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T05:04:50Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/1CLey6HYXyE/hqdefault.jpg",
-"title": "【寝る前の雑談】　#おやすみvtuber  #雑談  #VTuber配信",
-"video_id": "1CLey6HYXyE"
+"thumbnail": "https://i2.ytimg.com/vi/Ujz_L5KL72c/hqdefault.jpg",
+"title": "【５時からの蒼真帝国朝活】　#vtuber #おはようvtuber  #雑談  #VTuber配信  #初見さん大歓迎",
+"video_id": "Ujz_L5KL72c"
 },
 "lives": 752,
 "name": "碧井蒼真",
@@ -38215,14 +38274,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:31:18Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/8a1qEOsnU-A/hqdefault.jpg",
-"title": "【TCG card shop】I don't care about GTA 6",
-"video_id": "8a1qEOsnU-A"
+"thumbnail": "https://i2.ytimg.com/vi/eKKnefj3knw/hqdefault.jpg",
+"title": "【TCG card shop】I'm sick but the gamba must go on",
+"video_id": "eKKnefj3knw"
 },
 "lives": 105,
 "name": "Pwupcake",
 "shorts": 37,
-"subscribers": 673,
+"subscribers": 674,
 "videos": 2
 },
 "UC9XsF9M7lZ1BSABHjKatOSA": {
@@ -38297,9 +38356,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T14:53:37Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/Kz-daNgHUfQ/hqdefault.jpg",
-"title": "【死ぬたび罰ゲーム】リトナイ1トロコン耐久｜攻略なし12時間【リトルナイトメア】",
-"video_id": "Kz-daNgHUfQ"
+"thumbnail": "https://i1.ytimg.com/vi/DjcAatmxgt0/hqdefault.jpg",
+"title": "【リトルナイトメア】リトナイ1トロコン耐久＃2｜攻略なし12時間【死ぬたび罰ゲーム】",
+"video_id": "DjcAatmxgt0"
 },
 "lives": 724,
 "name": "犾守ルイク / Izumori Luik",
@@ -39011,9 +39070,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:43:46Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ugszdzqEtko/hqdefault.jpg",
+"thumbnail": "https://i1.ytimg.com/vi/P5i7q67GZPc/hqdefault.jpg",
 "title": "【縛りドラゴンクエスト11】自作装備だけで完全クリア目指して！※ネタバレあり【3H学園部長/火緋色 鐘】#新人vtuber",
-"video_id": "ugszdzqEtko"
+"video_id": "P5i7q67GZPc"
 },
 "lives": 102,
 "name": "3H学園",
@@ -39037,14 +39096,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T00:15:12Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VlGRyzuEdic/hqdefault.jpg",
-"title": "[FORTNITE] I NEED THAT GOLD MIKU!!! - Laurrellive",
-"video_id": "VlGRyzuEdic"
+"thumbnail": "https://i1.ytimg.com/vi/Lhn_ohX_nLU/hqdefault.jpg",
+"title": "[NAKED AND AFRAID] We Need to Go Deeper! Day 3 - Laurrellive",
+"video_id": "Lhn_ohX_nLU"
 },
 "lives": 438,
 "name": "Laurrel Live",
 "shorts": 365,
-"subscribers": 7450,
+"subscribers": 7460,
 "videos": 91
 },
 "UC9lub6P2DFY6vIWwBSSnfPA": {
@@ -39902,9 +39961,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T06:00:08Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0OvmGpheL6k/hqdefault.jpg",
-"title": "【初見】【BIOHAZARD requiem】同族だと思うなよ！？ゾンビがゾンビに喧嘩売ってみた。#8  再開！  #新人VTuber",
-"video_id": "0OvmGpheL6k"
+"thumbnail": "https://i1.ytimg.com/vi/P2EBLxOT2fU/hqdefault.jpg",
+"title": "【㊗ 収益化記念🎉】お祝いのはずが…ぼくの秘密が暴かれる！？🍻 重大発表も?! #新人VTuber",
+"video_id": "P2EBLxOT2fU"
 },
 "lives": 42,
 "name": "絶叫かぷぅ / Zekkyo Kapuu",
@@ -40027,9 +40086,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:10:12Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/pCYMjp6VNH0/hqdefault.jpg",
-"title": "〖 #歌枠/ Karaoke〗元気に歌う日曜日♬【 #新人Vtuber /#虎珀ガオ】#縦型配信 #shorts",
-"video_id": "pCYMjp6VNH0"
+"thumbnail": "https://i3.ytimg.com/vi/zhMPn1wV3IQ/hqdefault.jpg",
+"title": "⚔️バーチャルユニット戦V時代 ～第12回戦～⚔️#虎珀ガオ┊#新人Vtuber",
+"video_id": "zhMPn1wV3IQ"
 },
 "lives": 177,
 "name": "虎珀ガオ",
@@ -40656,9 +40715,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/_D8-5OdLkvc/hqdefault.jpg",
-"title": "【live9~】影之刃零｜逆天者難度｜7主播今晚決戰左殤！準備大結局通關！如無意外是真結局路線！玩了那麼多天終於！不用再加班了！太感動啦！【香港Vtuber／Phantom Blade Zero】",
-"video_id": "_D8-5OdLkvc"
+"thumbnail": "https://i4.ytimg.com/vi/wvrfsTPO_XA/hqdefault.jpg",
+"title": "【live7~】少女前線2抽卡｜克萊妲｜7主播要接大姐姐回家！超正外觀一起看！當然是買買買我全都要啦！周年活動大家子彈準備充足嗎？今晚我們約好歐洲不見不散！【香港Vtuber】",
+"video_id": "wvrfsTPO_XA"
 },
 "live": {
 "started_at": "2026-11-17T10:58:17Z",
@@ -40818,9 +40877,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T14:43:51Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-12d3aLrDp8/hqdefault.jpg",
-"title": "【同時視聴】初見ローグ・ワン スター・ウォーズ・ストーリー(日本語吹替)見る！【#大戸カオリの小話】",
-"video_id": "-12d3aLrDp8"
+"thumbnail": "https://i1.ytimg.com/vi/8uAlVMcOhYk/hqdefault.jpg",
+"title": "【同時視聴】初見スター・ウォーズ  エピソード3/シスの復讐 (日本語吹替)見る！【#大戸カオリの小話】",
+"video_id": "8uAlVMcOhYk"
 },
 "lives": 295,
 "name": "大戸 カオリ【oodo kaori】",
@@ -41836,7 +41895,7 @@
 "name": "こはねもか",
 "sections_at": "2026-11-07T14:12:05Z",
 "shorts": 37,
-"subscribers": 410,
+"subscribers": 411,
 "videos": 1
 },
 "UCAZytS9yOblB0mckDnXNBWQ": {
@@ -41919,9 +41978,9 @@
 "first_seen": "2026-11-21T16:00:51Z",
 "icon": "https://yt3.ggpht.com/nSLCWhfdGym8kaUsVWAMgA4wM59RwKCaO8VPAGi2iWteZAteUc_zCW69GynyAOCsj1YdE8_xVg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/6MyAXhlLkas/hqdefault.jpg",
-"title": "【 Deeplanders 】 Malming kita chill dulu dh 【 #ReigyOnAir 】",
-"video_id": "6MyAXhlLkas"
+"thumbnail": "https://i3.ytimg.com/vi/ncSRU6nX5Sw/hqdefault.jpg",
+"title": "【 Free Talk 】 Ngapain ya? 【 #ReigyOnAir 】",
+"video_id": "ncSRU6nX5Sw"
 },
 "lives": 565,
 "name": "Reigy Ren Ch.",
@@ -42247,7 +42306,7 @@
 "lives": 155,
 "name": "天ヶ咲 黎 / Amagasaki Lei",
 "shorts": 154,
-"subscribers": 600,
+"subscribers": 601,
 "via": "snowball",
 "videos": 11
 },
@@ -42351,9 +42410,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T01:21:34Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/wmEKSZqzszM/hqdefault.jpg",
-"title": "【つよつよピカチュウ】Pokémon Trading Card Game Pocket　#shorts #vtuber #ポケポケ",
-"video_id": "wmEKSZqzszM"
+"thumbnail": "https://i2.ytimg.com/vi/qgOzqHjB3C0/hqdefault.jpg",
+"title": "【ELDEN RING NIGHTREIGN/Steam版】朝活ナイトレイン【白/個人vtuber/参加型】（エルデンリング ナイトレイン）",
+"video_id": "qgOzqHjB3C0"
 },
 "lives": 1607,
 "name": "名無し白の遊び場",
@@ -42387,7 +42446,7 @@
 "lives": 426,
 "name": "結羽・L・シャノワール",
 "shorts": 2,
-"subscribers": 372,
+"subscribers": 373,
 "videos": 2
 },
 "UCAo4EPD3q6c1Z5MYpkCdIWA": {
@@ -43623,7 +43682,7 @@
 "lives": 99,
 "name": "泡灯ふぃず",
 "shorts": 38,
-"subscribers": 1460,
+"subscribers": 1470,
 "videos": 3
 },
 "UCBCAR4cnCZrmVFB9Uz4lv3w": {
@@ -43772,7 +43831,7 @@
 "lives": 749,
 "name": "ワクタ夕7",
 "shorts": 78,
-"subscribers": 743,
+"subscribers": 742,
 "videos": 15
 },
 "UCBF4Iv-qkfLlnX-eORZvUzg": {
@@ -43829,9 +43888,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:51:45Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/CaBACYOJ-hU/hqdefault.jpg",
-"title": "【#風燕伝】メインストーリーを進めたいのにサブストーリーを進めてしまう女 Part.9【#VTuber / 赤石グラナ】#PR",
-"video_id": "CaBACYOJ-hU"
+"thumbnail": "https://i3.ytimg.com/vi/FxvCK0_4zmQ/hqdefault.jpg",
+"title": "【#ガチグラ2￤Day.13】今日でくらいむりぃぱあ!!卒業…😿【#VTuber / 赤石グラナ】",
+"video_id": "FxvCK0_4zmQ"
 },
 "lives": 1294,
 "name": "赤石グラナ",
@@ -45191,7 +45250,7 @@
 },
 "name": "めあどーる",
 "shorts": 6,
-"subscribers": 212,
+"subscribers": 211,
 "videos": 6
 },
 "UCBjcx01rZwPDuUPzWLTsZVA": {
@@ -45466,9 +45525,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/TrePM5fNM84/hqdefault.jpg",
-"title": "【 勉強配信 】間違えた漢字を久しぶりに書いていく✏️",
-"video_id": "TrePM5fNM84"
+"thumbnail": "https://i2.ytimg.com/vi/aQFOyhC0m68/hqdefault.jpg",
+"title": "毎朝おはようチャレンジ490日目☀️11/22 #おはようvtuber #推しをお探しですか #個人勢vtuberだって拡散されたい",
+"video_id": "aQFOyhC0m68"
 },
 "live": {
 "started_at": "2026-11-17T11:01:45Z",
@@ -46183,7 +46242,7 @@
 "name": "霧切舞 新人Vtuber",
 "sections_at": "2026-11-07T14:12:05Z",
 "shorts": 34,
-"subscribers": 657,
+"subscribers": 658,
 "videos": 2
 },
 "UCBzbWsb8KYT1LTOoeDSGTBA": {
@@ -46357,7 +46416,7 @@
 "lives": 680,
 "name": "綾園冬華ちゃんねる",
 "shorts": 9,
-"subscribers": 1060,
+"subscribers": 1050,
 "videos": 4
 },
 "UCC05cjlhj3JLjVEilDLKVDw": {
@@ -46445,9 +46504,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:25:01Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/xTJAymY8Wzg/hqdefault.jpg",
-"title": "【参加型配信】初見さん大歓迎！誰でも参加可能なマイクラ配信#61 【Vtuber】【Minecraft/マインクラフト】",
-"video_id": "xTJAymY8Wzg"
+"thumbnail": "https://i4.ytimg.com/vi/Krgp9qvSGAM/hqdefault.jpg",
+"title": "【STEAL THE BRAINROT】新イベ来るか？管理者イベントやるぞ！！【Vtuber】【フォートナイト/Fortnite】",
+"video_id": "Krgp9qvSGAM"
 },
 "lives": 603,
 "name": "きゅっとん【Kyutton】",
@@ -46676,9 +46735,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:58:41Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/cGl1vhOkZlI/hqdefault.jpg",
-"title": "リングフィット⌇きょうはのんびりがんばらない♩〖＃フレリアランヴェルセ⌇#朝活〗",
-"video_id": "cGl1vhOkZlI"
+"thumbnail": "https://i4.ytimg.com/vi/sDCkED-Zwlk/hqdefault.jpg",
+"title": "〖朝活｜雑談〗㊗️80回✨今週食べたスイーツの話をしよ！💭🍴🔆初見さん歓迎◎〖#フレリアランヴェルセ ｜ #個人Vtuber 〗おやつダイアリー vol.80",
+"video_id": "sDCkED-Zwlk"
 },
 "lives": 728,
 "name": "フレリア・ランヴェルセ🍓🍰",
@@ -47260,9 +47319,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T16:37:56Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ErqO4LrTtT4/hqdefault.jpg",
-"title": "【歌枠】６時間で何曲歌える？限界チャレンジ❣【ふわすて！】【Vtuber】【夜桜ねむ】【雑談】",
-"video_id": "ErqO4LrTtT4"
+"thumbnail": "https://i3.ytimg.com/vi/JnabriHasgQ/hqdefault.jpg",
+"title": "【歌枠】とにかくいっぱい歌う❣ちょっぴり頭いた🥹【ふわすて！】【Vtuber】【夜桜ねむ】【雑談】",
+"video_id": "JnabriHasgQ"
 },
 "lives": 9,
 "name": "夜桜ねむ",
@@ -48786,7 +48845,7 @@
 "lives": 41,
 "name": "ガミオ・ベラ",
 "shorts": 17,
-"subscribers": 77
+"subscribers": 76
 },
 "UCCbPQzaJFM1zL7aTBQ5iwCQ": {
 "counts_at": null,
@@ -49550,7 +49609,7 @@
 "lives": 547,
 "name": "Sasami Ch. 東雲ささみ",
 "shorts": 88,
-"subscribers": 8670,
+"subscribers": 8680,
 "videos": 1
 },
 "UCCpaGJ6nbO-ktH2lFnZXEow": {
@@ -49855,9 +49914,9 @@
 "is_live": false,
 "last_live_at": "2026-11-13T12:19:08Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/7him0JZqtiw/hqdefault.jpg",
-"title": "安定の滑舌 #個人vtuber #shorts",
-"video_id": "7him0JZqtiw"
+"thumbnail": "https://i2.ytimg.com/vi/-6nDEKo15mE/hqdefault.jpg",
+"title": "そんな悲しいことがあるわけない #個人vtuber #shorts",
+"video_id": "-6nDEKo15mE"
 },
 "lives": 99,
 "name": "羽百合",
@@ -50892,7 +50951,7 @@
 "lives": 330,
 "name": "芙浦うに",
 "shorts": 20,
-"subscribers": 386,
+"subscribers": 387,
 "videos": 16
 },
 "UCDFJgcGp_Ws7b0DYxG5mAlA": {
@@ -50983,7 +51042,7 @@
 "lives": 184,
 "name": "つゆも",
 "shorts": 31,
-"subscribers": 787,
+"subscribers": 790,
 "videos": 2
 },
 "UCDIDsDZEDodLN-qZY1R4dww": {
@@ -51148,7 +51207,7 @@
 "lives": 578,
 "name": "Yuu Ch.歌恋 憂",
 "shorts": 132,
-"subscribers": 7290,
+"subscribers": 7280,
 "videos": 3
 },
 "UCDK61SWPrZm3PDj8RohAM-w": {
@@ -51309,9 +51368,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T18:42:27Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/St35FZflHNk/hqdefault.jpg",
-"title": "【Slay the Spire 2】→【Rob run】目指せA５！！！ ¦  かど!!! #vtuber #新人vtuber #slaythespire2",
-"video_id": "St35FZflHNk"
+"thumbnail": "https://i3.ytimg.com/vi/NCm4pMGNaW8/hqdefault.jpg",
+"title": "【Slay the Spire 2】そろそろ本気を出しますか ¦  かど!!! #vtuber #新人vtuber #slaythespire2",
+"video_id": "NCm4pMGNaW8"
 },
 "lives": 112,
 "name": "かど!!!",
@@ -51469,7 +51528,7 @@
 },
 "name": "猫睡ねむり / Nekosui-Nemuri",
 "shorts": 7,
-"subscribers": 895
+"subscribers": 894
 },
 "UCDNrHJQn6ELrYy8q-0W8aZw": {
 "counts_at": null,
@@ -51953,9 +52012,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T00:56:10Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0yLczwG0n9M/hqdefault.jpg",
-"title": "ブキチ金バッチが欲しい！（34/50）【オープン参加型】No.399｜#夜久コップ洗え｜52ガロン｜VTuber｜朝活スプラ｜#スプラトゥーン3｜Splatoon3",
-"video_id": "0yLczwG0n9M"
+"thumbnail": "https://i3.ytimg.com/vi/jGe5wOaRN-Q/hqdefault.jpg",
+"title": "【24日目】お絵描きできないVTuberが好きに絵を描いてみるだけ【朝活 雑談】｜#夜久コップ洗え｜VTuber｜#おはようVTuber｜雑談",
+"video_id": "jGe5wOaRN-Q"
 },
 "lives": 915,
 "name": "夜久ネムのスプラCH / YAHISA Nemu",
@@ -52885,7 +52944,7 @@
 "lives": 268,
 "name": "ひなぎこ",
 "shorts": 16,
-"subscribers": 5090,
+"subscribers": 5080,
 "videos": 43
 },
 "UCDlkPYUk1g7oJi2xyQlk6HQ": {
@@ -53086,7 +53145,7 @@
 "lives": 107,
 "name": "HoshiHo",
 "shorts": 14,
-"subscribers": 8220,
+"subscribers": 8230,
 "via": "snowball",
 "videos": 14
 },
@@ -53483,9 +53542,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:11:36Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/45D4ofMAUxU/hqdefault.jpg",
-"title": "【 #faaastpenguin 】新進気鋭の天才ペギが伝説を目指す！【出雲深月 #32K ┆ IZUMO project】",
-"video_id": "45D4ofMAUxU"
+"thumbnail": "https://i3.ytimg.com/vi/bWVy85qAqNI/hqdefault.jpg",
+"title": "【飲酒雑談】週末スナック「ひたかみ」へようこそ！夜更かししちゃお～【出雲深月 #32K ┆ IZUMO project】",
+"video_id": "bWVy85qAqNI"
 },
 "lives": 21,
 "name": "出雲深月 / Izumo Mitsuki【IZUMOproject】",
@@ -53758,9 +53817,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T13:39:17Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/EombfgtMf2Q/hqdefault.jpg",
-"title": "【スプラトゥーン３】大会勝つぞ #ながもんJAPAN  #八煌インクフェス  ！【緋繧めいや / Vtuber（個人勢）】",
-"video_id": "EombfgtMf2Q"
+"thumbnail": "https://i4.ytimg.com/vi/kjPfvfitLCw/hqdefault.jpg",
+"title": "【スプラトゥーン３ コラボ！】最後の練習会！ #八煌インクフェス  【緋繧めいや / Vtuber（個人勢）】",
+"video_id": "kjPfvfitLCw"
 },
 "lives": 1354,
 "name": "緋繧めいや / Hiun Meiya 【Vtuber】",
@@ -53797,7 +53856,7 @@
 },
 "name": "夜九ると / Yoruku Ruto",
 "shorts": 10,
-"subscribers": 114
+"subscribers": 116
 },
 "UCE27tvl-nfAwUhhhtmnsc8A": {
 "counts_at": null,
@@ -54035,7 +54094,7 @@
 "lives": 374,
 "name": "詠音ガト",
 "shorts": 137,
-"subscribers": 3170,
+"subscribers": 3180,
 "via": "snowball",
 "videos": 7
 },
@@ -54185,7 +54244,7 @@
 "lives": 143,
 "name": "sigiriyuuki Ch.紫桐ゆうき",
 "shorts": 3,
-"subscribers": 53,
+"subscribers": 57,
 "via": "snowball",
 "videos": 3
 },
@@ -54402,7 +54461,7 @@
 "lives": 63,
 "name": "竹﨑でめこ / Takezaki Demeco",
 "shorts": 2,
-"subscribers": 212,
+"subscribers": 213,
 "via": "snowball",
 "videos": 5
 },
@@ -54609,7 +54668,7 @@
 "lives": 320,
 "name": "びばねこ",
 "shorts": 2,
-"subscribers": 125,
+"subscribers": 124,
 "via": "snowball",
 "videos": 2
 },
@@ -54660,7 +54719,7 @@
 "lives": 173,
 "name": "アーニャ- Anya Vtuber",
 "shorts": 57,
-"subscribers": 680,
+"subscribers": 681,
 "videos": 8
 },
 "UCEGRaKu2lqjgWt-pwcScHyg": {
@@ -54928,13 +54987,13 @@
 "is_live": false,
 "last_live_at": "2026-11-13T20:06:11Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/BIbjHR3d5N4/hqdefault.jpg",
-"title": "【RUST/如月鯖番外編】たくさんファームして文明を進める❕",
-"video_id": "BIbjHR3d5N4"
+"thumbnail": "https://i3.ytimg.com/vi/2PF38AIFf88/hqdefault.jpg",
+"title": "【RUST/如月鯖番外編】まったり農業と工業化する❕",
+"video_id": "2PF38AIFf88"
 },
 "lives": 168,
 "name": "こもりぎん",
-"subscribers": 339
+"subscribers": 340
 },
 "UCEKk6AFSAxVPrjQwzXkkZxQ": {
 "counts_at": null,
@@ -54950,9 +55009,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:33:42Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/KH_02Zwp6kU/hqdefault.jpg",
-"title": "雑談配信　可愛いvtuberとお話しませんか？",
-"video_id": "KH_02Zwp6kU"
+"thumbnail": "https://i4.ytimg.com/vi/km91l6djT4o/hqdefault.jpg",
+"title": "朝活配信　可愛いvtuberとお話しませんか？",
+"video_id": "km91l6djT4o"
 },
 "lives": 781,
 "name": "りこ【りこりこちゃんねる】",
@@ -55072,7 +55131,7 @@
 "lives": 413,
 "name": "茜音 ヒロ (Hiro Akane)",
 "shorts": 12,
-"subscribers": 1370,
+"subscribers": 1360,
 "videos": 24
 },
 "UCEMVVtKNQWNEqm92eXwHXqA": {
@@ -55312,7 +55371,7 @@
 "lives": 432,
 "name": "刈魔そら -Karuma Sora-",
 "shorts": 7,
-"subscribers": 443,
+"subscribers": 442,
 "via": "snowball",
 "videos": 3
 },
@@ -55546,7 +55605,7 @@
 "lives": 163,
 "name": "雪乃める-YukinoMeru",
 "shorts": 67,
-"subscribers": 5560,
+"subscribers": 5570,
 "videos": 8
 },
 "UCETL2JBclrLr10P47BUMWqw": {
@@ -56270,7 +56329,7 @@
 "lives": 220,
 "name": "あのとこ",
 "shorts": 1,
-"subscribers": 187,
+"subscribers": 186,
 "via": "snowball"
 },
 "UCEiqdNNhNZ4Hj7evSHqPqHA": {
@@ -56516,7 +56575,7 @@
 "lives": 263,
 "name": "紅鬼いも",
 "shorts": 28,
-"subscribers": 785,
+"subscribers": 790,
 "videos": 48
 },
 "UCEqWvOgpHk3Ia8W5oS2T3Lg": {
@@ -56579,9 +56638,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/2AwtWqBTzzE/hqdefault.jpg",
-"title": "【初見歓迎】今夜の晩御飯何にした？みんなで輪になって夜雑談🌙",
-"video_id": "2AwtWqBTzzE"
+"thumbnail": "https://i1.ytimg.com/vi/x61ItWmmHps/hqdefault.jpg",
+"title": "【初見歓迎】みんなにおはよう言いたい雑談 起きてる人いるかい？【VTuber】",
+"video_id": "x61ItWmmHps"
 },
 "live": {
 "started_at": "2026-11-17T11:00:12Z",
@@ -56836,9 +56895,9 @@
 "first_seen": "2026-11-21T04:00:51Z",
 "icon": "https://yt3.ggpht.com/lvoQ70UoQpPYZHxZlI8LDPNFTaArKp-ccirKcrUwZ5lZmATuRP9RMBfmoyZxfn0kw688OaYl=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GeHrZy6ZnxQ/hqdefault.jpg",
-"title": "🩷LIVE￤イベスト「賢いメイド生活」を一緒に見よう🎃🧹【#トリッカル 】",
-"video_id": "GeHrZy6ZnxQ"
+"thumbnail": "https://i4.ytimg.com/vi/3doDGoXXU3k/hqdefault.jpg",
+"title": "🩷LIVE￤【Potato Please】魔王VSじゃがいも(60000個)【#うにたろ】",
+"video_id": "3doDGoXXU3k"
 },
 "lives": 684,
 "name": "うにたろChannel",
@@ -56971,7 +57030,7 @@
 },
 "name": "白隻レイ【Vlog制作中】",
 "shorts": 15,
-"subscribers": 219,
+"subscribers": 220,
 "videos": 1
 },
 "UCF-y5FH_8RirvxZFnyJMHMg": {
@@ -56988,9 +57047,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T03:25:00Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/X1LaY86d0lk/hqdefault.jpg",
-"title": "【APEX】🟣今日も今日とてのらぼの旅✨【黒瀬イツキ】　＃VTuber準備中　＃APEX　#マスター",
-"video_id": "X1LaY86d0lk"
+"thumbnail": "https://i4.ytimg.com/vi/wsgVvaKhSgM/hqdefault.jpg",
+"title": "【GTA5】RP鯖：さてさてガソスタ再建しましょうね～【黒瀬イツキ】　＃VTuber準備中　＃GTA5　＃ストサバ　＃GTA5RP",
+"video_id": "wsgVvaKhSgM"
 },
 "lives": 75,
 "name": "黒瀬イツキ",
@@ -57523,7 +57582,7 @@
 "name": "猫乃みけ🐈‎‎🤍nekono mike",
 "sections_at": "2026-11-07T14:14:15Z",
 "shorts": 9,
-"subscribers": 884
+"subscribers": 885
 },
 "UCFCCe3xXcQTTy2qQ_PiX3aw": {
 "counts_at": null,
@@ -57637,7 +57696,7 @@
 "lives": 320,
 "name": "Hoshino Kane 星野かね Ch.",
 "shorts": 25,
-"subscribers": 1420,
+"subscribers": 1430,
 "videos": 10
 },
 "UCFDURpxtsMEPJKiNgAJZDeg": {
@@ -58064,9 +58123,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T19:41:24Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GygvJN3NTSU/hqdefault.jpg",
-"title": "【モンスト】　フィロソフィア運極目指して　#モンスト #滅絶 #新人vtuber #未胡桃くるみ　#くるみ配信中",
-"video_id": "GygvJN3NTSU"
+"thumbnail": "https://i1.ytimg.com/vi/H_SmEzew-_I/hqdefault.jpg",
+"title": "AI字幕は何と言ってるか？#妖怪ウォッチ #shorts #新人vtuber #未胡桃くるみ",
+"video_id": "H_SmEzew-_I"
 },
 "lives": 117,
 "name": "未胡桃くるみ@VTuber",
@@ -58114,14 +58173,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T23:09:56Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/aE8HAD6SsCM/hqdefault.jpg",
-"title": "【朝活雑談/飲酒】やはり人生には笑いが大切だと思うんですよ。朝から笑顔、引き出しちゃいマスカット、、、☺️【Vtuber/好焉うる】",
-"video_id": "aE8HAD6SsCM"
+"thumbnail": "https://i3.ytimg.com/vi/zu_ATr_1b-Q/hqdefault.jpg",
+"title": "【朝活雑談/飲酒】早寝早起き朝飲酒。これが今時の健康法ですヨ(大嘘) リスナーの健康もぽれが担っちゃるけぇのぉ…！(˘ω˘)【Vtuber/好焉うる】",
+"video_id": "zu_ATr_1b-Q"
 },
 "lives": 133,
 "name": "好焉 うる / Sukore Uru Ch.",
 "shorts": 43,
-"subscribers": 1320,
+"subscribers": 1310,
 "videos": 1
 },
 "UCFNVR2Fdx8V7X1DO6CdBF2A": {
@@ -58623,15 +58682,15 @@
 "is_live": false,
 "last_live_at": "2026-11-16T23:19:31Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/Stx2zqcjzpM/hqdefault.jpg",
-"title": "【※ネタバレあり】11/21配信予定19時から！【KH2/FM】",
-"video_id": "Stx2zqcjzpM"
+"thumbnail": "https://i4.ytimg.com/vi/Wi1qs_urSTY/hqdefault.jpg",
+"title": "【あつ森】11/22タイトル未定【新人VTuber】",
+"video_id": "Wi1qs_urSTY"
 },
 "lives": 79,
 "name": "きのみきあch",
 "sections_at": "2026-11-07T14:14:15Z",
 "shorts": 36,
-"subscribers": 309,
+"subscribers": 310,
 "videos": 1
 },
 "UCFXfUzMQDLAV3uQE0CfTdsQ": {
@@ -58986,9 +59045,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/Vx88klLBxrg/hqdefault.jpg",
-"title": "[雑談/縦型]初見歓迎！テキトー雑談[個人勢Vtuber/鴉羽斎]",
-"video_id": "Vx88klLBxrg"
+"thumbnail": "https://i3.ytimg.com/vi/vtQyHrfWXAc/hqdefault.jpg",
+"title": "[Dark Hours/コラボ]強盗の時間だ[個人勢Vtuber/鴉羽斎]",
+"video_id": "vtQyHrfWXAc"
 },
 "live": {
 "started_at": "2026-11-17T11:01:02Z",
@@ -59030,7 +59089,7 @@
 "lives": 116,
 "name": "オルス=ローベ",
 "shorts": 248,
-"subscribers": 958,
+"subscribers": 959,
 "videos": 3
 },
 "UCFfY6VGOyqMEB_3UbpihSMw": {
@@ -59110,14 +59169,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:37:43Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/IF7n2nmPHBs/hqdefault.jpg",
-"title": "【朝活】おはよう、ブラックフライデー(土曜日)！【個人勢VTuber】",
-"video_id": "IF7n2nmPHBs"
+"thumbnail": "https://i2.ytimg.com/vi/q-M87xzbZ08/hqdefault.jpg",
+"title": "【朝活】早起きなみんなへ、おはよう届け！【個人勢VTuber】",
+"video_id": "q-M87xzbZ08"
 },
 "lives": 732,
 "name": "白花みんと",
 "shorts": 41,
-"subscribers": 946,
+"subscribers": 947,
 "videos": 16
 },
 "UCFiXgKud-UtzttkCO7GMKeQ": {
@@ -59922,9 +59981,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:14:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/MhLnBYt4OxE/hqdefault.jpg",
-"title": "叫声/己龍  #歌ってみた #karaoke #ヴィジュアル系 #V系 #己龍 #ロック #vtuber #shorts",
-"video_id": "MhLnBYt4OxE"
+"thumbnail": "https://i2.ytimg.com/vi/mgGKP2jhvz8/hqdefault.jpg",
+"title": "【歌枠】ロックが歌いたいおうちカラオケ",
+"video_id": "mgGKP2jhvz8"
 },
 "lives": 570,
 "name": "茶屋とるて",
@@ -59957,7 +60016,7 @@
 "lives": 177,
 "name": "wannpi",
 "shorts": 66,
-"subscribers": 2050,
+"subscribers": 2060,
 "videos": 8
 },
 "UCG-lxFakplk-wqjv-OnjHtw": {
@@ -59986,9 +60045,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T02:00:55Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-apAXdisY8g/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/33KfE03rDK8/hqdefault.jpg",
 "title": "めざせ！高評価666目標！おはなししよ！【初見さん！コメント大歓迎】　朝活/雑談　#shorts #縦型配信",
-"video_id": "-apAXdisY8g"
+"video_id": "33KfE03rDK8"
 },
 "lives": 1051,
 "name": "明乃よるは -Akenai Yoruha-",
@@ -60360,9 +60419,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/Um87r-goZ7U/hqdefault.jpg",
-"title": "【バイオハザードリベレーションズ２】速攻でDLC攻略します！！【Vtuber/朔真イリス】",
-"video_id": "Um87r-goZ7U"
+"thumbnail": "https://i2.ytimg.com/vi/Uy78wLEIwxc/hqdefault.jpg",
+"title": "【バイオハザード6】バイオハザード6をとにかく全力で楽しむ【Vtuber/朔真イリス】",
+"video_id": "Uy78wLEIwxc"
 },
 "live": {
 "started_at": "2026-11-17T11:02:17Z",
@@ -60795,9 +60854,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/FnlOi-ojAus/hqdefault.jpg",
-"title": "【あつ森第９-２回】タクミライフで別荘づくり！（新たな無人島生活）【猫屋幸海＆カイ #新人vtuber】",
-"video_id": "FnlOi-ojAus"
+"thumbnail": "https://i3.ytimg.com/vi/Jbvqq1RXco4/hqdefault.jpg",
+"title": "【あつ森第９回】新たな無人島生活スタート【猫屋幸海＆カイ ＃新人vtuber】",
+"video_id": "Jbvqq1RXco4"
 },
 "live": {
 "started_at": "2026-11-17T11:00:46Z",
@@ -61320,7 +61379,7 @@
 "lives": 19,
 "name": "白波くえん ",
 "shorts": 5,
-"subscribers": 182,
+"subscribers": 181,
 "videos": 2
 },
 "UCGQXlee6Ch4K4Z48XcwVoHw": {
@@ -61428,9 +61487,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:56:18Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/89Jo2uwninM/hqdefault.jpg",
-"title": "【#お悩み相談】あなたのお悩みが少しでも軽くなりますように！【#ぷーちぇる #新人vtuber 】",
-"video_id": "89Jo2uwninM"
+"thumbnail": "https://i1.ytimg.com/vi/TO7dU3tm_ok/hqdefault.jpg",
+"title": "【#雑談 #ぷチュ～】おいしいシチューを食べよう！【#ぷーちぇる #新人vtuber 】",
+"video_id": "TO7dU3tm_ok"
 },
 "lives": 71,
 "name": "ぷーちぇる / pu-chel",
@@ -63322,14 +63381,25 @@
 "lives": 829,
 "name": "Vivi Ch. 綺々羅々ヴィヴィ - FLOW GLOW",
 "shorts": 427,
-"subscribers": 766000,
+"subscribers": 767000,
 "via": "rechecked",
 "videos": 20
 },
 "UCH-3UuOSqmOP10CB15_nbYQ": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:30:50Z",
-"subscribers": 20800
+"icon": "https://yt3.ggpht.com/iyoD8y-PQlQAmWFSxypdBhZ_YIexjf92HHdNdS4lzKU8A6XWIIKGpAFJ98F-uAON1gaLU23h_Q=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/BXwMX7JDqdc/hqdefault.jpg",
+"title": "【#初配信】はじめまして、チョコミントの妖精さんです！【#新人vtuber】",
+"video_id": "BXwMX7JDqdc"
+},
+"lives": 42,
+"name": "初噛みつき / Hakka Mitsuki",
+"shorts": 31,
+"subscribers": 20800,
+"videos": 13
 },
 "UCH-LyZhErYR2IAXFB4KEetA": {
 "counts_at": null,
@@ -63357,9 +63427,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T09:19:49Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ymSg5NRuRLc/hqdefault.jpg",
-"title": "【#ポケモンユナイト/#参加型】新シーズンランクマ　#652【四月一日レオ】",
-"video_id": "ymSg5NRuRLc"
+"thumbnail": "https://i3.ytimg.com/vi/zkDsyMGn1wo/hqdefault.jpg",
+"title": "【#PEAK】なかよし3人組で山登り【四月一日レオ】",
+"video_id": "zkDsyMGn1wo"
 },
 "lives": 1313,
 "name": "四月一日レオ",
@@ -63668,7 +63738,7 @@
 "lives": 1,
 "name": "Utsutsu ch.鈴木うつつ",
 "shorts": 3,
-"subscribers": 3620,
+"subscribers": 3630,
 "videos": 1
 },
 "UCH73PVG4YD9fORDZeAVOU0Q": {
@@ -64353,9 +64423,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:29:30Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/SzeVD2e_W_s/hqdefault.jpg",
-"title": "【mスポーツ】CAIRNでフリーソロRTA目指す練習&ルート選定の日🏔️🏔️",
-"video_id": "SzeVD2e_W_s"
+"thumbnail": "https://i3.ytimg.com/vi/rWewFwo5g64/hqdefault.jpg",
+"title": "【mスポーツ】CAIRNでフリーソロRTA目指す練習&ルート選定の日",
+"video_id": "rWewFwo5g64"
 },
 "lives": 266,
 "name": "音孤乃マーニャ / DJ NekonoManya",
@@ -65224,7 +65294,7 @@
 "lives": 387,
 "name": "RonaldoVTUBER Ch.",
 "shorts": 34,
-"subscribers": 26300,
+"subscribers": 26400,
 "videos": 57
 },
 "UCHYIdv_LviXGqxCWIq7wk_A": {
@@ -65262,7 +65332,7 @@
 "lives": 146,
 "name": "ノンアルコールBAR",
 "shorts": 44,
-"subscribers": 356,
+"subscribers": 357,
 "videos": 24
 },
 "UCHYUp4H9h_p5ljRKNk5fZDg": {
@@ -65574,9 +65644,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T22:06:29Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/OB-Al8gK4b0/hqdefault.jpg",
-"title": "【FGO】　バビロニア　＃祐定配信中　＃FGO　#Vtuber",
-"video_id": "OB-Al8gK4b0"
+"thumbnail": "https://i1.ytimg.com/vi/TFRAGrT_rO8/hqdefault.jpg",
+"title": "【FGO】　素材回収作業枠　＃祐定配信中　＃FGO　#Vtuber",
+"video_id": "TFRAGrT_rO8"
 },
 "lives": 954,
 "name": "スケちゃん【祐定】@サムライ系Vtuber居合系は偶に実写有り",
@@ -65687,7 +65757,7 @@
 "lives": 152,
 "name": "柳 藍莉(Liu lanli)個人新人VTuber",
 "shorts": 32,
-"subscribers": 245,
+"subscribers": 246,
 "via": "snowball",
 "videos": 6
 },
@@ -66813,7 +66883,7 @@
 "lives": 159,
 "name": "闇々 すぴあ / Spia Yamiyami",
 "shorts": 94,
-"subscribers": 9500,
+"subscribers": 9510,
 "videos": 15
 },
 "UCI8MrU82FpER5_rSWc9rhCQ": {
@@ -66945,7 +67015,7 @@
 "lives": 414,
 "name": "めんつゆ",
 "shorts": 10,
-"subscribers": 866,
+"subscribers": 865,
 "videos": 25
 },
 "UCIAkO0fHvw6rgQlkLClEe7A": {
@@ -67205,7 +67275,7 @@
 "lives": 278,
 "name": "レラン・ジ・エクルヴィス / Lelan des Ecrevisse",
 "shorts": 139,
-"subscribers": 712,
+"subscribers": 711,
 "videos": 3
 },
 "UCIH25_G3Ec5pvf5E2JDfUYA": {
@@ -67228,7 +67298,7 @@
 "lives": 52,
 "name": "いとま ゆる🍩",
 "shorts": 31,
-"subscribers": 502
+"subscribers": 504
 },
 "UCIHVy1w4a0UhJPjRbrPFMDw": {
 "counts_at": null,
@@ -67302,9 +67372,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/QYHEzOlFSsA/hqdefault.jpg",
-"title": "【初見さん歓迎】夜更かし作業配信☆大人しくしゃべります【新人VTuber】",
-"video_id": "QYHEzOlFSsA"
+"thumbnail": "https://i3.ytimg.com/vi/vf80AyILb0w/hqdefault.jpg",
+"title": "【ゼルダの伝説 ブレス オブ ザ ワイルド】＃22　やっぱりやる！！昨日の続きの龍探し☆【新人VTuber】",
+"video_id": "vf80AyILb0w"
 },
 "live": {
 "started_at": "2026-11-17T10:59:23Z",
@@ -67803,7 +67873,7 @@
 "lives": 73,
 "name": "七星ねる / Nanase Neru",
 "shorts": 79,
-"subscribers": 598,
+"subscribers": 599,
 "videos": 1
 },
 "UCIV1HPKWhVc-6LbrWKH-4Uw": {
@@ -68031,7 +68101,7 @@
 "lives": 640,
 "name": "蝙蝠ヘラch",
 "shorts": 81,
-"subscribers": 1350,
+"subscribers": 1340,
 "via": "snowball",
 "videos": 80
 },
@@ -68243,9 +68313,9 @@
 "first_seen": "2026-11-19T01:00:52Z",
 "icon": "https://yt3.ggpht.com/I6L565_nsMK3524JWTJzhH5dTswc3qQ4lfO0ruwSgJIaUyYSeAi1u1C66kpLJqYGdMS7FcpV=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/OfRnk2rZzJc/hqdefault.jpg",
-"title": "【Grand Theft Auto VI】 Day 2 of turning my life around in GTA 6 | #2",
-"video_id": "OfRnk2rZzJc"
+"thumbnail": "https://i3.ytimg.com/vi/JKAZBrT-BLc/hqdefault.jpg",
+"title": "【ABIOTIC FACTOR】 Greens are BACK with @Limealicious!!",
+"video_id": "JKAZBrT-BLc"
 },
 "lives": 348,
 "name": "Nimi Nightmare",
@@ -68282,7 +68352,7 @@
 "lives": 91,
 "name": "いぬこりん【新人Vtuber】",
 "shorts": 113,
-"subscribers": 168,
+"subscribers": 169,
 "videos": 3
 },
 "UCIgbDPU_8anZBG0vBdojHzg": {
@@ -68413,7 +68483,7 @@
 },
 "name": "月見なび / Tukimi Nabi",
 "shorts": 4,
-"subscribers": 52,
+"subscribers": 56,
 "videos": 2
 },
 "UCIiNS_mQbzwAuXRBSUuNvag": {
@@ -69230,9 +69300,9 @@
 "is_live": false,
 "last_live_at": "2026-11-13T16:45:16Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ESnOKQIhQPw/hqdefault.jpg",
-"title": "【#apex 】ルーレットでキャラ変参加型えぺ～【陰山アゲハ/#パレデミア学園 】",
-"video_id": "ESnOKQIhQPw"
+"thumbnail": "https://i3.ytimg.com/vi/JAEsexafzDc/hqdefault.jpg",
+"title": "【#雑談 】三連休にかんぱ～い 俺強くなれたかな 初見さんもROMさんも歓迎👍【陰山アゲハ/#パレデミア学園 】",
+"video_id": "JAEsexafzDc"
 },
 "lives": 282,
 "name": "陰山アゲハ🦋パレデミア学園",
@@ -69532,9 +69602,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T20:40:04Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-mXUcssMQFU/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/gMkmmkob614/hqdefault.jpg",
 "title": "【エルデンリング】『ELDEN RING』完全初見プレイ！ #15",
-"video_id": "-mXUcssMQFU"
+"video_id": "gMkmmkob614"
 },
 "lives": 1236,
 "name": "ミラクル アスアサーテ",
@@ -70554,9 +70624,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T12:21:18Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/dzTekYtP3gM/hqdefault.jpg",
-"title": "【デジモンストーリー タイムストレンジャー】プルートモンを助ける…？タイタン族に指示を出していたのは…？＃１０【#新人vtuber/#焼きたてちーの】",
-"video_id": "dzTekYtP3gM"
+"thumbnail": "https://i2.ytimg.com/vi/EJxq1V9t3sE/hqdefault.jpg",
+"title": "【#食いしん坊あつまれ歌枠リレー】どんどん集まれ腹ペコたち～～🍴【#歌枠 / #焼きたてちーの 】",
+"video_id": "EJxq1V9t3sE"
 },
 "lives": 183,
 "name": "椎乃樹ちの【とーぶい】",
@@ -71029,7 +71099,7 @@
 "name": "猫宮ふわり / Nekomiya Fuwari",
 "sections_at": "2026-11-07T15:00:44Z",
 "shorts": 25,
-"subscribers": 3890,
+"subscribers": 3910,
 "videos": 9
 },
 "UCJXpJabCIcrNYPTpFybpdfw": {
@@ -71059,7 +71129,7 @@
 "lives": 772,
 "name": "紗夜ch【バ美肉VTuber】",
 "shorts": 4,
-"subscribers": 1790,
+"subscribers": 1800,
 "videos": 1
 },
 "UCJY3eQn3Mj81E4OpzZAwyyg": {
@@ -71851,7 +71921,7 @@
 "lives": 17,
 "name": "星守るか",
 "shorts": 31,
-"subscribers": 176,
+"subscribers": 177,
 "videos": 26
 },
 "UCJnxmeosa08BGIZar_LHzsA": {
@@ -72163,7 +72233,7 @@
 "lives": 29,
 "name": "カイコ・エヴァンス",
 "shorts": 9,
-"subscribers": 54,
+"subscribers": 53,
 "via": "snowball",
 "videos": 2
 },
@@ -72753,9 +72823,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T13:47:09Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/Vk7d7rXgODI/hqdefault.jpg",
-"title": "【ぬめぬめ /コラボ/視聴者参加型】大量のぬからめを探せ!!　【#神来社柊優 】",
-"video_id": "Vk7d7rXgODI"
+"thumbnail": "https://i1.ytimg.com/vi/Dky5YmAYnls/hqdefault.jpg",
+"title": "【結月ゆかりと朝のひととき#81】傘を持っていく基準　#shorts #結月ゆかり   #神来社  #vocaloid",
+"video_id": "Dky5YmAYnls"
 },
 "lives": 391,
 "name": "神来社柊優",
@@ -73395,7 +73465,7 @@
 "lives": 336,
 "name": "煌照羅 カミュレ",
 "shorts": 17,
-"subscribers": 163,
+"subscribers": 164,
 "via": "snowball",
 "videos": 6
 },
@@ -74100,7 +74170,7 @@
 "lives": 793,
 "name": "能美 にこ ",
 "shorts": 612,
-"subscribers": 612,
+"subscribers": 613,
 "via": "snowball",
 "videos": 3
 },
@@ -75430,9 +75500,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/LlH1RVG3Bco/hqdefault.jpg",
-"title": "【定期建築】11月分やっていく【マインクラフト 】記録1583",
-"video_id": "LlH1RVG3Bco"
+"thumbnail": "https://i2.ytimg.com/vi/iADI8krokQI/hqdefault.jpg",
+"title": "【アニモ】ボス系討伐回【モンスター収集ゲーム】記録1582",
+"video_id": "iADI8krokQI"
 },
 "live": {
 "started_at": "2026-09-14T13:58:46Z",
@@ -75526,7 +75596,7 @@
 "name": "てんきゅう",
 "sections_at": "2026-11-07T15:00:44Z",
 "shorts": 29,
-"subscribers": 63,
+"subscribers": 62,
 "videos": 7
 },
 "UCKuhqZ8lY53kCO0MjAYC9lg": {
@@ -75599,9 +75669,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T11:01:22Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/58v5Bhe0mwI/hqdefault.jpg",
-"title": "【餓狼 CotW】＃1 アルマスキャミィ使いが行く餓狼伝説【新人Vtuber】",
-"video_id": "58v5Bhe0mwI"
+"thumbnail": "https://i1.ytimg.com/vi/HotumlyKs44/hqdefault.jpg",
+"title": "【スト6】アルマスキャミィにとりあえず戻る配信【新人Vtuber】",
+"video_id": "HotumlyKs44"
 },
 "lives": 17,
 "name": "霧銀イブキ -Kirigane Ibuki-",
@@ -76618,7 +76688,7 @@
 "lives": 56,
 "name": "蓬莱エマ",
 "shorts": 815,
-"subscribers": 6790,
+"subscribers": 6800,
 "videos": 1361
 },
 "UCL7WaEHTzZTwd4k-shsOMag": {
@@ -76655,7 +76725,7 @@
 "lives": 116,
 "name": "吊子 なる",
 "shorts": 34,
-"subscribers": 285,
+"subscribers": 287,
 "videos": 5
 },
 "UCL9K_xxjRddvfq9Cwkxz_gQ": {
@@ -77109,9 +77179,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:09:56Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/H6gcS0UnOsc/hqdefault.jpg",
-"title": "【実況配信】緊急会見　おしろ様　#vtuber 　#雑談",
-"video_id": "H6gcS0UnOsc"
+"thumbnail": "https://i2.ytimg.com/vi/5diClngB1Z4/hqdefault.jpg",
+"title": "【龍が如く 維新! 極】猫から侍になります！　#セガアトラス配信中",
+"video_id": "5diClngB1Z4"
 },
 "lives": 469,
 "name": "おじょっこ",
@@ -77286,7 +77356,7 @@
 "lives": 134,
 "name": "雅　莉杜ｰMiyabi　Litoｰ",
 "shorts": 13,
-"subscribers": 294,
+"subscribers": 295,
 "videos": 1
 },
 "UCLLZG_eDl-3SvuDpmmNDWcw": {
@@ -77349,6 +77419,18 @@
 "shorts": 100,
 "subscribers": 964,
 "videos": 5
+},
+"UCLNQhntTEjxlC9HQjSKpcVw": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/_53LE11-mUh1O0LTQ0jLUuF8osK7H1FoxZLRMgzPd-zUswc2iQ2edgZJf-KOUjN5spXSAzuDd18=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i4.ytimg.com/vi/sexbCh3Xogg/hqdefault.jpg",
+"title": "【フォートナイト参加型配信】今日こそ見つけたい！13万7,500分の1⁉幻のお宝トークン出すまで終われません　#ワンピース #fortnite #shorts  #女性vtuber",
+"video_id": "sexbCh3Xogg"
+},
+"name": "るるたんch♡瑠璃菜るる",
+"subscribers": 10100
 },
 "UCLNRwvN4OeKApCg-sBWPrng": {
 "counts_at": null,
@@ -77709,7 +77791,7 @@
 "lives": 245,
 "name": "光咲ういか Uika Ch.",
 "shorts": 73,
-"subscribers": 1600
+"subscribers": 1610
 },
 "UCLV7NRoIOxm0UPiC2ySBsMg": {
 "counts_at": null,
@@ -77766,7 +77848,7 @@
 "lives": 35,
 "name": "さくら ふわり",
 "shorts": 17,
-"subscribers": 838
+"subscribers": 839
 },
 "UCLW1pELzIdRSYbLHRBdWSqQ": {
 "counts_at": null,
@@ -77935,9 +78017,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/Cl5oBcLLa5M/hqdefault.jpg",
-"title": "【雀魂】バーチャルクインテット杯　大将戦　濃厚ぷりん",
-"video_id": "Cl5oBcLLa5M"
+"thumbnail": "https://i3.ytimg.com/vi/J8wvTxYgusA/hqdefault.jpg",
+"title": "【スレスパ】 Slay the spire 2 　とりあえず進めていく 🔰　part2",
+"video_id": "J8wvTxYgusA"
 },
 "live": {
 "started_at": "2026-11-17T10:31:55Z",
@@ -78972,7 +79054,7 @@
 "lives": 130,
 "name": "小鳥遊 千鶴〈Chizuru Takanashi〉",
 "shorts": 19,
-"subscribers": 1530,
+"subscribers": 1550,
 "via": "snowball",
 "videos": 9
 },
@@ -79006,9 +79088,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T22:51:22Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/Pje5Qvl6Ikg/hqdefault.jpg",
-"title": "【 #第五人格 】参加型5人ランク戦🌳ゆみだに５５🦌【だにこ】#vtuber #identityv #縦型配信 #Shorts",
-"video_id": "Pje5Qvl6Ikg"
+"thumbnail": "https://i1.ytimg.com/vi/hcDlGMt0BkA/hqdefault.jpg",
+"title": "【 #第五人格 】サバイバーランク戦🌳ソロだよ！！🦌【だにこ】#vtuber #identityv #縦型配信 #Shorts",
+"video_id": "hcDlGMt0BkA"
 },
 "lives": 1655,
 "name": "だにこ-Danico-",
@@ -79411,9 +79493,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/dBY4CvvS5yg/hqdefault.jpg",
-"title": "【バトオペ3】バトオペ3ネットワークテストやってみた！みんなはやった？【新人Vtuber】",
-"video_id": "dBY4CvvS5yg"
+"thumbnail": "https://i1.ytimg.com/vi/xlcmvCsswr0/hqdefault.jpg",
+"title": "【閲覧注意】ピザがたべたいんじゃ～ 目指せ30万点！Highscore 220691くらい【Infinity Pizza】【新人Vtuber】 #shorts #新人Vtuber #229",
+"video_id": "xlcmvCsswr0"
 },
 "live": {
 "started_at": "2026-11-17T11:00:52Z",
@@ -80021,7 +80103,7 @@
 "lives": 131,
 "name": "蒼海 / Aomi ",
 "shorts": 35,
-"subscribers": 267,
+"subscribers": 268,
 "videos": 16
 },
 "UCM5vHld703sTxU_BZw-hH-g": {
@@ -80107,9 +80189,9 @@
 "first_seen": "2026-11-21T08:00:51Z",
 "icon": "https://yt3.ggpht.com/SAAVTKOnZmI4ICLQKQ0h2AEzF2Kb4jZfqpIivJi1_sWvYJTafdVz6ngrr1SK8YJwrxIK6jSvXg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/fBgxK9z7tPo/hqdefault.jpg",
-"title": "VTuberなりたい人必見！！#vtuber",
-"video_id": "fBgxK9z7tPo"
+"thumbnail": "https://i4.ytimg.com/vi/GF_u0EaJLhg/hqdefault.jpg",
+"title": "ほぼ初心者がマイクラ挑戦／２",
+"video_id": "GF_u0EaJLhg"
 },
 "lives": 7,
 "name": "雪宮るか🐾💠",
@@ -80916,9 +80998,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T13:03:48Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/vPM3W844xdQ/hqdefault.jpg",
-"title": "【同時視聴】コードギアスミリしらVと一気見する『コードギアス反逆のルルーシュR2』第13話~第25話【バツ子│個人V│邂逅バツ子ﾁｬﾝ】",
-"video_id": "vPM3W844xdQ"
+"thumbnail": "https://i4.ytimg.com/vi/oRRsEjeEftU/hqdefault.jpg",
+"title": "あ！！！バツ子が一瞬だけ雑談して帰ろうとしてる！！！捕まえろ捕まえろ！！！【バツ子│個人V│邂逅バツ子ﾁｬﾝ】",
+"video_id": "oRRsEjeEftU"
 },
 "lives": 672,
 "name": "合法‼︎バツ子ﾁｬﾝBatsuko",
@@ -81254,7 +81336,7 @@
 },
 "name": "なる / Vtuber準備中",
 "shorts": 3,
-"subscribers": 337
+"subscribers": 338
 },
 "UCMYLSg_WLcyWf_8PMJOnnqw": {
 "counts_at": null,
@@ -81376,9 +81458,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:53:39Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/thTSYNsQ4_I/hqdefault.jpg",
-"title": "村の整備が永遠に終わらん【ワロタ、俺の家のとなり魔王城www】",
-"video_id": "thTSYNsQ4_I"
+"thumbnail": "https://i2.ytimg.com/vi/u-dGCbBZp-8/hqdefault.jpg",
+"title": "コラボメンバーにおいつけモンハンライズ",
+"video_id": "u-dGCbBZp-8"
 },
 "lives": 1502,
 "name": "鬼目羅豚玉 Kimera Butatama",
@@ -81717,7 +81799,7 @@
 "lives": 183,
 "name": "招喜 にゃあ",
 "shorts": 19,
-"subscribers": 150
+"subscribers": 149
 },
 "UCMfFjX8uOe38n7VFNOPh6Ag": {
 "counts_at": null,
@@ -81862,7 +81944,7 @@
 "lives": 2,
 "name": "エルナ Eluna_EE Ch.",
 "shorts": 5,
-"subscribers": 930
+"subscribers": 934
 },
 "UCMj4iR9pY3DEh8LqPw7qnPQ": {
 "counts_at": "2026-11-14T19:00:51Z",
@@ -82094,7 +82176,7 @@
 "lives": 287,
 "name": "Lyria / リリア Live Channel",
 "shorts": 159,
-"subscribers": 1610,
+"subscribers": 1620,
 "videos": 19
 },
 "UCMoKbl01G8ZZAnA7Ade5X9Q": {
@@ -82605,7 +82687,7 @@
 "lives": 165,
 "name": "jinchannel.常識仁",
 "shorts": 39,
-"subscribers": 316,
+"subscribers": 325,
 "videos": 25
 },
 "UCMyvP0GM_l4khRYDZ5eKvxA": {
@@ -82721,7 +82803,7 @@
 "lives": 23,
 "name": "ゆにふぃ【公式】",
 "shorts": 19,
-"subscribers": 3750,
+"subscribers": 3760,
 "via": "snowball",
 "videos": 16
 },
@@ -82746,9 +82828,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T13:49:22Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/9bIi1OIfDXI/hqdefault.jpg",
-"title": "【#デスゲームの報告書  】依頼：死因を特定せよ！！！〚#個人勢vtuber ネタバレ注意〛",
-"video_id": "9bIi1OIfDXI"
+"thumbnail": "https://i3.ytimg.com/vi/6Pf9AnQWkgo/hqdefault.jpg",
+"title": "【#歌枠 #karaoke 】リバーブなんていらない（嘘）／ROM＆初見⋆作業⋆睡眠【カラオケ JOYSOUND for STREAMER  】　#個人勢vtube  #shorts",
+"video_id": "6Pf9AnQWkgo"
 },
 "lives": 138,
 "name": "絲乃ノア",
@@ -82804,7 +82886,7 @@
 "lives": 92,
 "name": "ろふた きゅい",
 "shorts": 15,
-"subscribers": 135,
+"subscribers": 134,
 "via": "snowball",
 "videos": 3
 },
@@ -82902,9 +82984,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VTPWrAqNQVY/hqdefault.jpg",
-"title": "【 Rust / #TJA4RUST 】 11/21 初めてのスト鯖RUST！遂に最終日！8日間の最高の思い出ദ്ദി(⩌ᴗ⩌ )第4回 #TJA4 8日目✨【 Vtuber / 勇者ユウダイ視点 】",
-"video_id": "VTPWrAqNQVY"
+"thumbnail": "https://i1.ytimg.com/vi/HbvCM4IqN0M/hqdefault.jpg",
+"title": "【 WARDOGS 】11/22 わんわんうぉ～！参加〇！朝にまったり癒しのわんわん🐶【 Vtuber / 勇者ユウダイ 】",
+"video_id": "HbvCM4IqN0M"
 },
 "live": {
 "started_at": "2026-11-17T09:23:09Z",
@@ -83245,9 +83327,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T10:58:54Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/WaMI4UxwL2o/hqdefault.jpg",
-"title": "祝！2027年前半ライブ決定　さねよしいさ子さんSet list作成雑談 ライブ追憶編 2026年11月21日(土)夜19時配信",
-"video_id": "WaMI4UxwL2o"
+"thumbnail": "https://i2.ytimg.com/vi/ydmpFg7wvz8/hqdefault.jpg",
+"title": "スライド作り作業雑談 2026年11月22日(日)朝6時ライブ配信",
+"video_id": "ydmpFg7wvz8"
 },
 "lives": 166,
 "name": "清岡美津夫",
@@ -83438,7 +83520,7 @@
 "lives": 1,
 "name": "夜逢クライ-Yorua Cry-【ViNET】",
 "shorts": 12,
-"subscribers": 155
+"subscribers": 156
 },
 "UCNFZY5ls74iEkjDzhBoIaRg": {
 "counts_at": null,
@@ -84628,9 +84710,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T16:09:23Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/FtbkxX-hoFY/hqdefault.jpg",
-"title": "【 タンポポは耐える。 】　僕は強い・・・耐えれるさ・・・【 男の娘Vtuber / 二条あまね 】",
-"video_id": "FtbkxX-hoFY"
+"thumbnail": "https://i2.ytimg.com/vi/M6zUJDscIdA/hqdefault.jpg",
+"title": "【 ラグナロクオンライン 】　ラグホーダイに乗じてクナイ型を作る！！【 男の娘Vtuber / 男声 】",
+"video_id": "M6zUJDscIdA"
 },
 "lives": 1038,
 "name": "Nijou Amane ch.二条あまね",
@@ -85738,9 +85820,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T21:10:46Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/MQYj-ZKB14s/hqdefault.jpg",
-"title": "【ELDEN RING NIGHTREIGN】遺物を全て失った夜渡りのやりなおし#64【羽鳥クレハ】",
-"video_id": "MQYj-ZKB14s"
+"thumbnail": "https://i2.ytimg.com/vi/1-s5yb7ynro/hqdefault.jpg",
+"title": "【ポケモンSS】ロケット団をボコボコにする#05【羽鳥クレハ】",
+"video_id": "1-s5yb7ynro"
 },
 "lives": 889,
 "name": "羽鳥クレハの配信部屋(旧はるたの私室)",
@@ -87499,7 +87581,7 @@
 "lives": 562,
 "name": "猫乃間 うと / Uto Nekonoma",
 "shorts": 122,
-"subscribers": 4690,
+"subscribers": 4680,
 "via": "snowball",
 "videos": 4
 },
@@ -88174,9 +88256,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T17:25:21Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/YLCdrODNp_I/hqdefault.jpg",
-"title": "⚪【#飲酒配信 】3連休ぼっちですがなにか？...(´;ω;｀)久しぶりに！一緒に楽しくのもーーぜ🍻【ちゃむ。/ねくすとぴあ】#ちゃむ今日も元気",
-"video_id": "YLCdrODNp_I"
+"thumbnail": "https://i2.ytimg.com/vi/EZg8I5Y7-RA/hqdefault.jpg",
+"title": "⚪【#nte #完全初見 #9 】初のオープンワールドRPGやるぞぉ！第5章！夢巡る回廊！ストーリー全部おもろいから楽しみすぎ！！【ちゃむ。/ねくすとぴあ】#ちゃむ今日も元気",
+"video_id": "EZg8I5Y7-RA"
 },
 "lives": 402,
 "name": "ちゃむ。 / Cyamumaru",
@@ -88349,9 +88431,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T10:29:44Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/yADyYbdSYdw/hqdefault.jpg",
-"title": "【雑談】３ヶ月ありがとう記念に乾杯をｷﾐと！初見さん大歓迎💙💛／公星ひなき#新人Vtuber",
-"video_id": "yADyYbdSYdw"
+"thumbnail": "https://i4.ytimg.com/vi/szHY5r7AxgQ/hqdefault.jpg",
+"title": "ｷﾐの今日の晩ごはんを召喚ッ🐔💙💛公星ひなき#shorts #vtuber",
+"video_id": "szHY5r7AxgQ"
 },
 "lives": 163,
 "name": "公星ひなきｰKimiboshi Hinakiｰ",
@@ -88513,7 +88595,7 @@
 "lives": 114,
 "name": "渚皓りりぃ　(なぎしらりりぃ)",
 "shorts": 48,
-"subscribers": 100,
+"subscribers": 99,
 "via": "snowball",
 "videos": 9
 },
@@ -88617,7 +88699,7 @@
 "lives": 365,
 "name": "雪彩ーゆきいろ【体調不良系VTuber】",
 "shorts": 341,
-"subscribers": 4510,
+"subscribers": 4500,
 "videos": 196
 },
 "UCO_f6uJHsTFN36snt8ppIRA": {
@@ -89016,9 +89098,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T03:22:34Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/2oLlghM_bj0/hqdefault.jpg",
-"title": "【#新人vtuber 】おうたの時間です🎤　#歌枠  #karaoke  #縦型配信 　＃shorts【＃紫雨しおん】",
-"video_id": "2oLlghM_bj0"
+"thumbnail": "https://i2.ytimg.com/vi/i2N5cU3Zsr4/hqdefault.jpg",
+"title": "#新人vtuber 】おうたのじかん〜　#歌枠  #karaoke  #縦型配信 　＃shorts【＃紫雨しおん】",
+"video_id": "i2N5cU3Zsr4"
 },
 "lives": 155,
 "name": "紫雨しおん",
@@ -90294,7 +90376,8 @@
 "videos": 22
 },
 "UCP53LDmf3a8L7bs6-9ngCdQ": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:01:07Z",
 "icon": "https://yt3.ggpht.com/CqI4-WUmOVvppuNYEdNAmQXWofaTkEKoWJQdOOemsof1IdIwtuw8S94d_jNCjKrPU9i30w6H=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -90302,8 +90385,11 @@
 "title": "いいこいいことってもいいこ　#shorts #vtuber  #新人vtuber #memes  #イイコと妖狐",
 "video_id": "tw0UeZQBUiY"
 },
+"lives": 30,
 "name": "葉月みゃお",
-"subscribers": 127
+"shorts": 47,
+"subscribers": 127,
+"videos": 12
 },
 "UCP5JWvSgNw6lXDqQTpfG7lA": {
 "counts_at": "2026-11-18T00:00:52Z",
@@ -91079,9 +91165,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T11:28:27Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/DHEuQ2jPsUQ/hqdefault.jpg",
-"title": "攻撃は防御の後に！　#縦型配信　  #vtuber 　#スト6 [ ストリートファイター6 ]",
-"video_id": "DHEuQ2jPsUQ"
+"thumbnail": "https://i3.ytimg.com/vi/RxSLjmKWLEo/hqdefault.jpg",
+"title": "攻撃は防御の後に！ #スト6 [ ストリートファイター6 ]",
+"video_id": "RxSLjmKWLEo"
 },
 "lives": 487,
 "name": "野良マオ @vtuber 🐱🚚",
@@ -91620,9 +91706,21 @@
 "lives": 164,
 "name": "叶雨つむぐ / Kaname Tsumugu",
 "shorts": 7,
-"subscribers": 318,
+"subscribers": 319,
 "via": "snowball",
 "videos": 7
+},
+"UCPTY-msADqVWo5EMK6crf0Q": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/uJkgfBxlPzPfzG2MOJ_FM6twKD9zWvL_lPXH9HgFakPxVqJsmtBQqZkFV7v0Yc_-x2Qdk2TKMQ=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/RSpv4GzWNNw/hqdefault.jpg",
+"title": "【Cult of the Lamb】#5  深夜の教祖業…【完全初見/ﾈﾀﾊﾞﾚNG】",
+"video_id": "RSpv4GzWNNw"
+},
+"name": "Sera🍊風雅",
+"subscribers": 472
 },
 "UCPTuwffEbVnzrkVpfvisYVQ": {
 "counts_at": "2026-11-15T02:51:28Z",
@@ -91822,7 +91920,7 @@
 "lives": 100,
 "name": "Mozzikito  🦟🩸Mosquito VTuber",
 "shorts": 77,
-"subscribers": 7160,
+"subscribers": 7150,
 "videos": 8
 },
 "UCPaLjELx49cssaje6a0aPtA": {
@@ -92037,9 +92135,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T03:57:47Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/Kud1n8FSSXE/hqdefault.jpg",
-"title": "【 タルコフ / EFT】～ サブタスク進めたい ～正式版完全初見 スタンダードで初見エンディング 残り16日 4年ぶりの初心者【個人勢Vtuber / 史門 】",
-"video_id": "Kud1n8FSSXE"
+"thumbnail": "https://i4.ytimg.com/vi/CclUh1nyDPE/hqdefault.jpg",
+"title": "【 タルコフ / EFT】～初めての アイスブレイカー攻略 ～正式版完全初見 スタンダードで初見エンディング 残り16日 4年ぶりの初心者【個人勢Vtuber / 史門 】",
+"video_id": "CclUh1nyDPE"
 },
 "lives": 803,
 "name": "史門 / Shimon ",
@@ -92141,9 +92239,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T01:55:46Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/amRuXHTpGh4/hqdefault.jpg",
-"title": "Loftin' it on a Tuesday || Loftia || VTuber || !promo !discord !lurk",
-"video_id": "amRuXHTpGh4"
+"thumbnail": "https://i4.ytimg.com/vi/czFqm_GJDqU/hqdefault.jpg",
+"title": "The guild took over the city || Steam Key Giveaway || VTuber || !promo !discord !lurk",
+"video_id": "czFqm_GJDqU"
 },
 "lives": 61,
 "name": "Spartan Ferrets",
@@ -92584,9 +92682,9 @@
 "is_live": false,
 "last_live_at": "2026-11-12T13:47:35Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/EYAZegd90j0/hqdefault.jpg",
-"title": "【🔴雑談】おかえりなさい🌤 #vtuber 【猫吹ケムリ】",
-"video_id": "EYAZegd90j0"
+"thumbnail": "https://i4.ytimg.com/vi/keyTXG1ZMCw/hqdefault.jpg",
+"title": "11/22 作業！！！配信！！！！ #個人勢vtuber  #vtuber  #おはようvtuber #3dvtuber",
+"video_id": "keyTXG1ZMCw"
 },
 "lives": 910,
 "name": "猫吹ケムリ☁Nekobuki Kemuri",
@@ -93277,9 +93375,9 @@
 "first_seen": "2026-11-19T08:01:00Z",
 "icon": "https://yt3.ggpht.com/Ey-Jk2ssdH-8NmM3JkUDji4AUR90j-B78iiIjI-Decq4L_dVATq3cxm6toff16u_AnlQLbM2eQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/26wnmrc3cgw/hqdefault.jpg",
-"title": "【AI Vtuber パズル・ポンデマル】日本散歩で気になったこと【雑談】【11/21 深夜〜朝】",
-"video_id": "26wnmrc3cgw"
+"thumbnail": "https://i4.ytimg.com/vi/ctfFLiXrUEw/hqdefault.jpg",
+"title": "【ペルソナ4G 452h〜 | AI Vtuber】パズル・ポンデマルのペルソナ4G実況 1月13日から ※ネタバレ有り。",
+"video_id": "ctfFLiXrUEw"
 },
 "lives": 161,
 "name": "パズル・ポンデマル | AI Vtuber",
@@ -93423,9 +93521,9 @@
 "first_seen": "2026-11-19T13:33:44Z",
 "icon": "https://yt3.ggpht.com/HziSN6ThLiw1jsijjkKw7TQY3SFpsN8MKclRmHNLA5irPoa9c8QXn3XEVIyOsro_aFyPY0VYzA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/cgy2XyxkerE/hqdefault.jpg",
-"title": "【#Apex ソロ】枠立て直し！！！【#VTuber #音瀬シルヴァ 】",
-"video_id": "cgy2XyxkerE"
+"thumbnail": "https://i1.ytimg.com/vi/PdhdKBR2haI/hqdefault.jpg",
+"title": "【歌ってみた】 『東京テディベア』Neru- 音瀬シルヴァ 歌枠配信切り抜き #新人vtuber #shorts",
+"video_id": "PdhdKBR2haI"
 },
 "lives": 454,
 "name": "音瀬シルヴァ@歌えるゲーマーVTuber",
@@ -93650,7 +93748,7 @@
 "lives": 852,
 "name": "やかまるーむ🌱🌟",
 "shorts": 210,
-"subscribers": 2010,
+"subscribers": 2020,
 "videos": 29
 },
 "UCPyk_Q0yaykajCQneR4ZVZQ": {
@@ -93675,9 +93773,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:27:59Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/t-seYYInYNM/hqdefault.jpg",
-"title": "【原神】お前友達いないだろ【個人Vtuber】",
-"video_id": "t-seYYInYNM"
+"thumbnail": "https://i4.ytimg.com/vi/GydM5OdYpVI/hqdefault.jpg",
+"title": "【原神】稲妻進んでないんですよぉ！！【個人Vtuber】",
+"video_id": "GydM5OdYpVI"
 },
 "lives": 450,
 "name": "天ゑび衣　Vtuber",
@@ -95019,7 +95117,7 @@
 "lives": 1,
 "name": "纏ロコ / Matoi Roco",
 "shorts": 46,
-"subscribers": 3040,
+"subscribers": 3050,
 "videos": 2
 },
 "UCQOVx-1BbHdSpBfWNTeHhRA": {
@@ -95068,9 +95166,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T20:22:47Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/PCCk9XMEOPQ/hqdefault.jpg",
-"title": "店長がんばる【Japanese Ramen Simulator】",
-"video_id": "PCCk9XMEOPQ"
+"thumbnail": "https://i2.ytimg.com/vi/m1JIbpXWpuk/hqdefault.jpg",
+"title": "【見守り副音声】大丈夫怖くないよ。私はやった時怖かったけど。",
+"video_id": "m1JIbpXWpuk"
 },
 "lives": 706,
 "name": "花緑青  カナデ",
@@ -95108,7 +95206,7 @@
 "lives": 1,
 "name": "悦園ルスト【ViNET】",
 "shorts": 14,
-"subscribers": 851
+"subscribers": 852
 },
 "UCQPdWzXMCo83tnJekAfOXXw": {
 "counts_at": null,
@@ -95187,7 +95285,7 @@
 "lives": 175,
 "name": "Cuffy ch. カフィー",
 "shorts": 86,
-"subscribers": 3590,
+"subscribers": 3600,
 "videos": 11
 },
 "UCQR3XBwsKV2J3Q_waniBcqA": {
@@ -95357,7 +95455,7 @@
 "lives": 75,
 "name": "サンデー毎日チャンネル【公式】",
 "shorts": 28,
-"subscribers": 8780,
+"subscribers": 8790,
 "videos": 122
 },
 "UCQV9lmQgI9LCCgcPCzonL5Q": {
@@ -95413,7 +95511,7 @@
 "lives": 273,
 "name": "ババもち",
 "shorts": 11,
-"subscribers": 384,
+"subscribers": 385,
 "videos": 4
 },
 "UCQVNj_nBUSAKxRPER2SaCQg": {
@@ -95888,9 +95986,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T12:37:32Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/A_by9Tli4B4/hqdefault.jpg",
-"title": "【 誰在唬爛尼🫵 】來看看觀眾都講了哪些瞎爆了💥的事件吧！｜小丑VTuber🤡｜尼皮NiPi ✖️🔴✖️｜",
-"video_id": "A_by9Tli4B4"
+"thumbnail": "https://i2.ytimg.com/vi/yToM4zO0poA/hqdefault.jpg",
+"title": "【 星期天來填表💬 】你居然最不能接受ＯＯ？！💬｜小丑VTuber🤡｜尼皮NiPi ✖️🔴✖️｜",
+"video_id": "yToM4zO0poA"
 },
 "lives": 879,
 "name": "尼皮 NiPi. Ch.",
@@ -95975,7 +96073,7 @@
 "lives": 272,
 "name": "貓音宫わさび",
 "shorts": 20,
-"subscribers": 189,
+"subscribers": 190,
 "videos": 5
 },
 "UCQdYxMFDIKHr7feHG3VGjSg": {
@@ -96524,9 +96622,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:09:50Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/arukGkf1LaU/hqdefault.jpg",
-"title": "【FINAL FANTASY RESONANCE】２DドットのFINALFANTASYで共鳴する！【#3】",
-"video_id": "arukGkf1LaU"
+"thumbnail": "https://i4.ytimg.com/vi/O9I0NcupD68/hqdefault.jpg",
+"title": "【FINAL FANTASY RESONANCE】２DドットのFINALFANTASYで共鳴する！【#3.5】",
+"video_id": "O9I0NcupD68"
 },
 "lives": 88,
 "name": "びえんのお家【眠り猫渼琰@VTuber】",
@@ -96854,7 +96952,7 @@
 "lives": 396,
 "name": "千神ここん[TRPG・ゲーム実況]",
 "shorts": 43,
-"subscribers": 405,
+"subscribers": 406,
 "videos": 120
 },
 "UCQv2tAM3HMA7rwkLmDHIJYA": {
@@ -96872,9 +96970,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T13:19:46Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/WGohiFaQqbQ/hqdefault.jpg",
-"title": "【#るーみっく歌枠リレー２】人生で一番見たアニメたち！🌺【#メーレv 】",
-"video_id": "WGohiFaQqbQ"
+"thumbnail": "https://i1.ytimg.com/vi/8F5goWPfxhU/hqdefault.jpg",
+"title": "【#るーみっく歌枠リレー２】開会式！㊗第２回開催！出演者様をご紹介していきます！【#メーレ 】",
+"video_id": "8F5goWPfxhU"
 },
 "lives": 487,
 "name": "メーレ-mele-",
@@ -97315,9 +97413,9 @@
 "first_seen": "2026-11-19T12:00:54Z",
 "icon": "https://yt3.ggpht.com/jQTqWA4UJIf6STqz655uROf_NActQ5XLgReWmq8KrUB8Zd23rECLicOLLa91IJR5bVJzozx1iA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/hHSvkYVLQaE/hqdefault.jpg",
-"title": "【Warframe】アットホームなPTです【ウォーフレーム/初心者/vtuber/立花りんす】",
-"video_id": "hHSvkYVLQaE"
+"thumbnail": "https://i3.ytimg.com/vi/6lZRk99C4Bc/hqdefault.jpg",
+"title": "【参加型/Minecraft】まったり雑談くらふと＃１１【統合版/vtuber/立花りんす】",
+"video_id": "6lZRk99C4Bc"
 },
 "lives": 1404,
 "name": "立花りんす TachibanaLince",
@@ -97676,9 +97774,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T00:04:12Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-tZRz_JBb8s/hqdefault.jpg",
-"title": "#20【#Python習得 ゲーム】農家はreplace()されました　Androidエンジニアが #Python に挑戦　エンジニアVTuber;ゆりバギ　朝活！",
-"video_id": "-tZRz_JBb8s"
+"thumbnail": "https://i1.ytimg.com/vi/8ASOoPWLPEw/hqdefault.jpg",
+"title": "【#GoogleAIStudio】 初見！現役エンジニアがお試しAndroid開発！ #AI #アプリ開発入門 #Androidアプリ開発入門",
+"video_id": "8ASOoPWLPEw"
 },
 "lives": 152,
 "name": "エンジニアVTuber;ゆりバギ",
@@ -98030,7 +98128,7 @@
 "lives": 51,
 "name": "t o i (とい)@目指せチャンネル登録100人🦊",
 "shorts": 24,
-"subscribers": 94,
+"subscribers": 95,
 "videos": 18
 },
 "UCRI3mTbJORMPo-jEelPMqxQ": {
@@ -98085,9 +98183,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/vhquH-3qcn4/hqdefault.jpg",
-"title": "【APEX】キーマウソロプレ日本1位が10キルチャンピオンをIGLが神すぎる",
-"video_id": "vhquH-3qcn4"
+"thumbnail": "https://i1.ytimg.com/vi/dZjeVM5O82M/hqdefault.jpg",
+"title": "【APEX】ソロプレデター日本１位のジャンパの耐え方が異次元すぎる #apex #apexlegends #エーペックス",
+"video_id": "dZjeVM5O82M"
 },
 "live": {
 "started_at": "2026-11-17T10:27:09Z",
@@ -98437,7 +98535,17 @@
 },
 "UCRQwdHwblpWgdyOqXF5BFeA": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
+"icon": "https://yt3.ggpht.com/kcydaKOwaDzujyG9noWyGXwJjMRKqyINQpF84ZqnUedGzv3YsI8QtMRknhsweichXSVoNER7Xw=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i1.ytimg.com/vi/HWj7SZes0fc/hqdefault.jpg",
+"title": "【 #新人vtuber  】寝る前のゆったり♡雑談【 #雑談 】",
+"video_id": "HWj7SZes0fc"
+},
+"lives": 232,
+"name": "シュルクル・シュクルル",
+"shorts": 7,
 "subscribers": 389
 },
 "UCRQxBldHWmzhfeSCokx8NIw": {
@@ -98527,7 +98635,7 @@
 "lives": 2,
 "name": "常花 レン.TKHNR【個人勢VTuber】",
 "shorts": 8,
-"subscribers": 440,
+"subscribers": 442,
 "videos": 2
 },
 "UCRSod5OLSE0QvL3K3mmGZsg": {
@@ -98798,9 +98906,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/zBBKt9Iemzc/hqdefault.jpg",
-"title": "【FF14】新生エオルゼアついにクライマックス！？ミンフィリア救出へ！ #13 【完全初見】【Vtuber /小恋城ぷらむ】FINAL FANTASY XIV",
-"video_id": "zBBKt9Iemzc"
+"thumbnail": "https://i2.ytimg.com/vi/e_Lx-CShNN4/hqdefault.jpg",
+"title": "【FF14】MMO初心者、飛空艇エンタープライズ復活なるか！？ガルーダ討伐へ！ #12 【完全初見】【Vtuber /小恋城ぷらむ】FINAL FANTASY XIV",
+"video_id": "e_Lx-CShNN4"
 },
 "live": {
 "started_at": "2026-11-17T08:30:55Z",
@@ -99179,7 +99287,7 @@
 },
 "name": "さだこな",
 "shorts": 907,
-"subscribers": 347,
+"subscribers": 346,
 "videos": 19
 },
 "UCR_SwHDeF-v1CavfnvTfAnQ": {
@@ -99405,9 +99513,9 @@
 "first_seen": "2026-11-21T16:00:51Z",
 "icon": "https://yt3.ggpht.com/aYgLabVWYZFdkV4LhLZasZK4EjeudOIVpESlsg7Q1u65ryQ2g43T0rPTrEmWD9udycK1n9H9DA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/Ef0WJhD6N0Q/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/GfIsy6tkgRY/hqdefault.jpg",
 "title": "Binaural Christian Whisper & Sleep ASMR 🕊 Bible Verse, Prayer & Hymns · He Carries You | PekeNocchio",
-"video_id": "Ef0WJhD6N0Q"
+"video_id": "GfIsy6tkgRY"
 },
 "lives": 27,
 "name": "PekeNocchio",
@@ -100040,9 +100148,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T17:52:31Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-kgbFy_Ihh0/hqdefault.jpg",
-"title": "【 #そはらごはんだぞ 】みんなのご飯の中からフルコースを決めようチャレンジ1回目.ᐟ.ᐟ # 2【  #添ヶ原そはら / からくり】#新人Vtuber",
-"video_id": "-kgbFy_Ihh0"
+"thumbnail": "https://i2.ytimg.com/vi/qh3mqkXBQl0/hqdefault.jpg",
+"title": "【 完全初見 / ゼンゼロ 】今日から初心者プロキシ！「序章：商機×怪奇×仁義」#2【  #添ヶ原そはら / からくり / ゼンレスゾーンゼロ】#新人Vtuber",
+"video_id": "qh3mqkXBQl0"
 },
 "lives": 5,
 "name": "添ヶ原そはら / Soegahara Sohara",
@@ -100099,7 +100207,7 @@
 },
 "UCRqitTu8NuhYtRB4qY7McPA": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-13T03:00:52Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "done": [
 "ayzlaosTzcw",
 "ABaWnmNOTPw",
@@ -100114,9 +100222,10 @@
 "title": "【続・初配信耐久2枠目】Darksoul3完全初見でも攻略本あれば余裕でしょ？【 #在レくるう/ #深層組】",
 "video_id": "0AJM7Xai8O0"
 },
+"lives": 5,
 "name": "在レ くるう",
 "shorts": 23,
-"subscribers": 814
+"subscribers": 818
 },
 "UCRqoQTyhb0EMGdI0ur5vsgQ": {
 "counts_at": null,
@@ -100193,7 +100302,7 @@
 },
 "UCRriHuqPqrqLDyooQl-Ra-g": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-13T03:00:52Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "done": [
 "VoQC_J9cQFU",
 "_TY_pA8-Ur8",
@@ -100216,7 +100325,7 @@
 },
 "UCRs7ej1JAS3uVcRc_EfU4hA": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-13T03:00:52Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "done": [
 "jddts3nN3O0",
 "QQvs2bhwEdU",
@@ -100612,9 +100721,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T18:50:15Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/jmp8czuAyps/hqdefault.jpg",
-"title": "【睡眠導入】寝られない人、寝たい人、眠たい人……に聞いて欲しい朗読配信【蝶川レディ】",
-"video_id": "jmp8czuAyps"
+"thumbnail": "https://i1.ytimg.com/vi/pvps6e6iKkA/hqdefault.jpg",
+"title": "【ポケモンZA@M次元ラッシュ】図鑑埋めの為の交換会のちランクマチャレンジ回【ネタバレ注意】",
+"video_id": "pvps6e6iKkA"
 },
 "lives": 410,
 "name": "蝶川レディ",
@@ -100818,9 +100927,9 @@
 "first_seen": "2026-11-21T18:00:58Z",
 "icon": "https://yt3.ggpht.com/BhaylAa_4t37KqVyTKh_gXKVVUo_kUnn2Oq874epj79RBFdyaCZqn7O35UtxhyLGYO_P4LpDBaE=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/x_ONxMOgzfc/hqdefault.jpg",
-"title": "【Minecraft】ネザー移動用の通路を整備する✨⛏️【VTuber】",
-"video_id": "x_ONxMOgzfc"
+"thumbnail": "https://i1.ytimg.com/vi/L6_7OxK40j4/hqdefault.jpg",
+"title": "【Minecraft】トライアルチャンバーに挑みに行く✨⚔【VTuber】",
+"video_id": "L6_7OxK40j4"
 },
 "lives": 1744,
 "name": "餅米魂",
@@ -101119,7 +101228,7 @@
 },
 "UCSEbrQVmYPxDA1g_4kTANwQ": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-13T03:00:52Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "done": [
 "fu58stIY0FA",
 "7_Wul3fOuYg",
@@ -101590,9 +101699,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:48:24Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/76maE4-3W8E/hqdefault.jpg",
-"title": "【朝活】ポケモンユナイト参加型スイクンｸﾝｸﾝ登録者100人目指して【10年売れなかったVtuber】",
-"video_id": "76maE4-3W8E"
+"thumbnail": "https://i3.ytimg.com/vi/ZYWzBuU3HSk/hqdefault.jpg",
+"title": "【朝活】ROBRUN車の金用意する初見さん歓迎コメント歓迎登録者100人目指して【10年売れなかったVtuber】",
+"video_id": "ZYWzBuU3HSk"
 },
 "lives": 166,
 "name": "10年、売れなかったVtuberはまだ夢を見ている",
@@ -102877,14 +102986,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T13:35:41Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/f8a07he2XL4/hqdefault.jpg",
-"title": "#03【P5R / ペルソナ５ ザ・ロイヤル】完全初見！最初のダンジョン～ボス撃破！！ ※ネタバレ注意",
-"video_id": "f8a07he2XL4"
+"thumbnail": "https://i3.ytimg.com/vi/R66XqKWvugs/hqdefault.jpg",
+"title": "【同時視聴】『ラブライブ！サンシャイン!!』1話～3話！一緒に見よ🍊🎹⛵️",
+"video_id": "R66XqKWvugs"
 },
 "lives": 2,
 "name": "逢乃 ひより / Hiyori Aino",
 "shorts": 30,
-"subscribers": 213,
+"subscribers": 214,
 "videos": 0
 },
 "UCSsIAz0cjxqchG8N47wsbEw": {
@@ -103666,7 +103775,7 @@
 "lives": 9,
 "name": "金雀枝ちゃむ",
 "shorts": 23,
-"subscribers": 220,
+"subscribers": 219,
 "via": "snowball",
 "videos": 2
 },
@@ -104135,7 +104244,7 @@
 "lives": 479,
 "name": "あちたろうちゃんねる",
 "shorts": 67,
-"subscribers": 3510,
+"subscribers": 3520,
 "videos": 12
 },
 "UCTM9dxovum91AWE_jvp5PrA": {
@@ -104376,7 +104485,7 @@
 "lives": 534,
 "name": "automutton - Eli & Lema - 【アート系ドールVtuber】",
 "shorts": 68,
-"subscribers": 987,
+"subscribers": 986,
 "videos": 39
 },
 "UCTPwuXpTMPn3TsX2vcvDdmQ": {
@@ -105429,7 +105538,7 @@
 },
 "name": "紫ノ宮ゆんゆん",
 "shorts": 9,
-"subscribers": 300
+"subscribers": 299
 },
 "UCTlWJ0-ZL0wJ4YeD3pe0QTw": {
 "counts_at": null,
@@ -105741,7 +105850,7 @@
 },
 "name": "冰爽みる / Hisou Miru",
 "shorts": 2,
-"subscribers": 58
+"subscribers": 59
 },
 "UCTqsaLiS-HaAR_M8Vof6rOA": {
 "counts_at": "2026-11-17T00:00:54Z",
@@ -106375,9 +106484,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T19:04:09Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/5H4ZgwF9I_8/hqdefault.jpg",
-"title": "Un Final feliz de fantasía 7",
-"video_id": "5H4ZgwF9I_8"
+"thumbnail": "https://i3.ytimg.com/vi/V2P0GWFb6Os/hqdefault.jpg",
+"title": "Un Final feliz de fantasía 7 y evento agarrar la pala",
+"video_id": "V2P0GWFb6Os"
 },
 "lives": 40,
 "name": "Capuchinio",
@@ -106642,7 +106751,7 @@
 },
 "name": "逝話ヨイヨイ",
 "shorts": 17,
-"subscribers": 802,
+"subscribers": 806,
 "videos": 5
 },
 "UCU6T6U_Qlf7HDUovArkGSQA": {
@@ -106691,7 +106800,7 @@
 "lives": 169,
 "name": "弟系キツネの藤山こん",
 "shorts": 16,
-"subscribers": 304,
+"subscribers": 303,
 "via": "snowball",
 "videos": 18
 },
@@ -106901,9 +107010,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T17:02:45Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ivDUaOEaiNI/hqdefault.jpg",
-"title": "【歌枠/雑談】なんかソワソワするので話したり歌ったり【七星夏月/Vtuber】",
-"video_id": "ivDUaOEaiNI"
+"thumbnail": "https://i4.ytimg.com/vi/oMpSnnpCNhI/hqdefault.jpg",
+"title": "【#TJA4RUST Vol.4】#8 今日が最終日！もうみんなとお別れですか？【七星夏月/Vtuber】",
+"video_id": "oMpSnnpCNhI"
 },
 "lives": 812,
 "name": "七星夏月",
@@ -107390,9 +107499,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/Kv62GPVl-LY/hqdefault.jpg",
-"title": "【雑談ラジオ｜コラボ】3連休！はじまったわね！【社畜と無職｜しゃちむしょラジオ #8】",
-"video_id": "Kv62GPVl-LY"
+"thumbnail": "https://i1.ytimg.com/vi/tHmjoxvJ-TM/hqdefault.jpg",
+"title": "【作業雑談】おえかき30日目！初日の絵をリメイクするよ【個人勢Vtuber】",
+"video_id": "tHmjoxvJ-TM"
 },
 "live": {
 "started_at": "2026-11-17T10:00:15Z",
@@ -107459,9 +107568,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T06:06:52Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/lP-VCup1hp8/hqdefault.jpg",
-"title": "【参加型鯖】ゆるく参加型マイクラ #10【 #minecraft  】#縦型配信 #shorts",
-"video_id": "lP-VCup1hp8"
+"thumbnail": "https://i2.ytimg.com/vi/AIV3DRdMn3E/hqdefault.jpg",
+"title": "【参加型鯖】テスト期間中の俺は今日も楽しくマイクラ #11【 #minecraft  】#縦型配信 #shorts",
+"video_id": "AIV3DRdMn3E"
 },
 "lives": 233,
 "name": "JeYu4",
@@ -107753,9 +107862,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GvMhnVKZ360/hqdefault.jpg",
-"title": "【記念配信】誕生日～！",
-"video_id": "GvMhnVKZ360"
+"thumbnail": "https://i2.ytimg.com/vi/m9VsDLAgioA/hqdefault.jpg",
+"title": "【APEX】ソロマスチャレンジ！😈ダイヤⅡ～#１１【虹々/koko】",
+"video_id": "m9VsDLAgioA"
 },
 "live": {
 "started_at": "2026-11-17T09:30:51Z",
@@ -107911,9 +108020,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/YQHiOEU1M4w/hqdefault.jpg",
-"title": "〖 #朝活  お絵かき雑談〗初見さん大歓迎！土曜日の朝はお絵描きの朝！初音ミクちゃんを描いていくぞ！！！【#原神 #新人vtuber #泡露ねぴ 】",
-"video_id": "YQHiOEU1M4w"
+"thumbnail": "https://i2.ytimg.com/vi/UwwUf_IZ4b0/hqdefault.jpg",
+"title": "〖 #朝活  お絵かき雑談〗初見さん大歓迎！今日こそ完成！初音ミクちゃんにガンガン加筆して仕上げていくぞ！！！！【#新人vtuber #泡露ねぴ 】",
+"video_id": "UwwUf_IZ4b0"
 },
 "live": {
 "started_at": "2026-11-17T11:00:20Z",
@@ -107925,7 +108034,7 @@
 "lives": 217,
 "name": "泡露ねぴ / Nepi Awaro",
 "shorts": 52,
-"subscribers": 3820,
+"subscribers": 3830,
 "via": "snowball",
 "videos": 9
 },
@@ -108229,7 +108338,7 @@
 "lives": 475,
 "name": "神凪誠士",
 "shorts": 80,
-"subscribers": 743,
+"subscribers": 744,
 "via": "snowball",
 "videos": 20
 },
@@ -108563,9 +108672,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T12:21:54Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/awreD4LbeOg/hqdefault.jpg",
-"title": "【 #朝活 】どきどきどようB【新巻るろな／パレデミア学園】#VTuber #雑談",
-"video_id": "awreD4LbeOg"
+"thumbnail": "https://i4.ytimg.com/vi/w_TyJDMi14k/hqdefault.jpg",
+"title": "※閲覧注意【切り抜き】Vtuber最〇の瞬間 #shorts  #vtuber",
+"video_id": "w_TyJDMi14k"
 },
 "lives": 274,
 "name": "新巻るろな【パレデミア学園】",
@@ -108625,9 +108734,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/RUlnrccb594/hqdefault.jpg",
-"title": "【マインクラフト】【#ててぽぷ】 第３回ててぽぷスト鯖！！そろそろ家が欲しい！！！　#3【森川雷】",
-"video_id": "RUlnrccb594"
+"thumbnail": "https://i4.ytimg.com/vi/OrEokGqFuE4/hqdefault.jpg",
+"title": "【マインクラフト】【#ててぽぷ】 第３回ててぽぷスト鯖！！家作る前に素材集めだ！　#4【森川雷】",
+"video_id": "OrEokGqFuE4"
 },
 "live": {
 "started_at": "2026-11-17T11:00:17Z",
@@ -109267,9 +109376,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T08:16:58Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/t75v3x4lY9E/hqdefault.jpg",
-"title": "【新衣装】ついにきたよ！！新しい姿【大公開】",
-"video_id": "t75v3x4lY9E"
+"thumbnail": "https://i1.ytimg.com/vi/Hxz1w5uyJw4/hqdefault.jpg",
+"title": "【DDFF】今期もサポセンおじさんのゆるゆるランクマ【ディシディア】",
+"video_id": "Hxz1w5uyJw4"
 },
 "lives": 2184,
 "name": "華舞乃宮 えりくしる/魔剤CH",
@@ -109576,7 +109685,7 @@
 "lives": 14,
 "name": "虎狛フウ",
 "shorts": 23,
-"subscribers": 209,
+"subscribers": 208,
 "videos": 2
 },
 "UCUx8F57ixIPXXhlORUOuDmQ": {
@@ -110309,9 +110418,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T06:58:50Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/pLaqgKhSpXc/hqdefault.jpg",
-"title": "【マイクラ統合版】れあがカフェをパクるってさ！　【Vサバ！/汐宮れあ/VTuber】",
-"video_id": "pLaqgKhSpXc"
+"thumbnail": "https://i1.ytimg.com/vi/Hpnp98kl9w4/hqdefault.jpg",
+"title": "【マイクラ統合版】急募建築センス　色彩感覚【Vサバ！/汐宮れあ/VTuber】",
+"video_id": "Hpnp98kl9w4"
 },
 "lives": 790,
 "name": "汐宮れあ-LEA-",
@@ -110399,7 +110508,7 @@
 "lives": 617,
 "name": "Hisui Ch. / 隼海ひすい",
 "shorts": 87,
-"subscribers": 4260,
+"subscribers": 4270,
 "via": "rechecked",
 "videos": 27
 },
@@ -110755,9 +110864,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:41:00Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/kfAdEnb7Aj8/hqdefault.jpg",
-"title": "【 #TJA4RUST】Day7｜ぎりぎりすべり込み最終日！【#ほしより】#RUST",
-"video_id": "kfAdEnb7Aj8"
+"thumbnail": "https://i2.ytimg.com/vi/e7VCfiBMuzQ/hqdefault.jpg",
+"title": "【#NTE】一番の豪運はココにいるぞ！にくきゅう大強盗 The Money　#ぶいきゃす #PR",
+"video_id": "e7VCfiBMuzQ"
 },
 "lives": 1401,
 "name": "ほしより ch / hoshiyori",
@@ -110850,9 +110959,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:20:21Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/Apkn58DY9z0/hqdefault.jpg",
-"title": "#japaneseramensimulator #初見常連大歓迎【親子でJapanese Ramen Simulator】完全初見でｗROM専さん、Vtuberさん大歓迎！お助けコメントも待ってます☺",
-"video_id": "Apkn58DY9z0"
+"thumbnail": "https://i4.ytimg.com/vi/G1jhi3X97h8/hqdefault.jpg",
+"title": "#nierreplicantver122474487139 #初見常連大歓迎 【🐰が激推しする#ニーアレプリカント #08】レプリカントは神作品だと信じて疑わない！布教配信© SQUARE ENIX",
+"video_id": "G1jhi3X97h8"
 },
 "lives": 562,
 "name": "mee(みー) 🐰🔮",
@@ -111518,7 +111627,7 @@
 "lives": 479,
 "name": "新月いな",
 "shorts": 8,
-"subscribers": 553
+"subscribers": 552
 },
 "UCVXhVrY3Qn4iCbpxwilUShw": {
 "counts_at": null,
@@ -114493,7 +114602,7 @@
 "lives": 131,
 "name": "灯火ホタル",
 "shorts": 136,
-"subscribers": 467,
+"subscribers": 468,
 "videos": 6
 },
 "UCWMfiRceMOyQNWOv2paKgqA": {
@@ -114740,7 +114849,7 @@
 },
 "name": "ユアネ / yuane",
 "shorts": 65,
-"subscribers": 671,
+"subscribers": 672,
 "videos": 3
 },
 "UCWPFCRfXwVDGRbINV_eYPbA": {
@@ -116138,7 +116247,7 @@
 "lives": 108,
 "name": "幸歌穏愛.Yukika Noa",
 "shorts": 5,
-"subscribers": 333,
+"subscribers": 332,
 "videos": 6
 },
 "UCWqaoXES62xm1GUiKjIOoZA": {
@@ -116298,9 +116407,9 @@
 "first_seen": "2026-11-21T09:00:49Z",
 "icon": "https://yt3.ggpht.com/TJ0C__XbV2egOaC22Z5cvXGL33_U5yWP0xPxGtyaU4Wbqd7uATxEoyRmqMlhOS8_DnWblhTCkQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/A9WIBvtDoPQ/hqdefault.jpg",
-"title": "二周目突入！「姫条まどか」を振り向かせたい！！恋愛下手なギャルがときメモGS1で激メロルート目指す #1【#vtuber / #実況プレイ  】",
-"video_id": "A9WIBvtDoPQ"
+"thumbnail": "https://i4.ytimg.com/vi/_UElBVwTlzQ/hqdefault.jpg",
+"title": "初見攻略最終回！「姫条まどか」を振り向かせたい！！#ときメモGS1 で恋愛下手なギャルが完全初見で激メロルート目指す #6【#vtuber / #実況プレイ  】",
+"video_id": "_UElBVwTlzQ"
 },
 "lives": 299,
 "name": "未侠ビリイ mikyanBillie",
@@ -116430,7 +116539,7 @@
 "lives": 158,
 "name": "咲坂つむぎ",
 "shorts": 97,
-"subscribers": 6670,
+"subscribers": 6680,
 "videos": 7
 },
 "UCWvkr77dqYNseQujPoNnqiQ": {
@@ -118579,7 +118688,7 @@
 "icon": "https://yt3.ggpht.com/_-1GB9-DE5r1-nUJ1oTeQ_ruViZ3CA4ZqO4sHNoERVLF8QywtiOTUy872gIWzFEwAUkPV3j_Hg=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "name": "赤染アリス / Akazome Alice",
-"subscribers": 901,
+"subscribers": 902,
 "via": "snowball"
 },
 "UCXVL9RACwiHQuvC1e1c_pNQ": {
@@ -119895,9 +120004,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T17:09:44Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/lO4-KdVsnVU/hqdefault.jpg",
-"title": "#TJA4RUST ￤ありがとう！TJA4 RUST！！最終日その２【 星ノ音コロン / ハコネクト 】",
-"video_id": "lO4-KdVsnVU"
+"thumbnail": "https://i3.ytimg.com/vi/65ZwgV6EjqM/hqdefault.jpg",
+"title": "#TJA4RUST ￤最終日らしい！少し入って楽しむぞ！！！最終日その１【 星ノ音コロン / ハコネクト 】",
+"video_id": "65ZwgV6EjqM"
 },
 "lives": 1531,
 "name": "星ノ音コロン Koron Ch.",
@@ -120150,7 +120259,7 @@
 "lives": 491,
 "name": "月島エト",
 "shorts": 78,
-"subscribers": 634,
+"subscribers": 635,
 "via": "snowball",
 "videos": 157
 },
@@ -120349,9 +120458,20 @@
 "videos": 7
 },
 "UCY1et-_vwRa-Jme42ydGcQg": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
-"subscribers": 262
+"icon": "https://yt3.ggpht.com/IblbB-kHgGsiLfe5pnIluY9ubPLmmkmnbOirjTUHEtKaSZcjqVLUKTstknVxNHy3TT5ljgxKYA=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i2.ytimg.com/vi/Q2OKdZWzIoY/hqdefault.jpg",
+"title": "今日こそS＋行くぞぉ！！！初見さん大歓迎♪　【#スプラトゥーン３】",
+"video_id": "Q2OKdZWzIoY"
+},
+"lives": 85,
+"name": "水無月エリィ",
+"shorts": 5,
+"subscribers": 263,
+"videos": 21
 },
 "UCY2-hBN25o7Owgo7o6h7aLg": {
 "counts_at": null,
@@ -121650,7 +121770,7 @@
 "lives": 910,
 "name": "マナモ・ベルフェ ch",
 "shorts": 9,
-"subscribers": 1950,
+"subscribers": 1960,
 "via": "snowball",
 "videos": 4
 },
@@ -121904,9 +122024,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/ZbXXgOzrATs/hqdefault.jpg",
-"title": "【 Dread Hunger 】　わいわいドレハンしたい土曜日の夜",
-"video_id": "ZbXXgOzrATs"
+"thumbnail": "https://i3.ytimg.com/vi/FcGEn0ijlS0/hqdefault.jpg",
+"title": "【 雑談 】配信頻度を何度だってあげていきたい。アニメの同時視聴だってしたい。映画何見る？",
+"video_id": "FcGEn0ijlS0"
 },
 "live": {
 "started_at": "2026-11-17T10:53:43Z",
@@ -121928,9 +122048,9 @@
 "first_seen": "2026-11-19T08:01:00Z",
 "icon": "https://yt3.ggpht.com/ywpwdWPVW0SnhHmwbtxLeT5_YWtEbRt3_xMptrHnnt8k4wAtEyHJ2lJXj3QYxZS1JfBWYluSmg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/5WulVcJsm50/hqdefault.jpg",
-"title": "「マイクラ参加型」横型配信。よしきの参加型完全サバイバルワールド、よしきの参加型アドオンサバイバルワールド、よしきのPVPワールドをプレイします！初見さん、常連さん、誰でも参加大歓迎！「概要欄必読」",
-"video_id": "5WulVcJsm50"
+"thumbnail": "https://i2.ytimg.com/vi/yfABImyHd-I/hqdefault.jpg",
+"title": "「マイクラ参加型」縦型配信。よしきの参加型完全サバイバルワールド、よしきの参加型アドオンサバイバルワールド、よしきのPVPワールドをプレイします！初見さん、常連さん、誰でも参加大歓迎！「概要欄必読」",
+"video_id": "yfABImyHd-I"
 },
 "lives": 836,
 "name": "サブよっちゃん@Vtuber",
@@ -122099,7 +122219,7 @@
 "lives": 126,
 "name": "折木咲朽",
 "shorts": 37,
-"subscribers": 191
+"subscribers": 192
 },
 "UCYWD4VfCor1e0jc6rTj1YVg": {
 "counts_at": null,
@@ -122494,9 +122614,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:09:33Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/gbSP4YV-naE/hqdefault.jpg",
-"title": "【ETS2】参加型 雑談しながらドライブしよう！ Euro Truck Simulator 2【VTuber 晩景緋音】288",
-"video_id": "gbSP4YV-naE"
+"thumbnail": "https://i1.ytimg.com/vi/Plc1TtFD8-8/hqdefault.jpg",
+"title": "【Forza Horizon 6】参加型 日本を駆け抜けろ！悲鳴が鳴り響くドライブ配信【VTuber 晩景緋音】69",
+"video_id": "Plc1TtFD8-8"
 },
 "lives": 2044,
 "name": "晩景緋音_bankei akane",
@@ -123282,9 +123402,9 @@
 "first_seen": "2026-11-19T03:01:04Z",
 "icon": "https://yt3.ggpht.com/YJTmRHUXsI6czBsgQgvUw6AGMjWQ4f_28zJTmUoInaOhWVRQU5LomKt79-H4r3WizhGEBXCtdk8=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/zYt721Q_rMU/hqdefault.jpg",
-"title": "【2周年記念】アポなし凸待ち配信！おめでとうをください！！【#男性vtuber / #雑談 / #freetalk 】",
-"video_id": "zYt721Q_rMU"
+"thumbnail": "https://i2.ytimg.com/vi/Ign74PstOUM/hqdefault.jpg",
+"title": "あまほし週次報告　その12",
+"video_id": "Ign74PstOUM"
 },
 "lives": 365,
 "name": "天星のこ",
@@ -123459,9 +123579,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ALp2xqe9idc/hqdefault.jpg",
-"title": "【縦型】☆参加型サーモンラン☆横型にて参加者さん募集中♡初見さん、初心者さん大歓迎！#shorts #新人vtuber",
-"video_id": "ALp2xqe9idc"
+"thumbnail": "https://i2.ytimg.com/vi/9rKBezI1U7Y/hqdefault.jpg",
+"title": "【参加型サーモンラン】☆BINGO開催☆9つのミッションを全制覇せよ！🌸🌙🐾初見さん、初心者さん大歓迎！",
+"video_id": "9rKBezI1U7Y"
 },
 "live": {
 "started_at": "2026-11-17T09:00:16Z",
@@ -126226,7 +126346,7 @@
 "lives": 2,
 "name": "アイドルVTuberの切り抜き",
 "shorts": 5,
-"subscribers": 712,
+"subscribers": 711,
 "via": "snowball",
 "videos": 3
 },
@@ -126810,7 +126930,7 @@
 "lives": 28,
 "name": "最上伊万 / Mogami ima",
 "shorts": 9,
-"subscribers": 5250,
+"subscribers": 5260,
 "videos": 2
 },
 "UCZufZYuf4_eQIOaEcft3HAQ": {
@@ -128071,6 +128191,18 @@
 "subscribers": 97700,
 "videos": 50
 },
+"UC_EyYlaKGY0n_HKjv9oXEow": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/gwz3l5T4gMWRKo9WdgTWSJFb6NzJtwaOKPQ-QLDHD_i6EROxz1oClnl9sYlmyijFuE1hquAeGw=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/NZxm6Uh-cfY/hqdefault.jpg",
+"title": "【 #palworld 】今回はハードコア(？)です！！【綿貫紅葉】",
+"video_id": "NZxm6Uh-cfY"
+},
+"name": "綿貫 紅葉 / Watanuki Kureha",
+"subscribers": 114
+},
 "UC_F4j9QjTUXNCI0uPp3Xamg": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-08T16:06:15Z",
@@ -128283,7 +128415,7 @@
 },
 "lives": 6,
 "name": "藍葉せな-Aiba Sena-",
-"subscribers": 237,
+"subscribers": 235,
 "videos": 3
 },
 "UC_I9qlF3Gh2GA378pbrueWQ": {
@@ -128543,9 +128675,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VUslJSVF9-Y/hqdefault.jpg",
-"title": "【 #雑談/初見さん歓迎♡ 】# 691オカ魔道士のオネェ愛の雑談よ💕【 #オネェVtuber #新人Vtuber #vtuber  #オカ魔道士ブルーローズアイス 】 #Shorts  #縦型配信",
-"video_id": "VUslJSVF9-Y"
+"thumbnail": "https://i4.ytimg.com/vi/wAB7ibe1Aa8/hqdefault.jpg",
+"title": "【 #雑談/初見さん歓迎♡ 】# 54オカ魔道士の愛の朝活雑談よ💖【 #オネェVtuber #新人Vtuber #vtuber  #オカ魔道士ブルーローズアイス 】 #Shorts  #縦型配信",
+"video_id": "wAB7ibe1Aa8"
 },
 "live": {
 "started_at": "2026-11-17T10:04:57Z",
@@ -128557,7 +128689,7 @@
 "lives": 1188,
 "name": "ブルーローズアイス",
 "shorts": 247,
-"subscribers": 4400,
+"subscribers": 4410,
 "videos": 80
 },
 "UC_LVLHe-RBBEhvWwcwOhRHQ": {
@@ -129398,7 +129530,7 @@
 "lives": 1,
 "name": "白羽海ふわVTuber準備中",
 "shorts": 11,
-"subscribers": 414,
+"subscribers": 415,
 "videos": 1
 },
 "UC_eLFT1AMxsTupzAdU2BljA": {
@@ -129558,14 +129690,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:30:48Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/B8tM4cPILPI/hqdefault.jpg",
-"title": "【ねるねるねるね！？】朝4:30の雑談ラジオ｜Q&A・お悩み/初見ROM専用歓迎【朝活VTuber】#1",
-"video_id": "B8tM4cPILPI"
+"thumbnail": "https://i3.ytimg.com/vi/rJ4aNmCLs2Q/hqdefault.jpg",
+"title": "【神ゲーって噂！】伝説の名作リメイクを完全初見でプレイ！｜ゼルダの伝説 時のオカリナ リメイク【Switch 2・初見実況】#1",
+"video_id": "rJ4aNmCLs2Q"
 },
 "lives": 255,
 "name": "何なりや",
 "shorts": 87,
-"subscribers": 1220,
+"subscribers": 1230,
 "videos": 1
 },
 "UC_gDK44a-sfqo4Sa5La9DAQ": {
@@ -129779,7 +129911,7 @@
 "lives": 494,
 "name": "Minnah_Mia",
 "shorts": 245,
-"subscribers": 5550,
+"subscribers": 5540,
 "videos": 16
 },
 "UC_j-1LnhHJeoQ2c_mCphw0w": {
@@ -130477,9 +130609,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:38:24Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/hvB8MN6vpJI/hqdefault.jpg",
-"title": "【R.E.P.O.】今度こそ大儲けして帰る！！【あむ】",
-"video_id": "hvB8MN6vpJI"
+"thumbnail": "https://i3.ytimg.com/vi/6U-4JEAYxQY/hqdefault.jpg",
+"title": "【BOMBANANA!】爆弾解除？余裕でしょ！…のはずがパニックで大惨事…かも！？【あむ】",
+"video_id": "6U-4JEAYxQY"
 },
 "lives": 707,
 "name": "Amu Channel",
@@ -130898,7 +131030,7 @@
 "lives": 23,
 "name": "Gracie Audios",
 "shorts": 238,
-"subscribers": 28900,
+"subscribers": 29000,
 "videos": 258
 },
 "UC_ys5X_GrZRS1H0TCSz4E2Q": {
@@ -131002,9 +131134,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GLhx5YI273A/hqdefault.jpg",
-"title": "【ぽこ あ ポケモン】#119　りんごの木をまだまだ集める！今日はポケメタルを集めに行こう【新人VTuber | 天奈都葵成】",
-"video_id": "GLhx5YI273A"
+"thumbnail": "https://i4.ytimg.com/vi/CtZcxcsJaqk/hqdefault.jpg",
+"title": "【ぽこ あ ポケモン】#118　ひかりいしを効率よくゲットできるのはどの層だ？地下を掘って検証する【新人VTuber | 天奈都葵成】",
+"video_id": "CtZcxcsJaqk"
 },
 "live": {
 "started_at": "2026-11-17T09:00:21Z",
@@ -131551,9 +131683,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T21:52:07Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/QDnLNXMy9tE/hqdefault.jpg",
-"title": "【日本代表サッカー同時視聴】日本対コロンビアを全力応援！！初見さん歓迎！一緒にU17を応援しよ！！※映像音声なし　 #サッカー日本代表　#サッカーVtuber",
-"video_id": "QDnLNXMy9tE"
+"thumbnail": "https://i2.ytimg.com/vi/mnuz48ppPn8/hqdefault.jpg",
+"title": "無料開放キター！！【欧州サッカー同時視聴】コベントリー対クリスタルパレスを全力視聴！！初見さん歓迎！プレミアを応援！！#プレミアリーグ #サッカーVtuber　※映像音声なし",
+"video_id": "mnuz48ppPn8"
 },
 "lives": 241,
 "name": "永途ろーれ【サッカー社畜VTuber】Ch",
@@ -131567,9 +131699,9 @@
 "first_seen": "2026-11-21T03:00:52Z",
 "icon": "https://yt3.ggpht.com/fsfkMFH-2rO4e-YqRZlsrt0tJsTPt0szHhQKoHXSiIWk8MApwcLptkUeQZvuY3F-DZU7J6li9Q=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ede2Fs47j1Y/hqdefault.jpg",
-"title": "【 #Dune: Awakening 】#scps_dune #03 今度は砂の惑星でSCPSメンバーとサバイバル生活 ネタバレ注意【 #ひゃっき航海日誌 】",
-"video_id": "ede2Fs47j1Y"
+"thumbnail": "https://i1.ytimg.com/vi/8Gw4i5WNpGk/hqdefault.jpg",
+"title": "【 #DEATHNOTEKillerWithin 】大人数コラボ デスノート人狼【 #ひゃっき航海日誌 】",
+"video_id": "8Gw4i5WNpGk"
 },
 "lives": 2599,
 "name": "Hyakki Ch. 猫海ひゃっき",
@@ -131660,9 +131792,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T07:42:35Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ATPHaP8O7A4/hqdefault.jpg",
-"title": "【らら鯖】【Minecraft/Java版/統合版】土曜22:00の定期開催鯖イベント釣り大会（2026/11/21）【たゆなか/VTuber】",
-"video_id": "ATPHaP8O7A4"
+"thumbnail": "https://i1.ytimg.com/vi/HBMTp5QHzjM/hqdefault.jpg",
+"title": "【Minecraft/Java版】採石場建築（ハリボテ）～階段編 part２～【たゆなか/VTuber】 #vtuber #マイクラ #個人vtuber #minecraft",
+"video_id": "HBMTp5QHzjM"
 },
 "lives": 434,
 "name": "たゆなか",
@@ -131875,9 +132007,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:33:25Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/kn7Tu73z-Nk/hqdefault.jpg",
-"title": "【 #雀魂 】すべて揃うまで終われない!?麻雀役ビンゴ【 #Vtuber 】",
-"video_id": "kn7Tu73z-Nk"
+"thumbnail": "https://i1.ytimg.com/vi/pNNQUaC2TVs/hqdefault.jpg",
+"title": "【 #作業雑談 】寝落ち歓迎 のんびりまったり作業雑談【 #Vtuber 】",
+"video_id": "pNNQUaC2TVs"
 },
 "lives": 1212,
 "name": "日奈多 にんじん",
@@ -131907,9 +132039,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T02:01:02Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/3ZtBJW61jDM/hqdefault.jpg",
-"title": "GTA 6 Might Be COOKED After REAL Reviews Finally Come Out",
-"video_id": "3ZtBJW61jDM"
+"thumbnail": "https://i4.ytimg.com/vi/KPNXYbu2hiQ/hqdefault.jpg",
+"title": "GTA 6 Fans REVIEW BOMB Ocarina Of Time (Remake and Original) To \"Own The Chuds\" After Low User Score",
+"video_id": "KPNXYbu2hiQ"
 },
 "lives": 115,
 "name": "Rev says desu",
@@ -131990,7 +132122,7 @@
 "lives": 102,
 "name": "雑談女　みずなしるく",
 "shorts": 30,
-"subscribers": 2780,
+"subscribers": 2790,
 "videos": 18
 },
 "UCaONkK95qWwsGPGacJu0VzA": {
@@ -132753,7 +132885,7 @@
 },
 "name": "おこめた べる🍚🔔",
 "shorts": 3,
-"subscribers": 25
+"subscribers": 24
 },
 "UCaesW3FM-H2CQxP9jMSXaLQ": {
 "counts_at": null,
@@ -133013,6 +133145,7 @@
 },
 "UCaiBv-FIC2Gcnt94xIldHUA": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:01:07Z",
 "icon": "https://yt3.ggpht.com/UeAq6QqOdtkyIi_lICGDPlCjSf4Kbz1WLjN6BKSHInBXDWtVVZK-e1YWYVHjk4q8wot0LCr8DQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -133021,6 +133154,7 @@
 "video_id": "EgpBtEvGqjc"
 },
 "name": "Ася•伊莎塔",
+"shorts": 30,
 "subscribers": 298
 },
 "UCaii01O6ZC1kSRbGRYQwKUw": {
@@ -133446,9 +133580,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/QkwT-VoMZXU/hqdefault.jpg",
-"title": "おはようございます！オードを大量に使いたいおじさんの【AION2】＃２２",
-"video_id": "QkwT-VoMZXU"
+"thumbnail": "https://i1.ytimg.com/vi/pQ_W-o6gQgA/hqdefault.jpg",
+"title": "アーカイブ消えちゃったけど続きからやりたいおじさんアメリカに行く【グランド・セフト・オートVI】＃０２",
+"video_id": "pQ_W-o6gQgA"
 },
 "live": {
 "started_at": "2026-11-17T10:04:44Z",
@@ -134052,7 +134186,7 @@
 "lives": 137,
 "name": "不和ふあん / Fuwa Fuan 【VTuber / 個人勢】",
 "shorts": 2,
-"subscribers": 1240,
+"subscribers": 1250,
 "via": "snowball"
 },
 "UCb0cQUZ9Vt7VRXliwEk4-IA": {
@@ -135225,9 +135359,9 @@
 "icon": "https://yt3.ggpht.com/5DYztYM7DtrVGWl9NQBrVMkNfgKYBMgis8j5mPA7qPQCsTABEQjG0uOo9euAgQ_GfTVdKyFMpA=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/rf-BWnFDqYg/hqdefault.jpg",
-"title": "カーネルサンダースっアー  #vtuber準備中  #vtuber準備中最古参になってください #kfc",
-"video_id": "rf-BWnFDqYg"
+"thumbnail": "https://i2.ytimg.com/vi/eGjTykvTP6E/hqdefault.jpg",
+"title": "まわるまわるよお寿司がまわる  #vtuber準備中  #vtuber準備中最古参になってください #回転寿司",
+"video_id": "eGjTykvTP6E"
 },
 "name": "これっとさん",
 "shorts": 67,
@@ -135713,7 +135847,7 @@
 },
 "name": "桜城",
 "shorts": 38,
-"subscribers": 90
+"subscribers": 91
 },
 "UCbVEujiQPWtMy-dlAnPIy8Q": {
 "counts_at": "2026-11-19T22:00:51Z",
@@ -135869,7 +136003,7 @@
 "lives": 64,
 "name": "灯守カンナ",
 "shorts": 64,
-"subscribers": 880,
+"subscribers": 885,
 "via": "snowball",
 "videos": 9
 },
@@ -136207,7 +136341,7 @@
 "lives": 331,
 "name": "柊リイセ / Riise von riviere",
 "shorts": 16,
-"subscribers": 2100,
+"subscribers": 2110,
 "videos": 1
 },
 "UCbbL75Ui_erxw9oHvtsMz9w": {
@@ -136900,9 +137034,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T14:41:37Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/No1bKebg_tU/hqdefault.jpg",
-"title": "【 RUST 】#8 「競馬で優勝してくる」しっぽ島編【 茂茶丸プー太 】",
-"video_id": "No1bKebg_tU"
+"thumbnail": "https://i4.ytimg.com/vi/SFMrm9oT94I/hqdefault.jpg",
+"title": "【 DREADMOOR 】 不穏な釣りゲー#1 【 茂茶丸プー太 】",
+"video_id": "SFMrm9oT94I"
 },
 "lives": 2360,
 "name": "MochamaruCh.茂茶丸プー太",
@@ -136995,7 +137129,7 @@
 "lives": 2,
 "name": "ほしたま学園",
 "shorts": 41,
-"subscribers": 675,
+"subscribers": 676,
 "via": "snowball",
 "videos": 6
 },
@@ -137513,9 +137647,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T17:02:38Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/JH5TvUhtQTo/hqdefault.jpg",
-"title": "【 #和V6 / 救急隊 #7 】街に平和はもう来ないのか！【 #猫神よつは 】",
-"video_id": "JH5TvUhtQTo"
+"thumbnail": "https://i1.ytimg.com/vi/HiVCkMKRd04/hqdefault.jpg",
+"title": "【 #和V6 / 救急隊 #6 】当院のEMSメンバーは個性の塊です【 #猫神よつは 】",
+"video_id": "HiVCkMKRd04"
 },
 "lives": 23,
 "name": "猫神よつは-YotsuhaNekogami-",
@@ -138260,14 +138394,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T16:40:51Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VMu6si7QAbo/hqdefault.jpg",
-"title": "【R.E.P.O.】新マップ来たらしい、過酷さに打ち勝て【#Vtuber 】#repo",
-"video_id": "VMu6si7QAbo"
+"thumbnail": "https://i2.ytimg.com/vi/AFV5f0ElgwY/hqdefault.jpg",
+"title": "【#LoL】寒すぎて寝てた【#Vtuber 】",
+"video_id": "AFV5f0ElgwY"
 },
 "lives": 1273,
 "name": "幽羽 戒人 / Yuwa Kaito 【VTuber】",
 "shorts": 130,
-"subscribers": 2160,
+"subscribers": 2170,
 "via": "snowball",
 "videos": 20
 },
@@ -139673,7 +139807,7 @@
 "lives": 175,
 "name": "遊伊みかぜ🌱ゲーム配信",
 "shorts": 44,
-"subscribers": 225,
+"subscribers": 226,
 "videos": 13
 },
 "UCcVg1W8b-Ak-NFfwgkqwIug": {
@@ -139936,9 +140070,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/rcJdvcArxx8/hqdefault.jpg",
-"title": "🔴【第五人格/参加型】S45もみんなで最高峰目指してランクマを初見様大歓迎でコメ全部読みする配信【実況/Vtuber/初見歓迎/IdentityV/神童/航空エンジニア/グリ】",
-"video_id": "rcJdvcArxx8"
+"thumbnail": "https://i1.ytimg.com/vi/h5QFecI9_NQ/hqdefault.jpg",
+"title": "🔴【手記の加筆リレー配信】「サファイア＆ムトゥラの核」最高額、最低額が出るまで終わらない配信07:00～13:00ダイジェスト版【実況/Vtuber/初見歓迎/IdentityV/第五人格/参加型】",
+"video_id": "h5QFecI9_NQ"
 },
 "live": {
 "started_at": "2026-11-17T11:01:03Z",
@@ -140799,9 +140933,9 @@
 "first_seen": "2026-11-21T18:00:58Z",
 "icon": "https://yt3.ggpht.com/MpS2JJNaXo36xCfETJdJ9l-z7OyxTpYEp6XtLgQ317mICq90DoJvOEDVYCTeJ-H62SRQpGqi=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/F9y-q5IuBgA/hqdefault.jpg",
-"title": "【夜活】初見・コメント大歓迎！【個人勢Vtuber /シエナ】",
-"video_id": "F9y-q5IuBgA"
+"thumbnail": "https://i2.ytimg.com/vi/Ys0KLGCPa0k/hqdefault.jpg",
+"title": "【夜活】初見・コメント大歓迎！新モデルで夜活！🌙【個人勢Vtuber /シエナ】",
+"video_id": "Ys0KLGCPa0k"
 },
 "lives": 114,
 "name": "Siena Ch.シエナ",
@@ -141350,9 +141484,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T04:25:50Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-wi5UUBImRo/hqdefault.jpg",
-"title": "4 Fools Walk Into A Zombie Apocalypse | Modded Left 4 Dead 2 |",
-"video_id": "-wi5UUBImRo"
+"thumbnail": "https://i1.ytimg.com/vi/T1ZwPH8gsEs/hqdefault.jpg",
+"title": "Streaming Dynasty Tactics 2 for the first time!",
+"video_id": "T1ZwPH8gsEs"
 },
 "lives": 1402,
 "name": "LightyTheNube",
@@ -141486,9 +141620,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T08:41:03Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/X0N12pRNQdI/hqdefault.jpg",
-"title": "【FF14 #21 】未予習・完全初見：極ガルーダ討伐！　仲間と共に打ち破れ！【Vtuber  /Live/歯車ラプト】",
-"video_id": "X0N12pRNQdI"
+"thumbnail": "https://i3.ytimg.com/vi/FsRUR-He9pc/hqdefault.jpg",
+"title": "【FF14 #20 】完全初見：メインストーリー進める！氷の巫女を追え！【Vtuber  /Live/歯車ラプト】",
+"video_id": "FsRUR-He9pc"
 },
 "lives": 1250,
 "name": "歯車ラプトのゲーム部屋",
@@ -142277,9 +142411,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-C0hGKRtOaI/hqdefault.jpg",
-"title": "【雑談】11/22 今週あったこと【＃新人Vtuber】",
-"video_id": "-C0hGKRtOaI"
+"thumbnail": "https://i1.ytimg.com/vi/d-_zy2ayb3Q/hqdefault.jpg",
+"title": "〖雑談〗初見・ROM専歓迎！おはようしてくださる方来てくださいまし〖 #Vtuber / #雪柳リイラ 〗",
+"video_id": "d-_zy2ayb3Q"
 },
 "live": {
 "started_at": "2026-11-17T10:58:12Z",
@@ -142291,7 +142425,7 @@
 "lives": 512,
 "name": "雪柳リイラ",
 "shorts": 67,
-"subscribers": 1670,
+"subscribers": 1680,
 "videos": 3
 },
 "UCdHlTpTU2yrld9CR6kd544Q": {
@@ -143068,9 +143202,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:57:48Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/_kTZWJ1TSxI/hqdefault.jpg",
-"title": "【#フォールガイズ参加型 】土曜日だ!!みんなで楽しむフォールガイズ！! スナイプもOK✨！！【#新人vtuber /#初見さん大歓迎 】",
-"video_id": "_kTZWJ1TSxI"
+"thumbnail": "https://i3.ytimg.com/vi/6AmHMEyDjC4/hqdefault.jpg",
+"title": "【#dqmbv 】呪文が通らない!?てっきゅうまじんだけが頼りだ!!絶望のシドー戦!?【#新人vtuber /#初見さん大歓迎 】",
+"video_id": "6AmHMEyDjC4"
 },
 "lives": 259,
 "name": "ポヨヨ伍長@自称キメラ",
@@ -143360,9 +143494,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T11:05:05Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/TWxEBcC9OEs/hqdefault.jpg",
-"title": "オムスターの頭装備 #shorts",
-"video_id": "TWxEBcC9OEs"
+"thumbnail": "https://i1.ytimg.com/vi/D1-889J86LU/hqdefault.jpg",
+"title": "アングラ―に一瞬で敗北 #shorts",
+"video_id": "D1-889J86LU"
 },
 "lives": 422,
 "name": "紅園マリア@新人Vtuber",
@@ -143697,7 +143831,7 @@
 },
 "lives": 24,
 "name": "汐熊なぎさ",
-"subscribers": 25
+"subscribers": 26
 },
 "UCdh-YF2gTzqDNu0VU9lwPPw": {
 "counts_at": "2026-11-12T18:00:52Z",
@@ -143826,7 +143960,7 @@
 "lives": 137,
 "name": "ちあもあroom",
 "shorts": 156,
-"subscribers": 907,
+"subscribers": 908,
 "videos": 18
 },
 "UCditfCZWzkmVDKMWF9biZMQ": {
@@ -143993,9 +144127,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-jDM0L3Ks_k/hqdefault.jpg",
-"title": "[ #じゃんたま ]朝活段位戦_聖1p2239～11/21（土）#麻雀 #vtuber",
-"video_id": "-jDM0L3Ks_k"
+"thumbnail": "https://i3.ytimg.com/vi/RVdbpOj7W2Q/hqdefault.jpg",
+"title": "[ #じゃんたま ]魂天までの道～朝活段位戦_聖1p2327～11/22（日）#麻雀 #vtuber",
+"video_id": "RVdbpOj7W2Q"
 },
 "live": {
 "started_at": "2026-11-17T08:49:54Z",
@@ -144067,14 +144201,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T19:43:11Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/2oNy9sqDN5s/hqdefault.jpg",
-"title": "【同時配信】のんびり初見でヨッシーとフカシギの図鑑。🥚🦕 #15 図鑑埋め編【#ヨッシーとフカシギの図鑑  】#個人勢Vtuber",
-"video_id": "2oNy9sqDN5s"
+"thumbnail": "https://i1.ytimg.com/vi/h3quFlZa7q0/hqdefault.jpg",
+"title": "【同時配信】金いくらを集めるばいと。🐟🐻ジョー狩るじょー💪🏻🥇✨【#サーモンランnw】#個人勢Vtuber  #splatoon3 #サーモンラン",
+"video_id": "h3quFlZa7q0"
 },
 "lives": 877,
 "name": "音無 幽/おとなしちゃん。",
 "shorts": 4,
-"subscribers": 841,
+"subscribers": 844,
 "via": "snowball",
 "videos": 1
 },
@@ -144362,7 +144496,7 @@
 "lives": 270,
 "name": "ギギねれと / gigi Nereto ch",
 "shorts": 49,
-"subscribers": 696,
+"subscribers": 699,
 "videos": 3
 },
 "UCdsZMw84uarX5cA0YJnmvgw": {
@@ -144600,7 +144734,7 @@
 "lives": 1,
 "name": "苺野希彩 / Ichino kiiro",
 "shorts": 15,
-"subscribers": 378,
+"subscribers": 380,
 "videos": 1
 },
 "UCdvQDstEx7b9mOyyzoEe3rg": {
@@ -144707,7 +144841,7 @@
 "lives": 62,
 "name": "月見 璃々花🐇🎑",
 "shorts": 83,
-"subscribers": 293,
+"subscribers": 292,
 "via": "snowball",
 "videos": 1
 },
@@ -144941,7 +145075,7 @@
 "lives": 1143,
 "name": "くーにょ",
 "shorts": 4,
-"subscribers": 975,
+"subscribers": 976,
 "videos": 14
 },
 "UCdyf3AILC475tx7J0AF-FRw": {
@@ -145827,7 +145961,7 @@
 "lives": 454,
 "name": "火凍にこ　Nico ch.",
 "shorts": 24,
-"subscribers": 817,
+"subscribers": 816,
 "via": "snowball",
 "videos": 1
 },
@@ -145903,9 +146037,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:00:59Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/xNXRb-YzRJw/hqdefault.jpg",
-"title": "【ふわもこらんどマインクラフト】ゆるーく、作業と探索をする予定？【結立コト / 個人Vtuber】",
-"video_id": "xNXRb-YzRJw"
+"thumbnail": "https://i1.ytimg.com/vi/xFQiM-bLUPY/hqdefault.jpg",
+"title": "【ふわもこらんどマインクラフト】今日はドラゴンが討伐されるらしい......。【結立コト / 個人Vtuber】",
+"video_id": "xFQiM-bLUPY"
 },
 "lives": 19,
 "name": "結立コト / Yuitachi Koto",
@@ -146225,7 +146359,7 @@
 "icon": "https://yt3.ggpht.com/FKlxrTh5b38-Wt2iE6PN656WzT4WRKbmPjnduUQnL1G8Shs7i-AOisqN9nztXGuhaJKOo7ueBA=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "name": "トリリオンガーデン【公式】",
-"subscribers": 792,
+"subscribers": 791,
 "via": "snowball"
 },
 "UCeKkP16XdaalU0Xn6il_mhw": {
@@ -146569,7 +146703,7 @@
 "lives": 10,
 "name": "璃雨Liyu",
 "shorts": 4,
-"subscribers": 831
+"subscribers": 832
 },
 "UCeS21PxxDg9IhXpZjt0_lNA": {
 "counts_at": null,
@@ -146763,9 +146897,9 @@
 "first_seen": "2026-11-19T11:00:58Z",
 "icon": "https://yt3.ggpht.com/HyGhsmao7ds3DxPfkWEEMhhuUWXdtCr2ppCBeh4ovwjsDZT8r3HKaQrGviuIssyg5eOXdPA4=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/wkj0WCsiq5A/hqdefault.jpg",
-"title": "@墨寒沒人要來了 #新人vtuber #流量 #互訂 #求火 #不要上推薦 #cover",
-"video_id": "wkj0WCsiq5A"
+"thumbnail": "https://i2.ytimg.com/vi/5GW5cv_vYBw/hqdefault.jpg",
+"title": "#新人vtuber #流量 #互訂 #求火 #不要上推薦",
+"video_id": "5GW5cv_vYBw"
 },
 "name": "韓念辭",
 "shorts": 13,
@@ -147504,9 +147638,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T19:52:38Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/gChQYsmZ2q4/hqdefault.jpg",
-"title": "( #ドラゴンクエスト2 )枠なぞに終わってごめんなさい！！ちょっとルビスさまとお話ししようとしただけなのに😞🧸仲間がいるって本当につよい #新人Vtuber #初見歓迎 #shorts",
-"video_id": "gChQYsmZ2q4"
+"thumbnail": "https://i2.ytimg.com/vi/QzKfo9dhvlw/hqdefault.jpg",
+"title": "夫の口を割らせることができたよ！佐藤さんとの事 #vtuber #夫の髭を剃る #ゲーム実況",
+"video_id": "QzKfo9dhvlw"
 },
 "lives": 1308,
 "name": "ぷりんこぐま🍑🧸",
@@ -147857,9 +147991,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T04:26:29Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/dYGIO5i1APo/hqdefault.jpg",
-"title": "【 時のオカリナ】（打ちあげゆるゲーム）耐久!!力尽きるまでやり続ける長時間配信、令和にガチ初見メイドが頑張る!! 【 #初見さん大歓迎 】",
-"video_id": "dYGIO5i1APo"
+"thumbnail": "https://i2.ytimg.com/vi/Q55hr5im8gk/hqdefault.jpg",
+"title": "【 時のオカリナ】耐久!!力尽きるまでやり続ける長時間配信、令和にガチ初見メイドが頑張る!! 【 #初見さん大歓迎 】",
+"video_id": "Q55hr5im8gk"
 },
 "lives": 330,
 "name": "布田利あんみつ🫖🍡",
@@ -149792,9 +149926,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/Y9kmAebEE6E/hqdefault.jpg",
+"thumbnail": "https://i3.ytimg.com/vi/NywcppQ9wCc/hqdefault.jpg",
 "title": "AIつむぎ",
-"video_id": "Y9kmAebEE6E"
+"video_id": "NywcppQ9wCc"
 },
 "live": {
 "started_at": "2026-11-17T05:35:10Z",
@@ -150232,9 +150366,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T14:43:21Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/oISBpgRca0E/hqdefault.jpg",
-"title": "【 #エアプロ可愛いが溢れる歌枠リレー 】 秋を彩る最高のフィナーレ🎤🎶 このあとライドリ様にて、バーチャル握手会を開催します🍁✨【 #歌枠 #vtuber #karaoke 】",
-"video_id": "oISBpgRca0E"
+"thumbnail": "https://i3.ytimg.com/vi/jQ-HzuLtcbc/hqdefault.jpg",
+"title": "【 #エアプロ可愛いが溢れる歌枠リレー 】 START🍁✨ 秋色に染まる歌声の祭典！彩り豊かな1日がいよいよ開幕🎤🎶 【 #歌枠 #vtuber #karaoke 】",
+"video_id": "jQ-HzuLtcbc"
 },
 "lives": 95,
 "name": "エアリープロダクション【公式】",
@@ -150442,7 +150576,7 @@
 },
 "name": "菊澄澪",
 "shorts": 9,
-"subscribers": 80,
+"subscribers": 83,
 "videos": 6
 },
 "UCfeIKRIZj-1lLbwQsMiB_EA": {
@@ -151337,7 +151471,7 @@
 },
 "name": "電撃ニコの切り抜きch",
 "shorts": 105,
-"subscribers": 303,
+"subscribers": 304,
 "videos": 9
 },
 "UCftYR77MPeodTgYv-3oK17w": {
@@ -152369,9 +152503,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:47:09Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/HyODsBhFri4/hqdefault.jpg",
-"title": "【ARK】今日こそイベント！？のんびりお散歩もしたい～！🦖 #6【#新人vtuber / #SILVARSE / #咲楽虹色】",
-"video_id": "HyODsBhFri4"
+"thumbnail": "https://i2.ytimg.com/vi/i7f3-jqldtk/hqdefault.jpg",
+"title": "【歌枠 / Karaoke】スキマ時間に歌を歌うやつ【#新人vtuber / #咲楽虹色 /#咲楽のお花見】",
+"video_id": "i7f3-jqldtk"
 },
 "lives": 579,
 "name": "咲楽 虹色 / Sakura Nanairo ch.",
@@ -152486,9 +152620,9 @@
 "first_seen": "2026-11-21T11:00:51Z",
 "icon": "https://yt3.ggpht.com/aeErmg9OOdMmSCg4CFvx42P8PP30vaqLeV9ERdvN0tEksnIK4ws6RXcWJgYnQXWN07UCd7sZtw=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/4pkd2mMnn8I/hqdefault.jpg",
-"title": "【 ポケモン赤緑 】完全初見！めざせ！ポケモンマスター！！初の原点へ🌟ポッポ最強！！ポケモンのボックス名アズカバンなのやめない？【 #天彩的配信 】 実況　ファイアレッド",
-"video_id": "4pkd2mMnn8I"
+"thumbnail": "https://i2.ytimg.com/vi/i7pV8W0LXlA/hqdefault.jpg",
+"title": "【 ポケモン赤緑 】完全初見！めざせ！ポケモンマスター！！初の原点へ🌟ドランゴンとエスパーが最恐って聞いたことあります【 #天彩的配信 】 実況　ファイアレッド",
+"video_id": "i7pV8W0LXlA"
 },
 "lives": 554,
 "name": "天彩たたん",
@@ -153099,9 +153233,9 @@
 "first_seen": "2026-11-21T14:00:51Z",
 "icon": "https://yt3.ggpht.com/ytc/AIdro_mW1jaZBTYsFLAobOpdMDfmNmFUYfNp4rdO7npGJEaj5w=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GP-OoelA1mg/hqdefault.jpg",
-"title": "【グラブル | 初心者&初見歓迎】本なし剣１闇古戦場予選【月白エイラ / Vtuber】",
-"video_id": "GP-OoelA1mg"
+"thumbnail": "https://i4.ytimg.com/vi/kEtD0eHXPwI/hqdefault.jpg",
+"title": "【グラブル | 初心者&初見歓迎】本なし剣１闇古戦場予選その２【月白エイラ / Vtuber】",
+"video_id": "kEtD0eHXPwI"
 },
 "lives": 1614,
 "name": "Eilla CHANNEL / 月白エイラ",
@@ -153337,9 +153471,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T00:18:55Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/qYs-d3A3Kso/hqdefault.jpg",
-"title": "只の災害と言うか天災？【#星の翼 /#starward / #shorts / #新人Vtuber】",
-"video_id": "qYs-d3A3Kso"
+"thumbnail": "https://i1.ytimg.com/vi/LkXsYO6R18Y/hqdefault.jpg",
+"title": "【#新人Vtuber】俺の場合はサタハルよりロンべの方が楽かも【#星の翼 /#ランクマッチ 】",
+"video_id": "LkXsYO6R18Y"
 },
 "lives": 475,
 "name": "炎楽 神楽ch",
@@ -154191,9 +154325,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T14:58:20Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/JEeik5vxwMU/hqdefault.jpg",
-"title": "【#おはようvtuber 】11/21 土曜日【ヤマト屋フロリ】 #vtuber #shorts",
-"video_id": "JEeik5vxwMU"
+"thumbnail": "https://i3.ytimg.com/vi/6dGrpcNZrhg/hqdefault.jpg",
+"title": "【#おはようvtuber 】11/22 日曜日【ヤマト屋フロリ】 #vtuber #shorts",
+"video_id": "6dGrpcNZrhg"
 },
 "lives": 1041,
 "name": "ヤマト屋フ口リChannel",
@@ -154731,9 +154865,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T11:00:20Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/v87cO8HfJ-w/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/_GlnaPR2cu4/hqdefault.jpg",
 "title": "[朝活]刀剣乱舞やります［新人Vtuber］　※概要欄必読",
-"video_id": "v87cO8HfJ-w"
+"video_id": "_GlnaPR2cu4"
 },
 "lives": 106,
 "name": "トレリー",
@@ -154785,9 +154919,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T10:28:28Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/UgLE0X4QznY/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/WPIoDwbe_a4/hqdefault.jpg",
 "title": "【JOYSOUND】腰が痛いおうたわく【#縦型配信  #歌枠 #karaoke】",
-"video_id": "UgLE0X4QznY"
+"video_id": "WPIoDwbe_a4"
 },
 "lives": 184,
 "name": "心純ゆう / Misumi Yuu",
@@ -155098,7 +155232,7 @@
 "lives": 75,
 "name": "出雲早苗 / Izumo Sanae【IZUMOproject】",
 "shorts": 20,
-"subscribers": 928,
+"subscribers": 927,
 "via": "snowball",
 "videos": 2
 },
@@ -155420,9 +155554,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T18:08:03Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/o3b5wKwpBYU/hqdefault.jpg",
-"title": "【 ネタバレが激しすぎるRPG 】枠立て直しました！！！いや、タイトルからネタバレしてるじゃん！【 甘従ひよ / #新人Vtuber 】",
-"video_id": "o3b5wKwpBYU"
+"thumbnail": "https://i3.ytimg.com/vi/6B1UQMchqsU/hqdefault.jpg",
+"title": "【 鳴潮 】第三章幕間 溶けゆく夜空の下で｜ダーニャちゃんに会いに行きます！【 甘従ひよ / #新人Vtuber 】",
+"video_id": "6B1UQMchqsU"
 },
 "lives": 138,
 "name": "甘従ひよ / Amatsugu Hiyo",
@@ -156030,7 +156164,7 @@
 "lives": 816,
 "name": "古川ナオミ(CV森ヤフオ)",
 "shorts": 37,
-"subscribers": 748,
+"subscribers": 750,
 "via": "snowball",
 "videos": 476
 },
@@ -156153,9 +156287,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T07:59:23Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/VcPH-Zwa0C0/hqdefault.jpg",
-"title": "Path of Exile 3.30 Poison Ranged Animate Weapon | FARM STRATEGY TESTING",
-"video_id": "VcPH-Zwa0C0"
+"thumbnail": "https://i2.ytimg.com/vi/Epzwi_9ha_E/hqdefault.jpg",
+"title": "Path of Exile 3.30 SHRINE STACKER SWAP TODAY",
+"video_id": "Epzwi_9ha_E"
 },
 "lives": 239,
 "name": "Sleepy Cat",
@@ -156180,9 +156314,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/6C8PvOTUVLA/hqdefault.jpg",
-"title": "【バトオペ3ネットワークテスト】支援機たのしすぎるぞ！？【VTuber #猫本にゃこ 】",
-"video_id": "6C8PvOTUVLA"
+"thumbnail": "https://i3.ytimg.com/vi/Bxoy6KsSNl0/hqdefault.jpg",
+"title": "グルンガストの計都羅喉剣・暗剣殺！暗殺剣じゃないからそこんとこよろしく！ #個人vtuber #shorts #バズれ #スパロボ #おすすめ #スーパーロボット大戦V",
+"video_id": "Bxoy6KsSNl0"
 },
 "live": {
 "started_at": "2026-11-17T11:01:45Z",
@@ -156382,9 +156516,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T20:50:45Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/u4IqUg3-N6k/hqdefault.jpg",
-"title": "【DARK SOULS Part12-2】小ロンド遺跡【がんばる】 #vtuber  #初見さん大歓迎 #ゲーム #darksouls   #雑談 #フロムゲー",
-"video_id": "u4IqUg3-N6k"
+"thumbnail": "https://i3.ytimg.com/vi/RtPAWICItnU/hqdefault.jpg",
+"title": "【朝ゆら】おはよぅー【352】#vtuber #雑談 #chill #新人vtuber #初見さん大歓迎 #朝活",
+"video_id": "RtPAWICItnU"
 },
 "lives": 524,
 "name": "シユラちゃんねる",
@@ -156552,9 +156686,9 @@
 "icon": "https://yt3.ggpht.com/dDH7KgwXvLQcgPp4E0mckNA96UaLWo1f3JQMLnFpgpf4Eui2ZvCp1_fPebEs00G8fI2-OTPvSA=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/LqF87Y5XVJA/hqdefault.jpg",
-"title": "【#シチュエーションボイス 】んふふ……今日はね、洗濯機が脱水のときにちょっとだけ歩いてたの。元気だねぇ……。【#新人vtuber #3dvtuber 】",
-"video_id": "LqF87Y5XVJA"
+"thumbnail": "https://i4.ytimg.com/vi/Ccpx-sf9i7I/hqdefault.jpg",
+"title": "【#シチュエーションボイス 】やばい、ファミチキの袋の底に残った衣が、全部、床に落ちた……。え、これ掃除するのあたし？君だよね？【#新人vtuber #3dvtuber 】",
+"video_id": "Ccpx-sf9i7I"
 },
 "name": "シーク@シチュボ3DVTuber",
 "shorts": 19,
@@ -156804,9 +156938,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:03:12Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/7qMGzhDZrrM/hqdefault.jpg",
-"title": "（仮）【スプラトゥーンレイダース】ウズシオのかけら集め耐久🔥とりあえず200,000個くらい…？？【 レイダース/#新人vtuber 】",
-"video_id": "7qMGzhDZrrM"
+"thumbnail": "https://i1.ytimg.com/vi/Lw1tX46_j9E/hqdefault.jpg",
+"title": "【ブルーアーカイブ】#10.5ε 深夜のブルーアーカイブ！晄輪大祭後日談&大決戦ゴズ！！　【#BlueArchive / #個人勢vtuber 】",
+"video_id": "Lw1tX46_j9E"
 },
 "lives": 429,
 "name": "日野森 天 / Hinomori Ten",
@@ -156841,7 +156975,7 @@
 },
 "UChWADycaLNmxNjcL6A4ZYJA": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-13T03:00:52Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "done": [
 "ucgVQihRwCU",
 "K5f7dSwnSZg",
@@ -157794,7 +157928,7 @@
 "lives": 89,
 "name": "歌語エトワール | Etowaru Utakata",
 "shorts": 12,
-"subscribers": 927,
+"subscribers": 926,
 "videos": 7
 },
 "UChl_nlWuZEFEwXh5AGT-B4A": {
@@ -158594,14 +158728,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T22:08:49Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/tjEiCiGMFiU/hqdefault.jpg",
-"title": "【 #朝活 / #ウマ娘 】スロットが2027年やってくるので、ウマ娘のストーリー見る！#3【 #完全初見 】",
-"video_id": "tjEiCiGMFiU"
+"thumbnail": "https://i2.ytimg.com/vi/aj4k0rkmf3A/hqdefault.jpg",
+"title": "【#朝活 /#参加型 】ラスでスクワット10回…！？雀魂三人麻雀参加型！火力高めでお届けしたい！（願望）【#麻雀 】#vtuber",
+"video_id": "aj4k0rkmf3A"
 },
 "lives": 483,
 "name": "日向ちどり",
 "shorts": 31,
-"subscribers": 1330,
+"subscribers": 1340,
 "videos": 7
 },
 "UCi-eXHNlBRwi6OlN_wV9-vg": {
@@ -158940,9 +159074,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T15:25:24Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/YBpakR2eslY/hqdefault.jpg",
-"title": "【 #雑談   】原神コラボマックいただきます！【海猫みら】  #新人VTuber",
-"video_id": "YBpakR2eslY"
+"thumbnail": "https://i2.ytimg.com/vi/-3bBPuoxSdw/hqdefault.jpg",
+"title": "【 #気のせいすぎるＲＰＧ   】いろんなことが気になっちゃう日と気にならない日があります【海猫みら】  #新人VTuber",
+"video_id": "-3bBPuoxSdw"
 },
 "lives": 402,
 "name": "海猫みら / Umineko Mila",
@@ -159189,9 +159323,9 @@
 "first_seen": "2026-11-18T17:01:00Z",
 "icon": "https://yt3.ggpht.com/V4kuxYwnX2O_jxcSi1tsrnHPJH3AuyPAuEplngfC6lwHghoNBZQGJVHpQqtUoRGI5ijPh_av8A=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/AFsDlI3GJXM/hqdefault.jpg",
-"title": "【Rainbow Gate】遊園地のチケットを貰ったので遊びに行ってきます #夢見ライブ #VTuber",
-"video_id": "AFsDlI3GJXM"
+"thumbnail": "https://i4.ytimg.com/vi/cYZMuFkJIIU/hqdefault.jpg",
+"title": "【Rainbow Gate】縦型 遊園地のチケットを貰ったので遊びに行ってきます #夢見ライブ #VTuber",
+"video_id": "cYZMuFkJIIU"
 },
 "lives": 1024,
 "name": "スターライトニング  (STARLIGHTNING)【夢見光】",
@@ -160527,14 +160661,14 @@
 "first_seen": "2026-11-21T16:00:51Z",
 "icon": "https://yt3.ggpht.com/VmBb5cSJnz4vG3CZEVwtwsSrPuEmk28I2eXP0Ebrmuhpaqn8m2Kfy7v2a7erQ6VRBR_3h__fjg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/2Hx88e1MsTs/hqdefault.jpg",
-"title": "【歌枠】睡眠導入歌枠🎶初見さん大歓迎♡【新人Vtuber/シャルウィッチ】",
-"video_id": "2Hx88e1MsTs"
+"thumbnail": "https://i3.ytimg.com/vi/FuHqciAcXVk/hqdefault.jpg",
+"title": "【歌枠】眠くなるまで歌うよ🎶初見さん大歓迎♡【新人Vtuber/シャルウィッチ】",
+"video_id": "FuHqciAcXVk"
 },
 "lives": 215,
 "name": "シャル・ウィッチ / Char Witch",
 "shorts": 133,
-"subscribers": 2720,
+"subscribers": 2730,
 "videos": 5
 },
 "UCiYx0ELelbzImsg3FsTTyiQ": {
@@ -160732,6 +160866,18 @@
 "shorts": 113,
 "subscribers": 890,
 "videos": 8
+},
+"UCiaVjS3RYaqS0kl70FmCVdg": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/01BJoLH10HdVSEJcOl2P0xy6UUNwQIX9djclUCxqXf58rwzIVZmDPYDnJ_YvbAmf9G73sGNHuYU=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i1.ytimg.com/vi/8JM5wQDG1HU/hqdefault.jpg",
+"title": "【 #トリッカル ※ネタバレあり】052 もちもちほっぺ大作戦！【黒蜂縢夢 Vtuber】 #トリッカル #트릭컬 #Trickcal",
+"video_id": "8JM5wQDG1HU"
+},
+"name": "くろばちチャンネル【Vtuber】黒蜂 縢夢",
+"subscribers": 2030
 },
 "UCibyhHYagIPjm5GNZMmOgYQ": {
 "counts_at": null,
@@ -161073,7 +161219,7 @@
 "lives": 3,
 "name": "ツクヨミのフリーBGM工房",
 "shorts": 1,
-"subscribers": 395,
+"subscribers": 398,
 "videos": 29
 },
 "UCihUJE7p-zPunC06GUb0RLQ": {
@@ -162223,9 +162369,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T19:03:59Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/To_m1CAOB8w/hqdefault.jpg",
+"thumbnail": "https://i1.ytimg.com/vi/Pgy2XwGR3Wo/hqdefault.jpg",
 "title": "【#歌枠 】加湿器炊いたので喉潤ってます【鈴木沙透/パレデミア学園】",
-"video_id": "To_m1CAOB8w"
+"video_id": "Pgy2XwGR3Wo"
 },
 "lives": 209,
 "name": "鈴木 沙透 / Suzuki Sato",
@@ -162406,7 +162552,7 @@
 "lives": 119,
 "name": "兎鳴らび / Tonari Rabi",
 "shorts": 48,
-"subscribers": 847,
+"subscribers": 846,
 "videos": 3
 },
 "UCj9rXwBEr5WHwBvi7MsbEPg": {
@@ -162691,7 +162837,7 @@
 "lives": 1,
 "name": "眠甘めるも Merumo Ch.",
 "shorts": 14,
-"subscribers": 1580
+"subscribers": 1590
 },
 "UCjFsYQQS0z3h2nOUcOTELLQ": {
 "counts_at": "2026-11-05T22:43:23+00:00",
@@ -162819,9 +162965,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T11:06:48Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/_UzKZczZ8cs/hqdefault.jpg",
-"title": "【ペルソナ５ ザ・ロイヤル】 次は誰の心を盗もうか💛初見さん大歓迎！ 【 輪音乗 】 #新人vtuber",
-"video_id": "_UzKZczZ8cs"
+"thumbnail": "https://i4.ytimg.com/vi/3vAG9ocnRA8/hqdefault.jpg",
+"title": "【Apex】この2人、チャンピオン取れるんですか？初見さん大歓迎 【 輪音乗 】 #新人vtuber  #vsinger",
+"video_id": "3vAG9ocnRA8"
 },
 "lives": 209,
 "name": "輪音 乗 / Rinto Jyo",
@@ -163226,7 +163372,7 @@
 "lives": 93,
 "name": "ねむこぴあ / Nemu Copia",
 "shorts": 20,
-"subscribers": 6530,
+"subscribers": 6540,
 "via": "snowball",
 "videos": 2
 },
@@ -163832,9 +163978,9 @@
 "first_seen": "2026-11-20T00:00:57Z",
 "icon": "https://yt3.ggpht.com/ZWPLv315-AyoL1yHPBicDfHt9SQKWrUxeKOf_s2QAeQ6pOvmudk06hL9_l4sjo06RqnUZchaww=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/yGFX4AbNUg8/hqdefault.jpg",
-"title": "やることはやった　#shorts #lol #leagueoflegends #vtuber",
-"video_id": "yGFX4AbNUg8"
+"thumbnail": "https://i3.ytimg.com/vi/RcJ0_WsIIEc/hqdefault.jpg",
+"title": "【初見・雑談歓迎】とりあえずE1を目指しても良い感じ？ #leagueoflegends #vtuber",
+"video_id": "RcJ0_WsIIEc"
 },
 "lives": 71,
 "name": "鹿島茜",
@@ -165122,9 +165268,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:52:50Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/FIOzqN1UVaM/hqdefault.jpg",
-"title": "【雑談歌枠】 同接100人高評価400耐久！初見さん/ROMさん大歓迎 【＃キラキラプロダクション】【＃いねかりたんぼ】【＃Vtuber】",
-"video_id": "FIOzqN1UVaM"
+"thumbnail": "https://i3.ytimg.com/vi/ZNUvMPIwQGY/hqdefault.jpg",
+"title": "【#きみとつくる夢のステージ】いつもとは違う魅力でお届け♡【#いねかりたんぼ】",
+"video_id": "ZNUvMPIwQGY"
 },
 "lives": 290,
 "name": "いねかりたんぼ",
@@ -165448,7 +165594,7 @@
 },
 "lives": 79,
 "name": "梅立とまこ / Umedachi tomaco",
-"subscribers": 116,
+"subscribers": 117,
 "via": "snowball",
 "videos": 3
 },
@@ -165507,9 +165653,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T16:28:15Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/oUeEQC1w3wo/hqdefault.jpg",
-"title": "ハゲ屋根完成へ。豪邸を仕上げてトラップタワー建設へ。【Minecraft#6】",
-"video_id": "oUeEQC1w3wo"
+"thumbnail": "https://i1.ytimg.com/vi/t9SzVHOV51s/hqdefault.jpg",
+"title": "本音暴露。普段は言わないVTuber活動の裏側、今日は全部話します。【ぶっちゃけ雑談その３】",
+"video_id": "t9SzVHOV51s"
 },
 "lives": 104,
 "name": "Sou Ch. しんしそう",
@@ -165625,7 +165771,7 @@
 },
 "name": "鈴音くろむ- Suzune Kuromu-",
 "shorts": 94,
-"subscribers": 43200,
+"subscribers": 43300,
 "videos": 24
 },
 "UCk9b6eACIw-CfwUqmRbyxOg": {
@@ -166289,7 +166435,7 @@
 "lives": 166,
 "name": "奏雪村【瑞華王国国立図書館・書庫】",
 "shorts": 10,
-"subscribers": 240,
+"subscribers": 241,
 "via": "snowball",
 "videos": 3
 },
@@ -166751,9 +166897,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/HVLswg3jHKo/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/o1iOXuMx-ak/hqdefault.jpg",
 "title": "個人Vtuberの星の翼配信【】",
-"video_id": "HVLswg3jHKo"
+"video_id": "o1iOXuMx-ak"
 },
 "live": {
 "started_at": "2026-11-17T11:02:16Z",
@@ -167323,9 +167469,9 @@
 "first_seen": "2026-11-19T13:33:44Z",
 "icon": "https://yt3.ggpht.com/Bjb1Fgb471VFwyGWosRW6ZQXQZRaHPzps9LRH93jeCWpY74XkxH0zOnvxQc24_RvRGyPdAz1hQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/8DKDhNeIN5k/hqdefault.jpg",
-"title": "【真・三國無双2リマスター】 #23 祝融さんの無双モードクリアするぞ☆一番遊んだ無双2 ※ネタバレあり【三國無双2 Remastered Vtuber/あーしゃ】",
-"video_id": "8DKDhNeIN5k"
+"thumbnail": "https://i3.ytimg.com/vi/FVfmhhS2Ifg/hqdefault.jpg",
+"title": "【ナイトレイン/PS】 1121 深度2〜3で 野良マルチNIGHTREIGN【Vtuber/エルデンリングナイトレイン/あーしゃ】",
+"video_id": "FVfmhhS2Ifg"
 },
 "lives": 428,
 "name": "あーしゃ_asha",
@@ -167522,9 +167668,9 @@
 "icon": "https://yt3.ggpht.com/X9XooIVpCGIqKNs_9SOKmeDIwanIv9X7Ra1nck8pHygI6i7o_H7GDaLAAGN3mE9Y7vY48X7a=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/i8tpQAncsYs/hqdefault.jpg",
-"title": "U17男子W杯同時視聴】日本vsコロンビア　U17男子サッカーW杯　GS開幕戦　東京ヴェルディ内定の選手も応援！　※映像はDAZNで無料",
-"video_id": "i8tpQAncsYs"
+"thumbnail": "https://i4.ytimg.com/vi/GO-TlUzAQ4o/hqdefault.jpg",
+"title": "鎌田、坂元、ザイオン！同時視聴｜コヴェントリー対クリスタル・パレス、アストン・ヴィラ対サンダーランド　 プレミアリーグ26/27　  #光りりあ フワフワ☆サッカーVTuber】※映像U-NEXT",
+"video_id": "GO-TlUzAQ4o"
 },
 "lives": 2934,
 "name": "光りりあ【Riria Hikari Ch】",
@@ -167652,9 +167798,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T00:39:15Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/dZcVX1lkRZM/hqdefault.jpg",
-"title": "【#朝活】11/21(土)11月終わらないでね。初見さん歓迎！とってもフレンドリーなVtuberです！【新人Vtuber/#八三月きうり】",
-"video_id": "dZcVX1lkRZM"
+"thumbnail": "https://i3.ytimg.com/vi/RJxkHquMUwM/hqdefault.jpg",
+"title": "【#朝活】11/23(月)いつもお疲れ様です！初見さん歓迎！とってもフレンドリーなVtuberです！【新人Vtuber/#八三月きうり】",
+"video_id": "RJxkHquMUwM"
 },
 "lives": 250,
 "name": "八三月きうり",
@@ -168883,9 +169029,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T13:14:35Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/IG8PIAVXFUE/hqdefault.jpg",
-"title": "【#FGO】初見実況！虚数羅針内界ペーパームーン part5第8節～【おおかみVtuber/#狼牙ヒナ】#新人vtuber #エアプロ",
-"video_id": "IG8PIAVXFUE"
+"thumbnail": "https://i4.ytimg.com/vi/3WMMIuI6LHw/hqdefault.jpg",
+"title": "【#エアプロ可愛いが溢れる歌枠リレー】エアプロに夢中な君がすーき♡【おおかみVtuber/#狼牙ヒナ】#新人vtuber #エアプロ",
+"video_id": "3WMMIuI6LHw"
 },
 "lives": 390,
 "name": "Hina Ch. 狼牙ヒナ",
@@ -169006,7 +169152,7 @@
 "lives": 267,
 "name": "柘榴 ハスキ【ゆるっとマルチ系VTuber】",
 "shorts": 51,
-"subscribers": 184,
+"subscribers": 183,
 "videos": 2
 },
 "UClGLLiLObsMbiGKxpkyEioA": {
@@ -169230,9 +169376,9 @@
 "first_seen": "2026-11-21T07:00:50Z",
 "icon": "https://yt3.ggpht.com/fV0JM_KHJlnR9eaMNjJr5wDfLXO3xx1VcozXSPuQvwtpyZ2LXnSkii0Mp5hOudsTZZcJbtGZQQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/EkJAWkZCkPQ/hqdefault.jpg",
+"thumbnail": "https://i3.ytimg.com/vi/RsrX2R1jLkw/hqdefault.jpg",
 "title": "【男女アイドル✖原曲キー】神アニソンお歌枠｜雪見おと #vsinger #歌枠 #縦型配信",
-"video_id": "EkJAWkZCkPQ"
+"video_id": "RsrX2R1jLkw"
 },
 "lives": 8,
 "name": "雪見おと",
@@ -169324,7 +169470,7 @@
 "lives": 1,
 "name": "絲音ねね",
 "shorts": 7,
-"subscribers": 356
+"subscribers": 360
 },
 "UClMUyVtehvhiRiEHb_MN5cQ": {
 "counts_at": null,
@@ -169681,9 +169827,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T09:45:34Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/zIB2NZ-fgVI/hqdefault.jpg",
-"title": "駆け込め！モグコレアロアロ島 w/猫部長,クロノ・シロン #FF14【Twitchアーカイブ】",
-"video_id": "zIB2NZ-fgVI"
+"thumbnail": "https://i1.ytimg.com/vi/P6-OGVwHVmI/hqdefault.jpg",
+"title": "【 #FF14 】エターナルバンドセレモニーちらこいど視点  w/朱芽うゆき【 #ネタバレ注意 】",
+"video_id": "P6-OGVwHVmI"
 },
 "lives": 1385,
 "name": "ちらこいど",
@@ -169909,7 +170055,7 @@
 "lives": 1302,
 "name": "Lion Rh Ch. リオン・レッドハート",
 "shorts": 1270,
-"subscribers": 3730,
+"subscribers": 3740,
 "via": "snowball",
 "videos": 60
 },
@@ -171356,7 +171502,7 @@
 },
 "lives": 1,
 "name": "盃 仁/SAKAZUKI JIN",
-"subscribers": 61,
+"subscribers": 60,
 "videos": 1
 },
 "UClwjWd25LUIgc0jvWInDJ6A": {
@@ -171419,9 +171565,9 @@
 "first_seen": "2026-11-17T23:00:12Z",
 "icon": "https://yt3.ggpht.com/mhL3mIPgusyHgSdYeBQqmS4CxMCXVCeWyuVDH6dvDWTmv5fqp9ePRvQS48hcdgfzb1p5LhXQeg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/uKIXlLpd8J0/hqdefault.jpg",
-"title": "【艦これ】Ranger掘りのこの編成全然でませんけど？メンテ前に必ず出会えると信じている【艦隊これくしょん】",
-"video_id": "uKIXlLpd8J0"
+"thumbnail": "https://i1.ytimg.com/vi/DWxi0xsCx0k/hqdefault.jpg",
+"title": "【艦これ】Ranger掘り｜第一関門：編成縛り、そこから第二関門がはじまる...メンテ前に必ず出会えると信じている【艦隊これくしょん】",
+"video_id": "DWxi0xsCx0k"
 },
 "lives": 652,
 "name": "宵森つく音 / Yoimori Tukune",
@@ -171927,7 +172073,7 @@
 "lives": 1,
 "name": "瑠乃宮シャノ",
 "shorts": 42,
-"subscribers": 807,
+"subscribers": 806,
 "videos": 1
 },
 "UCmC5oX1U3M_jyfSUu4cu22Q": {
@@ -171959,7 +172105,7 @@
 },
 "name": "佐奈伊ノア【sanai noah】",
 "shorts": 23,
-"subscribers": 143,
+"subscribers": 141,
 "videos": 1
 },
 "UCmCrHT03_3og0DyYFDTTabA": {
@@ -172329,9 +172475,9 @@
 "is_live": false,
 "last_live_at": "2026-11-09T15:11:59Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/mtO_ExLcC90/hqdefault.jpg",
-"title": "『???』I dont know tiếng Trung「EN/JP/VN」",
-"video_id": "mtO_ExLcC90"
+"thumbnail": "https://i1.ytimg.com/vi/dQxvd0Cg558/hqdefault.jpg",
+"title": "『 VALO』Game  ms đi ăng! NOPE",
+"video_id": "dQxvd0Cg558"
 },
 "lives": 901,
 "name": "Yukiha Rainer Ch.【VTuber】",
@@ -172359,7 +172505,7 @@
 "lives": 2,
 "name": "法宮 つむぎ-Houmiya Tsumugi-",
 "shorts": 14,
-"subscribers": 334,
+"subscribers": 335,
 "videos": 1
 },
 "UCmLSgrqNG38HAk6a1RqmTmg": {
@@ -172603,7 +172749,7 @@
 "lives": 56,
 "name": "Thevtuberclub",
 "shorts": 335,
-"subscribers": 229,
+"subscribers": 230,
 "videos": 89
 },
 "UCmReIad5h8lvyD4wIxWd_fg": {
@@ -173165,7 +173311,7 @@
 "lives": 244,
 "name": "二日に一度は美少女 ♡ 美少女ニカ@新人vtuber",
 "shorts": 347,
-"subscribers": 7510,
+"subscribers": 7520,
 "videos": 29
 },
 "UCmeE2NzaLomRxElBonsr1DQ": {
@@ -173531,7 +173677,7 @@
 "lives": 9,
 "name": "宵乃レネア",
 "shorts": 31,
-"subscribers": 367,
+"subscribers": 370,
 "videos": 2
 },
 "UCml47VY6fRMDOYisVnmoI8g": {
@@ -174026,9 +174172,9 @@
 "first_seen": "2026-11-18T17:01:00Z",
 "icon": "https://yt3.ggpht.com/e4dkoU7iA4LHvJrL188yQFqnRpPAtWpNDAXhlhJFIskmYgsIPAufFQkGvoxjnnkE1YEfa97Gf_0=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/UJNc3AqT5Q4/hqdefault.jpg",
-"title": "【Minecraft参加型】自由な建築鯖だよ⛏️新路線開発進めるぞ！！【Vtuber】",
-"video_id": "UJNc3AqT5Q4"
+"thumbnail": "https://i3.ytimg.com/vi/Bp3dqk0LkE8/hqdefault.jpg",
+"title": "【WoWS参加型】私にせんぶり飲ませたい人募集！回避目指して分艦隊参加型⚓️【Vtuber】",
+"video_id": "Bp3dqk0LkE8"
 },
 "lives": 1289,
 "name": "縁野夢芽 -ゆかりの むめ-",
@@ -174318,7 +174464,7 @@
 "lives": 1883,
 "name": "まんぷくちゃんねる",
 "shorts": 87,
-"subscribers": 7500,
+"subscribers": 7490,
 "videos": 80
 },
 "UCn0bPhgINwJh_2SvHqcjO7Q": {
@@ -175074,7 +175220,7 @@
 "lives": 1613,
 "name": "ジーユカータチャンネル🪽",
 "shorts": 378,
-"subscribers": 13200,
+"subscribers": 13300,
 "videos": 184
 },
 "UCnKtUlRgKZ2pc1XQ3FQqCwQ": {
@@ -175171,14 +175317,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:08:05Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/ZbQSGFKiJak/hqdefault.jpg",
-"title": "【 Japanese Ramen Simulator 】#1│祝！就職！【 喧音波 / #新人vtuber 】",
-"video_id": "ZbQSGFKiJak"
+"thumbnail": "https://i3.ytimg.com/vi/z3VWKMrbIsU/hqdefault.jpg",
+"title": "【 カラオケJOYSOUND for STREAMER / #shorts 】可愛い曲で可愛くなりたい歌枠【 喧音波 / #新人vtuber 】",
+"video_id": "z3VWKMrbIsU"
 },
 "lives": 369,
 "name": "喧音波(やかまし おんぱ)",
 "shorts": 78,
-"subscribers": 557,
+"subscribers": 556,
 "videos": 4
 },
 "UCnN61XazCWqnaf40u4xRW4Q": {
@@ -175498,9 +175644,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:08:29Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/E7_XosykLxU/hqdefault.jpg",
-"title": "【 #howtofish #コラボ 】釣りゲーム！魚釣りながらコラボ配信♪【雨井かえる | #新人VTuber 】",
-"video_id": "E7_XosykLxU"
+"thumbnail": "https://i3.ytimg.com/vi/jJ6cCQJzx4Q/hqdefault.jpg",
+"title": "【 #テイルズオブヴェスペリア #8 】初見プレイ！えっ、そういうこと！？怒涛の展開に大騒ぎ！【雨井かえる | #新人VTuber】",
+"video_id": "jJ6cCQJzx4Q"
 },
 "lives": 51,
 "name": "雨井かえる | 新人VTuber",
@@ -175652,9 +175798,9 @@
 "first_seen": "2026-11-18T08:00:51Z",
 "icon": "https://yt3.ggpht.com/m10LFi2tuE6Gt0m2qCCkjGgSRZ0aCRSvASFeHbxoMVXrzYsk-ae3ZMLT0A576GLq8B5lZ935Hg=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/ddP66kcVFR4/hqdefault.jpg",
-"title": "【#踊ってみた 】NEON/A2O LITE【宵月紫乃/新人Vtuber】#dance #shorts",
-"video_id": "ddP66kcVFR4"
+"thumbnail": "https://i1.ytimg.com/vi/l2997Vak1oI/hqdefault.jpg",
+"title": "🔰ネタバレ禁止🔰【Grand Theft Auto VI】バイスシティを探索しつつストーリー進める！【 宵月紫乃 /新人Vtuber】 #gta6",
+"video_id": "l2997Vak1oI"
 },
 "lives": 660,
 "name": "宵月紫乃-YoizukiShinoCH-",
@@ -175836,7 +175982,7 @@
 "lives": 762,
 "name": "Ena ch. /明戸えな",
 "shorts": 66,
-"subscribers": 6070,
+"subscribers": 6080,
 "via": "snowball",
 "videos": 51
 },
@@ -176820,7 +176966,7 @@
 "lives": 520,
 "name": "鬼多見アユム【パレプロ】",
 "shorts": 134,
-"subscribers": 29800,
+"subscribers": 29900,
 "via": "snowball",
 "videos": 21
 },
@@ -177509,9 +177655,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:25:56Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/HkXtJtgauWw/hqdefault.jpg",
-"title": "【apex】シーズン31スプ1#11～ダイヤ～",
-"video_id": "HkXtJtgauWw"
+"thumbnail": "https://i2.ytimg.com/vi/IlmGxzeefhQ/hqdefault.jpg",
+"title": "【apex】シーズン31スプ1#12～ダイヤ～",
+"video_id": "IlmGxzeefhQ"
 },
 "lives": 1298,
 "name": "凰蝶いのり",
@@ -177979,9 +178125,20 @@
 "videos": 27
 },
 "UCoEVr9rYx6PK6HT9TySV6kg": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:30:50Z",
-"subscribers": 18300
+"icon": "https://yt3.ggpht.com/HMbk6rdwdEv1j8EcaaOUPg3dv9kkfel5hylA02Hd3NATaZLvFWrENFQl7Mrhm_KGRelIUfxt=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i1.ytimg.com/vi/xEdY52KttFg/hqdefault.jpg",
+"title": "【#初配信】好きになる準備できた？【#新人vtuber】",
+"video_id": "xEdY52KttFg"
+},
+"lives": 24,
+"name": "ひづみ / Hizumi",
+"shorts": 4,
+"subscribers": 18300,
+"videos": 9
 },
 "UCoF9Xjwko_hmnOAInjaTtvw": {
 "counts_at": "2026-11-16T15:00:51Z",
@@ -178382,9 +178539,9 @@
 "is_live": false,
 "last_live_at": "2026-05-31T16:35:21Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0DEtW9JPHNw/hqdefault.jpg",
-"title": "りはびり　雑談・裏制作たまにAPEX【 #あまくられりぃお  #新人vtuber 】",
-"video_id": "0DEtW9JPHNw"
+"thumbnail": "https://i1.ytimg.com/vi/TVusaoJTFl8/hqdefault.jpg",
+"title": "誕生日なのでお月見",
+"video_id": "TVusaoJTFl8"
 },
 "lives": 343,
 "name": "天倉りぃ",
@@ -178451,9 +178608,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/QDf0DkUSSKU/hqdefault.jpg",
-"title": "【浮気診断】異性に「今日かわいいね」と言う【 #新人VTuber / #恋芹ハル】#健屋花那  さんの #浮気シート やってみた",
-"video_id": "QDf0DkUSSKU"
+"thumbnail": "https://i3.ytimg.com/vi/RdzQ1mnkB98/hqdefault.jpg",
+"title": "【ASMR/Binaural/FreeTalk】土曜の昼間の色々テスト雑談｜耳かき/タッピング/添い寝 #新人VTuber #恋芹ハル",
+"video_id": "RdzQ1mnkB98"
 },
 "live": {
 "started_at": "2026-11-06T15:55:23Z",
@@ -178600,9 +178757,9 @@
 "is_live": false,
 "last_live_at": "2026-11-10T15:26:39Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/U2hkQiJ_q74/hqdefault.jpg",
-"title": "🥛〖 バイオハザード７ 〗 バイオハザードシリーズ最恐といわれている７をついにプレイする時がきた・・みたい〖 小牛田みる / #vtuber  〗",
-"video_id": "U2hkQiJ_q74"
+"thumbnail": "https://i3.ytimg.com/vi/ZWoX4Ybb694/hqdefault.jpg",
+"title": "🥛〖  歌枠 〗久しぶりにお昼に歌枠やっちゃうぞおおおお❤️‍🔥 #shorts〖 小牛田みる / #vtuber 〗",
+"video_id": "ZWoX4Ybb694"
 },
 "lives": 58,
 "name": "小牛田みる / Mil Koushida",
@@ -179083,9 +179240,9 @@
 "icon": "https://yt3.ggpht.com/wIH4zYfWLv9_Im9r8ui3tCwYfduy1kJ2sfSA8KM9zksEir87e_DwZhELmoqnCqrfKUHzUSBevA=s240-c-k-c0x00ffffff-no-rj",
 "is_live": false,
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/tTeSqNKnTLo/hqdefault.jpg",
-"title": "【VTuber】ルパ・ウパ子に関する雑学(社会人編)　#新人vtuber #shorts  #切り抜き",
-"video_id": "tTeSqNKnTLo"
+"thumbnail": "https://i3.ytimg.com/vi/V8ki0TFE-Ig/hqdefault.jpg",
+"title": "世にも奇妙な初見挨拶　#新人vtuber #爆笑 #切り抜き",
+"video_id": "V8ki0TFE-Ig"
 },
 "lives": 22,
 "name": "ルパ・ウパ子",
@@ -179342,9 +179499,20 @@
 "videos": 11
 },
 "UCo_72O3SJl8xyzuzoavEmtQ": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
-"subscribers": 316
+"icon": "https://yt3.ggpht.com/X0l1PoeRzZgcix_x1c2gNfKMa0ih9w7QmFRgXT7y_chpmT07P0ezGeEWVM_Jjr4KEj78vwEnArE=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i4.ytimg.com/vi/go51TV_X1Zc/hqdefault.jpg",
+"title": "VTuberの喜怒哀楽！アーマードコア編！！ #armoredcore6  #新人vtuber #アーマードコア6",
+"video_id": "go51TV_X1Zc"
+},
+"lives": 203,
+"name": "壬照リアch / Misute Ria@新人Vtuber",
+"shorts": 7,
+"subscribers": 316,
+"videos": 3
 },
 "UCo_7o_GNFcZ2SsYrrdNh4xQ": {
 "counts_at": "2026-11-16T20:00:53Z",
@@ -179527,6 +179695,7 @@
 },
 "UCofE7kd8JReqL77iNsQz2Rg": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:01:07Z",
 "icon": "https://yt3.ggpht.com/VEnH01AXgv5MmcwE0QIYSsJ6INv2KnVEUzsenaF2mSuKQgb7ohVCdj6gvGqXuqhOjWzx5OMbsQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -179534,7 +179703,9 @@
 "title": "【R.E.P.O.】雪の音CUPお疲れ様会！！！【#新人VTuber　#きたちさく】",
 "video_id": "7izPXMx7geA"
 },
+"lives": 16,
 "name": "きたちさく‐KITATISAKU",
+"shorts": 3,
 "subscribers": 20
 },
 "UCofzZYhPJugHRFy4JEKhttw": {
@@ -180986,9 +181157,20 @@
 "videos": 7
 },
 "UCp1BAxX3B5QJIX1HOLtnQVA": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T19:30:50Z",
-"subscribers": 133
+"icon": "https://yt3.ggpht.com/-ukj2psHr2pEy8yG1gQkX-i5YqwKSuqNTDY_s4Ip-Rc3ARCB9MbiXsbyVqmDHUDfTnAEpF1INw=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i4.ytimg.com/vi/C3hpf1GJwxc/hqdefault.jpg",
+"title": "【 初配信 】はじめまして！ゴキブリ食べます！【 #新人vtuber / 白天 】",
+"video_id": "C3hpf1GJwxc"
+},
+"lives": 1,
+"name": "白天 / hakua",
+"shorts": 1,
+"subscribers": 133,
+"videos": 2
 },
 "UCp1H5Jt_ihUIUAIQCc-9hzw": {
 "counts_at": null,
@@ -181015,7 +181197,7 @@
 "last_live_at": "2026-11-16T17:08:26Z",
 "latest": {
 "thumbnail": "https://i3.ytimg.com/vi/ZPKIGaNpkh0/hqdefault.jpg",
-"title": "【VALORANT】謎のメンバーでカスタム",
+"title": "【VALORANT】謎のメンバーでカスタム┊がおまる。/ダイアウルフ/びつくり/まいくろさん/まさぴーや/まんじちゃん。/夜透 遥/しお/姫崎クト",
 "video_id": "ZPKIGaNpkh0"
 },
 "lives": 205,
@@ -181678,9 +181860,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T05:58:11Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/tq11pFmibV0/hqdefault.jpg",
-"title": "【 #Vtuber JP】雑談 chatting EN/ES OK!【同志かりん / Comrade Karin】",
-"video_id": "tq11pFmibV0"
+"thumbnail": "https://i3.ytimg.com/vi/Bit0_aHPVsU/hqdefault.jpg",
+"title": "【 #Vtuber JP】＃３モンスターハンターアウトランダーズ 初見！ Monster Hunter Outlanders EN/ES OK!【PR】【同志かりん / Comrade Karin】",
+"video_id": "Bit0_aHPVsU"
 },
 "lives": 778,
 "name": "同志かりんComrade_Karin🐰🛸",
@@ -182380,7 +182562,7 @@
 },
 "name": "空白ねむり -Sorashiro Nemuri-",
 "shorts": 4,
-"subscribers": 140,
+"subscribers": 141,
 "videos": 1
 },
 "UCpYzhFyrOzDmJm4gnsE0R5w": {
@@ -182653,7 +182835,7 @@
 },
 "lives": 198,
 "name": "シオン・ディラン・ガーディナー",
-"subscribers": 608,
+"subscribers": 609,
 "videos": 1
 },
 "UCpd5lmtHiF-MGKu7LUMiqDA": {
@@ -182752,9 +182934,9 @@
 "first_seen": "2026-11-19T13:33:44Z",
 "icon": "https://yt3.ggpht.com/6T-v16j_f6m39ZnK90BNcWZdVT0N253oGk5Yj11yXvMTaBaIRZlRnUJWx_j5VtdY5mbwru48=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/oBGcgXSvm7Y/hqdefault.jpg",
-"title": "【#鳴潮 】Ver4.0新キャラ先行映像きた！完全初見でアンナとルシェルの攻撃モーション見る！！  【 #顔出し配信 #wutheringwaves  】",
-"video_id": "oBGcgXSvm7Y"
+"thumbnail": "https://i4.ytimg.com/vi/K7l4gKLTsqM/hqdefault.jpg",
+"title": "【#NTE 】『にくきゅう大強盗 THE MONEY Vol.1』神沢有紗視点！【 #顔出し配信 #ネバエバ #nevernesstoeverness 】",
+"video_id": "K7l4gKLTsqM"
 },
 "lives": 495,
 "name": "神沢有紗 / Kanzawa arisa",
@@ -183133,7 +183315,7 @@
 "lives": 426,
 "name": "Y-G-B",
 "shorts": 884,
-"subscribers": 1220,
+"subscribers": 1230,
 "videos": 1131
 },
 "UCplP8bFs7jqJyGm3XZrQhtg": {
@@ -183252,7 +183434,7 @@
 "lives": 149,
 "name": "愛狂ゆめ🖤🌸",
 "shorts": 36,
-"subscribers": 481,
+"subscribers": 480,
 "videos": 8
 },
 "UCpnkblum-IYHWN8sUAK8PwQ": {
@@ -183275,7 +183457,7 @@
 "lives": 41,
 "name": "Libyän cHörd",
 "shorts": 1,
-"subscribers": 107,
+"subscribers": 108,
 "via": "snowball",
 "videos": 11
 },
@@ -183552,7 +183734,7 @@
 "lives": 528,
 "name": "Retro Dee 歌人",
 "shorts": 249,
-"subscribers": 3810,
+"subscribers": 3800,
 "videos": 132
 },
 "UCptq7f89bQaTap4T4KTrrvQ": {
@@ -183903,7 +184085,7 @@
 },
 "name": "アギアメ",
 "shorts": 47,
-"subscribers": 3160
+"subscribers": 3170
 },
 "UCq0OLsVA6ncohDCEdCRzYEA": {
 "counts_at": null,
@@ -184697,9 +184879,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T17:03:44Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/zRL8eLtPuDI/hqdefault.jpg",
-"title": "【#TJA4RUST 】DAY6　レイドイベント観戦するよ～！　11/21【星屑ゆぅみ/Vtuber】",
-"video_id": "zRL8eLtPuDI"
+"thumbnail": "https://i2.ytimg.com/vi/55p8pErVkTo/hqdefault.jpg",
+"title": "【#TJA4RUST 】DAY6　メモの謎を解きたい　11/21【星屑ゆぅみ/Vtuber】",
+"video_id": "55p8pErVkTo"
 },
 "lives": 891,
 "name": "星屑ゆぅみ",
@@ -184812,9 +184994,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:00:51Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/6bALdcAaZ6s/hqdefault.jpg",
-"title": "【#雑談 】雑談したり12月の配信予定を話したり【杏華イリア/新人Vtuber】",
-"video_id": "6bALdcAaZ6s"
+"thumbnail": "https://i3.ytimg.com/vi/vrYhsLmzX84/hqdefault.jpg",
+"title": "【#雑談 】みんなにおはようって言いたい！朝活配信【杏華イリア/新人Vtuber】",
+"video_id": "vrYhsLmzX84"
 },
 "lives": 183,
 "name": "杏華イリア",
@@ -185046,9 +185228,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:46:19Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/NBbMYRrBKbU/hqdefault.jpg",
-"title": "【 #サンリオパーティランド 】5回目のパーティすんで〜！🎀【 月紫乃むに ⏾ Vtuber 】",
-"video_id": "NBbMYRrBKbU"
+"thumbnail": "https://i4.ytimg.com/vi/kmEpjKhX6Ps/hqdefault.jpg",
+"title": "【VALORANT】2026/11/20 ふるぱこんぺ .ᐟ 【 月紫乃むに ⏾ Vtuber 】",
+"video_id": "kmEpjKhX6Ps"
 },
 "lives": 1012,
 "name": "月紫乃むに / Tsukishino Muni",
@@ -185444,9 +185626,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T12:46:40Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/enCrUfrB6oU/hqdefault.jpg",
-"title": "月猫ロゼのファンクラブ(CREATIA)紹介！",
-"video_id": "enCrUfrB6oU"
+"thumbnail": "https://i2.ytimg.com/vi/aRyhVkBwqrs/hqdefault.jpg",
+"title": "【#歌枠 /#耐久 】ch登録者1500名様目指して歌います！【月猫ロゼ/#vsinger 】#新人vtuber #配信中",
+"video_id": "aRyhVkBwqrs"
 },
 "lives": 153,
 "name": "月猫ロゼ",
@@ -185534,7 +185716,7 @@
 },
 "name": "ノメリコ・メリコメリー",
 "shorts": 27,
-"subscribers": 774
+"subscribers": 778
 },
 "UCqWQjy_FC0FuH5_-ittTrrQ": {
 "counts_at": null,
@@ -185652,7 +185834,7 @@
 "lives": 178,
 "name": "Ichi Channel",
 "shorts": 13,
-"subscribers": 215
+"subscribers": 216
 },
 "UCqYXJ5M55HWE6zyvl6rjIaA": {
 "counts_at": null,
@@ -185735,7 +185917,7 @@
 "lives": 395,
 "name": "はくさくチャンネル【兄妹VTuber】",
 "shorts": 20,
-"subscribers": 847,
+"subscribers": 846,
 "videos": 14
 },
 "UCqZosdEPHbX9V4hWYU9yYmQ": {
@@ -186101,7 +186283,7 @@
 "lives": 257,
 "name": "三日月まひろ",
 "shorts": 39,
-"subscribers": 471,
+"subscribers": 473,
 "videos": 26
 },
 "UCqeNMzI6s0rvsU6m0vIzlaw": {
@@ -186431,7 +186613,7 @@
 },
 "lives": 98,
 "name": "ねむりぽんこch ",
-"subscribers": 8400
+"subscribers": 8390
 },
 "UCqjNEFUWj0SkMq6hkKHFuNA": {
 "counts_at": "2026-11-19T15:00:54Z",
@@ -187322,9 +187504,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T06:26:31Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/AkbQF2n_UyA/hqdefault.jpg",
-"title": "【#スプラ3】今シーズンも残りわずか！エリア！昼活Xマッチ！！【#初見さん大歓迎 】",
-"video_id": "AkbQF2n_UyA"
+"thumbnail": "https://i2.ytimg.com/vi/QVSgYjEpaPw/hqdefault.jpg",
+"title": "【#スプラトゥーン3 】いきなり対抗戦！？固定チーム候補メンバーと戦え！",
+"video_id": "QVSgYjEpaPw"
 },
 "lives": 681,
 "name": "赤須あんず🐣姉貴系Vtuber",
@@ -187589,9 +187771,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T03:43:27Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/x1dNo83n5BI/hqdefault.jpg",
-"title": "【DBD】ハッチ脱出通算1000回行くまで耐久配信 2026年 #126",
-"video_id": "x1dNo83n5BI"
+"thumbnail": "https://i2.ytimg.com/vi/E96SY6DNndQ/hqdefault.jpg",
+"title": "【DBD】ハッチ脱出だけで彩Ⅰ目指す朝活2026年 #127",
+"video_id": "E96SY6DNndQ"
 },
 "lives": 925,
 "name": "のりたまchannel",
@@ -187682,9 +187864,9 @@
 "first_seen": "2026-11-18T04:00:51Z",
 "icon": "https://yt3.ggpht.com/7Rp9uVeC4kGRde_Je2P5FWDPttp4nZoxfDcbneREloc7ck_nxEH2eV4eyfgUZ0i4ICmOIY2BnQ=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/Y7Cs5ZmmfVs/hqdefault.jpg",
-"title": "【godfield】【ゴッドフィールド】はじめてのお兄ちゃんに手取り足取り！みんなでゴッフィ！【#視聴者参加型 】【#新人vtuber 】",
-"video_id": "Y7Cs5ZmmfVs"
+"thumbnail": "https://i2.ytimg.com/vi/uvr4ZQZUdWo/hqdefault.jpg",
+"title": "【#昼活 】不器用星人だから作業か雑談かどっちかしかできないよ！【#新人vtuber 】",
+"video_id": "uvr4ZQZUdWo"
 },
 "lives": 242,
 "name": "描織すもも",
@@ -187852,7 +188034,7 @@
 "lives": 71,
 "name": "愛音あいら / Aira Ch.",
 "shorts": 153,
-"subscribers": 783,
+"subscribers": 784,
 "videos": 29
 },
 "UCrAjR9MG87ZUKY0diWwEtsw": {
@@ -188974,7 +189156,7 @@
 "lives": 405,
 "name": "織部友瑠",
 "shorts": 14,
-"subscribers": 420,
+"subscribers": 421,
 "videos": 2
 },
 "UCrUP1_kMDDFq8W_X0DUDnaw": {
@@ -189174,7 +189356,7 @@
 },
 "name": "電球ちゃんねる / DENQ ch",
 "shorts": 7,
-"subscribers": 133,
+"subscribers": 132,
 "videos": 2
 },
 "UCrWL2OjRMB224oRv1Ya2BVA": {
@@ -190209,7 +190391,7 @@
 "lives": 644,
 "name": "RukikiRuki ch.るききるき",
 "shorts": 87,
-"subscribers": 2650,
+"subscribers": 2640,
 "videos": 67
 },
 "UCrsSgmQUv-mGxeCnZ6ZvWkA": {
@@ -190258,9 +190440,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/qTeGiFWsldA/hqdefault.jpg",
-"title": "【 #踊ってみた 】Sour Grapes / NiziU(니쥬)【 蛇宵ティア / ななしいんく 】#shorts #sourgrapes #niziu",
-"video_id": "qTeGiFWsldA"
+"thumbnail": "https://i1.ytimg.com/vi/HkBJ8sPpAWg/hqdefault.jpg",
+"title": "【 Lightyear Frontier #4 】え、人がやってきて農場をさらに効率よく…！【 蛇宵ティア / ななしいんく 】",
+"video_id": "HkBJ8sPpAWg"
 },
 "live": {
 "started_at": "2026-11-17T10:00:58Z",
@@ -190487,7 +190669,7 @@
 "lives": 545,
 "name": "宵闇しろは",
 "shorts": 24,
-"subscribers": 2680,
+"subscribers": 2690,
 "videos": 13
 },
 "UCrw0OGYmsvclkFdl1YXLj8Q": {
@@ -190777,9 +190959,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0tgiCnfxVto/hqdefault.jpg",
-"title": "【 #モンスターハンターアウトランダーズ 】#5 めちゃくちゃ楽しみ！！！一緒に遊ぼう！！【恋色知花／個人勢Vtuber／配信中】",
-"video_id": "0tgiCnfxVto"
+"thumbnail": "https://i4.ytimg.com/vi/giK6pkJx6RE/hqdefault.jpg",
+"title": "【 #モンスターハンターアウトランダーズ 】#6 めちゃくちゃ楽しみ！！！一緒に遊ぼう！！【恋色知花／個人勢Vtuber／配信中】",
+"video_id": "giK6pkJx6RE"
 },
 "live": {
 "started_at": "2026-11-17T10:01:23Z",
@@ -190873,9 +191055,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T10:38:51Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/YJDrkZJLoXY/hqdefault.jpg",
-"title": "テキチェン配信　久しぶり　２４日目（#テキサスチェーンソー　#vtuber）",
-"video_id": "YJDrkZJLoXY"
+"thumbnail": "https://i4.ytimg.com/vi/G17TOdacYKQ/hqdefault.jpg",
+"title": "DBD配信　ランク上げ　４６６日目　#deadbydaylight #デッドバイデイライト #vtuber  ）",
+"video_id": "G17TOdacYKQ"
 },
 "lives": 6362,
 "name": "ホーリー・グレイトフル・マッスル",
@@ -191181,9 +191363,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T01:54:28Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/zzxuCrS1B7I/hqdefault.jpg",
-"title": "【Jump King／朝活実況】難しすぎる超鬼畜ゲーム！クリアするまで終われない配信！【雪兎ちゃう／ライブ配信中】",
-"video_id": "zzxuCrS1B7I"
+"thumbnail": "https://i3.ytimg.com/vi/bcyE9ND5Mp8/hqdefault.jpg",
+"title": "【ライブ配信／Jump King／朝活実況】リベンジ！難しすぎる超鬼畜ゲーム！クリアするまで終われない配信！【雪兎ちゃう／配信中】",
+"video_id": "bcyE9ND5Mp8"
 },
 "lives": 1017,
 "name": "Chau Ch.雪兎ちゃう",
@@ -191203,9 +191385,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/uA327IM0ln4/hqdefault.jpg",
-"title": "【 #Splatoon3 】調子悪すぎて泣く【 #Vtuber / つけもの 】",
-"video_id": "uA327IM0ln4"
+"thumbnail": "https://i3.ytimg.com/vi/fVWm0uRGUq4/hqdefault.jpg",
+"title": "【 #Splatoon3 】トライストリンガー使えるってかっこよくない？【 #Vtuber / つけもの 】",
+"video_id": "fVWm0uRGUq4"
 },
 "live": {
 "started_at": "2026-11-17T10:45:16Z",
@@ -191832,9 +192014,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T12:05:43Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/F379hfO8U08/hqdefault.jpg",
-"title": "【#ゼルダの伝説】初代ゼルダ完全初見！12時間で裏ゼルダクリア目指す！！【#霧間ミエル】【#Vtuber】",
-"video_id": "F379hfO8U08"
+"thumbnail": "https://i2.ytimg.com/vi/mLiobpY4Cls/hqdefault.jpg",
+"title": "【#ゼルダの伝説】※二枠目 Day１❤初代ゼルダ完全初見！12時間で裏ゼルダクリア目指す！！【#霧間ミエル】【#Vtuber】",
+"video_id": "mLiobpY4Cls"
 },
 "lives": 1318,
 "name": "霧間ミエル-Mieru CH-",
@@ -192095,9 +192277,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T19:38:27Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/ig4iFKoYzhs/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/kzUTjVJKTbw/hqdefault.jpg",
 "title": "もしかしたらタルタロスって無限迷宮なんじゃ・・・【ネタバレ注意】#ペルソナ3リロード    ＃新人Vtuber　＃Vtuber　＃初見さん大歓迎　＃個人Vtuber",
-"video_id": "ig4iFKoYzhs"
+"video_id": "kzUTjVJKTbw"
 },
 "lives": 83,
 "name": "二名　琳子　(ふたな　りんこ)",
@@ -192159,9 +192341,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:41:25Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/tUBDQH2tSYY/hqdefault.jpg",
-"title": "【サッカー同時視聴】リヴァプール vs マンチェスターユナイテッド【サッカー好きVtuber】",
-"video_id": "tUBDQH2tSYY"
+"thumbnail": "https://i2.ytimg.com/vi/5mpzW2ijMt8/hqdefault.jpg",
+"title": "【サッカー同時視聴】チェルシー vs リーズ【サッカー好きVtuber】",
+"video_id": "5mpzW2ijMt8"
 },
 "lives": 106,
 "name": "ジャスミン_サッカー好きVTuber",
@@ -192287,7 +192469,7 @@
 },
 "name": "夕空ぷくく -Yuuzora Pukuku-",
 "shorts": 213,
-"subscribers": 874,
+"subscribers": 875,
 "videos": 25
 },
 "UCsTCqXCfLrfjnVJBVFq2kDw": {
@@ -192823,7 +193005,7 @@
 "lives": 28,
 "name": "夜綴むにゃ / Yotsuduri Munya",
 "shorts": 24,
-"subscribers": 34100,
+"subscribers": 34200,
 "videos": 1
 },
 "UCsZwgbAb_wytcKAulg75ERg": {
@@ -193074,9 +193256,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:33:41Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/dXmNU7dk3YM/hqdefault.jpg",
-"title": "「【#FANTATALE/#PR】10/22よりサービス開始したばかりの新作MMORPG⚔【#ファンタテイル #個人勢vtuber #生真黒】#5」のコピー",
-"video_id": "dXmNU7dk3YM"
+"thumbnail": "https://i4.ytimg.com/vi/KrELW_BTMf0/hqdefault.jpg",
+"title": "【#ロックマン8/#後編】初見プレイ！宇宙から隕石落下！謎のロボット、デューオ登場【#初見プレイ #生真黒 #個人勢Vtuber】",
+"video_id": "KrELW_BTMf0"
 },
 "lives": 644,
 "name": "Maguro Ch. 真黒猫",
@@ -193214,14 +193396,14 @@
 "is_live": false,
 "last_live_at": "2026-11-16T15:47:13Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/mXNK6ALzt0Y/hqdefault.jpg",
+"thumbnail": "https://i1.ytimg.com/vi/lPQydCfzR_o/hqdefault.jpg",
 "title": "【コラボ配信縦型】深海リルさんとBIOHAZARD6をやってくよ～🌟　【新人Vtuber】【BIOHAZARD6】",
-"video_id": "mXNK6ALzt0Y"
+"video_id": "lPQydCfzR_o"
 },
 "lives": 398,
 "name": "天海麗華ちゃんねる",
 "shorts": 35,
-"subscribers": 531,
+"subscribers": 530,
 "via": "snowball",
 "videos": 21
 },
@@ -194761,9 +194943,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T14:10:16Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/kBwxe5Pqg30/hqdefault.jpg",
-"title": "GTA6をついにやるぞー！②【ゲーム雑談】【GTA Ⅵ】 #shorts #live #gta6",
-"video_id": "kBwxe5Pqg30"
+"thumbnail": "https://i4.ytimg.com/vi/s--WT5rR0B0/hqdefault.jpg",
+"title": "古典の授業あるある：混乱する古典単語「おろか」 #shorts #古文 #あるある #古文単語 #vtuber",
+"video_id": "s--WT5rR0B0"
 },
 "lives": 782,
 "name": "雨峰あまね",
@@ -195087,9 +195269,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T17:38:30Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/gju51Cb5qhs/hqdefault.jpg",
-"title": "【 Escape from Playtime 】廃墟と化したおもちゃ工場に閉じ込められちゃったぁあああ？！！ 累皐月視点【 #vtuber #コラボ 】",
-"video_id": "gju51Cb5qhs"
+"thumbnail": "https://i3.ytimg.com/vi/VLh5pTnaaiw/hqdefault.jpg",
+"title": "【 JOYSOUND for STREAMER 】久々に歌いたいってわけよ！ 【 #歌枠 #karaoke #累皐月 #vtuber 】",
+"video_id": "VLh5pTnaaiw"
 },
 "lives": 694,
 "name": "累皐月-かさねさつき-",
@@ -195104,9 +195286,9 @@
 "first_seen": "2026-11-19T01:00:52Z",
 "icon": "https://yt3.ggpht.com/DIuSf2C_VdW-dMpQIbOcr0EHN16lAMtfuX8XayMZtaIticc58hRSk1i8n13d-wrwfxMm54CLn9Q=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/TF_eMTW2pzo/hqdefault.jpg",
-"title": "[VTUBER] Golfe com ozamigo",
-"video_id": "TF_eMTW2pzo"
+"thumbnail": "https://i2.ytimg.com/vi/eGxpXwSH4yw/hqdefault.jpg",
+"title": "[VTUBER] Oi turupom",
+"video_id": "eGxpXwSH4yw"
 },
 "lives": 58,
 "name": "Isys",
@@ -195299,7 +195481,7 @@
 "lives": 141,
 "name": "Thyr",
 "shorts": 96,
-"subscribers": 2270,
+"subscribers": 2280,
 "videos": 73
 },
 "UCtIxjJH_5nOfV8dMqiBO-iA": {
@@ -195495,9 +195677,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T07:16:17Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/sAp_DkQmKmw/hqdefault.jpg",
-"title": "リスナーに遊ばれてる！？星乃と一緒にIRIAMフレンズを覚えよう！ #iriam切り抜き #推しをお探しですか #新人vtuber",
-"video_id": "sAp_DkQmKmw"
+"thumbnail": "https://i2.ytimg.com/vi/epaSlIBtGSk/hqdefault.jpg",
+"title": "【SILENT HILL f】生きてるよね？【#3】※ネタバレあり",
+"video_id": "epaSlIBtGSk"
 },
 "lives": 3,
 "name": "星乃 みこ",
@@ -195677,9 +195859,20 @@
 "videos": 2
 },
 "UCtQ18kOupoMpq7caX-QZfsw": {
-"counts_at": null,
+"counts_at": "2026-11-21T21:00:51Z",
+"counts_attempt_at": "2026-11-21T21:00:51Z",
 "first_seen": "2026-11-21T20:00:52Z",
-"subscribers": 908
+"icon": "https://yt3.ggpht.com/6qRcMH6DKzVFklOHelLNKQSaYqE2-A9rSHxUuehpTRpCarYij5ISeFrllrRhgT5TApYQpJRiZA=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i4.ytimg.com/vi/3YdL3YYergY/hqdefault.jpg",
+"title": "【#歌枠 】ゲリラ歌枠【#新人Vtuber 】",
+"video_id": "3YdL3YYergY"
+},
+"lives": 52,
+"name": "蛇園かのん",
+"shorts": 67,
+"subscribers": 908,
+"videos": 26
 },
 "UCtQYWx3MKr8SDGyHe2e_6wA": {
 "counts_at": "2026-11-15T09:00:45Z",
@@ -195956,9 +196149,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:07:06Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/ZHochHuAju8/hqdefault.jpg",
-"title": "平和(笑)はどこへ 醜い押し付け合い☠️",
-"video_id": "ZHochHuAju8"
+"thumbnail": "https://i3.ytimg.com/vi/2OYiQXWauqk/hqdefault.jpg",
+"title": "色の順番が鬼畜すぎｗ パニック不可避の解除",
+"video_id": "2OYiQXWauqk"
 },
 "lives": 185,
 "name": "明架多ネイ",
@@ -196589,9 +196782,9 @@
 "is_live": false,
 "last_live_at": "2026-11-10T11:11:13Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GcnXeQZiiPw/hqdefault.jpg",
-"title": "29【Fall Guys / フォールガイズ】初見さん歓迎！妨害有りソロランク！【蜂井ちぃず / #新人Vtuber】",
-"video_id": "GcnXeQZiiPw"
+"thumbnail": "https://i3.ytimg.com/vi/ffHOKq_DtPU/hqdefault.jpg",
+"title": "＃01【イナズマイレブン 英雄たちのヴィクトリーロード】イケメンはどこだ！？【蜂井ちぃず / #新人Vtuber】",
+"video_id": "ffHOKq_DtPU"
 },
 "lives": 63,
 "name": "蜂井ちぃず / Honey Cheese",
@@ -197532,9 +197725,9 @@
 "first_seen": "2026-11-19T03:42:03Z",
 "icon": "https://yt3.ggpht.com/wBALIaxAxiihby2oaSU-qyTXA3clVulZkpJWAXuqRGIxIsNZ3tW5oh74vniVv5SgW95iCc9Gcw=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/w9p1L_AkNeY/hqdefault.jpg",
-"title": "【 モンハン / PR 】#8 強い素材で強い装備を作りたい！協力求む☆冒険ランク２８【 #モンハンアウトランダーズ 】",
-"video_id": "w9p1L_AkNeY"
+"thumbnail": "https://i2.ytimg.com/vi/MbEfkNpBnDE/hqdefault.jpg",
+"title": "【ユナイト/初見歓迎】最後の大会のために魂込めてメイジを使い倒す！マスター５７２～【ランクマ/参加型】",
+"video_id": "MbEfkNpBnDE"
 },
 "lives": 1132,
 "name": "凛堂すずか / Suzuka Rindo",
@@ -198300,7 +198493,7 @@
 "lives": 389,
 "name": "ぬしぃ",
 "shorts": 21,
-"subscribers": 383,
+"subscribers": 385,
 "videos": 2
 },
 "UCu7AsixLY16zx2Kza5Dtkww": {
@@ -198329,7 +198522,7 @@
 "lives": 1027,
 "name": "猫森彩奈のにくきゅうぷにぷに",
 "shorts": 22,
-"subscribers": 1520,
+"subscribers": 1530,
 "videos": 6
 },
 "UCu7EpRfsdeum6B3kcfQD1fA": {
@@ -199025,7 +199218,7 @@
 "lives": 75,
 "name": "江暮ありす🍫🐿️歌と謎解き系Vtuber",
 "shorts": 9,
-"subscribers": 46,
+"subscribers": 47,
 "via": "snowball",
 "videos": 4
 },
@@ -199627,9 +199820,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T12:20:22Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/kpFeVXswgnc/hqdefault.jpg",
-"title": "【#ヘブバン】完全初見！『剣客師弟、目指すは湯けむり山籠もり』※ネタバレ注意【 咲麗ベル / #新人Vtuber 】",
-"video_id": "kpFeVXswgnc"
+"thumbnail": "https://i2.ytimg.com/vi/MILku5vzcjw/hqdefault.jpg",
+"title": "【 snaq.me 】✨クーポン11/30まで✨ おやつ食レポ第2回！#PR #スナックミー",
+"video_id": "MILku5vzcjw"
 },
 "lives": 245,
 "name": "咲麗ベル / SakiuraBell",
@@ -199680,9 +199873,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T02:51:54Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/uYNECbE5YN4/hqdefault.jpg",
-"title": "【#歌枠 /#KARAOKE 】久しぶりに歌うよ～ん！初見＆ROM大歓迎！【真宵猫・深明向結輝/#vtuberグループ 】",
-"video_id": "uYNECbE5YN4"
+"thumbnail": "https://i2.ytimg.com/vi/uP6frTcJeU4/hqdefault.jpg",
+"title": "【＃WarThunder/参加型/朝活】#148　念願のHo229まで残り1機！研究開発を急ぐぞ！　【真宵猫：創物ぽい　 ＃新人グループVtuber】",
+"video_id": "uP6frTcJeU4"
 },
 "lives": 2449,
 "name": "真宵猫",
@@ -199966,9 +200159,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T20:24:05Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/5F77ohpz2f4/hqdefault.jpg",
-"title": "今日も深夜に大騒ぎ‼️📢【 #Vtuber / #雑談 / #初見歓迎 】",
-"video_id": "5F77ohpz2f4"
+"thumbnail": "https://i1.ytimg.com/vi/xTf8oLf1z9w/hqdefault.jpg",
+"title": "【 #FF14 視聴者参加型 】暁月のフィナーレ ♯1　―NimoKozuyaとエオチェキの旅―【 #Vtuber / #ManaDC / #既プレイ 】",
+"video_id": "xTf8oLf1z9w"
 },
 "lives": 780,
 "name": "Nimo Channel",
@@ -200343,7 +200536,7 @@
 "lives": 1,
 "name": "やちえる",
 "shorts": 18,
-"subscribers": 35
+"subscribers": 36
 },
 "UCuiApgxtAQd2xPxdI15TS4A": {
 "counts_at": "2026-11-21T05:00:54Z",
@@ -200925,9 +201118,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T13:00:12Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/bx7Dl7qWeik/hqdefault.jpg",
-"title": "「俺はお前だけ」なのに、誰とでも寝る恋人（布団） #Shorts",
-"video_id": "bx7Dl7qWeik"
+"thumbnail": "https://i4.ytimg.com/vi/WabGROcWACY/hqdefault.jpg",
+"title": "【身支度雑談】準備ができるまで、ちょっとだけお話しよ🌙【#VTuber /#華仙りっか】",
+"video_id": "WabGROcWACY"
 },
 "lives": 308,
 "name": "華仙りっか",
@@ -201055,9 +201248,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T16:18:40Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/0xlYr9tgm5g/hqdefault.jpg",
-"title": "【お絵描き雑談】お絵描き作業と新マイク！！！！【新人VTuder】",
-"video_id": "0xlYr9tgm5g"
+"thumbnail": "https://i4.ytimg.com/vi/sicBCEM2_do/hqdefault.jpg",
+"title": "皆様まことに突然ですが……！ #新人vtuberを発掘せよ",
+"video_id": "sicBCEM2_do"
 },
 "lives": 21,
 "name": "狗威 送-Inui Sou-【送り狼セルフ受肉Vtuber】",
@@ -201475,7 +201668,7 @@
 "lives": 1450,
 "name": "雨翠けろひ。-USUI KEROPI-",
 "shorts": 154,
-"subscribers": 952,
+"subscribers": 955,
 "videos": 310
 },
 "UCv1KOiaRusvqOR4BrT9Sh8w": {
@@ -201686,9 +201879,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:54:12Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/KzrFO8l_wEY/hqdefault.jpg",
+"thumbnail": "https://i2.ytimg.com/vi/iYaNL0g7744/hqdefault.jpg",
 "title": "配信34日目　YOZORACity day26　【ﾊﾔｸﾌﾄﾞｳｻﾝｼﾀｲ2】",
-"video_id": "KzrFO8l_wEY"
+"video_id": "iYaNL0g7744"
 },
 "lives": 29,
 "name": "VTuber猫宮琥珀",
@@ -202237,9 +202430,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T03:51:33Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/Vs5R80YCbPA/hqdefault.jpg",
-"title": "【#新人Vtuber】初見さんROM歓迎！寒すぎて布団から出られない人も来てね🥰💫ギターもある🔰声低めの脱線多めの朝活雑談【#雑談】2026/11/21",
-"video_id": "Vs5R80YCbPA"
+"thumbnail": "https://i4.ytimg.com/vi/SlN7esm_RhY/hqdefault.jpg",
+"title": "【#新人Vtuber】ついに最終回！！楽しみだけど寂しいかも😭#ゼルダの伝説 　時のオカリナ💫初見！神ゲーリメイク！朝にちょうどいい声低めの #ゲーム実況 【2026/11/22】",
+"video_id": "SlN7esm_RhY"
 },
 "lives": 217,
 "name": "星月りおな",
@@ -202964,13 +203157,13 @@
 "is_live": false,
 "last_live_at": "2026-11-16T06:58:47Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/bbA10i6E4gA/hqdefault.jpg",
+"thumbnail": "https://i4.ytimg.com/vi/C16XGboLq-c/hqdefault.jpg",
 "title": "【星の翼】7000台をこの先生きのこるために【ランクマ朝活】",
-"video_id": "bbA10i6E4gA"
+"video_id": "C16XGboLq-c"
 },
 "lives": 1917,
 "name": "龍月Yuiちゃんねる",
-"subscribers": 2860,
+"subscribers": 2870,
 "via": "snowball",
 "videos": 11
 },
@@ -203937,6 +204130,18 @@
 "subscribers": 8090,
 "videos": 35
 },
+"UCvll2E55flkfmqN1wefdxiQ": {
+"counts_at": null,
+"first_seen": "2026-11-21T21:00:51Z",
+"icon": "https://yt3.ggpht.com/l6eSQXlqUkAXC1_0oLNohJNdMlnXde-KfEK1ciqzvVmZaJmC69XEMB1WVHuv_0y3Ox23qHocaDE=s240-c-k-c0x00ffffff-no-rj",
+"latest": {
+"thumbnail": "https://i3.ytimg.com/vi/v7_mzgM923k/hqdefault.jpg",
+"title": "【カルドセプトビギンズ】マップを支配せよ！ストーリーを進めるボードゲーム×TCG実況 第２夜【ゲーム実況】",
+"video_id": "v7_mzgM923k"
+},
+"name": "杜咲翠焔",
+"subscribers": 879
+},
 "UCvlpbZDRSMF8e3FUa49jSbw": {
 "counts_at": null,
 "done": [
@@ -204255,7 +204460,7 @@
 "lives": 147,
 "name": "N番囚人のえぬた Enuta in Panopticon",
 "shorts": 40,
-"subscribers": 356,
+"subscribers": 357,
 "via": "snowball",
 "videos": 12
 },
@@ -204418,9 +204623,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/KhDcdgxQwYM/hqdefault.jpg",
-"title": "リングフィットアドベンチャー　運動不足解消する",
-"video_id": "KhDcdgxQwYM"
+"thumbnail": "https://i3.ytimg.com/vi/nbjdgWFvNZI/hqdefault.jpg",
+"title": "ドレイク財宝に心当たりがあるアウロラ母さん  ファイアーエムブレム",
+"video_id": "nbjdgWFvNZI"
 },
 "live": {
 "started_at": "2026-11-17T10:00:42Z",
@@ -205676,9 +205881,9 @@
 "first_seen": "2026-11-20T00:00:57Z",
 "icon": "https://yt3.ggpht.com/Q2RQOgCmHjilrFKurR6388gSFmkDUyABKCzRUvVNF0MRkGptEAUks-ssX5qZXOCOSXbma_Em=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/S9qhecezH74/hqdefault.jpg",
-"title": "【エンドフィールド】ミラー同時視聴🎥新バージョン&2.0先取り情報予告特別番組【Vtuber／猫田なつな】",
-"video_id": "S9qhecezH74"
+"thumbnail": "https://i4.ytimg.com/vi/gLUTPctyoSk/hqdefault.jpg",
+"title": "【初見歓迎🌼朝活雑談】三連休なにする？おしえておしえて～！【Vtuber／猫田なつな】",
+"video_id": "gLUTPctyoSk"
 },
 "lives": 1490,
 "name": "猫田 なつな / Nukota Ch.",
@@ -205716,9 +205921,9 @@
 "is_live": false,
 "last_live_at": "2026-11-08T23:49:16Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/_PgQqStDDBw/hqdefault.jpg",
-"title": "【朝活】そろそろ寝坊せずに朝活しませんか??【＃新人Vtuber】",
-"video_id": "_PgQqStDDBw"
+"thumbnail": "https://i3.ytimg.com/vi/B9vZd8F4Nc8/hqdefault.jpg",
+"title": "【歌枠】いいツインテールの日らしいのでツインテで歌うが機材、ついてこれるか…??【＃新人Vtuber】",
+"video_id": "B9vZd8F4Nc8"
 },
 "lives": 220,
 "name": "天狐てん / TenkoTen Ch.",
@@ -206119,7 +206324,7 @@
 "lives": 3,
 "name": "人生ガラス張り系VTuber   野梅 のるきゅー",
 "shorts": 16,
-"subscribers": 781,
+"subscribers": 782,
 "videos": 83
 },
 "UCwH_BPyxf0vSEooegrQCKpQ": {
@@ -206316,9 +206521,9 @@
 "is_live": true,
 "last_live_at": "2026-11-17T11:00:53Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/XgSi-qjq3s8/hqdefault.jpg",
-"title": "【耐久】初見さんが来ないと即終了する配信です。【新人Vtuber、雑談企画】",
-"video_id": "XgSi-qjq3s8"
+"thumbnail": "https://i1.ytimg.com/vi/P_KP50s68BM/hqdefault.jpg",
+"title": "【耐久】歌いながら足つぼジャンプをする配信です。【新人Vtuber、雑談企画】",
+"video_id": "P_KP50s68BM"
 },
 "live": {
 "started_at": "2026-11-17T06:43:00Z",
@@ -208023,7 +208228,7 @@
 "lives": 1533,
 "name": "卯花柚希🐇🍊UnohanaYuzuki",
 "shorts": 940,
-"subscribers": 2630,
+"subscribers": 2620,
 "via": "snowball",
 "videos": 388
 },
@@ -208123,9 +208328,9 @@
 "is_live": false,
 "last_live_at": "2026-11-15T17:18:30Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/mW7rZDSDuY4/hqdefault.jpg",
+"thumbnail": "https://i1.ytimg.com/vi/h8wgJBHXGQs/hqdefault.jpg",
 "title": "【 #APEX 】#参加型 #新人vtuber 今日は深夜ランクだよ！",
-"video_id": "mW7rZDSDuY4"
+"video_id": "h8wgJBHXGQs"
 },
 "lives": 134,
 "name": "焼肉亭 食(たべる)@Vtuber",
@@ -208637,7 +208842,7 @@
 "lives": 108,
 "name": "ハザク!",
 "shorts": 403,
-"subscribers": 682,
+"subscribers": 683,
 "videos": 9
 },
 "UCx0bTr9t1nzePM0Y3gy6yAA": {
@@ -208659,14 +208864,14 @@
 "is_live": false,
 "last_live_at": "2026-11-14T18:41:37Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/etNUQic6uGQ/hqdefault.jpg",
-"title": "ごはん、はだか",
-"video_id": "etNUQic6uGQ"
+"thumbnail": "https://i2.ytimg.com/vi/QnO72-3t2Zs/hqdefault.jpg",
+"title": "【#雀魂  #参加型 】今年の土曜もあと６回ってってマ？",
+"video_id": "QnO72-3t2Zs"
 },
 "lives": 568,
 "name": "蘇芳あおば",
 "shorts": 55,
-"subscribers": 1600,
+"subscribers": 1610,
 "via": "snowball",
 "videos": 31
 },
@@ -209105,7 +209310,7 @@
 "lives": 110,
 "name": "鴨川ほとり",
 "shorts": 45,
-"subscribers": 594,
+"subscribers": 595,
 "videos": 4
 },
 "UCxBB2-Csd5bt7uQpbrlIKrg": {
@@ -209256,7 +209461,7 @@
 "lives": 18,
 "name": "ぴゅこる / PYUKORU",
 "shorts": 33,
-"subscribers": 3410,
+"subscribers": 3420,
 "via": "rechecked",
 "videos": 78
 },
@@ -209687,9 +209892,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T14:33:04Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/8N_m0p3HXGc/hqdefault.jpg",
-"title": "【雀魂】勉強→段位戦→参加型します！！！！",
-"video_id": "8N_m0p3HXGc"
+"thumbnail": "https://i3.ytimg.com/vi/RdXZjxr8t4A/hqdefault.jpg",
+"title": "【スプラ3】今更だけど初見プレイするぞぉ！！",
+"video_id": "RdXZjxr8t4A"
 },
 "lives": 33,
 "name": "めいぷ@新人Vtuber",
@@ -209746,9 +209951,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T16:26:58Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/n-XCsjqX58o/hqdefault.jpg",
-"title": "【#apexlegends 】目指せ優勝！菜希4周年記念カスタム【#vtuber 】",
-"video_id": "n-XCsjqX58o"
+"thumbnail": "https://i2.ytimg.com/vi/QGALlGpJNlE/hqdefault.jpg",
+"title": "【モンスターハンターアウトランダーズ】#７ スマホで一狩り！村長救出編【霧島ネル】",
+"video_id": "QGALlGpJNlE"
 },
 "lives": 1611,
 "name": "霧島ネル_Vtuber🍶💤",
@@ -209948,9 +210153,9 @@
 "is_live": false,
 "last_live_at": "2026-11-11T14:54:43Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/TxqCA18NTY0/hqdefault.jpg",
-"title": "[マーダーミステリー/概要欄必読]「髄まで」PL 水宮るおん視点",
-"video_id": "TxqCA18NTY0"
+"thumbnail": "https://i1.ytimg.com/vi/4NVnwerZ7Go/hqdefault.jpg",
+"title": "[スプラトゥーン3]明日のプラベに向けて #みずみゃ でコソ練",
+"video_id": "4NVnwerZ7Go"
 },
 "lives": 111,
 "name": "水宮るおんVt",
@@ -210272,7 +210477,7 @@
 "lives": 154,
 "name": "うう / UU CHANNEL",
 "shorts": 3,
-"subscribers": 415
+"subscribers": 416
 },
 "UCxUTl1l84K59tuwCIcYj3Pg": {
 "counts_at": "2026-11-18T10:00:51Z",
@@ -210950,9 +211155,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T22:08:21Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/trETyEzThko/hqdefault.jpg",
-"title": "【 3D朝活 】おはよ！恋愛取扱説明書を作ってみる！【新人Vtuber  笑来ちくわ 】雑談 / 作業 / ライブ",
-"video_id": "trETyEzThko"
+"thumbnail": "https://i3.ytimg.com/vi/n9saE0kHJbY/hqdefault.jpg",
+"title": "【朝活 / カメラ枠】料理初心者が「鶏の照り焼き」を作る！【新人Vtuber  笑来ちくわ 】雑談 / 作業 / ライブ",
+"video_id": "n9saE0kHJbY"
 },
 "lives": 474,
 "name": "笑来ちくわ / Waku Chikuwa Ch.",
@@ -210997,7 +211202,7 @@
 },
 "name": "待宵りん",
 "shorts": 8,
-"subscribers": 102
+"subscribers": 103
 },
 "UCxi7lKDY2UlkOvhOI7KvuNw": {
 "counts_at": null,
@@ -211282,7 +211487,7 @@
 "lives": 80,
 "name": "卯澄まめふゆ♡アイドルオタクVTuber",
 "shorts": 64,
-"subscribers": 960,
+"subscribers": 961,
 "videos": 6
 },
 "UCxmm4ky5H-5lljCg2VIjWFg": {
@@ -211900,9 +212105,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T15:58:48Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/qKOgK6omWno/hqdefault.jpg",
-"title": "【遊戲直播】血戰中渡橋｜《燕雲十六聲》【雪棺 嗷歐】 EP 51",
-"video_id": "qKOgK6omWno"
+"thumbnail": "https://i2.ytimg.com/vi/qIj30ctG8_8/hqdefault.jpg",
+"title": "【棺心理】大家都說你很棒，你卻覺得自己是假的？｜《冒牌者症候群》【雪棺 嗷歐】#初見歡迎 #心理學",
+"video_id": "qIj30ctG8_8"
 },
 "lives": 201,
 "name": "雪棺 嗷歐 Cuffin Owol ch.",
@@ -212124,9 +212329,9 @@
 "is_live": false,
 "last_live_at": "2026-11-17T00:18:19Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/x_QybUUr90Q/hqdefault.jpg",
+"thumbnail": "https://i2.ytimg.com/vi/yo6ZhuQE1T8/hqdefault.jpg",
 "title": "【#DbD】立ち回りについてをぼそぼそしゃべりながら！【葉せんせー/Vtuber】#DBDCreator",
-"video_id": "x_QybUUr90Q"
+"video_id": "yo6ZhuQE1T8"
 },
 "lives": 2040,
 "name": "葉せんせー / Yoh Channel",
@@ -212254,7 +212459,7 @@
 "lives": 379,
 "name": "角笛 フユ",
 "shorts": 64,
-"subscribers": 1740,
+"subscribers": 1760,
 "videos": 10
 },
 "UCy7k8ADmmkd2uYantuIxzIA": {
@@ -212941,7 +213146,7 @@
 },
 "name": "Aeris Ch. 艾雷斯",
 "shorts": 15,
-"subscribers": 6140,
+"subscribers": 6150,
 "videos": 1
 },
 "UCyPjHtSzddpqSF6BibiDLvg": {
@@ -212964,14 +213169,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T00:07:53Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/_2USP-MPqRU/hqdefault.jpg",
-"title": "【 ASMR 】囁き雑談配信｜猫に邪魔されず完遂できるのか！？【 初見さん歓迎 】",
-"video_id": "_2USP-MPqRU"
+"thumbnail": "https://i1.ytimg.com/vi/PE2SYWhFPoo/hqdefault.jpg",
+"title": "【 #朝活  】初見さん10人！おはよう30人耐久！おはよう言わせてください！【 初見さん歓迎 】",
+"video_id": "PE2SYWhFPoo"
 },
 "lives": 2,
 "name": "Kaburu Ch | かせかぶる",
 "shorts": 47,
-"subscribers": 468,
+"subscribers": 469,
 "videos": 3
 },
 "UCyS0NEslm8UqJXY1ZqASbpg": {
@@ -213511,9 +213716,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T21:16:17Z",
 "latest": {
-"thumbnail": "https://i3.ytimg.com/vi/JNOUdIKYvm8/hqdefault.jpg",
-"title": "【11.21】　初見さん歓迎　朝活雑談　　咲院燐音／Vtuber",
-"video_id": "JNOUdIKYvm8"
+"thumbnail": "https://i3.ytimg.com/vi/frtVsAbk2-I/hqdefault.jpg",
+"title": "【11.22】　初見さん歓迎　朝活雑談　　咲院燐音／Vtuber",
+"video_id": "frtVsAbk2-I"
 },
 "lives": 346,
 "name": "咲院燐音ch.",
@@ -213545,7 +213750,7 @@
 "lives": 191,
 "name": "三澄ルカ",
 "shorts": 54,
-"subscribers": 414,
+"subscribers": 415,
 "videos": 10
 },
 "UCybI6SPTB25TgXpJjiNg5XA": {
@@ -213790,7 +213995,7 @@
 "lives": 2398,
 "name": "皇　翔流",
 "shorts": 131,
-"subscribers": 7730,
+"subscribers": 7720,
 "via": "snowball",
 "videos": 19
 },
@@ -214707,7 +214912,7 @@
 "lives": 878,
 "name": "緑空みんと",
 "shorts": 4,
-"subscribers": 622,
+"subscribers": 621,
 "via": "snowball",
 "videos": 12
 },
@@ -214941,14 +215146,14 @@
 "is_live": false,
 "last_live_at": "2026-11-15T05:45:01Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/P5rPi32LZVs/hqdefault.jpg",
-"title": "【DBD】まったり近況報告雑談デドバ☁️初見さん大歓迎【新人VTuber/雨沫るう】",
-"video_id": "P5rPi32LZVs"
+"thumbnail": "https://i4.ytimg.com/vi/sc571vxmjuA/hqdefault.jpg",
+"title": "【DBD】おはよ☃️初見さん大歓迎【新人VTuber/雨沫るう】",
+"video_id": "sc571vxmjuA"
 },
 "lives": 14,
 "name": "雨沫るう / Uruma Ruu",
 "shorts": 27,
-"subscribers": 215,
+"subscribers": 216,
 "videos": 32
 },
 "UCz0O1-NRs1MEAD8A1q-KuKg": {
@@ -215017,9 +215222,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T11:39:18Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/MECJm5bbi1Q/hqdefault.jpg",
-"title": "【#艶めく黒髪歌枠リレー 】深海シェル様でカッコイイ曲歌います！ #歌枠 【#海月シェル /vtuber 】",
-"video_id": "MECJm5bbi1Q"
+"thumbnail": "https://i3.ytimg.com/vi/neaukbrFV0A/hqdefault.jpg",
+"title": "#14【ドラゴンクエストVII Reimagined】ラスボスなの？神なの！？ドラクエ7リメイクリイマジンド【#海月シェル /vtuber 】",
+"video_id": "neaukbrFV0A"
 },
 "lives": 1040,
 "name": "海月シェル Shell Ch.",
@@ -215628,7 +215833,7 @@
 "lives": 1,
 "name": "一隻呼拉",
 "shorts": 31,
-"subscribers": 161,
+"subscribers": 157,
 "videos": 2
 },
 "UCzAyt7fh2ji80kpsfGP0hwQ": {
@@ -216202,9 +216407,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T13:22:17Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/p8kz7j9Yq7M/hqdefault.jpg",
+"thumbnail": "https://i2.ytimg.com/vi/yWBNDYmoQKQ/hqdefault.jpg",
 "title": "【タルコフ/PvE/参加型】持久力あげたらプレステージ3？！！かも？！　よちよちごみ漁り人【月城優/Vtuber】　＃EFT",
-"video_id": "p8kz7j9Yq7M"
+"video_id": "yWBNDYmoQKQ"
 },
 "lives": 1981,
 "name": "月城優Vtuber",
@@ -216370,7 +216575,7 @@
 "lives": 400,
 "name": "リビィ=ドラシエル / Livy Draciel",
 "shorts": 24,
-"subscribers": 3350,
+"subscribers": 3360,
 "via": "snowball",
 "videos": 7
 },
@@ -216541,9 +216746,9 @@
 "is_live": false,
 "last_live_at": "2026-11-14T18:56:40Z",
 "latest": {
-"thumbnail": "https://i1.ytimg.com/vi/47WAbogJxbo/hqdefault.jpg",
+"thumbnail": "https://i3.ytimg.com/vi/64dl-SXaDOs/hqdefault.jpg",
 "title": "【完全初見！】はじめてロックマンエグゼを遊ぶインターネット大好き人間【Vtuber/アンナ】",
-"video_id": "47WAbogJxbo"
+"video_id": "64dl-SXaDOs"
 },
 "lives": 121,
 "name": "⭐アンナ⭐DS・任天堂レトロゲーム配信",
@@ -216564,14 +216769,14 @@
 "is_live": false,
 "last_live_at": "2026-11-05T17:33:00Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/GmaYX4gXMy8/hqdefault.jpg",
-"title": "【#ASMR】3DIO ASMR : 고생한 너의 피로를 풀어주는 방법.。o○ (≡・Ⱉ・≡) ฅ",
-"video_id": "GmaYX4gXMy8"
+"thumbnail": "https://i2.ytimg.com/vi/mCIjZGOYavg/hqdefault.jpg",
+"title": "【#ASMR】3DIO ASMR : 여행가면 못보잖아 그래서 짧게라도 얘기하고 싶어서 (≡・Ⱉ・≡) ฅ",
+"video_id": "mCIjZGOYavg"
 },
 "lives": 38,
 "name": "아오토 라떼 Aoto Latte",
 "shorts": 20,
-"subscribers": 7240,
+"subscribers": 7250,
 "via": "rechecked",
 "videos": 93
 },
@@ -216605,9 +216810,9 @@
 "is_live": null,
 "last_live_at": "2026-11-17T08:00:54Z",
 "latest": {
-"thumbnail": "https://i2.ytimg.com/vi/-dQ4CU87Cas/hqdefault.jpg",
-"title": "【相性診断】陰キャと陽キャの差【がりゅる】",
-"video_id": "-dQ4CU87Cas"
+"thumbnail": "https://i1.ytimg.com/vi/8ha721I3sGQ/hqdefault.jpg",
+"title": "【#朝活】４５人におはようって言いたい！＊6日目【#にとあさ┊︎#個人VTuber┊︎#新人VTuber┊︎#仁斗】",
+"video_id": "8ha721I3sGQ"
 },
 "live": {
 "started_at": "2026-11-17T07:00:47Z",
@@ -216895,7 +217100,7 @@
 "lives": 958,
 "name": "ダン坊",
 "shorts": 59,
-"subscribers": 4780,
+"subscribers": 4790,
 "via": "snowball",
 "videos": 11
 },
@@ -217488,9 +217693,9 @@
 "first_seen": "2026-11-21T03:00:52Z",
 "icon": "https://yt3.ggpht.com/r4i1jHlut0KIujyOcIrB1Uio_ByYxpDTWbjSM4o4AaY40VafunjGMPH6jCVXsWMheLa3c4s3Pw=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/CQ5LcT7hlXU/hqdefault.jpg",
-"title": "なんでもぷにぷにに出来ちゃうサイト、発見。 #イラスト #vtuber #shorts",
-"video_id": "CQ5LcT7hlXU"
+"thumbnail": "https://i2.ytimg.com/vi/IJXqkXTvaCk/hqdefault.jpg",
+"title": "ファイアーエムブレム～お馬と仲良し組 無双～【 ファイアーエムブレム 万紫千紅｜ 花舟ルキ 】# 26",
+"video_id": "IJXqkXTvaCk"
 },
 "lives": 240,
 "name": "花舟ルキ / KafuneLuki",
@@ -218006,9 +218211,9 @@
 "is_live": false,
 "last_live_at": "2026-11-16T23:08:59Z",
 "latest": {
-"thumbnail": "https://i4.ytimg.com/vi/wOoez_StUt0/hqdefault.jpg",
-"title": "【#ゼンゼロ】「ロビンが折り紙大学の時はこんな姿やったんかなって」【#ロビン #新人vtuber #shorts】",
-"video_id": "wOoez_StUt0"
+"thumbnail": "https://i4.ytimg.com/vi/7dcRyL7VAus/hqdefault.jpg",
+"title": "【#ぷにぷに】初見さん大歓迎！！昼から周回周回！！【#妖怪ウォッチぷにぷに #周回配信 #新人vtuber】",
+"video_id": "7dcRyL7VAus"
 },
 "lives": 248,
 "name": "九条きゅう / kuzyo kyu",
