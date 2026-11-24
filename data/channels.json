@@ -29744,7 +29744,7 @@
 },
 "UC6iwxijoDKCpecSNoFCZWnw": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "WLxBi1AfS0Y",
 "0UonuUDC0YA",
@@ -33767,7 +33767,7 @@
 },
 "UC7weYf5wc3i0xsPsziZI4Jg": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "8ejblFwSS8g",
 "r3um3Av9HF0",
@@ -49471,7 +49471,8 @@
 "videos": 3
 },
 "UCCPmeAnGLGZLX_NUF8KQBuA": {
-"counts_at": null,
+"counts_at": "2026-11-24T12:47:20Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "first_seen": "2026-11-24T12:00:54Z",
 "icon": "https://yt3.ggpht.com/GeOef3DNhlirAE3cgqxfLy1MdLGmpo_7FQxZ87w7RYuNp0ExbHL2c299BFrwOVSi9C-s6hxwch8=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -49479,8 +49480,11 @@
 "title": "【雑談】大慌てで来ました【鈴姫ころん/新人Vtuber】",
 "video_id": "BXRGQE6rLvQ"
 },
+"lives": 34,
 "name": "鈴姫ころん / Suzuhime Coron",
-"subscribers": 210
+"shorts": 9,
+"subscribers": 210,
+"videos": 1
 },
 "UCCPrt8Ypgg9v3rwXdxdrpsw": {
 "counts_at": null,
@@ -52274,6 +52278,7 @@
 },
 "UCDFP4zhH7csORXz-BZkqNjg": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "first_seen": "2026-11-24T12:00:54Z",
 "icon": "https://yt3.ggpht.com/SwuUEWIPHd_sR_Si5h-yZQFBTne0tt_gMpXE6_MqlFXqi6DVBKYJjU5FzLH08t9EBlOyQi-QOA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -52282,7 +52287,9 @@
 "video_id": "KYwzCpcYql0"
 },
 "name": "星宮ゆゆ-hoshimiyayuyu",
-"subscribers": 227
+"shorts": 43,
+"subscribers": 227,
+"videos": 3
 },
 "UCDFfzzk-CMU2ZEdXA9X7Mhg": {
 "counts_at": "2026-11-15T17:00:59Z",
@@ -81909,6 +81916,11 @@
 "via": "snowball",
 "videos": 10
 },
+"UCLxY502MZ28PRupQy73CMjg": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 133
+},
 "UCLxn_bTw3V32be1ZYLMSqBQ": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-17T00:00:54Z",
@@ -92535,6 +92547,7 @@
 },
 "UCOvNNTsHVv7EN6u4EDm9plg": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "first_seen": "2026-11-24T12:00:54Z",
 "icon": "https://yt3.ggpht.com/U4Cc1YuRRN9I-SkUPmcR1MmUY2OUeekaTz4r6S2LpRwKko7SmIjKMGURjo1lBGlnO1uobdWL=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -92543,7 +92556,9 @@
 "video_id": "vYmYMZgHTtQ"
 },
 "name": "Spica CH 2.5次元VTuber 水無月すぴか",
-"subscribers": 2370
+"shorts": 203,
+"subscribers": 2370,
+"videos": 17
 },
 "UCOvU1GOTXG1qfGJgix-jO5w": {
 "counts_at": null,
@@ -95502,7 +95517,7 @@
 },
 "UCPhrEKvYP2iZ-3gJxqWT0Cg": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "P2smmTbD-jg",
 "xExIwuhSOs4",
@@ -102816,7 +102831,7 @@
 },
 "UCRm37oO1gmsLUdBf2eUYxuw": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "AujKLoLZp4I",
 "NyPUDryQTpo",
@@ -104547,6 +104562,11 @@
 "via": "snowball",
 "videos": 95
 },
+"UCSJoLv05Jmuh2Ua-4x17zwg": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 2640
+},
 "UCSKWiRwYGZ9YFvWlJOGu4Hg": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-19T22:00:51Z",
@@ -105871,6 +105891,11 @@
 "shorts": 11,
 "subscribers": 1970,
 "videos": 72
+},
+"UCSkg3lccWuaZBhC52LSvgsA": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 69
 },
 "UCSl5yjVx8_mEq_66jNKwHOw": {
 "counts_at": null,
@@ -120921,6 +120946,11 @@
 "subscribers": 204,
 "via": "snowball",
 "videos": 6
+},
+"UCX6lbOJP90YuvxEv9HGl_ZA": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 23
 },
 "UCX7468oh-YOnWZsq0SoUoRA": {
 "counts_at": null,
@@ -169138,7 +169168,7 @@
 },
 "UCja9b5j-yPoqfNQBIpQ9gkg": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T06:00:46Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "R7uTuhKft8g",
 "i03mUe3QwgI",
@@ -172138,7 +172168,7 @@
 },
 "UCkb2DNM974BMkVmW14DYqWQ": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T06:00:46Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "K17wsrb9fnw",
 "zCvx1MoVXd0",
@@ -175736,6 +175766,11 @@
 "via": "snowball",
 "videos": 1
 },
+"UCleBQKh12k_RJZdxGehGN9g": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 1000
+},
 "UClfIaqzrQUdDW3dqSb6O8qA": {
 "counts_at": null,
 "counts_attempt_at": "2026-11-14T11:00:48Z",
@@ -177218,7 +177253,7 @@
 },
 "UCm6YIRzEDAIT4QfVLL3Et8w": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "TWJHc2CwcV0",
 "lSZMNGOevjg",
@@ -177269,7 +177304,7 @@
 },
 "UCm7HXIM5wP5OOvjGEKzuGFg": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "O621o28Qd4k"
 ],
@@ -177347,7 +177382,7 @@
 },
 "UCm9e2Slufz9Y16_U6eqscoA": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "rAGkkATB1JQ",
 "ENaas_QGPlM",
@@ -177367,7 +177402,7 @@
 },
 "UCmAnVjYdyYaC3FMi3YJ8Yww": {
 "counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "bgbkkWl0ljg",
 "OvuZ9LpZq6A",
@@ -177458,8 +177493,8 @@
 "videos": 1
 },
 "UCmC5oX1U3M_jyfSUu4cu22Q": {
-"counts_at": null,
-"counts_attempt_at": "2026-11-16T07:00:49Z",
+"counts_at": "2026-11-24T12:47:20Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "done": [
 "-CuSz5eHgxc",
 "2cgux0WYQVg",
@@ -177484,6 +177519,7 @@
 "title": "ちょっと待って、行かないで#vtuber #新人vtuber #推しをお探しですか",
 "video_id": "P6AySEJn6tk"
 },
+"lives": 1,
 "name": "佐奈伊ノア【sanai noah】",
 "shorts": 23,
 "subscribers": 156,
@@ -195801,7 +195837,8 @@
 "videos": 218
 },
 "UCrdaiqpbAmeyjkX3U6QAkcg": {
-"counts_at": null,
+"counts_at": "2026-11-24T12:47:20Z",
+"counts_attempt_at": "2026-11-24T12:47:20Z",
 "first_seen": "2026-11-24T12:00:54Z",
 "icon": "https://yt3.ggpht.com/Q-Ard84pRVNUkT9xg1s9XPbdCz0tDzlfsop55_MPlF5tA7JVWhoGZ0dP7vvpdpYiuGVEFmr3pNk=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -195809,8 +195846,11 @@
 "title": "【あつ森】ただ遊ぶ　#新人vtuber 【V-iii】",
 "video_id": "nDRB3vcfwU8"
 },
+"lives": 171,
 "name": "桃花スイ",
-"subscribers": 685
+"shorts": 29,
+"subscribers": 685,
+"videos": 14
 },
 "UCrdcQFfP2WTGNRFPIhc2jUQ": {
 "counts_at": "2026-11-24T05:00:55Z",
@@ -215508,6 +215548,11 @@
 "name": "魔いたけ@新人バ美肉Vtuber",
 "shorts": 1,
 "subscribers": 145
+},
+"UCx5wMknKmEU4kGjcurNt64Q": {
+"counts_at": null,
+"first_seen": "2026-11-24T12:47:20Z",
+"subscribers": 230
 },
 "UCx6L0hGGc05WutjLlyD2Lkw": {
 "counts_at": null,
