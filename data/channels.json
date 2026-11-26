@@ -9779,7 +9779,10 @@
 },
 "UC1QJ-IQKZ1RkN7ZQAdUfO0g": {
 "counts_at": null,
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:18:12Z",
+"lives": 1720,
+"shorts": 115,
 "subscribers": 446
 },
 "UC1QgXt46-GEvtNjEC1paHnw": {
@@ -11107,9 +11110,13 @@
 "videos": 256
 },
 "UC1o8O0CkYR1PSXibVx_wDww": {
-"counts_at": null,
+"counts_at": "2026-11-26T21:00:50Z",
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:18:12Z",
-"subscribers": 371
+"lives": 125,
+"shorts": 1,
+"subscribers": 371,
+"videos": 26
 },
 "UC1oMBYF2Grby6clQ03aXZew": {
 "counts_at": null,
@@ -42025,7 +42032,8 @@
 "videos": 27
 },
 "UCA1MZ_-cPRlHz51qjBoyfyw": {
-"counts_at": null,
+"counts_at": "2026-11-26T21:00:50Z",
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:00:51Z",
 "icon": "https://yt3.ggpht.com/5Fn2qkLFBCDXjgFMT4prQ58CLv5l3MIajVTFPAKgaJN8fBNKmau4aoIDBQ4KzwMpPgnrH7mWqA=s240-c-k-c0x00ffffff-no-rj",
 "latest": {
@@ -42033,8 +42041,11 @@
 "title": "【Trust Your Gut】デスポケットこわすぎ #新人vtuber #ゲーム実況 #trustyourgut #直感を信じろ",
 "video_id": "yFPzxkV86zA"
 },
+"lives": 1,
 "name": "MIDOVA【ミドヴァ】",
-"subscribers": 157
+"shorts": 29,
+"subscribers": 157,
+"videos": 1
 },
 "UCA1vYZJgNc5pJZTFmVN87zQ": {
 "counts_at": "2026-11-10T20:00:51Z",
@@ -44285,9 +44296,13 @@
 "videos": 36
 },
 "UCAinapqKEMBZKfeK7nzpRkw": {
-"counts_at": null,
+"counts_at": "2026-11-26T21:00:50Z",
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:18:12Z",
-"subscribers": 599
+"lives": 304,
+"shorts": 5,
+"subscribers": 599,
+"videos": 3
 },
 "UCAkC3TKOyN8WxXxcT84g5VQ": {
 "counts_at": null,
@@ -59952,9 +59967,13 @@
 "videos": 32
 },
 "UCF0eE9qOEbrVKqWeZIz-dCg": {
-"counts_at": null,
+"counts_at": "2026-11-26T21:00:50Z",
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:18:12Z",
-"subscribers": 623
+"lives": 825,
+"shorts": 205,
+"subscribers": 623,
+"videos": 12
 },
 "UCF0iiEnTLSSbzr_9Ma9F6BA": {
 "counts_at": null,
@@ -61897,9 +61916,13 @@
 "videos": 65
 },
 "UCFaqwcgTH60nv71jjM0ynIg": {
-"counts_at": null,
+"counts_at": "2026-11-26T21:00:50Z",
+"counts_attempt_at": "2026-11-26T21:00:50Z",
 "first_seen": "2026-11-26T20:18:12Z",
-"subscribers": 4430
+"lives": 1685,
+"shorts": 58,
+"subscribers": 4430,
+"videos": 190
 },
 "UCFb-lCe6aE8u8x_3vYorJKg": {
 "counts_at": null,
@@ -64023,6 +64046,11 @@
 "shorts": 30,
 "subscribers": 16,
 "videos": 2
+},
+"UCGGEuVsthujojaB0cGl9vAw": {
+"counts_at": null,
+"first_seen": "2026-11-26T21:00:50Z",
+"subscribers": 7
 },
 "UCGGIGlgxXoVu1ZzbQ2XBxqQ": {
 "counts_at": null,
@@ -77905,6 +77933,11 @@
 "name": "KassY /カッシー",
 "subscribers": 117,
 "via": "snowball"
+},
+"UCKRsN31RbU5bqD4aKhcCCUA": {
+"counts_at": null,
+"first_seen": "2026-11-26T21:00:50Z",
+"subscribers": 11
 },
 "UCKRxn468W1zqTQ9ZeoHeVwA": {
 "counts_at": "2026-11-12T19:00:50Z",
@@ -163328,6 +163361,11 @@
 "via": "snowball",
 "videos": 57
 },
+"UCgs6wHATBb0bmZ9coyjiW0g": {
+"counts_at": null,
+"first_seen": "2026-11-26T21:00:50Z",
+"subscribers": 443
+},
 "UCgt-FgC-qWQnNR0nk5j72MQ": {
 "counts_at": "2026-11-15T21:00:49Z",
 "counts_attempt_at": "2026-11-15T21:00:49Z",
@@ -220551,6 +220589,11 @@
 "subscribers": 3580,
 "videos": 59
 },
+"UCx5EVnDttpft9CN-MzwU53w": {
+"counts_at": null,
+"first_seen": "2026-11-26T21:00:50Z",
+"subscribers": 150
+},
 "UCx5k2-qKNypvCd1udg_TvVg": {
 "counts_at": null,
 "done": [
@@ -226171,6 +226214,11 @@
 "subscribers": 622,
 "via": "snowball",
 "videos": 14
+},
+"UCyjz2ZWXxKbFM1QADxx3Taw": {
+"counts_at": null,
+"first_seen": "2026-11-26T21:00:50Z",
+"subscribers": 395
 },
 "UCykD43xGFVhUfaOPPVcW4ow": {
 "counts_at": null,
